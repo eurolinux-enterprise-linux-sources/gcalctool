@@ -1,6 +1,6 @@
 Name:           gcalctool
 Version:        5.28.2
-Release:        3%{?dist}
+Release:        5%{?dist}
 Summary:        A desktop calculator
 
 Group:          Applications/System
@@ -12,6 +12,8 @@ Source0:        http://download.gnome.org/sources/gcalctool/5.28/gcalctool-%{ver
 # https://bugzilla.redhat.com/show_bug.cgi?id=575759
 Patch0: gcalctool-translations.patch
 Patch1: gcalctool-translations2.patch
+# https://bugzilla.redhat.com/show_bug.cgi?id=834213
+Patch2: gcalctool-unknown-function.patch
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -44,6 +46,7 @@ to give a high degree of accuracy.
 %setup -q
 %patch0 -p1 -b .translations
 %patch1 -p2 -b .translations2
+%patch2 -p1 -b .unknown-function
 
 %build
 %configure --disable-scrollkeeper
@@ -105,6 +108,14 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Sep 30 2016 Matthias Clasen <mclasen@redhat.com> - 5.28.2-5
+- Fix a compiler warning
+Related: #834213
+
+* Tue Sep  6 2016 Matthias Clasen <mclasen@redhat.com> - 5.28.2-4
+- Fix a locale / encoding problem
+Resolves: #834213
+
 * Thu Aug  5 2010 Matthias Clasen <mclasen@redhat.com> - 5.28.2-3
 - More translation updates
 Resolves: #575759

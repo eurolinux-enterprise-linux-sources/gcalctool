@@ -1,0 +1,27 @@
+diff -up gcalctool-5.28.2/src/mp-equation.c.unknown-function gcalctool-5.28.2/src/mp-equation.c
+--- gcalctool-5.28.2/src/mp-equation.c.unknown-function	2009-12-15 18:24:32.000000000 -0500
++++ gcalctool-5.28.2/src/mp-equation.c	2016-09-30 13:42:32.488580743 -0400
+@@ -26,6 +26,8 @@
+ #include "mp-equation-parser.h"
+ #include "mp-equation-lexer.h"
+ 
++#include <glib.h>
++
+ extern int _mp_equation_parse(yyscan_t yyscanner);
+ 
+ static int
+@@ -81,12 +83,10 @@ static int sub_atoi(const char *data)
+ static int
+ get_function(MPEquationParserState *state, const char *name, const MPNumber *x, MPNumber *z)
+ {
+-    char *c, *lower_name;
++    char *lower_name;
+     int result = 1;
+     
+-    lower_name = strdup(name);
+-    for (c = lower_name; *c; c++)
+-        *c = tolower(*c);
++    lower_name = g_utf8_casefold(name, -1);
+     
+     // FIXME: Re Im ?
+ 
