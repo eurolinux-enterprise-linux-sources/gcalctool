@@ -1,0 +1,2736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "5.5.37">
+<!ENTITY manrevision "2.9">
+<!ENTITY date "March 2005">
+<!ENTITY app "<application>gcalctool</application>">
+<!ENTITY appname "Calculator">
+<!ENTITY ldquo "&#147;">
+<!-- Left Double Quote --><!ENTITY rdquo "&#148;">
+<!-- Right Double Quote -->]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="ko">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title><application>gcalctool</application> 설명서</title>       
+
+    <abstract role="description">
+      <para>gcalctool은 그놈 데스크탑의 계산기입니다. 기본, 고급, 재무, 공학 모드가 있고 연산을 정확히 하기 위해 높은 정확도의 연산 소프트웨어를 사용합니다.</para>
+    </abstract>
+
+    <copyright> 
+      <year>2003</year> 
+      <year>2004</year> 
+      <year>2005</year>
+      <holder>Sun Microsystems</holder> 
+    </copyright><copyright><year>2003.</year><holder>Sun Microsystems</holder></copyright><copyright><year>2007, 2008.</year><holder>류창우 (cwryu@debian.org)</holder></copyright> 
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+   -->
+    <publisher role="maintainer"> 
+      <publishername>그놈 문서 프로젝트</publishername> 
+    </publisher> 
+
+     <legalnotice id="legalnotice">
+	<para>본 설명서는 프리 소프트웨어 재단(FSF)에서 발행한 GNU 자유 문서 라이센스(GFDL) 버전 1.1 이상의 조항에 따라 변경 불가 부분, 앞 표지 텍스트 및 뒷 표지 텍스트를 제외하고 복사, 수정 및/또는 배포할 수 있습니다. GFDL의 사본은 <ulink type="help" url="ghelp:fdl">링크</ulink> 또는 본 설명서와 함께 배포된 COPYING-DOCS 파일에서 찾을 수 있습니다.</para>
+         <para>본 설명서는 GFDL에 따라 배포된 그놈 설명서 컬렉션의 일부입니다. 본 설명서를 컬렉션과 별도로 배포하려는 경우에는 라이센스 조항 6에 따라 라이센스 사본을 설명서에 추가하면 됩니다.</para>
+
+	<para>기업의 제품과 서비스를 식별하기 위해 사용된 많은 이름은 상표로 간주됩니다. 그놈 문서에 사용된 이름과 그놈 문서 프로젝트의 구성원은 해당 상표로, 모두 대문자로 표시되거나 첫 글자가 대문자로 표시되어 있습니다.</para>
+
+	<para>문서 및 수정판은 다음 GNU 자유 문서 라이센스의 조항에 따라 제공됩니다. <orderedlist>
+		<listitem>
+		  <para>문서는 "있는 그대로"로 제공되며 상품성, 특정 목적에의 적합성 또는 준수에 대한 보증을 비롯한 일체의 명시적 또는 암시적인 보증을 제한 없이 부인합니다. 문서 및 수정판의 품질, 정확성 및 성능에 대한 책임은 전적으로 사용자에게 있습니다. 문서 또는 수정판에 대한 오류를 입증하려면 사용자(원저작자, 저작자 또는 배포자 아님)는 필요한 서비스, 수리 및 수정 비용을 부담해야 합니다. 본 보증 부인은 라이센스의 필수 부분에 해당합니다. 본 보증 부인을 따르지 않는 모든 문서나 수정판은 사용할 수 없습니다.</para>
+		</listitem>
+		<listitem>
+		  <para>또한 불법 행위(부주의 포함), 계약 또는 직접, 간접, 특별, 부수적 및 파생적인 모든 손해(영업권 손실, 작업 중지, 컴퓨터 오류 및 고장 또는 본 문서나 수정판의 사용으로 인해 발생하거나 관련된 기타 모든 손실 및 이러한 손실 가능성에 대해 미리 공지한 경우에도 제한되지 않음)에 대해서는 어떠한 상황이나 법률적인 이론 하에서도 본 문서 또는 수정판의 저작자, 원저자, 모든 배포자 또는 공급자는 책임을 지지 않습니다.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+        any of this. -->
+
+    <authorgroup> 
+      <corpauthor>Sun Microsystems Inc.</corpauthor>
+
+<!-- gdocteam@sun.com (Sun Java Desktop System Documentation Team) -->
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+     
+      <othercredit role="translator">
+                <firstname>Latin</firstname> 
+                <surname>Translator 1</surname> 
+                <affiliation> 
+                          <orgname>Latin Translation Team</orgname> 
+                          <address> <email>translator@gnome.org</email> </address> 
+                </affiliation>
+                <contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+    <revision> 
+                <revnumber>계산기 설명서 버전 2.9</revnumber> 
+                <date>2005년 3월</date> 
+                <revdescription> 
+                          <para role="author">Sun Java Desktop System Documentation Team</para>
+                          <para role="publisher">그놈 문서 프로젝트</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>계산기 설명서 버전 2.8</revnumber> 
+                <date>2004년 8월</date> 
+                <revdescription> 
+                          <para role="author">Sun Java Desktop System Documentation Team</para>
+                          <para role="publisher">그놈 문서 프로젝트</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>계산기 설명서 버전 2.7</revnumber> 
+                <date>2004년 2월</date> 
+                <revdescription> 
+                          <para role="author">Sun 그놈 문서 팀</para>
+                          <para role="publisher">그놈 문서 프로젝트</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>계산기 설명서 버전 2.6</revnumber> 
+                <date>2003년 10월</date> 
+                <revdescription> 
+                          <para role="author">Sun 그놈 문서 팀</para>
+                          <para role="publisher">그놈 문서 프로젝트</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>계산기 설명서 버전 2.5</revnumber> 
+                <date>2003년 7월</date> 
+                <revdescription> 
+                          <para role="author">Sun 그놈 문서 팀</para>
+                          <para role="publisher">그놈 문서 프로젝트</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>계산기 설명서 버전 2.4</revnumber> 
+                <date>2003년 6월</date> 
+                <revdescription> 
+                          <para role="author">Sun 그놈 문서 팀</para>
+                          <para role="publisher">그놈 문서 프로젝트</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>계산기 설명서 버전 2.3</revnumber> 
+                <date>2003년 4월</date> 
+                <revdescription> 
+                          <para role="author">Sun 그놈 문서 팀</para>
+                          <para role="publisher">그놈 문서 프로젝트</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>계산기 설명서 버전 2.2</revnumber> 
+                <date>2003년 4월</date> 
+                <revdescription> 
+                          <para role="author">Sun 그놈 문서 팀</para>
+                          <para role="publisher">그놈 문서 프로젝트</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>계산기 설명서 버전 2.1</revnumber> 
+                <date>2003년 3월</date> 
+                <revdescription> 
+                          <para role="author">Sun 그놈 문서 팀</para>
+                          <para role="publisher">그놈 문서 프로젝트</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>계산기 설명서 버전 2.0</revnumber> 
+                <date>2003년 3월</date> 
+                <revdescription> 
+                          <para role="author">Sun 그놈 문서 팀</para>
+                          <para role="publisher">그놈 문서 프로젝트</para>
+                </revdescription> 
+      </revision> 
+    </revhistory> 
+
+    <releaseinfo>이 설명서에서는 계산기의 버전 5.5.37에 대해 설명합니다.</releaseinfo> 
+    <legalnotice> 
+      <title>피드백</title> 
+      <para><application>gcalctool</application> 응용 프로그램 또는 이 설명서에 대한 버그를 알려 주시거나 의견을 제시하려면 <ulink url="ghelp:gnome-feedback" type="help">그놈 피드백 페이지</ulink>에 있는 대로 해 주십시오.</para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>gcalctool</primary> 
+  </indexterm> 
+  <indexterm zone="index"> 
+    <primary>계산기</primary> 
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+  <sect1 id="gcalctool-intro"> 
+    <title>소개</title> 
+    <para><application>gcalctool</application> 응용 프로그램에는 다음과 같이 여러가지 계산 기능별 모드가 있습니다:</para>
+     <variablelist>
+        <varlistentry>
+        <term><link linkend="gcalctool-basic-mode">기본</link></term>
+        <listitem><para>기본 모드. 표준 계산기 기능이 들어 있습니다. 기본 모드에는 더하기, 빼기, 나누기, 곱하기를 할 수 있고 이 기본 기능들은 모두 다른 모드에서도 사용할 수 있습니다.</para></listitem>
+        </varlistentry>
+  <varlistentry>
+        <term><link linkend="gcalctool-advanced-mode">고급</link></term>
+        <listitem><para>Provides advanced calculator functions. You can store numbers in 10 different memory registers, and easily retrieve and replace the numbers in the memory registers. You can use all of the Advanced functions in Financial, Scientific and Programming modes.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+        <term><link linkend="gcalctool-financial-mode">재무</link></term>
+        <listitem><para>몇 가지 복잡한 재무 기능이 들어 있습니다.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+        <term><link linkend="gcalctool-scientific-mode">공학</link></term>
+        <listitem><para>Provides many additional mathematical functions, including trigonometric functions. You can also store your own functions and constants, when you use Scientific mode.</para></listitem>
+        </varlistentry>
+                <varlistentry>
+                <term><link linkend="gcalctool-programming-mode">Programming </link></term>
+                <listitem><para>Provides functions useful to a programmer, including bitwise functions and a bit editor.</para></listitem>
+                </varlistentry>
+     </variablelist>
+
+    <para>다음과 같은 진법에 따라 <application>gcalctool</application>을 사용할 수 있습니다:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>진법</para></entry>
+              <entry colname="COLSPEC1" align="right">
+                <para>밑</para></entry>
+            </row>
+          </thead> 
+          <tbody> 
+            <row valign="top">
+              <entry><para>2진수</para></entry>
+              <entry align="right"><para>2</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>8진수</para></entry>
+              <entry align="right"><para>8</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>10진수</para></entry>
+              <entry align="right"><para>10</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>16진수</para></entry>
+              <entry align="right"><para>16</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+                           
+  </sect1>
+
+<!-- =========== Getting Started ============================== -->
+
+  <sect1 id="gcalctool-get-start"> 
+    <title>시작하기</title> 
+    <para>다음 방법으로 <application>gcalctool</application>을 시작할 수 있습니다:</para>
+    <variablelist>
+      <varlistentry>
+        <term>메뉴</term>
+        <listitem>
+          <para><menuchoice><guimenu>보조 프로그램</guimenu><guimenuitem>계산기</guimenuitem></menuchoice>를 선택하십시오.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>명령줄</term>
+        <listitem>
+          <para>다음 명령을 실행합니다: <userinput>gnome-calculator</userinput></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para><application>gcalctool</application>를 시작하면 다음 창을 표시합니다:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-basic"> 
+        <title><application>gcalctool</application> 기본 모드 창</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_basic_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase><application>gcalctool</application> 기본 모드 창을 표시합니다.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+                <para>The <application>gcalctool</application> window contains the following elements: </para>
+                <variablelist>
+                  <varlistentry> <term>메뉴 모음</term>
+                         <listitem>
+                                <para>The menus on the menubar contain all of the commands that you need to work with <application>gcalctool</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>표시 영역</term>
+                         <listitem>
+                                <para>The display area shows the numbers that you enter, and the results of calculations.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>모드 영역</term>
+                         <listitem>
+                                <para>The mode area displays the buttons for the current mode. The Basic mode buttons are always displayed. Advanced mode buttons are also available in Financial, Scientific and Programming modes.  </para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>팝업 메뉴</term>
+                         <listitem>
+                <para><application>gcalctool</application> 단추의 <inlinemediaobject><imageobject><imagedata fileref="figures/gcalctool_menu_symbol.png" format="PNG"/></imageobject><textobject><phrase>팝업 메뉴 기호를 표시합니다.</phrase></textobject></inlinemediaobject> 기호는 그 단추를 누르면 팝업 메뉴를 표시한다는 의미입니다.</para>
+                         </listitem>
+                  </varlistentry>
+<varlistentry>
+         <term>상태 표시줄</term>
+                         <listitem>
+                                <para>상태 표시줄은 계산기의 상태 메세지를 표시합니다.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+  </sect1>
+<!-- ================ Usage ================================ -->
+  <sect1 id="gcalctool-usage"> 
+    <title>사용법</title> 
+
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="gcalctool-calc-functions">
+                <title>계산기 기능을 사용하려면</title> 
+                <para>계산을 하려면, 다음 방법 중 하나를 사용하십시오:</para>
+                <itemizedlist>
+                  <listitem>
+                         <para><application>gcalctool</application> 단추를 눌러 숫자 및 함수를 입력합니다.</para>
+                  </listitem>
+                  <listitem>
+                         <para><application>gcalctool</application> 창에 포커스를 두고 키보드나 숫자 키패드를 사용하여 계산하려는 식을 입력합니다. 키보드 바로 가기의 전체 목록을 보려면 <xref linkend="gcalctool-keyboard-shortcut"/>을 참고하십시오.</para>
+                  </listitem>
+                </itemizedlist>
+                <para><application>gcalctool</application> 응용 프로그램은 자동으로 40자리 이상의 수 및 작은 수를 지수 형식으로 표시합니다. 예를 들어, 유효 숫자 2자리와 10진수를 사용할 때 다음과 같이 표시합니다:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>표시</para></entry>
+              <entry colname="COLSPEC1">
+                <para>의미</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>1.23e+37</para></entry>
+              <entry><para>1.23 * 10<superscript>37</superscript></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>1e-5</para></entry>
+              <entry><para>0.00001</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <para>숫자를 지수 형식으로 입력하는 방법에 대해 좀 더 알고 싶으시면 <xref linkend="gcalctool-enter-exp"/> 부분을 참고하십시오.</para>
+
+    <sect3 id="gcalctool-calc-functions-separator">
+                <title>큰 수에서 자리수 구분을 표시하려면</title> 
+      <para>10진수에서 매 3자리마다 자리수 구분을 넣으려면, <menuchoice><guimenu>보기</guimenu><guimenuitem>천단위 자리수 구분 표시</guimenuitem></menuchoice>를 선택하십시오.</para>
+      <note>
+      <para>나라와 문화에 따라 정보를 교환하는 방식이 여러 가지가 있습니다. 언어도 다르고 자리수 구분에 사용하는 문자도 여러 가지가 있습니다.</para>
+      <para><application>gcalctool</application> has been internationalized so users can adapt to their own conventions. This is done by setting a specific locale. We can't determine what locales will exist, except for a standard one called the C locale.</para>
+      <para>C 로캘을 사용하면 자리점을 표시하지 않습니다.</para>
+      </note>
+    </sect3>
+
+    <sect3 id="gcalctool-calc-functions-copy">
+                <title>표시 영역을 복사하고 붙여 넣으려면</title> 
+                <para>계산 결과를 복사하려면 <menuchoice><guimenu>편집</guimenu><guimenuitem>복사</guimenuitem></menuchoice>를 선택하십시오. 다른 응용프로그램에 그 값을 붙여 넣을 수 있습니다.</para>
+
+                <para>이전에 복사한 값을 표시 영역에 붙여 넣으려면 <menuchoice><guimenu>편집</guimenu><guimenuitem>붙여 넣기</guimenuitem></menuchoice>를 선택하십시오.</para>
+    </sect3>
+
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+   
+    <sect2 id="gcalctool-basic-mode"> 
+      <title>기본 계산을 하려면</title> 
+      <para><application>gcalctool</application>를 처음 시작하면 기본 모드를 기본값으로 표시합니다. 기본 모드를 직접 지정하려면, <menuchoice><guimenu>보기</guimenu><guimenuitem>기본 모드</guimenuitem></menuchoice>를 선택하십시오.</para>
+      <para>계산기의 메모리 레지스터는 기본 모드에서 사용할 수 없습니다. 기본 모드에서 <menuchoice><guimenu>보기</guimenu><guimenuitem>메모리 레지스터</guimenuitem></menuchoice>는 비활성화되어 있는 상태입니다.</para>
+    <sect3 id="gcalctool-simple-calc"> 
+      <title>간단한 계산을 하려면</title> 
+      <para>간단한 계산을 하려면 <xref linkend="gcalctool-TBL-simple-calc"/>에 설명한 단추를 사용하십시오.</para>
+                <table id="gcalctool-TBL-simple-calc" frame="all">
+                  <title>간단한 계산 하기</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>예</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>숫자</para> </entry>
+                             <entry><para><guibutton>0</guibutton>에서 <guibutton>9</guibutton>까지</para></entry>
+                             <entry><para>10진수 및 16진수에서는 모든 숫자를 사용할 수 있습니다. 8진수 기수에서는 <guibutton>8</guibutton>과 <guibutton>9</guibutton>는 사용할 수 없습니다. 이진수에서는 <guibutton>0</guibutton>과 <guibutton>1</guibutton>만 사용할 수 있습니다. 기본 진법은 10진수입니다.</para></entry>
+                             <entry><para><guibutton>1</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>소숫점</para> </entry>
+                             <entry><para><guibutton>.</guibutton></para></entry>
+                             <entry><para>숫자를 입력할 때 소숫점 이하 부분을 시작합니다.</para></entry>
+                             <entry><para><guibutton>1</guibutton> <guibutton>.</guibutton> <guibutton>2</guibutton></para></entry>
+                             <entry><para>1.2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>결과 계산</para> </entry>
+                             <entry><para><guibutton>=</guibutton></para></entry>
+                             <entry><para>현재 계산 결과를 현재의 진법에 따라 표시합니다.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>더하기</para> </entry>
+                             <entry><para><guibutton>+</guibutton></para></entry>
+                             <entry><para>표시 영역의 현재 값에 다음에 입력할 수를 더합니다.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>빼기</para> </entry>
+                             <entry><para><guibutton>-</guibutton></para></entry>
+                             <entry><para>표시 영역의 현재 값에 다음에 입력할 수를 뺍니다.</para></entry>
+                             <entry><para>3 <guibutton>-</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>곱하기</para> </entry>
+                             <entry><para><guibutton>*</guibutton></para></entry>
+                             <entry><para>표시 영역의 현재 값에 다음에 입력할 수를 곱합니다.</para></entry>
+                             <entry><para>3 <guibutton>*</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>6</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>나누기</para> </entry>
+                             <entry><para><guibutton>/</guibutton></para></entry>
+                             <entry><para>표시 영역의 현재 값을 다음에 입력할 수로 나눕니다.</para></entry>
+                             <entry><para>6 <guibutton>/</guibutton><guibutton>3</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>2</para></entry>
+                           </row>
+                        <row valign="top">
+                             <entry><para>산술 부호 바꾸기</para> </entry>
+                             <entry><para><guibutton>+/-</guibutton></para></entry>
+                             <entry><para>양수를 음수로 바꾸거나, 음수를 양수로 바꿉니다.</para></entry>
+                             <entry><para>8 <guibutton>+/-</guibutton></para></entry>
+                             <entry><para>-8</para></entry>
+                           </row>
+                         </tbody>
+
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-erase-char"> 
+      <title>문자를 지우려면</title> 
+      <para>문자를 지우려면 <xref linkend="gcalctool-TBL-erase-char"/>에 설명한 단추를 사용하십시오.</para>
+                <table id="gcalctool-TBL-erase-char" frame="all">
+                  <title>문자 지우기</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>예</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>백스페이스</para> </entry>
+                             <entry><para><guibutton>Bksp</guibutton></para></entry>
+                             <entry><para>표시 영역에서 맨 오른쪽 문자를 지웁니다.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>Bksp</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>입력란 지우기</para> </entry>
+                             <entry><para><guibutton>CE</guibutton></para></entry>
+                             <entry><para>표시 영역에서 현재 값을 지웁니다.</para>
+                                    <para>This operation is the same as <guibutton>Clr</guibutton></para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>CE</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>0</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>지우기</para> </entry>
+                             <entry><para><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>표시 영역의 현재 값을 0으로 리셋하고 이전의 계산 결과를 모두 지웁니다. 또 <guibutton>Clr</guibutton> 단추를 누르면 공학 모드에서 <guilabel>Hyp</guilabel> 및 <guilabel>Inv</guilabel> 옵션의 선택을 해제합니다.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>0</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    
+    
+
+
+
+  
+
+          <sect3 id="gcalctool-ins-ascii"> 
+            <title>ASCII 값을 표시하려면</title> 
+                        <para>어떤 문자의 ASCII 값을 표시하려면 <menuchoice><guimenu>편집</guimenu><guimenuitem>ASCII 값 넣기</guimenuitem></menuchoice>를 선택하십시오.</para>
+                        <para>ASCII 값 넣기 대화 상자를 표시합니다.</para>
+                        <para><guilabel>문자</guilabel> 입력란에 필요한 문자를 입력하고 <guibutton>넣기</guibutton>를 누르십시오. 해당 문자의 ASCII 값이 현재의 진법에 맞게 표시 영역에 나타납니다. 예를 들어, 문자 B의 ASCII 값을 10진수로 표시하면 66입니다.</para>
+          </sect3>
+        </sect2>
+
+ <sect2 id="gcalctool-advanced-mode">
+    <title>고급 계산을 하려면</title>
+  <para>고급 모드로 바꾸려면, <menuchoice><guimenu>View</guimenu><guimenuitem>고급</guimenuitem></menuchoice>을 선택하십시오.</para>
+    <para>고급 모드로 바꾸면, 다음 단추를 기본 모드 단추의 오른쪽에 표시합니다:</para>
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-advanced"> 
+        <title><application>gcalctool</application> 고급 모드 단추</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_advanced_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase><application>gcalctool</application> 고급 모드 단추를 표시합니다.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+                <table id="gcalctool-TBL-adv-calc" frame="all">
+                  <title>고급 계산하기</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>예</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>퍼센트</para> </entry>
+                             <entry><para><guibutton>%</guibutton></para></entry>
+                             <entry><para>현재 값을 100으로 나눕니다.</para></entry>
+                             <entry><para>560 <guibutton>%</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>5.60</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>역수</para> </entry>
+                             <entry><para><guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>1을 표시 영역의 현재 값으로 나눕니다.</para></entry>
+                             <entry><para>4 <guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>0.25</para></entry>
+                           </row>
+                    
+                           <row valign="top">
+                             <entry><para>제곱근</para> </entry>
+                             <entry><para><guibutton>Sqrt</guibutton></para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 제곱근을 계산합니다.</para></entry>
+                             <entry><para><guibutton>Sqrt</guibutton> 9 <guibutton>)</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>제곱</para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 제곱을 계산합니다.</para></entry>
+                             <entry><para>3 <replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>9</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>정수 부분</para> </entry>
+                             <entry><para><guibutton>Int</guibutton></para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 정수 부분을 계산합니다.</para></entry>
+                             <entry><para>-23.45 <guibutton>Int</guibutton></para></entry>
+                             <entry><para>-23</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>분수 부분</para> </entry>
+                             <entry><para><guibutton>Frac</guibutton></para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 소수점 아래 부분을 계산합니다.</para></entry>
+                             <entry><para>-23.45 <guibutton>Frac</guibutton></para></entry>
+                             <entry><para>-0.45</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>절대값</para> </entry>
+                             <entry><para><guibutton>Abs</guibutton></para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 절대값을 계산합니다.</para></entry>
+                             <entry><para>-23.45 <guibutton>Abs</guibutton></para></entry>
+                             <entry><para>23.45</para></entry>
+                         </row>
+                           <row valign="top">
+                         <entry><para>괄호</para> </entry>
+                             <entry><para><guibutton>(</guibutton> 및 <guibutton>)</guibutton></para></entry>
+                             <entry><para>Calculations within parentheses are performed first. You can nest parentheses to any level.</para></entry>
+                           <entry>
+                               <para>2 <guibutton>+</guibutton><guibutton>3</guibutton><guibutton>*</guibutton><guibutton>4</guibutton><guibutton>=</guibutton></para>
+                               <para>2 <guibutton>+</guibutton><guibutton>(</guibutton><guibutton>3</guibutton><guibutton>*</guibutton><guibutton>4</guibutton><guibutton>)</guibutton></para>
+                             </entry>
+                             <entry> <para>20</para>
+                               <para>14</para>
+                             </entry>
+                               
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+
+<sect3 id="gcalctool-mem-reg"> 
+      <title>계산기 메모리 레지스터를 사용하려면</title> 
+      <para><guilabel>R0</guilabel>에서 <guilabel>R9</guilabel>까지의 10개의 <application>gcalctool</application> 메모리 레지스터에 값을 저장할 수 있습니다. 메모리 레지스터를 표시하려면 <menuchoice><guimenu>보기</guimenu><guimenuitem>메모리 레지스터</guimenuitem></menuchoice>를 선택하십시오.</para>
+      <para>메모리 레지스터 창은 <menuchoice><guimenu>보기</guimenu><guimenuitem>메모리 레지스터</guimenuitem></menuchoice>를 다시 선택하거나, 창의 <guibutton>닫기</guibutton> 단추를 눌러서 닫을 수 있습니다.</para>
+        <para><xref linkend="gcalctool-TBL-mem-reg"/>에서 사용할 수 있는 메모리 기능에 대해 설명합니다.</para>
+                <table id="gcalctool-TBL-mem-reg" frame="all">
+                  <title>메모리 기능</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>예</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>메모리 레지스터에 값 저장</para> </entry>
+                             <entry><para><guibutton>Sto</guibutton></para></entry>
+                             <entry><para>표시 영역의 현재 내용을 지정한 메모리 레지스터에 저장합니다. <guibutton>Sto</guibutton> 단추를 누른 다음 팝업 메뉴에서 메모리 레지스터를 선택하십시오.</para>
+                                   <para><application>gcalctool</application> 세션에서 메모리 레지스터를 지우려면:</para>
+                                     <orderedlist>
+                                       <listitem><para><guibutton>Clr</guibutton>를 누르십시오.</para></listitem>
+                                       <listitem><para><guibutton>Sto</guibutton>를 누르십시오.</para></listitem>
+                                       <listitem><para>팝업 메뉴에서 메모리 레지스터를 선택하십시오.</para></listitem>
+                                     </orderedlist>
+</entry>
+                             <entry><para>22 <guibutton>Sto</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para>값 22가 <guilabel>R2</guilabel> 메모리 레지스터에 저장됩니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>메모리 레지스터에서 값 가져오기</para> </entry>
+                             <entry><para><guibutton>Rcl</guibutton></para></entry>
+                             <entry><para>지정한 메모리 레지스터의 내용을 가져옵니다. <guibutton>Rcl</guibutton>을 누르고 팝업 메뉴에서 메모리 레지스터를 선택하십시오.</para></entry>
+                             <entry><para>0 <guibutton>Rcl</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para>표시 영역에 22가 나타납니다.</para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>메모리 레지스터 값과 표시된 값 뒤바꾸기</para> </entry>
+                             <entry><para><guibutton>Exch</guibutton></para></entry>
+                             <entry><para>지정한 메모리 레지스터의 내용과 표시 영역의 현재 값을 뒤바꿉니다. <guibutton>Exch</guibutton>를 누르고 팝업 메뉴에서 메모리 레지스터를 선택하십시오.</para></entry>
+                             <entry><para>44 <guibutton>Exch</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para>표시 영역의 값이 44에서 22로 바뀌고, R2의 값이 22에서 44로 바뀝니다.</para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>키보드 바로 가기를 사용하는 경우, 다음 예제와 같이 키보드로 메모리 레지스터를 지정할 수 있습니다:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>키보드 입력</para></entry>
+              <entry colname="COLSPEC1">
+                <para>설명</para></entry>
+            </row>
+          </thead>
+          <tbody> 
+            <row valign="top">
+              <entry><para><keycap>S</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>표시 영역의 현재 내용을 <guilabel>R2</guilabel> 메모리 레지스터에 저장합니다.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>R</keycap> <keycap>2</keycap></para></entry>
+              <entry><para><guilabel>R2</guilabel> 메모리 레지스터의 현재 내용을 표시 영역으로 가져옵니다.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>X</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>표시 영역의 현재 값을 <guilabel>R2</guilabel> 메모리 레지스터의 내용과 바꿉니다.</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+    </sect3>
+
+
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+         <sect2 id="gcalctool-financial-mode"> 
+      <title>재무 계산을 하려면</title> 
+      <para>재무 모드로 바꾸려면 <menuchoice><guimenu>보기</guimenu><guimenuitem>재무 모드</guimenuitem></menuchoice>를 선택하십시오.</para>
+     <para>재무 모드로 바꾸면, 다음 단추를 기본/고급 모드 단추의 위에 표시합니다:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-financial"> 
+        <title><application>gcalctool</application> 재무 모드 단추</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_financial_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase><application>gcalctool</application> 재무 모드 단추를 표시합니다.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+      <para>재무 계산을 하려면 <xref linkend="gcalctool-TBL-financial-calc"/>에 설명한 단추를 사용하십시오.</para>
+                <table id="gcalctool-TBL-financial-calc" frame="all">
+                  <title>재무 계산하기</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>예</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>복리 기간</para> </entry>
+                             <entry><para><guibutton>Ctrm</guibutton></para></entry>
+                             <entry><para>Calculates the number of compounding periods necessary to increase an investment from a present value to a future value, at a fixed interest rate per compounding period.</para>
+                             </entry>
+                             <entry><para>You have just deposited $8000 in an account that pays an annual interest rate of 9%, compounded monthly. Given the annual interest rate, you determine that the simple monthly interest rate is 0.09 / 12 = 0.0075. To calculate the time period necessary to double your investment, click <guibutton>Ctrm</guibutton>, and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>정기 이율</term>
+                                <listitem><para>0.0075</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>미래 가치</term>
+                                <listitem><para>16000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>현재 가치</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>92.77</para>
+                                    <para>투자금은 92.77개월 후에 두 배가 됩니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>이중 감가상각</para> </entry>
+                             <entry><para><guibutton>Ddb</guibutton></para></entry>
+                             <entry><para>지정한 기간 동안 자산에 대한 감가상각 허용치를 이중정률법을 사용하여 계산합니다.</para>
+                             </entry>
+                             <entry><para>You have just purchased an office machine for $8000. The useful life of this machine is six years. The salvage value after six years is $900.
+To calculate the depreciation expense for the fourth year, using the double-declining balance method, click <guibutton>Ddb</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Cost</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Salvage</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Life</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Period</term>
+                                <listitem><para>4</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>790.12</para>
+                                    <para>4년째 되는 해의 감가상각 지출은 $790.12입니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>미래 가치</para> </entry>
+                             <entry><para><guibutton>Fv</guibutton></para></entry>
+                             <entry><para>Calculates the future value of an investment based on a series of equal payments at a specific periodic interest rate, over the number of payment periods in the term.
+</para>
+                             </entry>
+                             <entry><para>You plan to deposit $4000 in a bank account on the last day of each year for the next 20 years. The account pays 8% interest, compounded annually. Interest is paid on the last day of each year. 
+To calculate the value of your account in 20 years, press <guibutton>Fv</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>정기 상환</term>
+                                <listitem><para>4000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>정기 이율</term>
+                                <listitem><para>0.08</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Number Of Periods</term>
+                                <listitem><para>20</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>183047.86</para>
+                                    <para>20년 후의 계좌 가치는 $183,047.86입니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Gross Profit Margin</para></entry>
+                             <entry><para><guibutton>Gpm</guibutton></para></entry>
+                             <entry><para>Calculates the resale price of a product, based on the product cost and the wanted gross profit margin.</para></entry>
+                             <entry><para>You sell T-Shirts online. Each T-Shirt cost you $12 in material and labor. You want to sell the T-Shirts with a Gross Profit Margin of 0.40 - for every five dollars you earn, you want two to be profit. To calculate the price you would have to sell your T-Shirts for, press <guibutton>Gpm</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Cost</term>
+                                <listitem><para>12</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Margin</term>
+                                <listitem><para>0.40</para></listitem>
+                                </varlistentry>
+                             </variablelist>
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>20</para>
+                             <para>You will have to sell your T-Shirts for $20</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>정기 상환</para> </entry>
+                             <entry><para><guibutton>Pmt</guibutton></para></entry>
+                             <entry><para>대출의 매 주기마다 상환하는 액수를 계산합니다. 매 주기의 마지막 날에 상환한다고 가정합니다.</para>
+                             </entry>
+                             <entry><para>You are considering a $120,000 mortgage for 30 years at an annual interest rate of 11.0%. Given the annual interest rate, you determine that the simple monthly interest rate is 0.11 / 12 = 0.00917. The term is 30 * 12 = 360 months. To calculate the monthly repayment for this mortgage, press <guibutton>Pmt</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Principal</term>
+                                <listitem><para>120000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>정기 이율</term>
+                                <listitem><para>0.00917</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Term</term>
+                                <listitem><para>360</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>1143.15</para>
+                                    <para>월별 상환금은 $1143.15입니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>현재 가치</para> </entry>
+                             <entry><para><guibutton>Pv</guibutton></para></entry>
+                             <entry><para>Calculates the present value of an investment based on a series of equal payments, discounted at a periodic interest rate, over the number of payment periods in the term.
+</para>
+                             </entry>
+                             <entry><para>$1,000,000의 상금을 받았습니다. 상금은 $50,000씩 20년 동안 지급됩니다. 매년 연말에 상금이 지급됩니다. 매년 $50,000를 받게 되면 복리 9%의 연이율로 투자할 수 있습니다.</para>
+                                    <para>However, you are given the option of receiving a single lump-sum payment of $400,000 instead of the million dollars annuity. 
+To calculate which option is worth more in today's dollars, press <guibutton>Pv</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>정기 상환</term>
+                                <listitem><para>50000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>정기 이율</term>
+                                <listitem><para>0.09</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Number Of Periods</term>
+                                <listitem><para>20</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>456427.28</para>
+                                    <para>20년 동안 $1,000,000가 지급되는 경우 현재 시세로는 $456,427.28입니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>정기 이율</para> </entry>
+                             <entry><para><guibutton>Rate</guibutton></para></entry>
+                             <entry><para>Calculates the periodic interest necessary to increase an investment of a present value to a future value, over a number of compounding periods.
+</para>
+                             </entry>
+                             <entry><para>You have invested $20,000 in a bond. The bond matures in five years, and has a maturity value of $30,000. Interest is compounded monthly. The term is 5 * 12 = 60 months.
+To calculate the periodic interest rate for this investment, press <guibutton>Rate</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>미래 가치</term>
+                                <listitem><para>30000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>현재 가치</term>
+                                <listitem><para>20000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Term</term>
+                                <listitem><para>60</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>.00678</para>
+                                    <para>월이율은 0.678%입니다. 연이율은 0.678% * 12 = 8.14%입니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>정액 감가상각</para> </entry>
+                             <entry><para><guibutton>Sln</guibutton></para></entry>
+                             <entry><para>한 기간 동안 자산의 정액 감가상각을 계산합니다. 감가 상각 비용은 <replaceable>cost</replaceable> - <replaceable>salvage</replaceable>입니다. 감가상각 정액법은 감가상각될 수 있는 비용을 자산의 수명으로 균등하게 나눕니다. 자산의 수명은 자산이 감가상각되는 기간을 (일반적으로 연수) 말합니다.</para>
+                             </entry>
+                             <entry><para>You have just purchased an office machine for $8000. The useful life of this machine is six years. The salvage value after six years is $900.
+To calculate the yearly depreciation expense, using the straight-line method, prss <guibutton>Sln</guibutton>, and put the following values into the first three memory registers:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Cost</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Salvage</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Life</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>1183.33</para>
+                                    <para>매년 감가상각 지출은 $1183.33입니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>연수합계 감가상각</para> </entry>
+                             <entry><para><guibutton>Syd</guibutton></para></entry>
+                             <entry><para>연수합계 방법을 사용해, 일정 기간동안 자산의 감가상각 허용치를 계산합니다. 이 감가상각 방식은 감가상각의 속도를 바꿔서, 나중 기간보다 앞의 기간에서 감가상각 속도가 빨라지게 만듭니다. 감가상각 비용은 <replaceable>cost</replaceable> - <replaceable>salvage</replaceable>입니다. 수명은 자산이 감가상각되는 기간을 (일반적으로 연수) 말합니다.</para>
+                             </entry>
+                             <entry><para>You have just purchased an office machine for $8000. The useful life of this machine is six years. The salvage value after six years is $900.
+To calculate the depreciation expense for the fourth year, using the sum-of-the-years'-digits method, press <guibutton>Syd</guibutton>, and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Cost</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Salvage</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Life</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Period</term>
+                                <listitem><para>4</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>1014.29</para>
+                                    <para>4년째 되는 해의 감가상각 지출은 $1014.29입니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>지불 기간</para> </entry>
+                             <entry><para><guibutton>Term</guibutton></para></entry>
+                             <entry><para>Calculates the number of payment periods that are necessary during the term of an ordinary annuity, to accumulate a future value, at a certain periodic interest rate.</para>
+                             </entry>
+                             <entry><para>You plan to deposit $1800 in a bank account on the last day of each year. The account pays 11% interest, compounded annually. Interest is paid on the last day of each year. 
+To calculate the time period necessary to accumulate $120,000, press <guibutton>Term</guibutton>, and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>정기 상환</term>
+                                <listitem><para>1800</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>미래 가치</term>
+                                <listitem><para>120000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>정기 이율</term>
+                                <listitem><para>0.11</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>20.32</para>
+                                    <para>20.32년 후에 계좌 금액은 $120,000가 됩니다.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="gcalctool-scientific-mode"> 
+      <title>공학 계산을 하려면</title> 
+      <para>공학 모드로 바꾸려면 <menuchoice><guimenu>보기</guimenu><guimenuitem>공학 모드</guimenuitem></menuchoice>를 선택하십시오.</para>
+    <para>공학 모드로 바꾸면, 다음 단추를 기본/고급 모드 단추의 위에 표시합니다:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-scientific"> 
+        <title><application>gcalctool</application> 공학 모드 단추</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_scientific_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase><application>gcalctool</application> 공학 모드 단추를 표시합니다.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+    <sect3 id="gcalctool-set-acc"> 
+      <title>정확도를 설정하려면</title> 
+      <para>표시 영역 및 메모리 레지스터의 정확도를 설정하려면 <guibutton>Acc</guibutton>를 누르고 팝업 메뉴에서 필요한 정확도를 선택하십시오. 팝업 메뉴에서 현재 정확도 수준 앞에 검정색 원을 표시합니다. 유효 숫자를 99자리까지 표시할 수 있습니다. 정확도 기본값은 9자리입니다.</para>
+<para>정확도를 9보다 높게 하려면, <guilabel>기타 (9) ...</guilabel>를 선택하고, <guilabel>유효숫자 설정</guilabel> 팝업에서 필요한 정확도를 선택하십시오.</para>
+      <para>기본적으로 마지막 0은 표시하지 않습니다. 마지막 0을 표시하려면 <guibutton>Acc</guibutton>를 누르고 팝업 메뉴에서 <guilabel>마지막 0 표시</guilabel>를 선택하거나 <menuchoice> <guimenu>보기</guimenu> <guimenuitem>마지막 0 표시</guimenuitem> </menuchoice>를 선택하십시오. <guibutton>Acc</guibutton> 팝업 메뉴 또는 <guimenu>보기</guimenu> 메뉴에서 앞에 있는 확인란은 <guilabel>마지막 0 표시</guilabel> 옵션을 선택했다는 뜻입니다. 마지막 0을 숨기려면 <menuchoice> <guimenu>보기</guimenu> <guimenuitem>마지막 0 표시</guimenuitem> </menuchoice>를 다시 선택하십시오.</para>
+      <para>다음 표의 예제는 10진법을 사용할 때 <literal>1 / 8 = <replaceable>x</replaceable></literal> 계산에 대해 <guimenuitem>마지막 0 표시</guimenuitem> 옵션을 선택하고 정확도 설정이 표시 영역에서 <replaceable>x</replaceable>에 어떻게 영향을 주는 지 나타냅니다:</para>
+                <informaltable frame="all">
+                  <tgroup cols="2" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>정확도</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>유효 숫자 1자리</para></entry>
+                             <entry><para>1.2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>유효 숫자 2자리</para></entry>
+                             <entry><para>1.25</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>유효 숫자 3자리</para></entry>
+                             <entry><para>1.250</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </informaltable>
+    </sect3>
+    <sect3 id="gcalctool-display-type"> 
+      <title>표시 형식을 설정하려면</title> 
+      <para>표시 형식을 설정하려면 <xref linkend="gcalctool-TBL-display-type"/>에 설명한 단추 중 하나를 선택하십시오.</para>
+                <table id="gcalctool-TBL-display-type" frame="all">
+                  <title>표시 형식 설정하기</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>공학 표시 형식</para> </entry>
+                             <entry><para><guibutton>Eng</guibutton></para></entry>
+                             <entry><para>표시 형식을 공학 형식으로 설정합니다. 결과는 공학 표기법으로 표시합니다. 지수는 항상 3의 제곱입니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>고정 소수점 표시 형식</para> </entry>
+                             <entry><para><guibutton>Fix</guibutton></para></entry>
+                             <entry><para>표시 형식을 고정 소숫점 형식으로 설정합니다. 결과는 과학 표기법으로 표시하지 않습니다. 고정 소수점은 기본 표시 형식입니다. 공학 모드를 기본 모드 또는 재무 모드로 바꾸면 <application>gcalctool</application>에서 표시 형식을 고정 소수점 형식으로 자동 설정합니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>과학 표시 형식</para> </entry>
+                             <entry><para><guibutton>Sci</guibutton></para></entry>
+                             <entry><para>표시 형식을 과학 형식으로 설정합니다. 결과는 고정된 개수의 숫자로 과학 표기법으로 표시합니다.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-trig-type"> 
+      <title>삼각 함수 형식을 설정하려면</title> 
+      <para>삼각 함수 형식을 설정하려면 <xref linkend="gcalctool-TBL-trig-type"/>에 설명한 단추 중 하나를 선택하십시오.</para>
+                <table id="gcalctool-TBL-trig-type" frame="all">
+                  <title>삼각 함수 형식 설정하기</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>육십분법</para> </entry>
+                             <entry><para><guibutton>육십분법</guibutton></para></entry>
+                             <entry><para>삼각 함수 형식을 육십분법으로 설정합니다. 육십분법은 삼각 함수 형식의 기본값입니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>그라디안</para> </entry>
+                             <entry><para><guibutton>그라디안</guibutton></para></entry>
+                             <entry><para>삼각 함수 형식을 그라디안으로 설정합니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>라디안</para> </entry>
+                             <entry><para><guibutton>라디안</guibutton></para></entry>
+                             <entry><para>삼각 함수 형식을 라디안으로 설정합니다.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-trig-options"> 
+      <title>삼각 함수 옵션을 설정하려면</title> 
+      <para>삼각 함수 옵션을 설정하려면 <xref linkend="gcalctool-TBL-trig-options"/>에 설명한 옵션을 사용하십시오.</para>
+                <table id="gcalctool-TBL-trig-options" frame="all">
+                  <title>삼각 함수 옵션 설정하기</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>쌍곡 옵션 표시</para> </entry>
+                             <entry><para><guibutton>Hyp</guibutton></para></entry>
+                             <entry><para>삼각 함수에 쌍곡 옵션을 선택합니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>역함수 옵션 표시</para> </entry>
+                             <entry><para><guibutton>Inv</guibutton></para></entry>
+                             <entry><para>삼각 함수에 역함수 옵션을 선택합니다.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>기본값으로 <xref linkend="gcalctool-TBL-trig-options"/>에 설명한 옵션은 선택되어 있지 않습니다. <guibutton>Clr</guibutton>을 누르면 이러한 옵션의 선택을 해제합니다.</para>
+
+    </sect3>
+    <sect3 id="gcalctool-trig-calc"> 
+      <title>삼각 함수 값을 계산하려면</title> 
+      <para>삼각 함수 값을 계산하려면 <xref linkend="gcalctool-TBL-trig-calc"/>에 설명한 단추를 사용하십시오.</para>
+                <table id="gcalctool-TBL-trig-calc" frame="all">
+                  <title>삼각 함수 값 계산하기</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>예</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>코사인 <literal>cos</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하지 않고 <guilabel>Inv</guilabel> 옵션을 선택하지 않은 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 코사인을 계산합니다.</para></entry>
+                             <entry><para>60 <guibutton>Cos</guibutton></para></entry>
+                             <entry><para>0.5</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>아크 코사인 <literal>acos</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하지 않고 <guilabel>Inv</guilabel> 옵션을 선택한 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 아크 코사인을 계산합니다.</para></entry>
+                             <entry><para>0.5 <guilabel>Inv</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>60</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>하이퍼 코사인 <literal>cosh</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하고 <guilabel>Inv</guilabel> 옵션을 선택하지 않은 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 하이퍼 코사인을 계산합니다.</para></entry>
+                             <entry><para>0.4 <guilabel>Hyp</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>1.081072372</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>아크 하이퍼 코사인 <literal>acosh</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하고 <guilabel>Inv</guilabel> 옵션을 선택한 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 아크 하이퍼 코사인을 계산합니다.</para></entry>
+                             <entry><para>1.6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>1.046967915</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>사인 <literal>sin</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하지 않고 <guilabel>Inv</guilabel> 옵션을 선택하지 않은 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 사인을 계산합니다.</para></entry>
+                             <entry><para>90 <guibutton>Sin</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>아크 사인 <literal>asin</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하지 않고 <guilabel>Inv</guilabel> 옵션을 선택한 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 아크 사인을 계산합니다.</para></entry>
+                             <entry><para>1 <guilabel>Inv</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>90</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>하이퍼 사인 <literal>sinh</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하지 않고 <guilabel>Inv</guilabel> 옵션을 선택한 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 하이퍼 사인을 계산합니다.</para></entry>
+                             <entry><para>0.4 <guilabel>Hyp</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>0.410752326</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>아크 하이퍼 사인 <literal>asinh</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하고 <guilabel>Inv</guilabel> 옵션을 선택한 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 아크 하이퍼 사인을 계산합니다.</para></entry>
+                             <entry><para>1.6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>1.248983328</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>탄젠트 <literal>tan</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하지 않고 <guilabel>Inv</guilabel> 옵션을 선택하지 않은 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 탄젠트를 계산합니다.</para></entry>
+                             <entry><para>45 <guibutton>Tan</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>아크 탄젠트 <literal>atan</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하지 않고 <guilabel>Inv</guilabel> 옵션을 선택한 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 아크 탄젠트를 계산합니다.</para></entry>
+                             <entry><para>1 <guilabel>Inv</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>45</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>하이퍼 탄젠트 <literal>tanh</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하고 <guilabel>Inv</guilabel> 옵션을 선택하지 않은 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 하이퍼 탄젠트를 계산합니다.</para></entry>
+                             <entry><para>0.6 <guilabel>Hyp</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>0.537049567</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>아크 하이퍼 탄젠트 <literal>atanh</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> 옵션을 선택하고 <guilabel>Inv</guilabel> 옵션을 선택한 상태</para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 아크 하이퍼 탄젠트를 계산합니다.</para></entry>
+                             <entry><para>0.6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>0.693147181</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-logs-calc"> 
+      <title>로그 함수를 계산하려면</title> 
+      <para>로그 함수를 계산하려면 <xref linkend="gcalctool-TBL-logs-calc"/>에 설명한 단추를 사용하십시오.</para>
+                <table id="gcalctool-TBL-logs-calc" frame="all">
+                  <title>로그 함수 계산하기</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>예</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>상용 로그, 밑 10</para> </entry>
+                             <entry><para>Log<subscript><replaceable>10</replaceable></subscript></para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 상용 로그를 (밑이 10) 계산합니다.</para></entry>
+                             <entry><para>10 Log<subscript><replaceable>10</replaceable></subscript></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>자연 로그</para> </entry>
+                             <entry><para><guibutton>Ln</guibutton></para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 자연 로그를 계산합니다.</para></entry>
+                             <entry><para>10 <guibutton>Ln</guibutton></para></entry>
+                             <entry><para>2.30</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>밑이 2인 로그</para> </entry>
+                             <entry><para>Log<subscript><replaceable>2</replaceable></subscript></para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 밑이 2인 로그를 계산합니다.</para></entry>
+                             <entry><para>10 Log<subscript><replaceable>2</replaceable></subscript></para></entry>
+                             <entry><para>3.32</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <note>
+                  <para>이 버전의 <application>gcalctool</application>는 상용 로그 및 자연 로그를 지원하지 않습니다.</para>
+                </note>
+    </sect3>
+    <sect3 id="gcalctool-enter-exp"> 
+      <title>지수를 입력하려면</title> 
+      <para>지수를 입력하려면 <guibutton>Exp</guibutton> 단추를 사용하십시오.</para>
+      <para>guibutton&gt;Exp</para>
+<variablelist>
+  <varlistentry>
+    <term><replaceable>가수</replaceable></term>
+    <listitem><para>표시 영역의 0이 아닌 현재 값. 현재 값이 0이면 가수는 1.0입니다.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><replaceable>밑</replaceable></term>
+    <listitem><para>2, 8, 10, 16은 2진수, 8진수, 10진수, 16진수 진법에 각각 해당합니다.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><replaceable>지수</replaceable></term>
+    <listitem><para>다음에 입력하는 수.</para></listitem>
+  </varlistentry>
+</variablelist>
+
+<para><guibutton>Exp</guibutton>를 누르면 계산기에는 <literal>. +</literal>를 표시합니다. 다음에 입력하는 숫자로 거듭제곱할 밑을 나타냅니다.</para>
+<para>To change the sign of the number, use the <guibutton>+/-</guibutton> button before the <guibutton>Exp</guibutton> button.
+To change the sign of the exponent (the power to which the number is raised) use <guibutton>-</guibutton> after the
+<guibutton>Exp</guibutton> button.</para>
+
+<para>To enter a decimal number in exponential format, use the guidelines in the following table: </para>
+          <informaltable frame="all">
+            <tgroup cols="3" colsep="1" rowsep="1">
+                   <colspec colname="COLSPEC0" colwidth="50*"/>
+                   <colspec colname="COLSPEC1" colwidth="50*"/>
+                   <thead>
+                          <row valign="top">
+                            <entry colname="COLSPEC0">
+                                   <para>숫자</para></entry>
+                            <entry colname="COLSPEC1">
+                                   <para>입력</para></entry>
+                            <entry colname="COLSPEC2">
+                                   <para>표시하는 숫자</para></entry>
+                          </row>
+                   </thead> 
+                   <tbody> 
+                     <row valign="top">
+                       <entry><para>1200000000</para></entry>
+                       <entry><para>12 <guibutton>Exp</guibutton><guibutton>+</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>1200000000</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>-1200000000</para></entry>
+                       <entry><para><guibutton>-</guibutton> 12 <guibutton>Exp</guibutton><guibutton>+</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>-1200000000</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>0.00000012</para></entry>
+                       <entry><para>12 <guibutton>Exp</guibutton><guibutton>-</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>1.2e-7</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>-0.00000012</para></entry>
+                       <entry><para><guibutton>-</guibutton> 12 <guibutton>Exp</guibutton><guibutton>-</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>-1.2e-7</para></entry>
+                     </row>
+                   </tbody>
+            </tgroup>
+          </informaltable>
+
+    </sect3>
+    <sect3 id="gcalctool-edit-const"> 
+      <title>상수 값을 사용하려면</title> 
+      <para><guibutton>Con</guibutton>을 누르면 정의되어 있는 상수 값 목록을 표시합니다. 현재 진법이 10진수가 아닌 경우에도 모든 상수 값은 10진수로 지정되어 있습니다.</para>
+      <para>메뉴에서 상수를 선택해 표시 영역에 해당 값을 입력합니다. 키보드 바로 가기 <keycap>#</keycap>을 사용하는 경우 다음 예제에 있는 대로 키보드를 사용해 상수를 지정할 수 있습니다:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>키보드 입력</para></entry>
+              <entry colname="COLSPEC1">
+                <para>상수</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>#</keycap> <keycap>3</keycap> </para></entry>
+              <entry><para>C3</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      <para><application>gcalctool</application> 응용 프로그램은 다음 표에 설명한 것처럼 10개의 기본 상수 값이 들어 있습니다:</para>
+                <informaltable frame="all">
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1" colwidth="50*"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>숫자</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>값</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>C0</para></entry>
+                             <entry><para>0.621</para></entry>
+                             <entry><para>킬로미터/마일 변환 비율</para>
+                                    <para>표시 영역의 현재 값을 이 상수와 곱하면 시간당 킬로미터를 시간당 마일로 변환합니다. 예를 들어, 8 * <guibutton>Con</guibutton> <guilabel>C0</guilabel><keycap>=</keycap> 5.</para>
+                                    <para>표시 영역의 현재 값을 이 상수로 나누면 시간당 마일을 시간당 킬로미터로 변환합니다. 예를 들어, 5 / <guibutton>Con</guibutton> <guilabel>C0</guilabel> <keycap>=</keycap> 8.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C1</para></entry>
+                             <entry><para>1.414213562</para></entry>
+                             <entry><para>2의 제곱근</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C2</para></entry>
+                             <entry><para>2.718281828</para></entry>
+                             <entry><para>e</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C3</para></entry>
+                             <entry><para>3.141592653</para></entry>
+                             <entry><para>pi</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C4</para></entry>
+                             <entry><para>0.3937007</para></entry>
+                             <entry><para>센티미터/인치 변환 비율</para>
+                                    <para>표시 영역의 현재 값을 이 상수와 곱하면 센티미터를 인치로 변환합니다. 예를 들어, 30 * <guibutton>Con</guibutton> <guilabel>C4</guilabel> <keycap>=</keycap> 12.</para>
+                                    <para>표시 영역의 현재 값을 이 상수로 나누면 인치를 센티미터로 변환합니다. 예를 들어, 12 / <guibutton>Con</guibutton> <guilabel>C4</guilabel> <keycap>=</keycap> 30.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C5</para></entry>
+                             <entry><para>57.295779513</para></entry>
+                             <entry><para>1라디안의 육십분법 각도</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C6</para></entry>
+                             <entry><para>1048576</para></entry>
+                             <entry><para>2 ^ 20</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C7</para></entry>
+                             <entry><para>0.0353</para></entry>
+                             <entry><para>그램/온스 변환 비율</para>
+                                    <para>표시 영역의 현재 값을 이 상수와 곱하면 그램을 온스로 변환합니다. 예를 들어, 500 * <guibutton>Con</guibutton> <guilabel>C7</guilabel> <keycap>=</keycap> 18.</para>
+                                    <para>표시 영역의 현재 값을 이 상수로 나누면 온스를 그램으로 변환합니다. 예를 들어, 18 / <guibutton>Con</guibutton> <guilabel>C7</guilabel> <keycap>=</keycap> 500.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C8</para></entry>
+                             <entry><para>0.948</para></entry>
+                             <entry><para>킬로줄/영국식 온도 단위 변환 비율</para>
+                                    <para>표시 영역의 현재 값을 이 상수와 곱하면 킬로줄을 영국 에너지 단위로 변환합니다. 예를 들어, 10 * <guibutton>Con</guibutton> <guilabel>C8</guilabel> <keycap>=</keycap> 9.48.</para>
+                                    <para>표시 영역의 현재 값을 이 상수로 나누면 영국 에너지 단위를 킬로줄로 변환합니다. 예를 들어, 9.48 / <guibutton>Con</guibutton> <guilabel>C8</guilabel> <keycap>=</keycap> 10.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C9</para></entry>
+                             <entry><para>0.061</para></entry>
+                             <entry><para>입방 센티미터/입방 인치 변환 비율</para>
+                                    <para>표시 영역의 현재 값을 이 상수와 곱하면 입방 센티미터를 입방 인치로 변환합니다. 예를 들어, 100 * <guibutton>Con</guibutton> <guilabel>C9</guilabel> <keycap>=</keycap> 6.10.</para>
+                                    <para>표시 영역의 현재 값을 이 상수로 나누면 입방 인치를 입방 센티미터로 변환합니다. 예를 들어, 6.10 / <guibutton>Con</guibutton> <guilabel>C9</guilabel> <keycap>=</keycap> 100.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </informaltable>
+      <para>기본값 상수를 사용자 자신의 상수로 겹쳐 쓸 수 있습니다.</para>
+      <para>새 상수를 저장하거나 기존의 상수를 편집하려면 다음 순서대로 하십시오:</para>
+      <orderedlist>
+        <listitem>
+           <para><guibutton>Con</guibutton>을 누르고 팝업 메뉴에서 <guilabel>상수 편집</guilabel>을 선택하십시오.</para>
+        </listitem>
+        <listitem>
+      <para><guilabel>상수 편집</guilabel> 창에서 덮어 쓰거나 편집할 상수를 하나 선택하십시오.</para>
+        </listitem>
+        <listitem>
+      <para>값 입력란을 누르고 새 값을 입력합니다.</para>
+        </listitem>
+        <listitem>
+      <para>설명 입력란을 누르고 새 설명을 입력합니다.</para>
+        </listitem>
+        <listitem>
+      <para><guibutton>확인</guibutton>을 눌러 바꾼 사항을 저장하고 <guilabel>상수 편집</guilabel> 창을 닫습니다.</para>
+        </listitem>
+      </orderedlist>
+    </sect3>
+    <sect3 id="gcalctool-edit-func"> 
+      <title>함수를 사용하려면</title> 
+      <para>To show the available functions, click <guibutton>Fun</guibutton>. A popup menu displays the list of defined functions. Select a function from the menu to run that function.</para>
+<para>키보드 바로 가기 <keycap>F</keycap>를 사용하는 경우 다음 예제에 표시된 대로 키보드를 사용하여 기능을 지정할 수 있습니다:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>키보드 입력</para></entry>
+              <entry colname="COLSPEC1">
+                <para>기능</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>F</keycap> <keycap>3</keycap> </para></entry>
+              <entry><para>F3</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <para><application>gcalctool</application> 응용 프로그램에는 기본 함수가 들어 있지 않습니다. 함수를 10개까지 저장할 수 있습니다.</para>
+      <para>새 함수를 저장하거나 기존 함수를 편집하려면, 다음 순서대로 하십시오:</para>
+      <orderedlist>
+        <listitem>
+           <para><guibutton>Fun</guibutton>을 누르고, 팝업 메뉴에서 <guilabel>함수 편집</guilabel>을 선택하십시오.</para>
+        </listitem>
+        <listitem>
+      <para><guilabel>함수 편집</guilabel> 대화 창에서, 빈 항목을 선택하거나 겹쳐 쓸 함수를 선택하십시오.</para>
+        </listitem>
+        <listitem>
+      <para>Click on the Value field, then enter the new equation to solve. You can use "ans" for the result of the previous equation and "R5" for register 5 etc. For example, enter <literal>(-R1+sqrt(R1^2-4*R0*R2))/(2*R0)</literal> to calculate a root of the quadratic equation R0*x^2 + R1*x + R2 = 0.</para>
+        </listitem>
+        <listitem>
+      <para>Click on the Description field, then enter the new description. For example, <literal>Quadratic Solver</literal>.</para>
+        </listitem>
+        <listitem>
+      <para><guibutton>확인</guibutton>을 눌러 바꾼 사항을 저장하고 <guilabel>함수 편집</guilabel> 대화 창을 닫습니다.</para>
+        </listitem>
+      </orderedlist>
+    </sect3>
+    <sect3 id="gcalctool-misc-calc"> 
+      <title>기타 공학 계산을 하려면</title> 
+      <para>기타 공학 계산을 하려면 <xref linkend="gcalctool-TBL-misc-calc"/>에 설명한 단추를 사용하십시오.</para>
+                <table id="gcalctool-TBL-misc-calc" frame="all">
+                  <title>기타 공학 계산하기</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>예</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                                                      <row valign="top">
+                             <entry><para>e의 <replaceable>x</replaceable> 거듭제곱</para> </entry>
+                             <entry><para>e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>표시 영역의 현재 값으로 <literal>e</literal>를 거듭제곱하여 계산합니다.</para></entry>
+                             <entry><para>2 e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>7.39</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>10의 <replaceable>x</replaceable> 거듭제곱</para> </entry>
+                             <entry><para>10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>표시 영역의 현재 값으로 10을 제곱하여 계산합니다.</para></entry>
+                             <entry><para>2 10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>100</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>2 to the <replaceable>x</replaceable> power</para> </entry>
+                             <entry><para>2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>Calculates the value of 2 raised to the power of the current value in the display area.</para></entry>
+                             <entry><para>2 2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>4</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>x의 <replaceable>y</replaceable> 거듭제곱</para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>표시 영역의 현재 값을 다음에 입력하는 값으로 거듭제곱합니다.</para></entry>
+                             <entry><para>2 <replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>16</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>x to the reciprocal <replaceable>y</replaceable> power</para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>Raises the current value in the display area to the reciprocal power of the next value that you enter.</para></entry>
+                             <entry><para>2 <replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript> <guibutton>4</guibutton> <guibutton>=</guibutton></para></entry>
+                             <entry><para>16</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><replaceable>x</replaceable> 팩토리얼</para> </entry>
+                             <entry><para><guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para>표시 영역에 있는 현재 값의 팩토리얼을 계산합니다. <replaceable>x</replaceable> 팩토리얼은 <replaceable>x</replaceable>*(<replaceable>x</replaceable>-1)*(<replaceable>x</replaceable>-2)...*1입니다. 이 함수는 양의 정수에만 적용됩니다.</para></entry>
+                             <entry><para>4 <guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para>24</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>나머지 나누기</para> </entry>
+                             <entry><para><guibutton>Mod</guibutton></para></entry>
+                             <entry><para>표시 영역의 현재 정수 값을 다음에 입력하는 정수로 나누고, 나머지를 표시합니다.</para></entry>
+                             <entry><para>15 <guibutton>Mod</guibutton><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>난수 생성</para> </entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>0.0에서 1.0까지의 범위에서 난수를 하나 만들고 표시 영역에 그 난수를 표시합니다.</para></entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>0.14</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    </sect2> 
+    <sect2 id="gcalctool-programming-mode">
+      <title>To Perform Programming Calculations</title>
+      <para>To change to Programming mode, choose 
+        <menuchoice> 
+          <guimenu>View</guimenu> 
+          <guimenuitem>Programming</guimenuitem> 
+        </menuchoice>. 
+      </para>
+    <para>When you change to Programming mode, the following widget is displayed above the Base and Advanced mode buttons:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-programming"> 
+        <title><application>gcalctool</application> Programming Mode Buttons</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_programming_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Shows <application>gcalctool</application> Programming mode buttons.  </phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+    <sect3 id="gcalctool-num-base"> 
+      <title>진법을 설정하려면</title> 
+      <para>진법을 설정하려면 <xref linkend="gcalctool-TBL-num-base"/>에 설명한 단추 중 하나를 선택하십시오.</para>
+                <table id="gcalctool-TBL-num-base" frame="all">
+                  <title>진법 설정하기</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>2진수</para> </entry>
+                             <entry><para><guibutton>2진</guibutton></para></entry>
+                             <entry><para>진법을 이진수, 즉 밑을 2로 설정합니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>8진수</para> </entry>
+                             <entry><para><guibutton>8진</guibutton></para></entry>
+                             <entry><para>숫자 기수를 8진수, 즉 밑을 8로 설정합니다.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>10진수</para> </entry>
+                             <entry><para><guibutton>10진</guibutton></para></entry>
+                             <entry><para>Sets the numeric base to decimal, that is, base 10. Decimal is the default numeric base. If you change from Programming mode to another mode, <application>gcalctool</application> automatically sets the numeric base to decimal.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>16진수</para> </entry>
+                             <entry><para><guibutton>16진</guibutton></para></entry>
+                             <entry><para>숫자 기수를 16진수, 즉 밑을 16으로 설정합니다.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-word-length">
+      <title>To Set the Word Length</title>
+      <para>The word length can be altered, to make the bitwise functions behave differently. To set the word length, select one of the buttons described in <xref linkend="gcalctool-TBL-word-length"/>. </para>
+                <table id="gcalctool-TBL-word-length" frame="all">
+                  <title>Setting the Word Length</title>
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>64 bit word</para> </entry>
+                             <entry><para><guibutton>64 bit</guibutton></para></entry>
+                             <entry><para>Sets the word length to 64 bits. 64 bits is the default word length.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>32 bit word</para> </entry>
+                             <entry><para><guibutton>32 bit</guibutton></para></entry>
+                             <entry><para>Sets the word length to 32 bits.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>16 bit word</para> </entry>
+                             <entry><para><guibutton>16 bit</guibutton></para></entry>
+                             <entry><para>Sets the word length to 16 bits.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-calc-bit-manipulation-ext">
+      <title>정수의 비트 값을 조작하려면</title>
+      <para>If the calculator display shows an integer value, then each of the bits in that integer value is displayed as a collection of 0s and 1s in the Bit Editor. By clicking on any of these individual bits, their value can be toggled, causing the displayed integer value to be adjusted accordingly.</para>
+    </sect3>
+    <sect3 id="gcalctool-logic-calc"> 
+      <title>비트연산을 계산하려면</title> 
+      <para>비트연산을 계산하려면 <xref linkend="gcalctool-TBL-logic-calc"/>에 설명한 단추를 사용하십시오.</para>
+                <table id="gcalctool-TBL-logic-calc" frame="all">
+                  <title>비트연산 계산하기</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>예</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>비트연산 OR</para> </entry>
+                             <entry><para><guibutton>OR</guibutton></para></entry>
+                             <entry><para>Performs a bitwise OR operation on the current value in the display area and the next number that you enter.</para></entry>
+                             <entry><para>10001000 <guibutton>OR</guibutton> 00010001</para></entry>
+                             <entry><para>10011001</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>비트연산 AND</para> </entry>
+                             <entry><para><guibutton>AND</guibutton></para></entry>
+                             <entry><para>Performs a bitwise AND operation on the current value in the display area and the next number that you enter.</para></entry>
+                             <entry><para>10101010 <guibutton>AND</guibutton> 00110011</para></entry>
+                             <entry><para>100010</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>비트연산 NOT</para> </entry>
+                             <entry><para><guibutton>NOT</guibutton></para></entry>
+                             <entry><para>Performs a bitwise NOT operation on the current value in the display area, using the word size configured in <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para><guibutton>NOT</guibutton> 1357ACE</para></entry>
+                             <entry><para>FECA8531</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>비트연산 XOR</para> </entry>
+                             <entry><para><guibutton>XOR</guibutton></para></entry>
+                             <entry><para>Performs a bitwise XOR operation on the current value in the display area and the next number that you enter.</para></entry>
+                             <entry><para>1100 <guibutton>XOR</guibutton> 1010</para></entry>
+                             <entry><para>110</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>비트연산 XNOR</para> </entry>
+                             <entry><para><guibutton>XNOR</guibutton></para></entry>
+                             <entry><para>Performs a bitwise XNOR operation on the current value in the display area and the next number that you enter.</para></entry>
+                             <entry><para>1100 <guibutton>XNOR</guibutton> 1010</para></entry>
+                             <entry><para>1001</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-num-manip"> 
+      <title>이진수를 조작하려면</title> 
+      <para>이진수를 조작하려면 <xref linkend="gcalctool-TBL-num-manip"/>에 설명한 단추를 사용하십시오.</para>
+                <table id="gcalctool-TBL-num-manip" frame="all">
+                  <title>이진수 조작하기</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>예</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><replaceable>n</replaceable>만큼 왼쪽으로 쉬프트</para> </entry>
+                             <entry><para><guibutton>&lt;</guibutton></para></entry>
+                             <entry><para>Shifts the current value in the display area, the specified number of places to the left. Click <guibutton>&lt;</guibutton>, then select the number of shift places from the popup menu. The number can be shifted up to 15 places left. </para></entry>
+                             <entry><para>111 <guibutton>&lt;</guibutton><guilabel>1번</guilabel></para></entry>
+                             <entry><para>1110</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><replaceable>n</replaceable>만큼 오른쪽으로 밀기</para> </entry>
+                             <entry><para><guibutton>&gt;</guibutton></para></entry>
+                             <entry><para>Shifts the current value in the display area, the specified number of places to the right. Click <guibutton>&gt;</guibutton>, then select the number of shift places from the popup menu. The number can be shifted up to 15 places right.</para></entry>
+                             <entry><para>1011 <guibutton>&gt;</guibutton><guilabel>1번</guilabel></para></entry>
+                             <entry><para>101</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Truncating a number</para> </entry>
+                             <entry><para><guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>Truncates the current value in the display area to the word size configured in <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>FFFFFFFFFF <guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>FFFFFFFF</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Get the 1's complement</para> </entry>
+                             <entry><para><guibutton>1's</guibutton></para></entry>
+                             <entry><para>Calculates the 1's complement for the current value in the display area, using the word size configured in <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>D723 <guibutton>1's</guibutton></para></entry>
+                             <entry><para>FFFF28DC</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Get the 2's complement</para> </entry>
+                             <entry><para><guibutton>2's</guibutton></para></entry>
+                             <entry><para>Calculates the 2's complement for the current value in the display area, using the word size configured in <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>D723 <guibutton>2's</guibutton></para></entry>
+                             <entry><para>FFFF28DD</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>키보드 바로 가기를 사용하는 경우 다음 예제에 표시된 대로 키보드를 사용해 쉬프트할 자리수를 지정할 수 있습니다:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>키보드 입력</para></entry>
+              <entry colname="COLSPEC1">
+                <para>설명</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>&lt;</keycap> <keycap>4</keycap></para></entry>
+              <entry><para>표시 영역의 현재 이진수 값을 왼쪽으로 4자리만큼 쉬프트합니다.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>&gt;</keycap> <keycap>4</keycap></para></entry>
+              <entry><para>표시 영역의 현재 이진수 값을 오른쪽으로 4자리만큼 쉬프트합니다.</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+
+    </sect3>
+        <sect3 id="gcalctool-misc-prog">
+      <title>To Perform Miscellaneous Programming Calculations</title> 
+      <para>To perform miscellaneous programming calculations, use the buttons described in <xref linkend="gcalctool-TBL-misc-prog"/>. </para>
+                <table id="gcalctool-TBL-misc-prog" frame="all">
+                  <title>Performing Miscellaneous Programming Calculations</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>설명</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>예</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>결과</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>16진수 숫자</para> </entry>
+                             <entry><para><guibutton>A</guibutton>에서 <guibutton>F</guibutton>까지</para></entry>
+                             <entry><para>이 숫자는 16진법에서만 사용할 수 있습니다.</para></entry>
+                             <entry><para><guibutton>B</guibutton></para></entry>
+                             <entry><para>B</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+         </sect3>
+    </sect2>
+<!-- ============= Undo and Redo ======================== -->
+  <sect2 id="gcalctool-undo-redo">
+    <title>실행 취소 및 다시 실행</title>
+                <para>이전 동작을 실행 취소하려면 <menuchoice><guimenu>편집</guimenu><guimenuitem>실행 취소</guimenuitem></menuchoice>를 선택하십시오. 과거 15개까지의 동작을 실행 취소할 수 있습니다.</para>
+                <para>If you want to redo an action you have just undone, choose
+                  <menuchoice>
+                         <guimenu>Edit</guimenu>
+                         <guimenuitem>Redo</guimenuitem>
+                  </menuchoice>. You can redo up to 15 undone actions.</para>
+  </sect2>
+<!-- ============= Quitting ============================= -->
+  <sect2 id="gcalctool-quit"> 
+    <title>끝내려면</title> 
+                <para><application>gcalctool</application>를 끝내려면 <menuchoice><guimenu>계산기</guimenu><guimenuitem>끝내기</guimenuitem></menuchoice>를 선택하십시오.</para>
+                <para><application>gcalctool</application>를 종료하면 다음 설정의 현재 값을 저장하고 다음에 <application>gcalctool</application>를 시작할 때 저장한 값을 자동으로 적용합니다:</para>
+                  <itemizedlist>
+                    <listitem><para>모드: <link linkend="gcalctool-basic-mode">기본</link>, <link linkend="gcalctool-advanced-mode">고급</link>, <link linkend="gcalctool-financial-mode">재무</link>, <link linkend="gcalctool-scientific-mode">공학</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-set-acc">정확도</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-mem-reg">메모리 레지스터 창</link> 표시 또는 표시하지 않기, 추가로 각 메모리 레지스터의 내용</para></listitem>
+                    <listitem><para><link linkend="gcalctool-num-base">진법</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-display-type">표시 형식</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-trig-type">삼각 함수 형식</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-set-acc">마지막 0 표시</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-calc-functions-separator">천단위 자리수 구분 표시</link></para></listitem>
+                  </itemizedlist>
+  </sect2>
+  </sect1>
+<!-- ============= Technical Information ============================= -->
+  <sect1 id="gcalctool-tech-info">
+         <title>기술 정보</title>
+
+         <sect2 id="gcalctool-recognize-error">
+                <title>오류 상태</title>
+                <para>잘못된 계산을 한 경우, <application>gcalctool</application>에 오류 상태를 다음과 같이 표시합니다: <itemizedlist>
+<listitem><para>표시 영역에 <literal>오류</literal>라는 단어를 표시합니다.</para></listitem>
+<listitem><para>상태 표시줄에 오류 메세지를 표시합니다.</para></listitem>
+<listitem><para><guibutton>Clr</guibutton>을 제외한 모든 계산기 단추를 사용할 수 없게 됩니다.</para></listitem>
+<listitem><para>모든 계산기 옵션을 사용할 수 없게 됩니다.</para></listitem>
+<listitem><para><menuchoice><guimenu>계산기</guimenu><guimenuitem>끝내기</guimenuitem></menuchoice> 및 <menuchoice><guimenu>도움말</guimenu><guimenuitem>차례</guimenuitem></menuchoice>를 제외한 모든 계산기 메뉴 항목을 사용할 수 없게 됩니다.</para></listitem>
+</itemizedlist></para>
+<para>오류 상태를 지우려면 <guibutton>Clr</guibutton>를 누르거나 <keycombo><keycap>Shift</keycap><keycap>Delete</keycap></keycombo>를 누르십시오.</para>
+         </sect2>
+
+         <sect2 id="gcalctool-change-modes">
+                <title>모드를 바꾸려면</title>
+                <para>일부 계산 값이 표시된 상태에서 모드를 바꾸려고 하면 경고 대화 상자가 나타납니다. 이 대화 상자에는 현재 계산 값을 지우고, 진법을 십진수로 바꾼다고 안내합니다.</para>
+                <para>대화 상자에 있는 확인란을 누르면 이 대화 상자가 다시 나오지 않습니다.</para>
+                <para><guibutton>취소</guibutton> 단추를 누르면 모드 바꾸기 동작을 취소합니다. <guibutton>모드 바꾸기</guibutton> 단추를 누르면 모드가 바뀌고 다음 부가 효과가 있습니다: <itemizedlist>
+<listitem><para>표시 영역을 지웁니다.</para></listitem>
+   <listitem><para>진법을 10진수로 설정합니다.</para></listitem>
+   <listitem><para>진법을 2진수로 설정합니다.</para></listitem>
+   <listitem><para>정확도를 소수점 아래 9자리로 설정합니다.</para></listitem>
+   <listitem><para>천단위 자리수 구분 표시를 지웁니다.</para></listitem>
+   <listitem><para>소수점 아래 끝에 0을 지웁니다.</para></listitem>
+   <listitem><para>모드를 기본 모드로 바꾸면 레지스터 창을 닫습니다.</para></listitem>
+</itemizedlist></para>
+         </sect2>
+
+         <sect2 id="gcalctool-changing-display-area">
+                <title>표시 영역을 바꾸려면</title>
+                <para>It is possible to use the mouse to click on the display area and edit it.</para>
+                <para>모든 일반적인 키보드 바로 가기가 동작하고, 다음 바로 가기도 있습니다: <itemizedlist>
+    <listitem><para><keycombo><keycap>Ctrl</keycap><keycap>Delete</keycap></keycombo> 키를 누르면 텍스트 커서의 오른쪽 문자를 지웁니다.</para></listitem>
+    <listitem><para><keycap>Home</keycap> 키는 텍스트 커서를 표시 영역의 맨 앞으로 옮깁니다</para></listitem> 
+    <listitem><para><keycap>End</keycap> 키는 텍스트 커서를 표시 영역의 맨 뒤로 옮깁니다</para></listitem> 
+</itemizedlist></para>
+         </sect2>
+
+  </sect1>
+<!-- ============= Keyboard Shortcuts ============================= -->
+  <sect1 id="gcalctool-keyboard-shortcut"> 
+    <title>빠른 참조: 키보드 바로 가기</title> 
+                <para><xref linkend="gcalctool-TBL-keyboard-shortcut-button"/>, <xref linkend="gcalctool-TBL-keyboard-shortcut-sci-options"/>, <xref linkend="gcalctool-TBL-keyboard-shortcut-menu"/>에 모든 <application>gcalctool</application> 키보드 바로 가기의 빠른 참조가 있습니다.</para>
+                <para>사용자가 메뉴가 붙어 있는 계산기 단추에 해당하는 키보드 바로 가기를 누르면, 그 메뉴를 표시합니다. 그러면 사용자가 화살표 키로 메뉴 항목을 선택하거나 메뉴 항목 바로 가기를 사용할 수 있습니다.</para>
+                <table id="gcalctool-TBL-keyboard-shortcut-button" frame="all">
+                  <title><application>gcalctool</application>의 키보드 바로 가기에 대한 빠른 참조</title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>키보드 바로 가기</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>단추</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>참고</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycap>0</keycap>에서 <keycap>9</keycap>까지</para></entry>
+                             <entry><para><guibutton>0</guibutton>에서 <guibutton>9</guibutton>까지</para></entry>
+                             <entry><para>숫자</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>A</keycap> </para></entry>
+                             <entry><para><guibutton>Acc</guibutton> </para></entry>
+                             <entry><para>정확도</para> </entry>
+                             <entry><para><xref linkend="gcalctool-set-acc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>a</keycap> </para></entry>
+                             <entry><para><guibutton>A</guibutton> </para></entry>
+                             <entry><para>16진수 숫자</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>b</keycap> </para></entry>
+                             <entry><para><guibutton>B</guibutton> </para></entry>
+                             <entry><para>16진수 숫자</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>C</keycap></para></entry>
+                             <entry><para><guibutton>+/-</guibutton></para></entry>
+                             <entry><para>산술 부호 바꾸기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>c</keycap> </para></entry>
+                             <entry><para><guibutton>C</guibutton> </para></entry>
+                             <entry><para>16진수 숫자</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>D</keycap></para></entry>
+                             <entry><para><guibutton>Ddb</guibutton></para></entry>
+                             <entry><para>이중 감가상각</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>d</keycap> </para></entry>
+                             <entry><para><guibutton>D</guibutton> </para></entry>
+                             <entry><para>16진수 숫자</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>E</keycap> </para></entry>
+                             <entry><para><guibutton>Exp</guibutton> </para></entry>
+                             <entry><para>지수</para> </entry>
+                             <entry><para><xref linkend="gcalctool-enter-exp"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>e</keycap> </para></entry>
+                             <entry><para><guibutton>E</guibutton> </para></entry>
+                             <entry><para>16진수 숫자</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>F</keycap> </para></entry>
+                             <entry><para><guibutton>Fun</guibutton> </para></entry>
+                             <entry><para>기능</para> </entry>
+                             <entry><para><xref linkend="gcalctool-edit-func"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>f</keycap> </para></entry>
+                             <entry><para><guibutton>F</guibutton> </para></entry>
+                             <entry><para>16진수 숫자</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>G</keycap></para></entry>
+                             <entry><para>10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>10의 <replaceable>x</replaceable> 거듭제곱</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>g</keycap></para></entry>
+                             <entry><para><guibutton>Log</guibutton></para></entry>
+                             <entry><para>Common base 10 logarithm</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>H</keycap></para></entry>
+                             <entry><para>2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>2 to the <replaceable>x</replaceable> power</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>h</keycap></para></entry>
+                             <entry><para>Log<subscript>2</subscript></para></entry>
+                             <entry><para>Common base 2 logarithm</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>I</keycap></para></entry>
+                             <entry><para><guibutton>Gpm</guibutton></para></entry>
+                             <entry><para>Gross Profit Margin</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>i</keycap></para></entry>
+                             <entry><para><guibutton>Int</guibutton></para></entry>
+                             <entry><para>정수 부분</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>J</keycap></para></entry>
+                             <entry><para>Cos<superscript>-1</superscript></para></entry>
+                             <entry><para>Inverse Cosine</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>j</keycap></para></entry>
+                             <entry><para><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>코사인</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>K</keycap></para></entry>
+                             <entry><para>Sin<superscript>-1</superscript></para></entry>
+                             <entry><para>Inverse Sine</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>k</keycap></para></entry>
+                             <entry><para><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>사인</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>l</keycap></para></entry>
+                             <entry><para><guibutton>Sln</guibutton></para></entry>
+                             <entry><para>정액 감가상각</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>M</keycap></para></entry>
+                             <entry><para><guibutton>Mod</guibutton></para></entry>
+                             <entry><para>나머지 나누기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>m</keycap></para></entry>
+                             <entry><para><guibutton>Ctrm</guibutton></para></entry>
+                             <entry><para>복리 기간</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>N</keycap></para></entry>
+                             <entry><para>e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>e의 <replaceable>x</replaceable> 거듭제곱</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>n</keycap></para></entry>
+                             <entry><para><guibutton>Ln</guibutton></para></entry>
+                             <entry><para>자연 로그</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                                                   <row valign="top">
+                                                         <entry><para><keycap>O</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>x to the reciprocal<replaceable>y</replaceable> power</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>o</keycap> or <keycap>^</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>x의 <replaceable>y</replaceable> 거듭제곱</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>P</keycap></para></entry>
+                             <entry><para><guibutton>Pmt</guibutton></para></entry>
+                             <entry><para>주기적 지불 금액</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>p</keycap></para></entry>
+                             <entry><para><guibutton>Pv</guibutton></para></entry>
+                             <entry><para>현재 가치</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>R</keycap></para></entry>
+                             <entry><para><guibutton>Rcl</guibutton></para></entry>
+                             <entry><para>메모리 레지스터에서 값을 가져옵니다</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>r</keycap></para></entry>
+                             <entry><para><guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>역수</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>S</keycap></para></entry>
+                             <entry><para><guibutton>Sto</guibutton></para></entry>
+                             <entry><para>메모리 레지스터에 값을 저장합니다</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>s</keycap></para></entry>
+                             <entry><para><guibutton>Sqrt</guibutton></para></entry>
+                             <entry><para>제곱근</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>T</keycap></para></entry>
+                             <entry><para><guibutton>Rate</guibutton></para></entry>
+                             <entry><para>정기 이율</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>t</keycap></para></entry>
+                             <entry><para><guibutton>Term</guibutton></para></entry>
+                             <entry><para>상환 주기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>u</keycap></para></entry>
+                             <entry><para><guibutton>Abs</guibutton></para></entry>
+                             <entry><para>절대값</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>v</keycap></para></entry>
+                             <entry><para><guibutton>Fv</guibutton></para></entry>
+                             <entry><para>미래 가치</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>W</keycap></para></entry>
+                             <entry><para>Tan<superscript>-1</superscript></para></entry>
+                             <entry><para>Inverse Tan</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>w</keycap></para></entry>
+                             <entry><para><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>Tan</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>X</keycap></para></entry>
+                             <entry><para><guibutton>Exch</guibutton></para></entry>
+                             <entry><para>메모리 레지스터 값과 표시된 값 뒤바꾸기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>x</keycap></para></entry>
+                             <entry><para><guibutton>Xor</guibutton></para></entry>
+                             <entry><para>비트연산 XOR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Y</keycap></para></entry>
+                             <entry><para><guibutton>Syd</guibutton></para></entry>
+                             <entry><para>연수합계 감가상각</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Z</keycap></para></entry>
+                             <entry><para><guibutton>2's</guibutton></para></entry>
+                             <entry><para>2's complement</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>z</keycap></para></entry>
+                             <entry><para><guibutton>1's</guibutton></para></entry>
+                             <entry><para>1's complement</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>!</keycap></para></entry>
+                             <entry><para><guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para><replaceable>x</replaceable> 팩토리얼</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>#</keycap> </para></entry>
+                             <entry><para><guibutton>Con</guibutton> </para></entry>
+                             <entry><para>상수 값</para> </entry>
+                             <entry><para><xref linkend="gcalctool-edit-const"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>%</keycap></para></entry>
+                             <entry><para><guibutton>%</guibutton></para></entry>
+                             <entry><para>퍼센트</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&amp;</keycap></para></entry>
+                             <entry><para><guibutton>And</guibutton></para></entry>
+                             <entry><para>비트연산 AND</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>(</keycap> 및 <keycap>)</keycap></para></entry>
+                             <entry><para><guibutton>(</guibutton> 및 <guibutton>)</guibutton></para></entry>
+                             <entry><para>괄호</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>*</keycap></para></entry>
+                             <entry><para><guibutton>*</guibutton></para></entry>
+                             <entry><para>곱하기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>+</keycap></para></entry>
+                             <entry><para><guibutton>+</guibutton></para></entry>
+                             <entry><para>더하기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>-</keycap></para></entry>
+                             <entry><para><guibutton>-</guibutton></para></entry>
+                             <entry><para>빼기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>.</keycap></para></entry>
+                             <entry><para><guibutton>.</guibutton></para></entry>
+                             <entry><para>소숫점</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>/</keycap></para></entry>
+                             <entry><para><guibutton>/</guibutton></para></entry>
+                             <entry><para>나누기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>:</keycap></para></entry>
+                             <entry><para><guibutton>Frac</guibutton></para></entry>
+                             <entry><para>분수 부분</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&lt;</keycap></para></entry>
+                             <entry><para><guibutton>&lt;</guibutton></para></entry>
+                             <entry><para><replaceable>n</replaceable>만큼 왼쪽으로 밀기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>=</keycap> 혹은 <keycap>Return</keycap></para></entry>
+                             <entry><para><guibutton>=</guibutton></para></entry>
+                             <entry><para>결과 계산</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&gt;</keycap></para></entry>
+                             <entry><para><guibutton>&gt;</guibutton></para></entry>
+                             <entry><para><replaceable>n</replaceable>만큼 오른쪽으로 밀기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>?</keycap></para></entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>난수 생성</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>@</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>제곱</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>{</keycap></para></entry>
+                             <entry><para><guibutton>Xnor</guibutton></para></entry>
+                             <entry><para>비트연산 XNOR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>[</keycap></para></entry>
+                             <entry><para><guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>Truncates the number</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>|</keycap></para></entry>
+                             <entry><para><guibutton>Or</guibutton></para></entry>
+                             <entry><para>비트연산 OR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>~</keycap></para></entry>
+                             <entry><para><guibutton>Not</guibutton></para></entry>
+                             <entry><para>비트연산 NOT</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>백스페이스</keycap></para></entry>
+                             <entry><para><guibutton>Bksp</guibutton></para></entry>
+                             <entry><para>백스페이스</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Esc</keycap> 혹은</para>
+                                    <para><keycombo><keycap>Ctrl</keycap><keycap>백스페이스</keycap></keycombo></para></entry>
+                             <entry><para><guibutton>CE</guibutton></para></entry>
+                             <entry><para>입력란 지우기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Shift</keycap><keycap>Delete</keycap></keycombo></para></entry>
+                             <entry><para><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>지우기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <table id="gcalctool-TBL-keyboard-shortcut-sci-options" frame="all">
+                  <title><application>gcalctool</application> 공학 모드 옵션의 키보드 바로 가기에 대한 빠른 참조</title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>키보드 바로 가기</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>옵션</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>참고</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>1</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>16 bit</guilabel></para></entry>
+                             <entry><para>Set the word size to 16 bits.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>3</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>32 bit</guilabel></para></entry>
+                             <entry><para>Set the word size to 32 bits.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>6</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>64 bit</guilabel></para></entry>
+                             <entry><para>Set the word size to 64 bits.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>a</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>그라디안</guilabel></para></entry>
+                             <entry><para>삼각 함수 형식을 그라디안으로 설정합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>b</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>2진</guilabel></para></entry>
+                             <entry><para>진법을 2진수로 설정합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>d</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>10진</guilabel></para></entry>
+                             <entry><para>진법을 10진수로 설정합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>f</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Fix</guilabel></para></entry>
+                             <entry><para>표시 형식을 고정 소수점 형식으로 설정합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>g</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>육십분법</guilabel></para></entry>
+                             <entry><para>삼각 함수 형식을 육십분법으로 설정합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>i</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Inv</guilabel></para></entry>
+                             <entry><para>삼각 함수에 역함수 옵션을 선택합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-options"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>n</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Eng</guilabel></para></entry>
+                             <entry><para>표시 형식을 공학 형식으로 설정합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>o</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>8진</guilabel></para></entry>
+                             <entry><para>진법을 8진수로 설정합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>r</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>라디안</guilabel></para></entry>
+                             <entry><para>삼각 함수 형식을 라디안으로 설정합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>s</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Sci</guilabel></para></entry>
+                             <entry><para>표시 형식을 과학 형식으로 설정합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>x</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>16진</guilabel></para></entry>
+                             <entry><para>진법을 16진수로 설정합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>y</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Hyp</guilabel></para></entry>
+                             <entry><para>삼각 함수에 쌍곡 옵션을 선택합니다.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-options"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <table id="gcalctool-TBL-keyboard-shortcut-menu" frame="all">
+                  <title><application>gcalctool</application> 메뉴 항목의 키보드 바로 가기에 대한 빠른 참조</title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>키보드 바로 가기</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>메뉴 항목</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>기능</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>참고</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>b</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>보기</guimenu> <guimenuitem>기본</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>기본 모드로 바꾸기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-basic-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>c</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>편집</guimenu> <guimenuitem>복사</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>표시 영역의 현재 값을 클립보드로 복사합니다</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>f</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>보기</guimenu> <guimenuitem>재무</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>재무 모드로 바꾸기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-financial-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>h</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>도움말</guimenu> <guimenuitem>차례</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para><application>gcalctool</application> 온라인 도움말을 표시합니다</para> </entry>
+                             <entry><para><xref linkend="gcalctool-intro"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>i</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>편집</guimenu> <guimenuitem>ASCII 값 넣기</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para><guilabel>ASCII 값 넣기</guilabel> 창을 표시합니다</para> </entry>
+                             <entry><para><xref linkend="gcalctool-ins-ascii"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>k</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>보기</guimenu> <guimenuitem>천단위 자리수 구분 표시</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>천단위 자리수 구분 표시</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions-separator"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>m</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>보기</guimenu> <guimenuitem>메모리 레지스터</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para><guilabel>메모리 레지스터</guilabel> 창을 표시합니다</para> </entry>
+                             <entry><para><xref linkend="gcalctool-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>p</keycap></keycombo></para></entry>
+                                                         <entry><para> <menuchoice> <guimenu>보기</guimenu> <guimenuitem>Programming</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Change to Programming mode</para> </entry>
+                             <entry><para><xref linkend="gcalctool-programming-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>q</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>계산기</guimenu> <guimenuitem>끝내기</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para><application>gcalctool</application> 응용 프로그램을 끝냅니다</para> </entry>
+                             <entry><para><xref linkend="gcalctool-quit"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>s</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>보기</guimenu> <guimenuitem>공학</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>공학 모드로 바꾸기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-scientific-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>t</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>보기</guimenu> <guimenuitem>마지막 0 표시</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>소수점 아래 0으로 채우기</para> </entry>
+                             <entry><para><xref linkend="gcalctool-set-acc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>v</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>편집</guimenu> <guimenuitem>붙여 넣기</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>클립보드의 현재 값을 표시 영역에 붙여 넣습니다</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>z</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>편집</guimenu> <guimenuitem>실행 취소</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>이전 동작을 실행 취소합니다</para> </entry>
+                             <entry><para><xref linkend="gcalctool-undo-redo"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>z</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>편집</guimenu> <guimenuitem>다시 실행</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Redo an undone action</para> </entry>
+                             <entry><para><xref linkend="gcalctool-undo-redo"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+  </sect1>
+</article>

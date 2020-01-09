@@ -1,0 +1,2711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "5.5.37">
+<!ENTITY manrevision "2.9">
+<!ENTITY date "March 2005">
+<!ENTITY app "<application>gcalctool</application>">
+<!ENTITY appname "Calculator">
+<!ENTITY ldquo "&#147;">
+<!-- Left Double Quote --><!ENTITY rdquo "&#148;">
+<!-- Right Double Quote -->]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="el">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Εγχειρίδιο <application>gcalctool</application></title>       
+
+    <abstract role="description">
+      <para>Το gcalctool είναι μία αριθμομηχανή για το γραφικό περιβάλλον GNOME. Περιλαμβάνει βασική, προχωρημένη, εμπορική και επιστημονική λειτουργία. Κάνει χρήση πακέτου πολλαπλής ακριβείας κατά την εκτέλεση των πράξεων,εξασφαλίζοντας υψηλό βαθμό ακρίβειας.</para>
+    </abstract>
+
+    <copyright> 
+      <year>2003</year> 
+      <year>2004</year> 
+      <year>2005</year>
+      <holder>Sun Microsystems</holder> 
+    </copyright> 
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+   -->
+    <publisher role="maintainer"> 
+      <publishername>Έργο Τεκμηρίωσης GNOME</publishername> 
+    </publisher> 
+
+     <legalnotice id="legalnotice">
+	<para>Χορηγείται άδεια αντιγραφής, διανομής και/ή τροποποίησης του παρόντος εγγράφου υπό τους όρους της έκδοσης 1.1 της Ελεύθερης Άδειας Τεκμηρίωσης GNU (GFDL), ή οποιασδήποτε μεταγενέστερης έκδοσής αυτής από το Ίδρυμα Ελεύθερου Λογισμικού (FSF), χωρίς αμετάβλητα τμήματα, κείμενα εξωφύλλου και κείμενα οπισθοφύλλου. Αντίγραφο της άδειας GFDL είναι διαθέσιμο στον ακόλουθο <ulink type="help" url="ghelp:fdl">σύνδεσμο</ulink>, ή στο αρχείο COPYING-DOCS που διανέμεται μαζί με το παρόν εγχειρίδιο.</para>
+         <para>Αυτό το εγχειρίδιο αποτελεί μέρος της συλλογής εγχειριδίων του GNOME που διανέμονται υπό τους όρους της GFDL. Αν επιθυμείτε να διανείμετε το παρόν εγχειρίδιο ξεχωριστά από τη συλλογή, οφείλετε να προσθέσετε στο εγχειρίδιο αντίγραφο της άδειας χρήσης, όπως προβλέπεται στο άρθρο 6 της άδειας.</para>
+
+	<para>Πολλές από τις ονομασίες που χρησιμοποιούνται από εταιρείες για την διαφοροποίηση των προϊόντων και υπηρεσιών τους έχουν καταχωρισθεί ως εμπορικά σήματα. Σε όποιο σημείο της τεκμηρίωσης GNOME τυχόν εμφανίζονται αυτές οι ονομασίες, και εφόσον τα μέλη του Έργου τεκμηρίωσης GNOME έχουν λάβει γνώση αυτών των εμπορικών σημάτων, οι ονομασίες ή τα αρχικά αυτών θα γράφονται με κεφαλαίους χαρακτήρες.</para>
+
+	<para>ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΚΑΙ ΟΙ ΤΡΟΠΟΙΗΜΕΝΕΣ ΕΚΔΟΣΕΙΣ ΑΥΤΟΥ ΠΑΡΕΧΟΝΤΑΙ ΥΠΟ ΤΟΥΣ ΟΡΟΥΣ ΤΗΣ ΕΛΕΥΘΕΡΗΣ ΑΔΕΙΑΣ ΤΕΚΜΗΡΙΩΣΗΣ GNU (GFDL) ΚΑΙ ΜΕ ΤΗΝ ΠΕΡΑΙΤΕΡΩ ΔΙΕΥΚΡΙΝΙΣΗ ΟΤΙ: <orderedlist>
+		<listitem>
+		  <para>ΤΟ ΠΑΡΟΝ ΕΓΓΡΑΦΟ ΠΑΡΕΧΕΤΑΙ "ΩΣ ΕΧΕΙ", ΧΩΡΙΣ ΟΠΟΙΑΔΗΠΟΤΕ ΑΛΛΗ ΕΓΓΥΗΣΗ, ΕΙΤΕ ΡΗΤΗ ΕΙΤΕ ΣΙΩΠΗΡΗ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟ, ΤΗΣ ΕΓΓΥΗΣΗΣ ΟΤΙ ΤΟ ΕΓΓΡΑΦΟ, Ή Η ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ, ΕΙΝΑΙ ΕΜΠΟΡΕΥΣΙΜΟ, ΚΑΤΑΛΛΗΛΟ ΓΙΑ ΕΙΔΙΚΟ ΣΚΟΠΟ ΚΑΙ ΔΕΝ ΠΡΟΣΒΑΛΛΕΙ ΔΙΚΑΙΩΜΑΤΑ ΤΡΙΤΩΝ. Ο ΧΡΗΣΤΗΣ ΑΝΑΛΑΜΒΑΝΕΙ ΕΞ ΟΛΟΚΛΗΡΟΥ ΤΗΝ ΕΘΥΝΗ ΩΣ ΠΡΟΣ ΤΗΝ ΠΟΙΟΤΗΤΑ, ΤΗΝ ΑΚΡΙΒΕΙΑ ΚΑΙ ΤΗΝ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή ΤΗΣ ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ. ΣΕ ΠΕΡΙΠΤΩΣΗ ΠΟΥ ΟΠΟΙΟΔΗΠΟΤΕ ΕΓΓΡΑΦΟ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗ ΕΚΔΟΣΗ ΑΥΤΟΥ ΑΠΟΔΕΙΧΘΟΥΝ ΕΛΑΤΤΩΜΑΤΙΚΑ ΚΑΘ' ΟΙΟΝΔΗΠΟΤΕ ΤΡΟΠΟ, Ο ΧΡΗΣΤΗΣ (ΚΑΙ ΟΧΙ Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΔΗΜΙΟΥΡΓΟΣ Ή ΟΠΟΙΟΣΔΗΠΟΤΕ ΣΥΝΤΕΛΕΣΤΗΣ) ΑΝΑΛΑΜΒΑΝΕΙ ΤΟ ΚΟΣΤΟΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΑΝΑΓΚΑΙΑΣ ΣΥΝΤΗΡΗΣΗΣ, ΕΠΙΣΚΕΥΗΣ Ή ΔΙΟΡΘΩΣΗΣ. Η ΠΑΡΟΥΣΑ ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ ΑΠΟΤΕΛΕΙ ΑΝΑΠΟΣΠΑΣΤΟ ΜΕΡΟΣ ΤΗΣ ΑΔΕΙΑΣ. ΔΕΝ ΕΠΙΤΡΕΠΕΤΑΙ ΟΥΔΕΜΙΑ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ ΣΥΜΦΩΝΑ ΜΕ ΤΟΥΣ ΟΡΟΥΣ ΤΗΣ ΠΑΡΟΥΣΑΣ, ΠΑΡΑ ΜΟΝΟ ΕΑΝ ΣΥΝΟΔΕΥΕΤΑΙ ΑΠΟ ΤΗΝ ΑΠΟΠΟΙΗΣΗ ΕΓΓΥΗΣΗΣ· ΚΑΙ</para>
+		</listitem>
+		<listitem>
+		  <para>Ο ΔΗΜΙΟΥΡΓΟΣ, Ο ΑΡΧΙΚΟΣ ΣΥΓΓΡΑΦΕΑΣ, ΟΙ ΣΥΝΤΕΛΕΣΤΕΣ Ή ΟΙ ΔΙΑΝΟΜΕΙΣ ΤΟΥ ΕΓΓΡΑΦΟΥ Ή ΤΡΟΠΟΠΟΙΗΜΕΝΗΣ ΕΚΔΟΣΗΣ ΑΥΤΟΥ, ΚΑΘΩΣ ΚΑΙ ΟΙ ΠΡΟΜΗΘΕΥΤΕΣ ΟΠΟΙΩΝΔΗΠΟΤΕ ΕΚ ΤΩΝ ΠΡΟΑΝΑΦΕΡΟΜΕΝΩΝ ΜΕΡΩΝ, ΔΕΝ ΕΥΘΥΝΟΝΤΑΙ ΕΝΑΝΤΙ ΟΙΟΥΔΗΠΟΤΕ, ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ ΚΑΙ ΥΠΟ ΚΑΜΙΑ ΕΡΜΗΝΕΙΑ ΝΟΜΟΥ, ΕΙΤΕ ΕΞ ΑΔΙΚΟΠΡΑΞΙΑΣ (ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ ΤΗΣ ΑΜΕΛΕΙΑΣ) ΕΙΤΕ ΣΤΟ ΠΛΑΙΣΙΟ ΣΥΜΒΑΤΙΚΗΣ Ή ΑΛΛΗΣ ΥΠΟΧΡΕΩΣΗΣ, ΓΙΑ ΤΥΧΟΝ ΑΜΕΣΕΣ, ΕΜΜΕΣΕΣ, ΕΙΔΙΚΕΣ, ΤΥΧΑΙΕΣ Ή ΣΥΝΕΠΑΚΟΛΟΥΘΕΣ ΖΗΜΙΕΣ ΟΠΟΙΑΣΔΗΠΟΤΕ ΜΟΡΦΗΣ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΩΝ, ΧΩΡΙΣ ΠΕΡΙΟΡΙΣΜΟ, ΖΗΜΙΩΝ ΛΟΓΩ ΑΠΩΛΕΙΑΣ ΦΗΜΗΣ ΚΑΙ ΠΕΛΑΤΕΙΑΣ, ΔΙΑΚΟΠΗΣ ΕΡΓΑΣΙΩΝ, ΔΥΣΛΕΙΤΟΥΡΓΙΑΣ Ή ΒΛΑΒΗΣ ΗΛΕΚΤΡΟΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ, Ή ΚΑΘΕ ΑΛΛΗΣ ΖΗΜΙΑΣ Ή ΑΠΩΛΕΙΑΣ ΠΟΥ ΟΦΕΙΛΕΤΑΙ Ή ΣΧΕΤΙΖΕΤΑΙ ΜΕ ΤΗΝ ΧΡΗΣΗ ΤΟΥ ΕΓΓΡΑΦΟΥ ΚΑΙ ΤΩΝ ΤΡΟΠΟΠΟΙΗΜΕΝΩΝ ΕΚΔΟΣΕΩΝ ΑΥΤΟΥ, ΑΚΟΜΑ ΚΑΙ ΑΝ ΤΑ ΩΣ ΑΝΩ ΜΕΡΗ ΕΙΧΑΝ ΛΑΒΕΙ ΓΝΩΣΗ ΤΗΣ ΠΙΘΑΝΟΤΗΤΑΣ ΠΡΟΚΛΗΣΗΣ ΤΕΤΟΙΩΝ ΖΗΜΙΩΝ.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+        any of this. -->
+
+    <authorgroup> 
+      <corpauthor>Sun Microsystems Inc.</corpauthor>
+
+<!-- gdocteam@sun.com (Sun Java Desktop System Documentation Team) -->
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+     
+      <othercredit role="translator">
+                <firstname>Latin</firstname> 
+                <surname>Translator 1</surname> 
+                <affiliation> 
+                          <orgname>Latin Translation Team</orgname> 
+                          <address> <email>translator@gnome.org</email> </address> 
+                </affiliation>
+                <contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+    <revision> 
+                <revnumber>Εγχειρίδιο αριθμομηχανής Έκδοση 2.9</revnumber> 
+                <date>Μάρτιος 2005</date> 
+                <revdescription> 
+                          <para role="author">Sun Java Desktop System Documentation Team</para>
+                          <para role="publisher">Έργο Τεκμηρίωσης GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Εγχειρίδιο αριθμομηχανής,Έκδοση 2.8</revnumber> 
+                <date>Αύγουστος 2004</date> 
+                <revdescription> 
+                          <para role="author">Sun Java Desktop System Documentation Team</para>
+                          <para role="publisher">Έργο Τεκμηρίωσης GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Εγχειρίδιο gcalctool, Έκδοση 2.7</revnumber> 
+                <date>Φεβρουάριος 2004</date> 
+                <revdescription> 
+                          <para role="author">Sun GNOME Documentation Team</para>
+                          <para role="publisher">Έργο Τεκμηρίωσης GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Εγχειρίδιο gcalctool, Έκδοση 2.6</revnumber> 
+                <date>Οκτώβριος 2003</date> 
+                <revdescription> 
+                          <para role="author">Sun GNOME Documentation Team</para>
+                          <para role="publisher">Έργο Τεκμηρίωσης GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Εγχειρίδιο gcalctool, Έκδοση 2.5</revnumber> 
+                <date>Ιούλιος 2003</date> 
+                <revdescription> 
+                          <para role="author">Sun GNOME Documentation Team</para>
+                          <para role="publisher">Έργο Τεκμηρίωσης GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Εγχειρίδιο gcalctool, Έκδοση 2.4</revnumber> 
+                <date>Ιούνιος 2003</date> 
+                <revdescription> 
+                          <para role="author">Sun GNOME Documentation Team</para>
+                          <para role="publisher">Έργο Τεκμηρίωσης GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Εγχειρίδιο gcalctool, Έκδοση 2.3</revnumber> 
+                <date>Απρίλιος 2003</date> 
+                <revdescription> 
+                          <para role="author">Sun GNOME Documentation Team</para>
+                          <para role="publisher">Έργο Τεκμηρίωσης GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Εγχειρίδιο gcalctool, Έκδοση 2.2</revnumber> 
+                <date>Απρίλιος 2003</date> 
+                <revdescription> 
+                          <para role="author">Sun GNOME Documentation Team</para>
+                          <para role="publisher">Έργο Τεκμηρίωσης GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Εγχειρίδιο gcalctool, Έκδοση 2.1</revnumber> 
+                <date>Μάρτιος 2003</date> 
+                <revdescription> 
+                          <para role="author">Sun GNOME Documentation Team</para>
+                          <para role="publisher">Έργο Τεκμηρίωσης GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Εγχειρίδιο gcalctool, Έκδοση 2.0</revnumber> 
+                <date>Μάρτιος 2003</date> 
+                <revdescription> 
+                          <para role="author">Sun GNOME Documentation Team</para>
+                          <para role="publisher">Έργο Τεκμηρίωσης GNOME</para>
+                </revdescription> 
+      </revision> 
+    </revhistory> 
+
+    <releaseinfo>Αυτό το εγχειρίδιο περιγράφει την έκδοση 5.5.37 της αριθμομηχανής.</releaseinfo> 
+    <legalnotice> 
+      <title>Ανάδραση</title> 
+      <para>Για να αναφέρετε ένα σφάλμα ή να κάνετε μία πρόταση σχετικά με την εφαρμογή ή το εγχειρίδιο, ακολουθήστε τις οδηγίες στη.<ulink url="ghelp:gnome-feedback" type="help">Σελίδα Ανάδρασης του GNOME</ulink>.</para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>gcalctool</primary> 
+  </indexterm> 
+  <indexterm zone="index"> 
+    <primary>Αριθμομηχανή</primary> 
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+  <sect1 id="gcalctool-intro"> 
+    <title>Εισαγωγή</title> 
+    <para>Η εφαρμογή <application>gcalctool</application> περιέχει τις παρακάτω λειτουργίες, που επιτρέπουν διάφορους τύπους μαθηματικών υπολογισμών:</para>
+     <variablelist>
+        <varlistentry>
+        <term><link linkend="gcalctool-basic-mode">Βασική</link></term>
+        <listitem><para>Η προεπιλεγμένη λειτουργία. Παρέχει τις κύριες δυνατότητες μιας αριθμομηχανής. Δηλαδή, σας επιτρέπει να κάνετε πρόσθεση, αφαίρεση, πολλαπλασιασμό και διαίρεση. Οι δυνατότητες αυτές είναι διαθέσιμες και σε κάθε άλλη λειτουργία.</para></listitem>
+        </varlistentry>
+  <varlistentry>
+        <term><link linkend="gcalctool-advanced-mode">Προχωρημένη</link></term>
+        <listitem><para>Παρέχει προχωρημένες δυνατότητες αριθμομηχανής. Μπορείτε να αποθηκεύετε αριθμούς σε 10 διαφορετικές μνήμες, να τιςανακαλείτε εύκολα ή και να τιςαντικαθιστάτε. Μπορείτε να χρησιμοποιήσετε όλες τις δυνατότητες της Προχωρημένης λειτουργίας στην Εμπορική, την Επιστημονική και την Προγραμματιστική λειτουργία.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+        <term><link linkend="gcalctool-financial-mode">Εμπορική</link></term>
+        <listitem><para>Παρέχει αρκετές πολύπλοκες εμπορικές λειτουργίες.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+        <term><link linkend="gcalctool-scientific-mode">Επιστημονική</link></term>
+        <listitem><para>Παρέχει πολλές επιπρόσθετες μαθηματικές λειτουργίες,συμπεριλαμβανομένων των τριγωνομετρικών συναρτήσεων. Στην Επιστημονική λειτουργία μπορείτε, επίσης, να αποθηκεύετε τις δικές σας συναρτήσεις και σταθερές.</para></listitem>
+        </varlistentry>
+                <varlistentry>
+                <term><link linkend="gcalctool-programming-mode">Προγραμματιστική</link></term>
+                <listitem><para>Παρέχει χρήσιμες δυνατότητες για προγραμματιστές, συμπεριλαμβανομένων πράξεων κατά bit καθώς και επεξεργαστή bit.</para></listitem>
+                </varlistentry>
+     </variablelist>
+
+    <para>Μπορείτε να χρησιμοποιήσετε την εφαρμογή <application>gcalctool</application> με τα ακόλουθα συστήματα αρίθμησης:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Σύστημα αρίθμησης</para></entry>
+              <entry colname="COLSPEC1" align="right">
+                <para>Βάση</para></entry>
+            </row>
+          </thead> 
+          <tbody> 
+            <row valign="top">
+              <entry><para>Δυαδικό</para></entry>
+              <entry align="right"><para>2</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Οκταδικό</para></entry>
+              <entry align="right"><para>8</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Δεκαδικό</para></entry>
+              <entry align="right"><para>10</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Δεκαεξαδικό</para></entry>
+              <entry align="right"><para>16</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+                           
+  </sect1>
+
+<!-- =========== Getting Started ============================== -->
+
+  <sect1 id="gcalctool-get-start"> 
+    <title>Ξεκινώντας</title> 
+    <para>Μπορείτε να εκκινήσετε την εφαρμογή <application>gcalctool</application> με τους ακόλουθους τρόπους:</para>
+    <variablelist>
+      <varlistentry>
+        <term>Μενού</term>
+        <listitem>
+          <para>Επιλέξτε <menuchoice><guimenu>Βοηθήματα</guimenu><guimenuitem>Αριθμομηχανή</guimenuitem></menuchoice>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Γραμμή εντολών</term>
+        <listitem>
+          <para>Εκτελέστε την ακόλουθη εντολή: <userinput>gnome-calculator</userinput></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>Όταν ξεκινά η εφαρμογή <application>gcalctool</application>, εμφανίζεται το παράθυρο:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-basic"> 
+        <title>Παράθυρο Βασικής λειτουργίας <application>gcalctool</application></title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_basic_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Εμφανίζει το παράθυρο Βασικής λειτουργίας <application>gcalctool</application>.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+                <para>Το παράθυρο του <application>gcalctool</application> περιέχει τα ακόλουθα:</para>
+                <variablelist>
+                  <varlistentry> <term>Γραμμή μενού</term>
+                         <listitem>
+                                <para>Τα μενού στη γραμμή μενού περιέχουν όλες τις εντολές που θα χρειαστείτε για να εργαστείτε με την εφαρμογή <application>gcalctool</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Περιοχή οθόνης</term>
+                         <listitem>
+                                <para>Η οθόνη της αριθμομηχανής εμφανίζει τους αριθμούς που εισάγετε και τα αποτελέσματα των υπολογισμών.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Περιοχή λειτουργίας</term>
+                         <listitem>
+                                <para>Στην περιοχή λειτουργίας βρίσκονται τα κουμπιά της τρέχουσας λειτουργίας. Τα κουμπιά της Βασικής λειτουργίας εμφανίζονται πάντα. Τα κουμπιά της Προχωρημένης λειτουργίας είναι επίσης διαθέσιμα στην Εμπορική, Επιστημονική και Προγραμματιστική λειτουργία.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Αναδυόμενο μενού</term>
+                         <listitem>
+                <para>Το σύμβολο <inlinemediaobject><imageobject><imagedata fileref="figures/gcalctool_menu_symbol.png" format="PNG"/></imageobject><textobject><phrase>Εμφάνιση συμβόλου αναδυόμενου μενού.</phrase></textobject></inlinemediaobject> πάνω σε ένα κουμπί της εφαρμογής <application>gcalctool</application> υποδεικνύει ότι, αν κάνετε κλικ στο κουμπί, θα εμφανιστεί ένα αναδυόμενο μενού.</para>
+                         </listitem>
+                  </varlistentry>
+<varlistentry>
+         <term>Γραμμή κατάστασης</term>
+                         <listitem>
+                                <para>Στη γραμμή κατάστασης προβάλλονται μηνύματα σχετικά με την κατάσταση των υπολογισμών σας.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+  </sect1>
+<!-- ================ Usage ================================ -->
+  <sect1 id="gcalctool-usage"> 
+    <title>Χρήση</title> 
+
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="gcalctool-calc-functions">
+                <title>Χρήση λειτουργιών αριθμομηχανής</title> 
+                <para>Για να κάνετε έναν υπολογισμό, χρησιμοποιήστε μια από τις παρακάτω μεθόδους:</para>
+                <itemizedlist>
+                  <listitem>
+                         <para>Κάντε κλικ στα κουμπιά της εφαρμογής <application>gcalctool</application> για να εισάγετε αριθμούς και σύμβολα αριθμητικών υπολογισμών.</para>
+                  </listitem>
+                  <listitem>
+                         <para>Επιλέξτε το παράθυρο της εφαρμογής <application>gcalctool</application>, κατόπιν χρησιμοποιήστε το πληκτρολόγιο ή το αριθμητικό πληκτρολόγιο για να εισάγετε τους υπολογισμούς που θέλετε να πραγματοποιήσετε. Για την πλήρη λίστα των συντομεύσεων πληκτρολογίου, δείτε <xref linkend="gcalctool-keyboard-shortcut"/>.</para>
+                  </listitem>
+                </itemizedlist>
+                <para>Η εφαρμογή <application>gcalctool</application> μετατρέπει αυτόματα τους αριθμούς με περισσότερα από 40 ψηφία (ακέραια ή δεκαδικά) σε εκθετικούς αριθμούς. Για παράδειγμα, ο παρακάτω πίνακας δείχνει την τιμή που εμφανίζεται όταν χρησιμοποιείτε δεκαδική αριθμητική βάση και ακρίβεια 2 σημαντικά ψηφία.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Εμφάνιση</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Ερμηνεία</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>1.23e+37</para></entry>
+              <entry><para>1.23 * 10<superscript>37</superscript></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>1e-5</para></entry>
+              <entry><para>0.00001</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <para>Για πληροφορίες σχετικά με την εισαγωγή ενός αριθμού σε εκθετική μορφή, δείτε <xref linkend="gcalctool-enter-exp"/>.</para>
+
+    <sect3 id="gcalctool-calc-functions-separator">
+                <title>Εμφάνιση διαχωριστικού σε μεγάλους αριθμούς.</title> 
+      <para>Για αριθμούς με δεκαδική βάση, μπορείτε να εισάγετε ένα διαχωριστικό ανά τρία ψηφία (για τα ψηφία αριστερά της υποδιαστολής), αν επιλέξετε<menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Εμφάνιση διαχωριστικού χιλάδων</guimenuitem></menuchoice>.</para>
+      <note>
+      <para>Οι διάφορες χώρες και πολιτισμοί έχουν τις δικές τους συμβάσεις επικοινωνίας. Αυτές οι συμβάσεις συμπεριλαμβάνουν τη χρησιμοποιούμενη γλώσσα και το χαρακτήρα που συμβολίζει την υποδιαστολή.</para>
+      <para>Η εφαρμογή <application>gcalctool</application> έχει διεθνοποιηθεί ούτως ώστε να προσαρμόζεται στις συμβάσεις των εκάστοτε χρηστών. Αυτό επιτυγχάνεται με την επιλογή διαφορετικών τοπικοποιήσεων. Ωστόσο, οι συντελεστές της εφαρμογής δεν μπορούν να εξασφαλίσουν την ύπαρξη άλλων τοπικοποιήσεων πέρα από την πρότυπη τοπικοποίηση (τοπικοποίηση C).</para>
+      <para>Όταν χρησιμοποιείτε την τοπικοποίηση C, το διαχωριστικό δεν εμφανίζεται.</para>
+      </note>
+    </sect3>
+
+    <sect3 id="gcalctool-calc-functions-copy">
+                <title>Αντιγραφή και Επικόλληση στην περιοχή οθόνης</title> 
+                <para>Για να αντιγράψετε το αποτέλεσμα ενός υπολογισμού, επιλέξτε <menuchoice><guimenu>Επεξεργασία</guimenu><guimenuitem>Αντιγραφή</guimenuitem></menuchoice>. Μπορείτε να επικολλήσετε το αποτέλεσμα σε μια άλλη εφαρμογή.</para>
+
+                <para>Για να επικολλήσετε στην περιοχή οθόνης μιατιμή που είχατε αντιγράψει προηγουμένως, επιλέξτε <menuchoice><guimenu>Επεξεργασία</guimenu><guimenuitem>Επικόλληση</guimenuitem></menuchoice>.</para>
+    </sect3>
+
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+   
+    <sect2 id="gcalctool-basic-mode"> 
+      <title>Πραγματοποίηση βασικών υπολογισμών</title> 
+      <para>Η Βασική λειτουργία είναι η προεπιλεγμένη λειτουργία, που εμφανίζεται την πρώτη φορά που εκτελείτε την εφαρμογή <application>gcalctool</application>. Διαφορετικά, μπορείτε να ενεργοποιήσετε την Βασική λειτουργία, επιλέγοντας <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Βασική</guimenuitem></menuchoice>.</para>
+      <para>Οι μνήμες της αριθμομηχανής δεν είναι διαθέσιμες στη Βασική λειτουργία. Το μενού <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Μνήμες</guimenuitem></menuchoice> είναι ανενεργό.</para>
+    <sect3 id="gcalctool-simple-calc"> 
+      <title>Πραγματοποίηση απλών υπολογισμών</title> 
+      <para>Για να πραγματοποιήσετε απλούς υπολογισμούς, χρησιμοποιήστε τα κουμπιά που περιγράφονται στον <xref linkend="gcalctool-TBL-simple-calc"/>.</para>
+                <table id="gcalctool-TBL-simple-calc" frame="all">
+                  <title>Πραγματοποίηση απλών υπολογισμών</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Παράδειγμα</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Αριθμητικά ψηφία</para> </entry>
+                             <entry><para>Από το <guibutton>0</guibutton> εως και το <guibutton>9</guibutton></para></entry>
+                             <entry><para>Όταν χρησιμοποιείται δεκαδική και δεκαεξαδική βάση, είναι διαθέσιμα όλα τα ψηφία. Όταν χρησιμοποιείται οκταδική βάση, δεν είναι διαθέσιμα τα ψηφία <guibutton>8</guibutton> και <guibutton>9<guibutton>. Όταν η βάση είναι δυαδική, επιτρέπονται μόνο τα ψηφία <guibutton>0</guibutton> και <guibutton>1</guibutton>. Η προεπιλεγμένη βάση είναι η δεκαδική.</guibutton></guibutton></para></entry>
+                             <entry><para><guibutton>1</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Υποδιαστολή</para> </entry>
+                             <entry><para><guibutton>.</guibutton></para></entry>
+                             <entry><para>Τοποθετείται στην αρχή του κλασματικού μέρους του αριθμού.</para></entry>
+                             <entry><para><guibutton>1</guibutton> <guibutton>.</guibutton> <guibutton>2</guibutton></para></entry>
+                             <entry><para>1.2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Υπολογισμός αποτελέσματος</para> </entry>
+                             <entry><para><guibutton>=</guibutton></para></entry>
+                             <entry><para>Εμφανίζει το αποτέλεσμα του τρέχοντος υπολογισμού στην τρέχουσα βάση.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Πρόσθεση</para> </entry>
+                             <entry><para><guibutton>+</guibutton></para></entry>
+                             <entry><para>Προσθέτει την τιμή που εμφανίζεται στην οθόνη στην τιμή που ακολουθεί.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Αφαίρεση</para> </entry>
+                             <entry><para><guibutton>-</guibutton></para></entry>
+                             <entry><para>Αφαιρεί από την τιμή που εμφανίζεται στην οθόνη την τιμή που ακολουθεί.</para></entry>
+                             <entry><para>3 <guibutton>-</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Πολλαπλασιασμός</para> </entry>
+                             <entry><para><guibutton>*</guibutton></para></entry>
+                             <entry><para>Πολλαπλασιάζει την τιμή που εμφανίζεται στην οθόνη με την τιμή που ακολουθεί.</para></entry>
+                             <entry><para>3 <guibutton>*</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>6</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Διαίρεση</para> </entry>
+                             <entry><para><guibutton>/</guibutton></para></entry>
+                             <entry><para>Διαιρεί την τιμή που εμφανίζεται στην οθόνη δια της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>6 <guibutton>/</guibutton><guibutton>3</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>2</para></entry>
+                           </row>
+                        <row valign="top">
+                             <entry><para>Αλλαγή προσήμου</para> </entry>
+                             <entry><para><guibutton>+/-</guibutton></para></entry>
+                             <entry><para>Μετατρέπει έναν θετικό αριθμό σε αρνητικό, ή εναν αρνητικό αριθμό σε θετικό.</para></entry>
+                             <entry><para>8 <guibutton>+/-</guibutton></para></entry>
+                             <entry><para>-8</para></entry>
+                           </row>
+                         </tbody>
+
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-erase-char"> 
+      <title>Διαγραφή χαρακτήρων</title> 
+      <para>Για να διαγράψετε χαρακτήρες, χρησιμοποιήστε τα κουμπιά που περιγράφονται στον <xref linkend="gcalctool-TBL-erase-char"/>.</para>
+                <table id="gcalctool-TBL-erase-char" frame="all">
+                  <title>Διαγραφή χαρακτήρων</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Παράδειγμα</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Backspace</para> </entry>
+                             <entry><para><guibutton>Bksp</guibutton></para></entry>
+                             <entry><para>Διαγραφή του δεξιότερου χαρακτήρα στην οθόνη.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>Bksp</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Εκκαθάριση καταχώρησης</para> </entry>
+                             <entry><para><guibutton>CE</guibutton></para></entry>
+                             <entry><para>Διαγράφει την τρέχουσα τιμή από την οθόνη.</para>
+                                    <para>Αυτή η λειτουργία είναι ίδια με του <guibutton>Clr</guibutton></para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>CE</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>0</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Εκκαθάριση</para> </entry>
+                             <entry><para><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>Επαναφέρει την τρέχουσα τιμή της οθόνης στο μηδέν και απομακρύνει προηγούμενα αποτελέσματα. Επίσης, το κουμπί <guibutton>Clr</guibutton> αποεπιλέγει τις επιλογές <guilabel>Hyp</guilabel> και <guilabel>Inv</guilabel> της Επιστημονικής λειτουργίας.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>0</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    
+    
+
+
+
+  
+
+          <sect3 id="gcalctool-ins-ascii"> 
+            <title>Εμφάνιση τιμών ASCII</title> 
+                        <para>Για να εμφανίσετε την τιμή ASCII ενός χαρακτήρα, επιλέξτε <menuchoice><guimenu>Επεξεργασία</guimenu><guimenuitem>Εισαγωγή τιμής ASCII</guimenuitem></menuchoice>.</para>
+                        <para>Εμφανίζεται ο διάλογος εισαγωγής τιμών ASCII.</para>
+                        <para>Εισάγετε το ζητούμενο χαρακτήρα στο πεδίο <guilabel>Χαρακτήρας</guilabel> και κάντε κλικ στο κουμπί <guibutton>Εισαγωγή</guibutton>. Η τιμή ASCII του χαρακτήρα, με την τρέχουσα αριθμητική βάση, εμφανίζεται στην οθόνη. Για παράδειγμα, η τιμή ASCII του χαρακτήρα B είναι 66 με δεκαδική βάση.</para>
+          </sect3>
+        </sect2>
+
+ <sect2 id="gcalctool-advanced-mode">
+    <title>Πραγματοποίηση προχωρημένων υπολογισμών</title>
+  <para>Για να μεταβείτε στην Προχωρημένη λειτουργία, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Προχωρημένη</guimenuitem></menuchoice>.</para>
+    <para>Όταν επιλέγεται η Προχωρημένη λειτουργία, εμφανίζονται τα ακόλουθα κουμπιά στα δεξιά των κουμπιών της Βασικής λειτουργίας:</para>
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-advanced"> 
+        <title>Κουμπιά προχωρημένης λειτουργίας <application>gcalctool</application></title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_advanced_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Εμφανίζει τα κουμπιά Προχωρημένης λειτουργίας <application>gcalctool</application>.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+                <table id="gcalctool-TBL-adv-calc" frame="all">
+                  <title>Πραγματοποίηση προχωρημένων υπολογισμών</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Παράδειγμα</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Ποσοστό</para> </entry>
+                             <entry><para><guibutton>%</guibutton></para></entry>
+                             <entry><para>Διαιρεί την τρέχουσα τιμή με το 100.</para></entry>
+                             <entry><para>560 <guibutton>%</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>5.60</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Αντίστροφο</para> </entry>
+                             <entry><para><guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>Διαιρεί το 1 με την τρέχουσα τιμή στην οθόνη.</para></entry>
+                             <entry><para>4 <guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>0.25</para></entry>
+                           </row>
+                    
+                           <row valign="top">
+                             <entry><para>Τετραγωνική ρίζα</para> </entry>
+                             <entry><para><guibutton>Sqrt</guibutton></para></entry>
+                             <entry><para>Υπολογίζει την τετραγωνική ρίζα της τρέχουσας τιμής στην οθόνη.</para></entry>
+                             <entry><para><guibutton>Sqrt</guibutton> 9 <guibutton>)</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Τετράγωνο</para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>Υπολογίζει το τετράγωνο της τρέχουσας τιμής στην οθόνη.</para></entry>
+                             <entry><para>3 <replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>9</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Ακέραιο μέρος</para> </entry>
+                             <entry><para><guibutton>Int</guibutton></para></entry>
+                             <entry><para>Υπολογίζει το ακέραιο μέρος της τρέχουσας τιμής στην οθόνη.</para></entry>
+                             <entry><para>-23.45 <guibutton>Int</guibutton></para></entry>
+                             <entry><para>-23</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Κλασματικό μέρος</para> </entry>
+                             <entry><para><guibutton>Frac</guibutton></para></entry>
+                             <entry><para>Υπολογίζει το κλασματικό μέρος της τρέχουσας τιμής στην οθόνη.</para></entry>
+                             <entry><para>-23.45 <guibutton>Frac</guibutton></para></entry>
+                             <entry><para>-0.45</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Απόλυτη τιμή</para> </entry>
+                             <entry><para><guibutton>Abs</guibutton></para></entry>
+                             <entry><para>Υπολογίζει την απόλυτη τιμή της τρέχουσας τιμής στην οθόνη.</para></entry>
+                             <entry><para>-23.45 <guibutton>Abs</guibutton></para></entry>
+                             <entry><para>23.45</para></entry>
+                         </row>
+                           <row valign="top">
+                         <entry><para>Παρενθέσεις</para> </entry>
+                             <entry><para><guibutton>(</guibutton> και <guibutton>)</guibutton></para></entry>
+                             <entry><para>Οι πράξεις εντός παρενθέσεων πραγματοποιούνται πρώτες. Μπορείτε να τοποθετήσετε όσες παρενθέσεις επιθυμείτε τη μία μέσα στην άλλη.</para></entry>
+                           <entry>
+                               <para>2 <guibutton>+</guibutton><guibutton>3</guibutton><guibutton>*</guibutton><guibutton>4</guibutton><guibutton>=</guibutton></para>
+                               <para>2 <guibutton>+</guibutton><guibutton>(</guibutton><guibutton>3</guibutton><guibutton>*</guibutton><guibutton>4</guibutton><guibutton>)</guibutton></para>
+                             </entry>
+                             <entry> <para>20</para>
+                               <para>14</para>
+                             </entry>
+                               
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+
+<sect3 id="gcalctool-mem-reg"> 
+      <title>Χρήση μνημών αριθμομηχανής</title> 
+      <para>Μπορείτε να αποθηκεύετε τιμές σε οποιαδήποτε από τις δέκα μνήμες του <application>gcalctool</application> (<guilabel>Μ0</guilabel> ως <guilabel>Μ9</guilabel>). Για να εμφανίσετε τις μνήμες, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Μνήμες</guimenuitem></menuchoice>.</para>
+      <para>Μπορείτε να κρύψετε τις μνήμες, είτε επιλέγοντας ξανά <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Μνήμες</guimenuitem></menuchoice>, είτε κάνοντας κλικ στο κουμπί <guibutton>Κλείσιμο</guibutton> του παραθύρου των μνημών.</para>
+        <para>Ο <xref linkend="gcalctool-TBL-mem-reg"/> περιγράφει τις λειτουργίες των μνημώνπου μπορείτε να χρησιμοποιείτε.</para>
+                <table id="gcalctool-TBL-mem-reg" frame="all">
+                  <title>Λειτουργίες μνήμης</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Παράδειγμα</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Αποθήκευση τιμής σε μνήμη</para> </entry>
+                             <entry><para><guibutton>ΜSto</guibutton></para></entry>
+                             <entry><para>Αποθηκεύει τα περιεχόμενα της οθόνης στην ορισθείσα μνήμη. Κάντε κλικ στο κουμπί <guibutton>ΜSto</guibutton> και μετά επιλέξτε μια μνήμη από το αναδυόμενο μενού.</para>
+                                   <para>Για να εκκαθαρίσσετε μια μνήμη κατα τη διάρκεια μιας συνεδρίας του<application>gcalctool</application> :</para>
+                                     <orderedlist>
+                                       <listitem><para>Κάντε κλικ στο κουμπί <guibutton>ΜClr</guibutton>.</para></listitem>
+                                       <listitem><para>Κάντε κλικ στο κουμπί <guibutton>ΜSto</guibutton>.</para></listitem>
+                                       <listitem><para>Επιλέξτε τη μνήμη απο το αναδυόμενο μενού.</para></listitem>
+                                     </orderedlist>
+</entry>
+                             <entry><para>22 <guibutton>ΜSto</guibutton><guilabel>Μ2</guilabel></para></entry>
+                             <entry><para>Η τιμή 22 αποθηκεύεται στη μνήμη <guilabel>Μ2</guilabel>.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Ανάκληση τιμής από μνήμη</para> </entry>
+                             <entry><para><guibutton>ΜRcl</guibutton></para></entry>
+                             <entry><para>Ανακαλεί τα περιεχόμενα της ορισθείσας μνήμης. Κάντε κλικ στο κουμπί <guibutton>ΜRcl</guibutton> και μετά επιλέξτε μια μνήμη από το αναδυόμενο μενού.</para></entry>
+                             <entry><para>0 <guibutton>ΜRcl</guibutton><guilabel>Μ2</guilabel></para></entry>
+                             <entry><para>Η τιμή στην οθόνη είναι 22.</para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Αντικατάσταση τιμής μνήμης με την τιμή στην οθόνη</para> </entry>
+                             <entry><para><guibutton>ΜExch</guibutton></para></entry>
+                             <entry><para>Αντικαθιστά τα περιεχόμενα της ορισθείσας μνήμης με την τρέχουσα τιμή στην οθόνη. Κάντε κλικ στο κουμπί <guibutton>ΜExch</guibutton> και μετάεπιλέξτε μνήμη από το αναδυόμενο μενού.</para></entry>
+                             <entry><para>44 <guibutton>ΜExch</guibutton><guilabel>Μ2</guilabel></para></entry>
+                             <entry><para>Η τιμή στην οθόνη αλλάζει από 44 σε 22, η τιμή της μνήμης Μ2 αλλάζει από 22 σε 44.</para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Αν χρησιμοποιείτε συντομεύσεις πληκτρολογίου, μπορείτε να χρησιμοποιήσετε το πληκτρολόγιο για να επιλέξετε μνήμη, όπως φαίνεται στα παρακάτω παραδείγματα:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Συντόμευση πληκτρολογίου</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Περιγραφή</para></entry>
+            </row>
+          </thead>
+          <tbody> 
+            <row valign="top">
+              <entry><para><keycap>S</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>Αποθηκεύει τα περιεχόμενα της οθόνης στη μνήμη <guilabel>Μ2</guilabel>.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>R</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>Ανακαλεί τα περιεχόμενα της μνήμης <guilabel>Μ2</guilabel> και τα εμφανίζει στην οθόνη.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>X</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>Αντικαθιστά την τρέχουσα τιμή στην οθόνη με τα περιεχόμενα τηςμνήμης <guilabel>Μ2</guilabel>.</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+    </sect3>
+
+
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+         <sect2 id="gcalctool-financial-mode"> 
+      <title>Πραγματοποίηση εμπορικών υπολογισμών</title> 
+      <para>Για να μεταβείτε στην εμπορική λειτουργία, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Εμπορική</guimenuitem></menuchoice>.</para>
+     <para>Όταν επιλέγεται η Εμπορική λειτουργία, εμφανίζονται τα ακόλουθα κουμπιά πάνω από τα κουμπιά για τη Βασική και την Προχωρημένη λειτουργία.</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-financial"> 
+        <title>Κουμπιά Εμπορικής λειτουργίας <application>gcalctool</application></title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_financial_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Εμφανίζει τα κουμπιά Εμπορικής λειτουργίας <application>gcalctool</application>.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+      <para>Για να πραγματοποιήσετε εμπορικούς υπολογισμούς, χρησιμοποιήστε τα κουμπιά που περιγράφονται στον <xref linkend="gcalctool-TBL-financial-calc"/>.</para>
+                <table id="gcalctool-TBL-financial-calc" frame="all">
+                  <title>Πραγματοποίηση εμπορικών υπολογισμών</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Παράδειγμα</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Διάρκεια ανατοκισμού</para> </entry>
+                             <entry><para><guibutton>Ctrm</guibutton></para></entry>
+                             <entry><para>Υπολογίζει τον αριθμό των ανατοκιστικών περιόδων που απαιτούνται για να αυξηθεί μια επένδυση από την παρούσα αξία σε μια μελλοντική αξία, αν ισχύει σταθερό επιτόκιο ανα ανατοκιστική περίοδο.</para>
+                             </entry>
+                             <entry><para>Μόλις καταθέσατε €8000 σε έναν λογαριασμό που προσφέρει ετήσιο επιτόκιο 9%,ανατοκιζόμενο μηνιαίως. Γνωρίζοντας το ετήσιο επιτόκιο, υπολογίζετε οτι το απλό μηνιαίο επιτόκιο είναι 0.09 / 12 = 0.0075. Για να υπολογίσετε τη χρονική περίοδο που απαιτείται για να διπλασιάσετε τα χρήματά σας, κάντε κλικ στο κουμπί <guibutton>Ctrm</guibutton>, και εισάγετε τις ακόλουθες τιμές στα πεδία:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Περιοδικό επιτόκιο</term>
+                                <listitem><para>0.0075</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Μελλοντική αξία</term>
+                                <listitem><para>16000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Τρέχουσα αξία</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Κάντε κλικ στο κουμπί <guibutton>Υπολογισμός</guibutton></para></entry>
+                             <entry><para>92.77</para>
+                                    <para>Η αξία της επένδυσης διπλασιάζεται σε 92.77 μήνες</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Φθίνουσα απόσβεση διπλάσιου ρυθμού</para> </entry>
+                             <entry><para><guibutton>Ddb</guibutton></para></entry>
+                             <entry><para>Υπολογίζει την απόσβεση ενός στοιχείου ενεργητικού για συγκεκριμένη χρονική περίοδο με βάση τη μέθοδο της φθίνουσας απόσβεσης με διπλάσιο ρυθμό.</para>
+                             </entry>
+                             <entry><para>Μόλις αγοράσατε εξοπλισμό γραφείου αξίας €8000. Η ωφέλιμη ζωή του εξοπλισμού είναι 6 έτη. Η υπολειμματική του αξία μετά τα 6 έτη είναι €900. Για να υπολογίσετε την απόσβεση για τον τέταρτο χρόνο χρησιμοποιώντας τη μέθοδο της φθίνουσας απόσβεσης με διπλάσιο ρυθμό, κάντε κλικ στο κουμπί <guibutton>Ddb</guibutton> και εισάγετε τις ακόλουθες τιμές στα πεδία:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Κόστος</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Υπολειμματική αξία</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Ζωή</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Περίοδος</term>
+                                <listitem><para>4</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Κάντε κλικ στο κουμπί <guibutton>Υπολογισμός</guibutton></para></entry>
+                             <entry><para>790.12</para>
+                                    <para>Η απόσβεση για τον τέταρτο χρόνο είναι €790.12</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Μελλοντική αξία</para> </entry>
+                             <entry><para><guibutton>Fv</guibutton></para></entry>
+                             <entry><para>Υπολογίζει τη μελλοντική αξία μιας επένδυσης που συνίσταται σε μια σειρά ισόποσων πληρωμών και η οποία υπόκειται σε συγκεκριμένο περιοδικό επιτόκιο καθ' όλη τη διάρκεια των πληρωμών.</para>
+                             </entry>
+                             <entry><para>Σκοπεύετε να καταθέτετε στην τράπεζα €4000 την τελευταία ημέρα του έτους και για τα επόμενα 20 έτη. Το επιτόκιο είναι 8%, με ετήσιο ανατοκισμό. Οι τόκοι προσμετρώνται την τελευταία ημέρα κάθε έτους. Για να υπολογίσετε το υπόλοιπο του λογαριασμού σας μετά από 20 έτη, κάντε κλικ στο <guibutton>Fv</guibutton> και εισάγετε τις ακόλουθες τιμές στα πεδία:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Περιοδική πληρωμή</term>
+                                <listitem><para>4000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Περιοδικό επιτόκιο</term>
+                                <listitem><para>0.08</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Αριθμός περιόδων</term>
+                                <listitem><para>20</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Κάντε κλικ στο κουμπί <guibutton>Υπολογισμός</guibutton></para></entry>
+                             <entry><para>183047.86</para>
+                                    <para>Μετά από 20 έτη, το υπόλοιπο του λογαριασμού θα είναι €183,047.86.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Μικτό περιθώριο κέρδους</para></entry>
+                             <entry><para><guibutton>Gpm</guibutton></para></entry>
+                             <entry><para>Υπολογίζει την αξία μεταπώλησης ενός προϊόντος, με βάση το κόστος του προϊόντος και το επιθυμητό μικτό περιθώριο κέρδους.</para></entry>
+                             <entry><para>Πουλάτε μπλουζάκια στο Διαδίκτυο. Κάθε μπλουζάκι σας κοστίζει €12 σε υλικά και εργασία. Θέλετε να έχετε μικτό περιθώριο κέρδους 0.40· δηλαδή για κάθε πέντε ευρώ που πληρώνεστε, θέλετε τα δύο ευρώ να είναι κέρδος. Για να υπολογίσετε την τιμή στην οποία θα πουλάτε τα μπλουζάκια, κάντε κλικ στο <guibutton>Gpm</guibutton> και εισάγετε τις ακόλουθες τιμές στα πεδία:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Κόστος</term>
+                                <listitem><para>12</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Περιθώριο</term>
+                                <listitem><para>0.40</para></listitem>
+                                </varlistentry>
+                             </variablelist>
+                             <para>Κάντε κλικ στο κουμπί <guibutton>Υπολογισμός</guibutton></para></entry>
+                             <entry><para>20</para>
+                             <para>Θα πρέπει να πουλάτε τα μπλουζάκια €20</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Περιοδική πληρωμή</para> </entry>
+                             <entry><para><guibutton>Pmt</guibutton></para></entry>
+                             <entry><para>Υπολογίζει το ποσό της περιοδικής πληρωμής (δόσης) του δανείου, αν η πληρωμή των δόσεων γίνεται στο τέλος κάθε περιόδου.</para>
+                             </entry>
+                             <entry><para>Σκέφτεστε να πάρετε στεγαστικό δάνειο €120,000 για 30 έτη με ετήσιο επιτόκιο 11.0%. Από το ετήσιο επιτόκιο συμπεραίνετε ότι το απλό μηνιαίο επιτόκιο θα είναι 0.11 / 12 = 0.00917. Η διάρκεια είναι 30 * 12 = 360 μήνες. Για να υπολογίσετε τη μηνιαία δόση του δανείου, κάντε κλικ στο <guibutton>Pmt</guibutton> και εισάγετε τις ακόλουθες τιμές στα πεδία:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Κύρια</term>
+                                <listitem><para>120000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Περιοδικό επιτόκιο</term>
+                                <listitem><para>0.00917</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Διάρκεια</term>
+                                <listitem><para>360</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Κάντε κλικ στο κουμπί <guibutton>Υπολογισμός</guibutton></para></entry>
+                             <entry><para>1143.15</para>
+                                    <para>Η μηνιαία δόση θα είναι €1143.15.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Τρέχουσα αξία</para> </entry>
+                             <entry><para><guibutton>Pv</guibutton></para></entry>
+                             <entry><para>Υπολογίζει την τρέχουσα αξία μιας επένδυσης που συνίσταται σε μια σειρά ισόποσων πληρωμών και η οποία υπόκειται σε συγκεκριμένο περιοδικό επιτόκιο καθ' όλη τη διάρκεια των πληρωμών.</para>
+                             </entry>
+                             <entry><para>Κερδίσατε ένα εκατομμύριο ευρώ. Μπορείτε να παραλάβετε τα χρήματα σε 20 ισόποσες ετήσιες δόσεις των €50,000. Τα χρήματα θα κατατίθενται στο τέλος κάθε έτους. Αν δεχτείτε αυτή τη διευθέτηση, μπορείτε να επενδύσετε τα χρήματα με επιτόκιο 9%, ανατοκιζόμενο ετησίως.</para>
+                                    <para>Σας δίνεται όμως και η επιλογή να λάβετε ένα εφάπαξ ποσό των €400,000 αντί για την ετήσια πρόσοδο του ενός εκατομμυρίου. Για να βρείτε ποια επιλογή είναι η καλύτερη με βάση τη σημερινή τιμή του ευρώ, κάντε κλικ στο <guibutton>Pv</guibutton> και εισάγετε τις ακόλουθες τιμές στα πεδία:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Περιοδική πληρωμή</term>
+                                <listitem><para>50000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Περιοδικό επιτόκιο</term>
+                                <listitem><para>0.09</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Αριθμός περιόδων</term>
+                                <listitem><para>20</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Κάντε κλικ στο κουμπί <guibutton>Υπολογισμός</guibutton></para></entry>
+                             <entry><para>456427.28</para>
+                                    <para>Το €1,000,000 στη διάρκεια περιόδου 20 ετών αντιστοιχεί σε €456,427.28 ευρώ σήμερα.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Περιοδικό επιτόκιο</para> </entry>
+                             <entry><para><guibutton>Rate</guibutton></para></entry>
+                             <entry><para>Υπολογίζει το περιοδικό επιτόκιο που απαιτείται προκειμένου να ανέλθει η αξία τηςεπένδυσης σε συγκεκριμένη μελλοντική αξία μετά από ορισμένο αριθμό περιόδων ανατοκισμού.</para>
+                             </entry>
+                             <entry><para>Επενδύσατε €20,000 σε ένα ομόλογο. Το ομόλογο λήγει σε πέντε έτη και έχει τελική τιμή €30,000. Ο ανατοκισμός είναι μηνιαίος. Η διάρκεια είναι 5 * 12 = 60 μήνες. Για να υπολογίσετε το περιοδικό επιτόκιο της επένδυσης, κάντε κλικ στο <guibutton>Rate</guibutton> και εισάγετε τις ακόλουθες τιμές στα πεδία:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Μελλοντική αξία</term>
+                                <listitem><para>30000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Τρέχουσα αξία</term>
+                                <listitem><para>20000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Διάρκεια</term>
+                                <listitem><para>60</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Κάντε κλικ στο κουμπί <guibutton>Υπολογισμός</guibutton></para></entry>
+                             <entry><para>.00678</para>
+                                    <para>Το μηνιαίο επιτόκιο είναι 0.678%. Το ετήσιο επιτόκιο είναι 0.678% * 12 = 8.14%.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Σταθερή απόσβεση</para> </entry>
+                             <entry><para><guibutton>Sln</guibutton></para></entry>
+                             <entry><para>Υπολογίζει τη σταθερή απόσβεση ενός στοιχείου ενεργητικού για συγκεκριμένη περίοδο. Η αποσβεστέα αξία ισούται με το <replaceable>κόστος</replaceable> μείον την <replaceable>υπολειμματική αξία</replaceable>. Στη σταθερή μέθοδο απόσβεσης, η αποσβεστέα αξία διαιρείται δια της ωφέλιμης ζωής του στοιχείου ενεργητικού. Η ωφέλιμη ζωή είναι ο αριθμός των περιόδων, συνήθως ετών, κατά τη διάρκεια των οποίων συντελείται η απόσβεση.</para>
+                             </entry>
+                             <entry><para>Μόλις αγοράσατε εξοπλισμό γραφείου αξίας €8000. Η ωφέλιμη ζωή του εξοπλισμού είναι 6 έτη. Η υπολειμματική του αξία μετά τα 6 έτη είναι €900. Για να υπολογίσετε την ετήσια απόσβεση χρησιμοποιώντας τη μέθοδο της σταθερής απόσβεσης, κάντε κλικ στο κουμπί <guibutton>Sln</guibutton> και εισάγετε τις ακόλουθες τιμές στα πεδία:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Κόστος</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Υπολειμματική αξία</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Ζωή</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Κάντε κλικ στο κουμπί <guibutton>Υπολογισμός</guibutton></para></entry>
+                             <entry><para>1183.33</para>
+                                    <para>Η ετήσια απόσβεση είναι €1183.33.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Απόσβεση με συντελεστή τα έτη ζωής</para> </entry>
+                             <entry><para><guibutton>Syd</guibutton></para></entry>
+                             <entry><para>Υπολογίζει την απόσβεση ενός στοιχείου ενεργητικού για συγκεκριμένη χρονική περίοδο με βάση τη μέθοδο της φθίνουσας απόσβεσης με συντελεστή τα έτη ζωής. Αυτή η μέθοδος απόσβεσης προβλέπει αυξανόμενο ρυθμό απόσβεσης, έτσι ώστε η απόσβεση να είναι μεγαλύτερη στην αρχή της χρονικής περιόδου. Η αποσβεστέα αξία ισούται με το <replaceable>κόστος</replaceable> μείον την <replaceable>υπολειμματική αξία</replaceable>. Η ωφέλιμη ζωή είναι ο αριθμός των περιόδων, συνήθως ετών, κατά τη διάρκεια των οποίων συντελείται η απόσβεση.</para>
+                             </entry>
+                             <entry><para>Μόλις αγοράσατε εξοπλισμό γραφείου αξίας €8000. Η ωφέλιμη ζωή του εξοπλισμού είναι 6 έτη. Η υπολειμματική του αξία μετά τα 6 έτη είναι €900. Για να υπολογίσετε την απόσβεση για τον τέταρτο χρόνο χρησιμοποιώντας τη μέθοδο της φθίνουσας απόσβεσης με συντελεστή τα έτη ζωής, κάντε κλικ στο κουμπί <guibutton>Syd</guibutton> και εισάγετε τις ακόλουθες τιμές στα πεδία:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Κόστος</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Υπολειμματική αξία</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Ζωή</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Περίοδος</term>
+                                <listitem><para>4</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Κάντε κλικ στο κουμπί <guibutton>Υπολογισμός</guibutton></para></entry>
+                             <entry><para>1014.29</para>
+                                    <para>Η απόσβεση για το τέταρτο έτος θα είναι €1014.29.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Περίοδος πληρωμής</para> </entry>
+                             <entry><para><guibutton>Διάρκεια</guibutton></para></entry>
+                             <entry><para>Υπολογίζει τον αριθμό των περιόδων πληρωμής που απαιτούνται κατά τη διάρκεια μιας απλής ετήσιας προσόδου για την επίτευξη μιας μελλοντικής αξίας, με βάση συγκεκριμένο περιοδικό επιτόκιο.</para>
+                             </entry>
+                             <entry><para>Σκοπεύετε να καταθέτετε στην τράπεζα €1800 κάθε έτος και πάντα την τελευταία ημέρα του έτους. Το επιτόκιο είναι 11%, με ετήσιο ανατοκισμό. Οι τόκοι προσμετρώνται την τελευταία ημέρα κάθε έτους. Για να υπολογίσετε τη χρονική περίοδο που απαιτείται για να συγκεντρωθούν €120,000, κάντε κλικ στο <guibutton>Term</guibutton> και εισάγετε τις ακόλουθες τιμές στα πεδία:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Περιοδική πληρωμή</term>
+                                <listitem><para>1800</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Μελλοντική αξία</term>
+                                <listitem><para>120000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Περιοδικό επιτόκιο</term>
+                                <listitem><para>0.11</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Κάντε κλικ στο κουμπί <guibutton>Υπολογισμός</guibutton></para></entry>
+                             <entry><para>20.32</para>
+                                    <para>Ο λογαριασμός σας θα ανέλθει σε €120,000 μετά από 20.32 έτη.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="gcalctool-scientific-mode"> 
+      <title>Πραγματοποίηση επιστημονικών υπολογισμών</title> 
+      <para>Για να μεταβείτε στην Επιστημονική λειτουργία, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Επιστημονική</guimenuitem></menuchoice>.</para>
+    <para>Όταν επιλέγεται η Επιστημονική λειτουργία, εμφανίζονται τα ακόλουθα κουμπιά πάνω από τα κουμπιά για τη Βασική και την Προχωρημένη λειτουργία:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-scientific"> 
+        <title>Κουμπιά Επιστημονικής λειτουργίας <application>gcalctool</application></title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_scientific_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Εμφανίζει τα κουμπιά της Επιστημονικής λειτουργίας <application>gcalctool</application>.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+    <sect3 id="gcalctool-set-acc"> 
+      <title>Ορισμός ακρίβειας</title> 
+      <para>Για να ορίσετε την ακρίβεια για την περιοχή της οθόνης και τις μνήμες, κάντε κλικ στο <guibutton>Acc</guibutton> και μετά επιλέξτε το επίπεδο ακρίβειας που επιθυμείτε από το αναδυόμενο μενού. Το τρέχον επίπεδο ακρίβειας είναι αυτό που είναι σημειωμένο με ένα μαύρο κύκλο. Μπορούν να εμφανίζονται μέχρι και 99 σημαντικά ψηφία. Η προεπιλεγμένη ακρίβεια είναι 9 σημαντικά ψηφία.</para>
+<para>Για να ορίσετε επίπεδο ακρίβειας ανώτερο του 9, επιλέξτε <guilabel>Άλλο (9) ...</guilabel> και μετά διαλέξτε το επιθυμητό επίπεδο ακρίβειας από τον αναδυόμενο διάλογο <guilabel>Ορισμός ακρίβειας</guilabel>.</para>
+      <para>Η προεπιλογή είναι να μην εμφανίζονται τα μηδενικά στο τέλος του κλασματικού μέρους των δεκαδικών αριθμών. Για να τα εμφανίσετε, κάντε κλικ στο <guibutton>Acc</guibutton> και μετά επιλέξτε <guilabel>Εμφάνιση μηδενικών στο τέλος</guilabel> από το αναδυόμενο μενού. Εναλλακτικά, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Εμφάνιση μηδενικών στο τέλος</guimenuitem></menuchoice>. Αν το αντίστοιχο κουτάκι στο αναδυόμενο μενού του <guibutton>Acc</guibutton> ή στο μενού <guimenu>Προβολή</guimenu> είναι σημειωμένο, τότε έχει επιλεγεί η <guilabel>Εμφάνιση μηδενικών στο τέλος</guilabel>. Για να κρύψετε τα μηδενικά στο τέλος, επιλέξτε ξανά <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Εμφάνιση μηδενικών στο τέλος</guimenuitem></menuchoice>.</para>
+      <para>Στα παραδείγματα του παρακάτω πίνακα βλέπετε πώς οι ρυθμίσεις ακρίβειας επιδρούν στο <replaceable>x</replaceable> που θα εμφανιστεί στην οθόνη, όπου <literal>1 / 8 = <replaceable>x</replaceable></literal>. (Χρησιμοποιείται δεκαδική αριθμητική βάση και είναι επιλεγμένη η <guimenuitem>Εμφάνιση μηδενικών στο τέλος</guimenuitem>.)</para>
+                <informaltable frame="all">
+                  <tgroup cols="2" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Ακρίβεια</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>1 σημαντικό ψηφίο</para></entry>
+                             <entry><para>1.2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>2 σημαντικά ψηφία</para></entry>
+                             <entry><para>1.25</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>3 σημαντικά ψηφία</para></entry>
+                             <entry><para>1.250</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </informaltable>
+    </sect3>
+    <sect3 id="gcalctool-display-type"> 
+      <title>Ορισμός μορφής εμφάνισης</title> 
+      <para>Για να επιλέξετε μορφή εμφάνισης, επιλέξτε ένα από τα κουμπιά που περιγράφονται στον <xref linkend="gcalctool-TBL-display-type"/>.</para>
+                <table id="gcalctool-TBL-display-type" frame="all">
+                  <title>Ορισμός μορφής εμφάνισης</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Τεχνολογική μορφή εμφάνισης</para> </entry>
+                             <entry><para><guibutton>Eng</guibutton></para></entry>
+                             <entry><para>Επιλέγει την τεχνολογική μορφή εμφάνισης. Τα αποτελέσματα εμφανίζονται με επιστημονική γραφή. Ο εκθέτης είναι πάντα πολλαπλάσιο του τρία.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Εμφάνιση σταθερής υποδιαστολής</para> </entry>
+                             <entry><para><guibutton>Fix</guibutton></para></entry>
+                             <entry><para>Επιλέγει την εμφάνιση σταθερής υποδιαστολής. Τα αποτελέσματα δεν εμφανίζονται με επιστημονική γραφή. Η εμφάνιση σταθερής υποδιαστολής είναι η προεπιλεγμένη μορφή εμφάνισης. Όταν μεταβαίνετε από την Επιστημονική στη Βασική ή την Εμπορική λειτουργία, το <application>gcalctool</application> επιλέγει αυτόματα την εμφάνιση σταθερής υποδιαστολής.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Επιστημονική μορφή εμφάνισης</para> </entry>
+                             <entry><para><guibutton>Sci</guibutton></para></entry>
+                             <entry><para>Επιλέγει την επιστημονική μορφή εμφάνισης. Τα αποτελέσματα εμφανίζονται με επιστημονική γραφή με σταθερό αριθμό αριθμητικών ψηφίων.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-trig-type"> 
+      <title>Ορισμός τριγωνομετρικής μονάδας μέτρησης</title> 
+      <para>Για να ορίσετε τη μονάδα μέτρησης για τους τριγωνομετρικούς υπολογισμούς, επιλέξτε ένα από τα κουμπιά που περιγράφονται στον <xref linkend="gcalctool-TBL-trig-type"/>.</para>
+                <table id="gcalctool-TBL-trig-type" frame="all">
+                  <title>Ορισμός τριγωνομετρικής μονάδας μέτρησης</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Μοίρες</para> </entry>
+                             <entry><para><guibutton>Μοίρες</guibutton></para></entry>
+                             <entry><para>Ορίζει τις μοίρες ως μονάδα μέτρησης για τριγωνομετρικούς υπολογισμούς. Πρόκειται για την προεπιλεγμένη μονάδα μέτρησης.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Βαθμοί</para> </entry>
+                             <entry><para><guibutton>Βαθμοί</guibutton></para></entry>
+                             <entry><para>Ορίζει τους βαθμούς (grad) ως μονάδα μέτρησης για τριγωνομετρικούς υπολογισμούς.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Ακτίνια</para> </entry>
+                             <entry><para><guibutton>Ακτίνια</guibutton></para></entry>
+                             <entry><para>Ορίζει τα ακτίνια (rad) ως μονάδα μέτρησης για τριγωνομετρικούς υπολογισμούς.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-trig-options"> 
+      <title>Ορισμός τριγωνομετρικών επιλογών</title> 
+      <para>Για να ορίσετε τις τριγωνομετρικές επιλογές, συμβουλευθείτε τον <xref linkend="gcalctool-TBL-trig-options"/>.</para>
+                <table id="gcalctool-TBL-trig-options" frame="all">
+                  <title>Ορισμός τριγωνομετρικών επιλογών</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Ένδειξη υπερβολικής συνάρτησης</para> </entry>
+                             <entry><para><guibutton>Hyp</guibutton></para></entry>
+                             <entry><para>Επιλέγει τη χρήση υπερβολικών τριγωνομετρικών συναρτήσεων.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Ένδειξη αντίστροφης συνάρτησης</para> </entry>
+                             <entry><para><guibutton>Inv</guibutton></para></entry>
+                             <entry><para>Επιλέγει τη χρήση αντίστροφων τριγωνομετρικών συναρτήσεων.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Η προεπιλογή είναι να μην είναι σημειωμένες οι επιλογές που περιγράφονται στον <xref linkend="gcalctool-TBL-trig-options"/>. Για να τις αποεπιλέξετε, κάντε κλικ στο <guibutton>Clr</guibutton>.</para>
+
+    </sect3>
+    <sect3 id="gcalctool-trig-calc"> 
+      <title>Υπολογισμός τριγωνομετρικών συναρτήσεων</title> 
+      <para>Για να υπολογίσετε τριγωνομετρικές συναρτήσεις, χρησιμοποιήστε τα κουμπιά που περιγράφονται στον <xref linkend="gcalctool-TBL-trig-calc"/>.</para>
+                <table id="gcalctool-TBL-trig-calc" frame="all">
+                  <title>Υπολογισμός τριγωνομετρικών συναρτήσεων</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Παράδειγμα</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Συνημίτονο <literal>cos</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> αποεπιλεγμένο, <guilabel>Inv</guilabel> αποεπιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει το συνημίτονο της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>60 <guibutton>Cos</guibutton></para></entry>
+                             <entry><para>0.5</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Αντίστροφο συνημίτονο <literal>acos</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> αποεπιλεγμένο, <guilabel>Inv</guilabel> επιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει το αντίστροφο συνημίτονο της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>0.5 <guilabel>Inv</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>60</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Υπερβολικό συνημίτονο <literal>cosh</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> επιλεγμένο, <guilabel>Inv</guilabel> αποεπιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει το υπερβολικό συνημίτονο της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>0.4 <guilabel>Hyp</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>1.081072372</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Υπερβολικό αντίστροφο συνημίτονο <literal>acosh</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> επιλεγμένο, <guilabel>Inv</guilabel> επιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει το υπερβολικό αντίστροφο συνημίτονο της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>1.6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>1.046967915</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Ημίτονο <literal>sin</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> αποεπιλεγμένο, <guilabel>Inv</guilabel> αποεπιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει το ημίτονο της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>90 <guibutton>Sin</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Αντίστροφο ημίτονο <literal>asin</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> αποεπιλεγμένο, <guilabel>Inv</guilabel> επιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει το αντίστροφο ημίτονο της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>1 <guilabel>Inv</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>90</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Υπερβολικό ημίτονο <literal>sinh</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> επιλεγμένο, <guilabel>Inv</guilabel> αποεπιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει το υπερβολικό ημίτονο της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>0.4 <guilabel>Hyp</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>0.410752326</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Υπερβολικό αντίστροφο ημίτονο <literal>asinh</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> επιλεγμένο, <guilabel>Inv</guilabel> επιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει το υπερβολικό αντίστροφο ημίτονο της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>1.6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>1.248983328</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Εφαπτομένη <literal>tan</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> αποεπιλεγμένο, <guilabel>Inv</guilabel> αποεπιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει την εφαπτομένη της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>45 <guibutton>Tan</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Αντίστροφη εφαπτομένη <literal>atan</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> αποεπιλεγμένο, <guilabel>Inv</guilabel> επιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει την αντίστροφη εφαπτομένη της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>1 <guilabel>Inv</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>45</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Υπερβολική εφαπτομένη <literal>tanh</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> επιλεγμένο, <guilabel>Inv</guilabel> αποεπιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει την υπερβολική εφαπτομένη της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>0.6 <guilabel>Hyp</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>0.537049567</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Υπερβολική αντίστροφη εφαπτομένη <literal>atanh</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> επιλεγμένο, <guilabel>Inv</guilabel> επιλεγμένο</para></entry>
+                             <entry><para>Υπολογίζει την υπερβολική αντίστροφη εφαπτομένη της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>0.6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>0.693147181</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-logs-calc"> 
+      <title>Υπολογισμός λογαρίθμων</title> 
+      <para>Για να υπολογίσετε λογαρίθμούς, συμβουλευθείτε τον <xref linkend="gcalctool-TBL-logs-calc"/>.</para>
+                <table id="gcalctool-TBL-logs-calc" frame="all">
+                  <title>Υπολογισμός λογαρίθμων</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Παράδειγμα</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Κοινός λογάριθμος με βάση το 10</para> </entry>
+                             <entry><para>Log<subscript><replaceable>10</replaceable></subscript></para></entry>
+                             <entry><para>Υπολογίζει τον κοινό λογάριθμο (με βάση το 10) της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>10 Log<subscript><replaceable>10</replaceable></subscript></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Φυσικός λογάριθμος</para> </entry>
+                             <entry><para><guibutton>Ln</guibutton></para></entry>
+                             <entry><para>Υπολογίζει το φυσικό λογάριθμο της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>10 <guibutton>Ln</guibutton></para></entry>
+                             <entry><para>2.30</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Λογάριθμος με βάση το 2</para> </entry>
+                             <entry><para>Log<subscript><replaceable>2</replaceable></subscript></para></entry>
+                             <entry><para>Υπολογίζει το λογάριθμο με βάση το 2 της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>10 Log<subscript><replaceable>2</replaceable></subscript></para></entry>
+                             <entry><para>3.32</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <note>
+                  <para>Οι κοινοί και οι φυσικοί αντιλογάριθμοι δεν υποστηρίζονται από αυτήν την έκδοση του <application>gcalctool</application>.</para>
+                </note>
+    </sect3>
+    <sect3 id="gcalctool-enter-exp"> 
+      <title>Εισαγωγή εκθετικών αριθμών</title> 
+      <para>Για να εισάγετε εκθετικούς αριθμούς, χρησιμοποιήστε το κουμπί <guibutton>Exp</guibutton>.</para>
+      <para>Το κουμπί <guibutton>Exp</guibutton> σας επιτρέπει να εισάγετε αριθμούς με επιστημονική γραφή, δηλαδή με τη μορφή <replaceable>συντελεστής</replaceable> * <replaceable>βάση</replaceable><superscript><replaceable>εκθέτης</replaceable></superscript>:</para>
+<variablelist>
+  <varlistentry>
+    <term><replaceable>συντελεστής</replaceable></term>
+    <listitem><para>Η τρέχουσα, μη μηδενική, τιμή στην οθόνη. Αν η τρέχουσα τιμή είναι μηδέν, ο συντελεστής θα είναι 1.0.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><replaceable>βάση</replaceable></term>
+    <listitem><para>2, 8, 10 ή 16 για τη δυαδική, οκταδική, δεκαδική και δεκαεξαδική αριθμητική βάση, αντίστοιχα.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><replaceable>εκθέτης</replaceable></term>
+    <listitem><para>Ο επόμενος αριθμός που θα εισαχθεί.</para></listitem>
+  </varlistentry>
+</variablelist>
+
+<para>Όταν πατάτε το <guibutton>Exp</guibutton>, η αριθμομηχανή εμφανίζει τα<literal>. +</literal> που σημαίνουν <replaceable>βάση</replaceable> υψωμένη στη δύναμη του αριθμού που ακολουθεί.</para>
+<para>Για να αλλάξετε το πρόσημο του αριθμού, πατήστε το κουμπί <guibutton>+/-</guibutton> πριν από το <guibutton>Exp</guibutton>. Για να αλλάξετε το πρόσημο του εκθέτη (της δύναμης στην οποία υψώνεται ο αριθμός) πατήστε το κουμπί <guibutton>-</guibutton> μετά το <guibutton>Exp</guibutton>.</para>
+
+<para>Για να εισάγετε ένα δεκαδικό αριθμό σε εκθετική μορφή, χρησιμοποιήστε τις οδηγίες του παρακάτω πίνακα:</para>
+          <informaltable frame="all">
+            <tgroup cols="3" colsep="1" rowsep="1">
+                   <colspec colname="COLSPEC0" colwidth="50*"/>
+                   <colspec colname="COLSPEC1" colwidth="50*"/>
+                   <thead>
+                          <row valign="top">
+                            <entry colname="COLSPEC0">
+                                   <para>Αριθμός</para></entry>
+                            <entry colname="COLSPEC1">
+                                   <para>Κουμπιά</para></entry>
+                            <entry colname="COLSPEC2">
+                                   <para>Εμφάνιση</para></entry>
+                          </row>
+                   </thead> 
+                   <tbody> 
+                     <row valign="top">
+                       <entry><para>1200000000</para></entry>
+                       <entry><para>12 <guibutton>Exp</guibutton><guibutton>+</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>1200000000</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>-1200000000</para></entry>
+                       <entry><para><guibutton>-</guibutton> 12 <guibutton>Exp</guibutton><guibutton>+</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>-1200000000</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>0.00000012</para></entry>
+                       <entry><para>12 <guibutton>Exp</guibutton><guibutton>-</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>1.2e-7</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>-0.00000012</para></entry>
+                       <entry><para><guibutton>-</guibutton> 12 <guibutton>Exp</guibutton><guibutton>-</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>-1.2e-7</para></entry>
+                     </row>
+                   </tbody>
+            </tgroup>
+          </informaltable>
+
+    </sect3>
+    <sect3 id="gcalctool-edit-const"> 
+      <title>Χρήση σταθερών</title> 
+      <para>Κάντε κλικ στο <guibutton>Con</guibutton> για να εμφανίσετε τις προκαθορισμένες τιμές σταθερών. Όλες οι εμφανιζόμενες τιμές είναι σε δεκαδική αριθμητική βάση, ακόμη και αν η αριθμητική βάση που χρησιμοποιείται δεν είναι η δεκαδική.</para>
+      <para>Επιλέξτε μια σταθερά από το μενού για να εισάγετε την τιμή της στην οθόνη. Μπορείτε, επίσης, να χρησιμοποιήσετε τη συντόμευση πληκτρολογίου <keycap>#</keycap> συνοδευόμενη από έναν αριθμό, όπως στο παράδειγμα που ακολουθεί:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Συντόμευση πληκτρολογίου</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Σταθερά</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>#</keycap> <keycap>3</keycap> </para></entry>
+              <entry><para>C3</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      <para>Η εφαρμογή <application>gcalctool</application> περιλαμβάνει δέκα προεπιλεγμένες τιμές σταθερών, όπως φαίνεται στον παρακάτω πίνακα:</para>
+                <informaltable frame="all">
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1" colwidth="50*"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Αριθμός</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Τιμή</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>C0</para></entry>
+                             <entry><para>0.621</para></entry>
+                             <entry><para>Συντελεστής μετατροπής χιλιομέτρων σε μίλια</para>
+                                    <para>Πολλαπλασιάστε την τιμή στην οθόνη με αυτή τη σταθερά για να μετατρέψετε τα χιλιόμετρα ανά ώρα σε μίλια ανά ώρα. Π.χ., 8 * <guibutton>Con</guibutton><guilabel>C0</guilabel><keycap>=</keycap> 5.</para>
+                                    <para>Διαιρέστε την τιμή στην οθόνη με αυτή τη σταθερά για να μετατρέψετε τα μίλια ανά ώρα σε χιλιόμετρα ανά ώρα. Π.χ., 5 / <guibutton>Con</guibutton><guilabel>C0</guilabel><keycap>=</keycap> 8.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C1</para></entry>
+                             <entry><para>1.414213562</para></entry>
+                             <entry><para>Τετραγωνική ρίζα του 2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C2</para></entry>
+                             <entry><para>2.718281828</para></entry>
+                             <entry><para>e</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C3</para></entry>
+                             <entry><para>3.141592653</para></entry>
+                             <entry><para>π</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C4</para></entry>
+                             <entry><para>0.3937007</para></entry>
+                             <entry><para>Συντελεστής μετατροπής εκατοστών σε ίντσες</para>
+                                    <para>Πολλαπλασιάστε την τιμή στην οθόνη με αυτή τη σταθερά για να μετατρέψετε εκατοστά σε ίντσες. Π.χ., 30 * <guibutton>Con</guibutton><guilabel>C4</guilabel><keycap>=</keycap> 12.</para>
+                                    <para>Διαιρέστε την τιμή στην οθόνη με αυτή τη σταθερά για να μετατρέψετε ίντσες σε εκατοστά. Π.χ.,  12 / <guibutton>Con</guibutton><guilabel>C4</guilabel><keycap>=</keycap> 30.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C5</para></entry>
+                             <entry><para>57.295779513</para></entry>
+                             <entry><para>Μοίρες ανά ακτίνιο</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C6</para></entry>
+                             <entry><para>1048576</para></entry>
+                             <entry><para>2 ^ 20</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C7</para></entry>
+                             <entry><para>0.0353</para></entry>
+                             <entry><para>Συντελεστής μετατροπής γραμμαρίων σε ουγγιές</para>
+                                    <para>Πολλαπλασιάστε την τιμή στην οθόνη με αυτή τη σταθερά για να μετατρέψετε γραμμάρια σε ουγγιές. Π.χ., 500 * <guibutton>Con</guibutton><guilabel>C7</guilabel><keycap>=</keycap> 18.</para>
+                                    <para>Διαιρέστε την τιμή στην οθόνη με αυτή τη σταθερά για να μετατρέψετε ουγγιές σε γραμμάρια. Π.χ., 18 / <guibutton>Con</guibutton><guilabel>C7</guilabel><keycap>=</keycap> 500.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C8</para></entry>
+                             <entry><para>0.948</para></entry>
+                             <entry><para>Συντελεστής μετατροπής Kilojoule σε βρετανικές θερμικές μονάδες</para>
+                                    <para>Πολλαπλασιάστε την τιμή στην οθόνη με αυτή τη σταθερά για να μετατρέψετε kilojoule σε βρετανικές θερμικές μονάδες. Π.χ., 10 * <guibutton>Con</guibutton><guilabel>C8</guilabel><keycap>=</keycap> 9.48.</para>
+                                    <para>Διαιρέστε την τιμή στην οθόνη με αυτή τη σταθερά για να μετατρέψετε βρετανικές θερμικές μονάδες σε kilojoule. Π.χ., 9.48 / <guibutton>Con</guibutton><guilabel>C8</guilabel><keycap>=</keycap> 10.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C9</para></entry>
+                             <entry><para>0.061</para></entry>
+                             <entry><para>Συντελεστής μετατροπής κυβικών εκατοστών σε κυβικές ίντσες</para>
+                                    <para>Πολλαπλασιάστε την τιμή στην οθόνη με αυτή τη σταθερά για να μετατρέψετε τα κυβικά εκατοστά σε κυβικές ίντσες. Π.χ., 100 * <guibutton>Con</guibutton><guilabel>C9</guilabel><keycap>=</keycap> 6.10.</para>
+                                    <para>Διαιρέστε την τιμή στην οθόνη με αυτή τη σταθερά για να μετατρέψετε τις κυβικές ίντσες σε κυβικά εκατοστά. Π.χ., 6.10 / <guibutton>Con</guibutton><guilabel>C9</guilabel><keycap>=</keycap> 100.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </informaltable>
+      <para>Μπορείτε να αντικαταστήσετε τις προεπιλεγμένες σταθερές με δικές σας.</para>
+      <para>Για να αποθηκεύσετε μια νέα σταθερά ή να επεξεργαστείτε μία από τις υπάρχουσες, ακολουθήστε τα εξής βήματα:</para>
+      <orderedlist>
+        <listitem>
+           <para>Κάντε κλικ στο <guibutton>Con</guibutton> και μετά επιλέξτε <guilabel>Επεξεργασία σταθερών</guilabel> από το αναδυόμενο μενού.</para>
+        </listitem>
+        <listitem>
+      <para>Στο διάλογο <guilabel>Επεξεργασία σταθερών</guilabel>, επιλέξτε τη σταθερά που επιθυμείτε να αντικαταστήσετε ή να τροποποιήσετε.</para>
+        </listitem>
+        <listitem>
+      <para>Κάντε κλικ στο πεδίο Τιμή και εισάγετε τη νέα τιμή.</para>
+        </listitem>
+        <listitem>
+      <para>Κάντε κλικ στο πεδίο Περιγραφή και εισάγετε τη νέα περιγραφή.</para>
+        </listitem>
+        <listitem>
+      <para>Κάντε κλικ στο <guibutton>Εντάξει</guibutton> για να αποθηκεύσετε τις αλλαγές σας και να κλείσετε το διάλογο <guilabel>Επεξεργασία σταθερών</guilabel>.</para>
+        </listitem>
+      </orderedlist>
+    </sect3>
+    <sect3 id="gcalctool-edit-func"> 
+      <title>Χρήση συναρτήσεων</title> 
+      <para>Για να εμφανίσετε τις διαθέσιμες συναρτήσεις, κάντε κλικ στο <guibutton>Fun</guibutton>. Θα εμφανιστεί ένα αναδυόμενο μενού με τις προκαθορισμένες συναρτήσεις. Επιλέξτε μια συνάρτηση από το μενού για να την εκτελέσετε.</para>
+<para>Μπορείτε, επίσης, να χρησιμοποιήσετε τη συντόμευση πληκτρολογίου <keycap>F</keycap> συνοδευόμενη από έναν αριθμό, όπως στο παράδειγμα που ακολουθεί:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Συντόμευση πληκτρολογίου</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Λειτουργία</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>F</keycap> <keycap>3</keycap> </para></entry>
+              <entry><para>F3</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <para>Η εφαρμογή <application>gcalctool</application> δεν περιλαμβάνει προκαθορισμένες συναρτήσεις. Μπορείτε να αποθηκεύσετε μέχρι δέκα συναρτήσεις.</para>
+      <para>Για να αποθηκεύσετε μια νέα συνάρτηση ή να επεξεργαστείτε μία από τις υπάρχουσες, ακολουθήστε τα εξής βήματα:</para>
+      <orderedlist>
+        <listitem>
+           <para>Κάντε κλικ στο <guibutton>Fun</guibutton> και μετά επιλέξτε <guilabel>Επεξεργασία συναρτήσεων</guilabel> από το αναδυόμενο μενού.</para>
+        </listitem>
+        <listitem>
+      <para>Στο διάλογο <guilabel>Επεξεργασία συναρτήσεων</guilabel>, επιλέξτε μια κενή συνάρτηση ή τη συνάρτηση που επιθυμείτε να αντικαταστήσετε.</para>
+        </listitem>
+        <listitem>
+      <para>Κάντε κλικ στο πεδίο Τιμή και εισάγετε τη νέα εξίσωση. Μπορείτε να χρησιμοποιήσετε το "ans" για να αναφερθείτε στο αποτέλεσμα της προηγούμενης εξίσωσης και το "R5" για τη μνήμη 5, κτλ. Π.χ., πληκτρολογήστε <literal>(-R1+sqrt(R1^2-4*R0*R2))/(2*R0)</literal> για να υπολογίσετε μία ρίζα της δευτεροβάθμιας εξίσωσης R0*x^2 + R1*x + R2 = 0.</para>
+        </listitem>
+        <listitem>
+      <para>Κάντε κλικ στο πεδίο Περιγραφή και εισάγετε τη νέα περιγραφή. Π.χ., <literal>Λύση 2βάθμιας</literal>.</para>
+        </listitem>
+        <listitem>
+      <para>Κάντε κλικ στο <guibutton>Εντάξει</guibutton> για να αποθηκεύσετε τις αλλαγές σας και να κλείσετε το διάλογο <guilabel>Επεξεργασία συναρτήσεων</guilabel>.</para>
+        </listitem>
+      </orderedlist>
+    </sect3>
+    <sect3 id="gcalctool-misc-calc"> 
+      <title>Πραγματοποίηση άλλων επιστημονικών υπολογισμών</title> 
+      <para>Για να πραγματοποιήσετε άλλους επιστημονικούς υπολογισμούς, χρησιμοποιήστε τα κουμπιά που περιγράφονται στον <xref linkend="gcalctool-TBL-misc-calc"/>.</para>
+                <table id="gcalctool-TBL-misc-calc" frame="all">
+                  <title>Πραγματοποίηση άλλων επιστημονικών υπολογισμών</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Παράδειγμα</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                                                      <row valign="top">
+                             <entry><para>e στη δύναμη του <replaceable>x</replaceable></para> </entry>
+                             <entry><para>e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>Υπολογίζει την τιμή του <literal>e</literal> υψωμένου στη δύναμη της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>2 e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>7.39</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>10 στη δύναμη του <replaceable>x</replaceable></para> </entry>
+                             <entry><para>10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>Υπολογίζει την τιμή του 10 υψωμένου στη δύναμη της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>2 10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>100</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>2 στη δύναμη του <replaceable>x</replaceable></para> </entry>
+                             <entry><para>2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>Υπολογίζει την τιμή του 2 υψωμένου στη δύναμη της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>2 2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>4</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>x στη δύναμη του <replaceable>y</replaceable></para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>Υψώνει την τρέχουσα τιμή στην οθόνη στη δύναμη της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>2 <replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>16</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>x στην αντίστροφη δύναμη του <replaceable>y</replaceable></para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>Υψώνει την τρέχουσα τιμή στην οθόνη στην αντίστροφη δύναμη της τιμής που ακολουθεί.</para></entry>
+                             <entry><para>2 <replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>16</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Παραγοντικό του <replaceable>x</replaceable></para> </entry>
+                             <entry><para><guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para>Υπολογίζει το παραγοντικό της τρέχουσας τιμής στην οθόνη. Το παραγοντικό του <replaceable>x</replaceable> ισούται με <replaceable>x</replaceable>*(<replaceable>x</replaceable>-1)*(<replaceable>x</replaceable>-2)...*1. Αυτή η συνάρτηση ορίζεται μόνο για θετικούς ακέραιους.</para></entry>
+                             <entry><para>4 <guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para>24</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Υπόλοιπο διαίρεσης ακεραίων</para> </entry>
+                             <entry><para><guibutton>Mod</guibutton></para></entry>
+                             <entry><para>Διαιρεί τον ακέραιο που εμφανίζεται στην οθόνη με τον επόμενο ακέραιο που θα εισαχθεί, και εμφανίζει το υπόλοιπο της διαίρεσης.</para></entry>
+                             <entry><para>15 <guibutton>Mod</guibutton><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Γεννήτρια τυχαίων αριθμών</para> </entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>Παράγει έναν τυχαίο αριθμό μεταξύ 0.0 και 1.0 και τον εμφανίζει στην οθόνη.</para></entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>0.14</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    </sect2> 
+    <sect2 id="gcalctool-programming-mode">
+      <title>Πραγματοποίηση προγραμματιστικών υπολογισμών</title>
+      <para>Για να μεταβείτε στην Προγραμματιστική λειτουργία, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Προγραμματιστική</guimenuitem></menuchoice>.</para>
+    <para>Όταν επιλέγεται η Προγραμματιστική λειτουργία, εμφανίζεται το ακόλουθο γραφικό συστατικόπάνω από τα κουμπιά για τη Βασική και την Προχωρημένη λειτουργία.</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-programming"> 
+        <title>Κουμπιά Προγραμματιστικής λειτουργίας <application>gcalctool</application></title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_programming_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Εμφανίζει τα κουμπιά Προγραμματιστικής λειτουργίας <application>gcalctool</application>.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+    <sect3 id="gcalctool-num-base"> 
+      <title>Επιλογή αριθμητικής βάσης</title> 
+      <para>Για να επιλέξετε την αριθμητική βάση, επιλέξτε ένα από τα κουμπιά που περιγράφονται στον <xref linkend="gcalctool-TBL-num-base"/>.</para>
+                <table id="gcalctool-TBL-num-base" frame="all">
+                  <title>Επιλογή αριθμητικής βάσης</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Δυαδική βάση</para> </entry>
+                             <entry><para><guibutton>Bin</guibutton></para></entry>
+                             <entry><para>Ορίζει την αριθμητική βάση σε δυαδική, δηλαδή βάση 2.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Οκταδική βάση</para> </entry>
+                             <entry><para><guibutton>Oct</guibutton></para></entry>
+                             <entry><para>Ορίζει την αριθμητική βάση σε οκταδική, δηλαδή βάση 8.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Δεκαδική βάση</para> </entry>
+                             <entry><para><guibutton>Dec</guibutton></para></entry>
+                             <entry><para>Ορίζει την αριθμητική βάση σε δεκαδική, δηλαδή βάση 10. Η δεκαδική είναι η προεπιλεγμένη αριθμητική βάση. Όταν μεταβαίνετε από την Προγραμματιστική σε άλλη λειτουργία, το <application>gcalctool</application> επιλέγει αυτόματα τη δεκαδική αριθμητική βάση.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Δεκαεξαδική βάση</para> </entry>
+                             <entry><para><guibutton>Hex</guibutton></para></entry>
+                             <entry><para>Ορίζει την αριθμητική βάση σε δεκαεξαδική, δηλαδή βάση 16.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-word-length">
+      <title>Επιλογή μήκους λέξης</title>
+      <para>Το μήκος της λέξης μπορεί να τροποποιηθεί, αλλάζοντας τη συμπεριφορά των υπολογισμών κατά bit. Για να ορίσετε το μήκος λέξης, επιλέξτε ένα από τα κουμπιά που περιγράφονται στην <xref linkend="gcalctool-TBL-word-length"/>.</para>
+                <table id="gcalctool-TBL-word-length" frame="all">
+                  <title>Επιλογή μήκους λέξης</title>
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>λέξη 64 bit</para> </entry>
+                             <entry><para><guibutton>64 bit</guibutton></para></entry>
+                             <entry><para>Ορίζει το μήκος λέξης σε 64 bit. Τα 64 bit είναι το προεπιλεγμένο μήκος λέξης.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>λέξη 32 bit</para> </entry>
+                             <entry><para><guibutton>32 bit</guibutton></para></entry>
+                             <entry><para>Ορίζει το μήκος λέξης σε 32 bit.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>λέξη 16 bit</para> </entry>
+                             <entry><para><guibutton>16 bit</guibutton></para></entry>
+                             <entry><para>Ορίζει το μήκος λέξης σε 16 bit.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-calc-bit-manipulation-ext">
+      <title>Επεξεργασία bit ακεραίων</title>
+      <para>Αν η τρέχουσα τιμή στην οθόνη είναι ακέραια, τότε στον επεξεργαστή bit εμφανίζεται η ακέραια αυτή τιμή με τη μορφή bit, δηλαδή μιας ακολουθίας από 0 και 1. Κάνοντας κλικ σε οποιοδήποτε μεμονωμένο bit μπορείτε να εναλλάξετε την τιμή του. Στην οθόνη εμφανίζεται ο νέος αριθμός που προκύπτει κατ' αυτόν τον τρόπο.</para>
+    </sect3>
+    <sect3 id="gcalctool-logic-calc"> 
+      <title>Πραγματοποίηση υπολογισμών κατά bit</title> 
+      <para>Για να πραγματοποιήσετε υπολογισμούς κατά bit, χρησιμοποιήστε τα κουμπιά που περιγράφονται στον <xref linkend="gcalctool-TBL-logic-calc"/>.</para>
+                <table id="gcalctool-TBL-logic-calc" frame="all">
+                  <title>Πραγματοποίηση υπολογισμών κατά bit</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Παράδειγμα</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Bitwise OR</para> </entry>
+                             <entry><para><guibutton>OR</guibutton></para></entry>
+                             <entry><para>Εκτελεί την εντολή bitwise OR για την τρέχουσα τιμή στην οθόνη και τον επόμενο αριθμό που θα εισαχθεί.</para></entry>
+                             <entry><para>10001000 <guibutton>OR</guibutton> 00010001</para></entry>
+                             <entry><para>10011001</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Bitwise AND</para> </entry>
+                             <entry><para><guibutton>AND</guibutton></para></entry>
+                             <entry><para>Εκτελεί την εντολή bitwise AND για την τρέχουσα τιμή στην οθόνη και τον επόμενο αριθμό που θα εισαχθεί.</para></entry>
+                             <entry><para>10101010 <guibutton>AND</guibutton> 00110011</para></entry>
+                             <entry><para>100010</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Bitwise NOT</para> </entry>
+                             <entry><para><guibutton>NOT</guibutton></para></entry>
+                             <entry><para>Εκτελεί την εντολή bitwise NOT για την τρέχουσα τιμή στην οθόνη, χρησιμοποιώντας το μήκος λέξης που είχε οριστεί στην <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para><guibutton>NOT</guibutton> 1357ACE</para></entry>
+                             <entry><para>FECA8531</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Bitwise XOR</para> </entry>
+                             <entry><para><guibutton>XOR</guibutton></para></entry>
+                             <entry><para>Εκτελεί την εντολή bitwise XOR για την τρέχουσα τιμή στην οθόνη και τον επόμενο αριθμό που θα εισαχθεί.</para></entry>
+                             <entry><para>1100 <guibutton>XOR</guibutton> 1010</para></entry>
+                             <entry><para>110</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Bitwise XNOR</para> </entry>
+                             <entry><para><guibutton>XNOR</guibutton></para></entry>
+                             <entry><para>Εκτελεί την εντολή bitwise XNOR για την τρέχουσα τιμή στην οθόνη και τον επόμενο αριθμό που θα εισαχθεί.</para></entry>
+                             <entry><para>1100 <guibutton>XNOR</guibutton> 1010</para></entry>
+                             <entry><para>1001</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-num-manip"> 
+      <title>Επεξεργασία δυαδικών αριθμών</title> 
+      <para>Για να επεξεργαστείτε δυαδικούς αριθμούς, χρησιμοποιήστε τα κουμπιά που περιγράφονται στον <xref linkend="gcalctool-TBL-num-manip"/>.</para>
+                <table id="gcalctool-TBL-num-manip" frame="all">
+                  <title>Επεξεργασία δυαδικών αριθμών</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Παράδειγμα</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Αριστερή μετατόπιση κατά <replaceable>n</replaceable></para> </entry>
+                             <entry><para><guibutton>&lt;</guibutton></para></entry>
+                             <entry><para>Μετατοπίζει προς τα αριστερά, κατά ορισμένο αριθμό θέσεων, την τρέχουσα τιμή στην οθόνη. Κάντε κλικ στο <guibutton>&lt;</guibutton> και μετά επιλέξτε τον κατάλληλο αριθμό θέσεων μετατόπισης από το αναδυόμενο μενού. Ο αριθμός μπορεί να μετατοπιστεί μέχρι και 15 θέσεις στα αριστερά.</para></entry>
+                             <entry><para>111 <guibutton>&lt;</guibutton><guilabel>1 θέση</guilabel></para></entry>
+                             <entry><para>1110</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Δεξιά μετατόπιση κατά <replaceable>n</replaceable></para> </entry>
+                             <entry><para><guibutton>&gt;</guibutton></para></entry>
+                             <entry><para>Μετατοπίζει προς τα δεξιά, κατά ορισμένο αριθμό θέσεων, την τρέχουσα τιμή στην οθόνη. Κάντε κλικ στο <guibutton>&gt;</guibutton> και μετά επιλέξτε τον κατάλληλο αριθμό θέσεων μετατόπισης από το αναδυόμενο μενού. Ο αριθμός μπορεί να μετατοπιστεί μέχρι και 15 θέσεις στα δεξιά.</para></entry>
+                             <entry><para>1011 <guibutton>&gt;</guibutton><guilabel>1 θέση</guilabel></para></entry>
+                             <entry><para>101</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Περικοπή αριθμών</para> </entry>
+                             <entry><para><guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>Περικόπτει την τρέχουσα τιμή στην οθόνη στο μήκος λέξης που είχε οριστεί στην <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>FFFFFFFFFF <guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>FFFFFFFF</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Συμπλήρωμα ως προς 1</para> </entry>
+                             <entry><para><guibutton>Συμπ1</guibutton></para></entry>
+                             <entry><para>Υπολογίζει το συμπλήρωμα ως προς ένα της τρέχουσας τιμής στην οθόνη, χρησιμοποιώντας το μήκος λέξης που είχε οριστεί στο <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>D723 <guibutton>Συμπ1</guibutton></para></entry>
+                             <entry><para>FFFF28DC</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Συμπλήρωμα ως προς 2</para> </entry>
+                             <entry><para><guibutton>Συμπ2</guibutton></para></entry>
+                             <entry><para>Υπολογίζει το συμπλήρωμα ως προς δύο της τρέχουσας τιμής στην οθόνη, χρησιμοποιώντας το μήκος λέξης που είχε οριστεί στο <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>D723 <guibutton>Συμπ2</guibutton></para></entry>
+                             <entry><para>FFFF28DD</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Αν χρησιμοποιείτε συντομεύσεις πληκτρολογίου, μπορείτε να χρησιμοποιήσετε το πληκτρολόγιο για να επιλέξετε τον αριθμό θέσεων για τη μετατόπιση, όπως φαίνεται στα παρακάτω παραδείγματα:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Συντόμευση πληκτρολογίου</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Περιγραφή</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>&lt;</keycap> <keycap>4</keycap></para></entry>
+              <entry><para>Μετατοπίζει την τρέχουσα δυαδική τιμή στην οθόνη 4 θέσεις στα αριστερά.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>&gt;</keycap> <keycap>4</keycap></para></entry>
+              <entry><para>Μετατοπίζει την τρέχουσα δυαδική τιμή στην οθόνη 4 θέσεις στα δεξιά.</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+
+    </sect3>
+        <sect3 id="gcalctool-misc-prog">
+      <title>Πραγματοποίηση άλλων προγραμματιστικών υπολογισμών</title> 
+      <para>Για να πραγματοποιήσετε άλλους υπολογιστικούς υπολογισμούς, χρησιμοποιήστε τα κουμπιά που περιγράφονται στον <xref linkend="gcalctool-TBL-misc-prog"/>.</para>
+                <table id="gcalctool-TBL-misc-prog" frame="all">
+                  <title>Πραγματοποίηση άλλων προγραμματιστικών υπολογισμών</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Περιγραφή</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Παράδειγμα</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Αποτέλεσμα</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Δεκαεξαδικά αριθμητικά</para> </entry>
+                             <entry><para>Από το <guibutton>A</guibutton> έως και το <guibutton>F</guibutton></para></entry>
+                             <entry><para>Αυτά τα αριθμητικά είναι διαθέσιμα μόνο όταν χρησιμοποιείται δεκαεξαδική βάση.</para></entry>
+                             <entry><para><guibutton>B</guibutton></para></entry>
+                             <entry><para>B</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+         </sect3>
+    </sect2>
+<!-- ============= Undo and Redo ======================== -->
+  <sect2 id="gcalctool-undo-redo">
+    <title>Ακύρωση και αναίρεση</title>
+                <para>Για να αναιρέσετε την προηγούμενή σας ενέργεια, επιλέξτε <menuchoice><guimenu>Επεξεργασία</guimenu><guimenuitem>Αναίρεση</guimenuitem></menuchoice>. Μπορείτε να αναιρέσετε μέχρι και 15 προηγούμενες ενέργειες.</para>
+                <para>Για να ακυρώσετε την αναίρεση προηγούμενης ενέργειας, επιλέξτε <menuchoice><guimenu>Επεξεργασία</guimenu><guimenuitem>Ακύρωση αναίρεσης</guimenuitem></menuchoice>. Μπορείτε να ακυρώσετε μέχρι και 15 προηγούμενες αναιρέσεις.</para>
+  </sect2>
+<!-- ============= Quitting ============================= -->
+  <sect2 id="gcalctool-quit"> 
+    <title>Έξοδος</title> 
+                <para>Για να τερματίσετε το <application>gcalctool</application>, επιλέξτε <menuchoice><guimenu>Αριθμομηχανή</guimenu><guimenuitem>Έξοδος</guimenuitem></menuchoice>.</para>
+                <para>Όταν τερματίζετε το <application>gcalctool</application>, οι τρέχουσες τιμές των παρακάτω ρυθμίσεων αποθηκεύονται και εφαρμόζονται αυτόματα την επόμενη φορά που θα χρησιμοποιήσετε το <application>gcalctool</application>:</para>
+                  <itemizedlist>
+                    <listitem><para>Λειτουργία: <link linkend="gcalctool-basic-mode">Βασική</link>, <link linkend="gcalctool-advanced-mode">Προχωρημένη</link>, <link linkend="gcalctool-financial-mode">Εμπορική</link> ή <link linkend="gcalctool-scientific-mode">Επιστημονική</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-set-acc">Ακρίβεια</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-mem-reg">Παράθυρο μνημών</link>: Αν εμφανίζεται ή όχι, καθώς και τα περιεχόμενα κάθε μεμονωμένης μνήμης</para></listitem>
+                    <listitem><para><link linkend="gcalctool-num-base">Αριθμητική βάση</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-display-type">Μορφή εμφάνισης</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-trig-type">Τριγωνομετρική μονάδα μέτρησης</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-set-acc">Εμφάνιση μηδενικών στο τέλος</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-calc-functions-separator">Εμφάνιση διαχωριστικού χιλιάδων</link></para></listitem>
+                  </itemizedlist>
+  </sect2>
+  </sect1>
+<!-- ============= Technical Information ============================= -->
+  <sect1 id="gcalctool-tech-info">
+         <title>Τεχνικές πληροφορίες</title>
+
+         <sect2 id="gcalctool-recognize-error">
+                <title>Εμφάνιση σφαλμάτων</title>
+                <para>Αν προσπαθήσετε να κάνετε μη έγκυρο υπολογισμό, το <application>gcalctool</application> θα σας προειδοποιήσει για σφάλμα, με τους εξής τρόπους: <itemizedlist>
+<listitem><para>Εμφάνιση της λέξης <literal>Σφάλμα</literal> στην οθόνη.</para></listitem>
+<listitem><para>Εμφάνιση μηνύματος σφάλματος στη γραμμή κατάστασης.</para></listitem>
+<listitem><para>Απενεργοποίηση όλων των κουμπιών της αριθμομηχανής, εκτός από το <guibutton>Clr</guibutton>.</para></listitem>
+<listitem><para>Απενεργοποίηση όλων των επιλογών της αριθμομηχανής.</para></listitem>
+<listitem><para>Απενεργοποίηση όλων των στοιχείων μενού της αριθμομηχανής, εκτός από τα <menuchoice><guimenu>Αριθμομηχανή</guimenu><guimenuitem>Έξοδος</guimenuitem></menuchoice> και <menuchoice><guimenu>Βοήθεια</guimenu><guimenuitem>Περιεχόμενα</guimenuitem></menuchoice>.</para></listitem>
+</itemizedlist></para>
+<para>Για να κάνετε εκκαθάριση του σφάλματος, κάντε κλικ στο <guibutton>Clr</guibutton> ή πληκτρολογήστε<keycombo><keycap>Shift</keycap><keycap>Delete</keycap></keycombo>.</para>
+         </sect2>
+
+         <sect2 id="gcalctool-change-modes">
+                <title>Αλλαγή λειτουργιών</title>
+                <para>Αν ο χρήστης προσπαθήσει να αλλάξει λειτουργία, ενώ στην οθόνη εμφανίζεται ένας ημιτελής υπολογισμός, προβάλλεται ένας διάλογος προειδοποίησης, που ενημερώνει το χρήστη ότι οι τρέχοντες υπολογισμοί θα καθαριστούν και ότι θα επιλεγεί ξανά η δεκαδική αριθμητική βάση.</para>
+                <para>Στο διάλογο αυτό υπάρχει ένα κουτάκι επιλογής. Αν το σημειώσετε, ο διάλογος δεν θα εμφανιστεί ξανά.</para>
+                <para>Αν ο χρήστης πατήσει το κουμπί <guibutton>Ακύρωση</guibutton>, η αλλαγή λειτουργίας ακυρώνεται. Αν πατήσει το κουμπί <guibutton>Αλλαγή λειτουργίας</guibutton>, τότε η λειτουργία αλλάζει, κάτι που έχει τις εξής επιπτώσεις: <itemizedlist>
+<listitem><para>Καθαρίζει την οθόνη</para></listitem>
+   <listitem><para>Επιλέγει τη δεκαδική αριθμητική βάση.</para></listitem>
+   <listitem><para>Επιλέγει την εμφάνιση σταθερής υποδιαστολής.</para></listitem>
+   <listitem><para>Ορίζει την ακρίβεια σε 9 ψηφία μετά την υποδιαστολή.</para></listitem>
+   <listitem><para>Παύει να εμφανίζει το διαχωριστικό των χιλιάδων.</para></listitem>
+   <listitem><para>Παύει να εμφανίζει μηδενικά μετά την υποδιαστολή στο τέλος του αριθμού.</para></listitem>
+   <listitem><para>Κλείνει το παράθυρο των μνημών, αν η νέα λειτουργία είναι η Βασική.</para></listitem>
+</itemizedlist></para>
+         </sect2>
+
+         <sect2 id="gcalctool-changing-display-area">
+                <title>Αλλαγές στην οθόνη</title>
+                <para>Ο χρήστης μπορεί να χρησιμοποιεί το ποντίκι για να επιλέγει και να επεξεργάζεται ό,τι εμφανίζεται στην οθόνη.</para>
+                <para>Ισχύουν όλες οι συνήθεις συντομεύσεις πληκτρολογίου, και επιπλέον οι εξής:</para>
+         </sect2>
+
+  </sect1>
+<!-- ============= Keyboard Shortcuts ============================= -->
+  <sect1 id="gcalctool-keyboard-shortcut"> 
+    <title>Συνοπτικός οδηγός: Συντομεύσεις πληκτρολογίου</title> 
+                <para>Οι <xref linkend="gcalctool-TBL-keyboard-shortcut-button"/>, <xref linkend="gcalctool-TBL-keyboard-shortcut-sci-options"/> και <xref linkend="gcalctool-TBL-keyboard-shortcut-menu"/> παρέχουν ένα συνοπτικό οδηγό όλων των συντομεύσεων πληκτρολογίου του <application>gcalctool</application>.</para>
+                <para>Όποτε χρησιμοποιείτε συντόμευση πληκτρολογίου για κουμπιά της αριθμομηχανής που περιλαμβάνουν το δικό τους μενού, εμφανίζεται το μενού αυτό. Στη συνέχεια, για να επιλέξετε ένα στοιχείο του μενού, μπορείτε να χρησιμοποιήσετε τα βέλη ή τη συντόμευση του συγκεκριμένου στοιχείου.</para>
+                <table id="gcalctool-TBL-keyboard-shortcut-button" frame="all">
+                  <title>Συνοπτικός οδηγός των συντομεύσεων πληκτρολογίου των κουμπιών του <application>gcalctool</application></title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Συντόμευση πληκτρολογίου</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Κουμπί</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Βλέπε</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Από <keycap>0</keycap> έως και <keycap>9</keycap></para></entry>
+                             <entry><para>Από το <guibutton>0</guibutton> εως και το <guibutton>9</guibutton></para></entry>
+                             <entry><para>Αριθμητικά ψηφία</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>A</keycap> </para></entry>
+                             <entry><para><guibutton>Acc</guibutton> </para></entry>
+                             <entry><para>Ακρίβεια</para> </entry>
+                             <entry><para><xref linkend="gcalctool-set-acc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>a</keycap> </para></entry>
+                             <entry><para><guibutton>A</guibutton> </para></entry>
+                             <entry><para>Δεκαεξαδικά αριθμητικά</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>b</keycap> </para></entry>
+                             <entry><para><guibutton>B</guibutton> </para></entry>
+                             <entry><para>Δεκαεξαδικά αριθμητικά</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>C</keycap></para></entry>
+                             <entry><para><guibutton>+/-</guibutton></para></entry>
+                             <entry><para>Αλλαγή προσήμου</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>c</keycap> </para></entry>
+                             <entry><para><guibutton>C</guibutton> </para></entry>
+                             <entry><para>Δεκαεξαδικά αριθμητικά</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>D</keycap></para></entry>
+                             <entry><para><guibutton>Ddb</guibutton></para></entry>
+                             <entry><para>Φθίνουσα απόσβεση διπλάσιου ρυθμού</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>d</keycap> </para></entry>
+                             <entry><para><guibutton>D</guibutton> </para></entry>
+                             <entry><para>Δεκαεξαδικά αριθμητικά</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>E</keycap> </para></entry>
+                             <entry><para><guibutton>Exp</guibutton> </para></entry>
+                             <entry><para>Εκθετικός αριθμός</para> </entry>
+                             <entry><para><xref linkend="gcalctool-enter-exp"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>e</keycap> </para></entry>
+                             <entry><para><guibutton>E</guibutton> </para></entry>
+                             <entry><para>Δεκαεξαδικά αριθμητικά</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>F</keycap> </para></entry>
+                             <entry><para><guibutton>Fun</guibutton> </para></entry>
+                             <entry><para>Λειτουργία</para> </entry>
+                             <entry><para><xref linkend="gcalctool-edit-func"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>f</keycap> </para></entry>
+                             <entry><para><guibutton>F</guibutton> </para></entry>
+                             <entry><para>Δεκαεξαδικά αριθμητικά</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>G</keycap></para></entry>
+                             <entry><para>10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>10 στη δύναμη του <replaceable>x</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>g</keycap></para></entry>
+                             <entry><para><guibutton>Log</guibutton></para></entry>
+                             <entry><para>Κοινός λογάριθμος με βάση το 10</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>H</keycap></para></entry>
+                             <entry><para>2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>2 στη δύναμη του <replaceable>x</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>h</keycap></para></entry>
+                             <entry><para>Log<subscript>2</subscript></para></entry>
+                             <entry><para>Λογάριθμος με βάση το 2</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>I</keycap></para></entry>
+                             <entry><para><guibutton>Gpm</guibutton></para></entry>
+                             <entry><para>Μικτό περιθώριο κέρδους</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>i</keycap></para></entry>
+                             <entry><para><guibutton>Int</guibutton></para></entry>
+                             <entry><para>Ακέραιο μέρος</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>J</keycap></para></entry>
+                             <entry><para>Cos<superscript>-1</superscript></para></entry>
+                             <entry><para>Αντίστροφο συνημίτονο</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>j</keycap></para></entry>
+                             <entry><para><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>Συνημίτονο</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>K</keycap></para></entry>
+                             <entry><para>Sin<superscript>-1</superscript></para></entry>
+                             <entry><para>Αντίστροφο ημίτονο</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>k</keycap></para></entry>
+                             <entry><para><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>Ημίτονο</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>l</keycap></para></entry>
+                             <entry><para><guibutton>Sln</guibutton></para></entry>
+                             <entry><para>Σταθερή απόσβεση</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>M</keycap></para></entry>
+                             <entry><para><guibutton>Mod</guibutton></para></entry>
+                             <entry><para>Υπόλοιπο διαίρεσης ακεραίων</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>m</keycap></para></entry>
+                             <entry><para><guibutton>Ctrm</guibutton></para></entry>
+                             <entry><para>Διάρκεια ανατοκισμού</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>N</keycap></para></entry>
+                             <entry><para>e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>e στη δύναμη του <replaceable>x</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>n</keycap></para></entry>
+                             <entry><para><guibutton>Ln</guibutton></para></entry>
+                             <entry><para>Φυσικός λογάριθμος</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                                                   <row valign="top">
+                                                         <entry><para><keycap>O</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>Το x στην αντίστροφη δύναμη του <replaceable>y</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>o</keycap> ή <keycap>^</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>x στη δύναμη του <replaceable>y</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>P</keycap></para></entry>
+                             <entry><para><guibutton>Pmt</guibutton></para></entry>
+                             <entry><para>Περιοδική πληρωμή </para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>p</keycap></para></entry>
+                             <entry><para><guibutton>Pv</guibutton></para></entry>
+                             <entry><para>Τρέχουσα αξία</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>R</keycap></para></entry>
+                             <entry><para><guibutton>ΜRcl</guibutton></para></entry>
+                             <entry><para>Ανάκληση τιμής από μνήμη</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>r</keycap></para></entry>
+                             <entry><para><guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>Αντίστροφο</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>S</keycap></para></entry>
+                             <entry><para><guibutton>ΜSto</guibutton></para></entry>
+                             <entry><para>Αποθήκευση τιμής σε μνήμη</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>s</keycap></para></entry>
+                             <entry><para><guibutton>Sqrt</guibutton></para></entry>
+                             <entry><para>Τετραγωνική ρίζα</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>T</keycap></para></entry>
+                             <entry><para><guibutton>Rate</guibutton></para></entry>
+                             <entry><para>Περιοδικό επιτόκιο</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>t</keycap></para></entry>
+                             <entry><para><guibutton>Διάρκεια</guibutton></para></entry>
+                             <entry><para>Περίοδος πληρωμής</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>u</keycap></para></entry>
+                             <entry><para><guibutton>Abs</guibutton></para></entry>
+                             <entry><para>Απόλυτη τιμή</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>v</keycap></para></entry>
+                             <entry><para><guibutton>Fv</guibutton></para></entry>
+                             <entry><para>Μελλοντική αξία</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>W</keycap></para></entry>
+                             <entry><para>Tan<superscript>-1</superscript></para></entry>
+                             <entry><para>Αντίστροφη εφαπτομένη</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>w</keycap></para></entry>
+                             <entry><para><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>Tan</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>X</keycap></para></entry>
+                             <entry><para><guibutton>ΜExch</guibutton></para></entry>
+                             <entry><para>Ανταλλαγή τιμής μνήμης με εμφανιζόμενη τιμή</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>x</keycap></para></entry>
+                             <entry><para><guibutton>Xor</guibutton></para></entry>
+                             <entry><para>Bitwise XOR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Y</keycap></para></entry>
+                             <entry><para><guibutton>Syd</guibutton></para></entry>
+                             <entry><para>Απόσβεση με συντελεστή τα έτη ζωής</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Z</keycap></para></entry>
+                             <entry><para><guibutton>Συμπ2</guibutton></para></entry>
+                             <entry><para>Συμπλήρωμα ως προς 2</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>z</keycap></para></entry>
+                             <entry><para><guibutton>Συμπ1</guibutton></para></entry>
+                             <entry><para>Συμπλήρωμα ως προς 1</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>!</keycap></para></entry>
+                             <entry><para><guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para>Παραγοντικό του <replaceable>x</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>#</keycap> </para></entry>
+                             <entry><para><guibutton>Con</guibutton> </para></entry>
+                             <entry><para>Σταθερή τιμή</para> </entry>
+                             <entry><para><xref linkend="gcalctool-edit-const"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>%</keycap></para></entry>
+                             <entry><para><guibutton>%</guibutton></para></entry>
+                             <entry><para>Ποσοστό</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&amp;</keycap></para></entry>
+                             <entry><para><guibutton>And</guibutton></para></entry>
+                             <entry><para>Bitwise AND</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>(</keycap> και <keycap>)</keycap></para></entry>
+                             <entry><para><guibutton>(</guibutton> και <guibutton>)</guibutton></para></entry>
+                             <entry><para>Παρενθέσεις</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>*</keycap></para></entry>
+                             <entry><para><guibutton>*</guibutton></para></entry>
+                             <entry><para>Πολλαπλασιασμός</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>+</keycap></para></entry>
+                             <entry><para><guibutton>+</guibutton></para></entry>
+                             <entry><para>Πρόσθεση</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>-</keycap></para></entry>
+                             <entry><para><guibutton>-</guibutton></para></entry>
+                             <entry><para>Αφαίρεση</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>.</keycap></para></entry>
+                             <entry><para><guibutton>.</guibutton></para></entry>
+                             <entry><para>Υποδιαστολή</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>/</keycap></para></entry>
+                             <entry><para><guibutton>/</guibutton></para></entry>
+                             <entry><para>Διαίρεση</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>:</keycap></para></entry>
+                             <entry><para><guibutton>Frac</guibutton></para></entry>
+                             <entry><para>Κλασματικό μέρος</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&lt;</keycap></para></entry>
+                             <entry><para><guibutton>&lt;</guibutton></para></entry>
+                             <entry><para>Αριστερή μετατόπιση κατά <replaceable>n</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>=</keycap> ή <keycap>Return</keycap></para></entry>
+                             <entry><para><guibutton>=</guibutton></para></entry>
+                             <entry><para>Υπολογισμός αποτελέσματος</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&gt;</keycap></para></entry>
+                             <entry><para><guibutton>&gt;</guibutton></para></entry>
+                             <entry><para>Δεξιά μετατόπιση κατά <replaceable>n</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>?</keycap></para></entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>Γεννήτρια τυχαίων αριθμών</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>@</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>Τετράγωνο</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>{</keycap></para></entry>
+                             <entry><para><guibutton>Xnor</guibutton></para></entry>
+                             <entry><para>Bitwise XNOR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>[</keycap></para></entry>
+                             <entry><para><guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>Περικόπτει τον αριθμό</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>|</keycap></para></entry>
+                             <entry><para><guibutton>Or</guibutton></para></entry>
+                             <entry><para>Bitwise OR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>~</keycap></para></entry>
+                             <entry><para><guibutton>Not</guibutton></para></entry>
+                             <entry><para>Bitwise NOT</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Backspace</keycap></para></entry>
+                             <entry><para><guibutton>Bksp</guibutton></para></entry>
+                             <entry><para>Backspace</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Esc</keycap> ή</para>
+                                    <para><keycombo><keycap>Ctrl</keycap><keycap>Backspace</keycap></keycombo></para></entry>
+                             <entry><para><guibutton>CE</guibutton></para></entry>
+                             <entry><para>Εκκαθάριση καταχώρησης</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Shift</keycap><keycap>Delete</keycap></keycombo></para></entry>
+                             <entry><para><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>Εκκαθάριση</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <table id="gcalctool-TBL-keyboard-shortcut-sci-options" frame="all">
+                  <title>Συνοπτικός οδηγός των συντομεύσεων πληκτρολογίου των επιλογών της Επιστημονικής λειτουργίας του <application>gcalctool</application></title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Συντόμευση πληκτρολογίου</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Επιλογή</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Βλέπε</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>1</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>16 bit</guilabel></para></entry>
+                             <entry><para>Ορισμός του μήκους λέξης στα 16 bit.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>3</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>32 bit</guilabel></para></entry>
+                             <entry><para>Ορισμός του μήκους λέξης στα 32 bit.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>6</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>64 bit</guilabel></para></entry>
+                             <entry><para>Ορισμός του μήκους λέξης στα 64 bit.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>a</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Βαθμοί</guilabel></para></entry>
+                             <entry><para>Επιλογή βαθμών ως τριγωνομετρικής μονάδας μέτρησης.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>b</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Bin</guilabel></para></entry>
+                             <entry><para>Επιλογή δυαδικής αριθμητικής βάσης.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>d</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Dec</guilabel></para></entry>
+                             <entry><para>Επιλογή δεκαδικής αριθμητικής βάσης.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>f</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Fix</guilabel></para></entry>
+                             <entry><para>Επιλογή εμφάνισης σταθερής υποδιαστολής.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>g</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Μοίρες</guilabel></para></entry>
+                             <entry><para>Επιλογή μοιρών ως τριγωνομετρικής μονάδας μέτρησης.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>i</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Inv</guilabel></para></entry>
+                             <entry><para>Επιλογή αντίστροφων τριγωνομετρικών συναρτήσεων.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-options"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>n</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Eng</guilabel></para></entry>
+                             <entry><para>Επιλογή τεχνολογικής μορφής εμφάνισης.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>o</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Oct</guilabel></para></entry>
+                             <entry><para>Επιλογή οκταδικής αριθμητικής βάσης.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>r</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Ακτίνια</guilabel></para></entry>
+                             <entry><para>Επιλογή ακτινίων ως τριγωνομετρικής μονάδας μέτρησης.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>s</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Sci</guilabel></para></entry>
+                             <entry><para>Επιλογή επιστημονικής μορφής εμφάνισης.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>x</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Hex</guilabel></para></entry>
+                             <entry><para>Επιλογή δεκαεξαδικής αριθμητικής βάσης.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>y</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Hyp</guilabel></para></entry>
+                             <entry><para>Επιλογή υπερβολικών τριγωνομετρικών συναρτήσεων.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-options"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <table id="gcalctool-TBL-keyboard-shortcut-menu" frame="all">
+                  <title>Συνοπτικός οδηγός των συντομεύσεων πληκτρολογίου των στοιχείων μενού του <application>gcalctool</application></title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Συντόμευση πληκτρολογίου</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Στοιχείο Μενού</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Λειτουργία</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Βλέπε</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>b</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Προβολή</guimenu> <guimenuitem>Βασική</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Μετάβαση στη Βασική λειτουργία</para> </entry>
+                             <entry><para><xref linkend="gcalctool-basic-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>c</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Επεξεργασία</guimenu> <guimenuitem>Αντιγραφή</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Αντιγραφή στο πρόχειρο της τρέχουσας τιμής στην οθόνη</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>f</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Προβολή</guimenu> <guimenuitem>Εμπορική</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Μετάβαση στην Εμπορική λειτουργία</para> </entry>
+                             <entry><para><xref linkend="gcalctool-financial-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>h</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Βοήθεια</guimenu> <guimenuitem>Περιεχόμενα</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Εμφάνιση της διαδικτυακής βοήθειας του <application>gcalctool</application></para> </entry>
+                             <entry><para><xref linkend="gcalctool-intro"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>i</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Επεξεργασία</guimenu> <guimenuitem>Εισαγωγή τιμής ASCII</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Εμφάνιση του διαλόγου <guilabel>Εισαγωγή τιμής ASCII</guilabel></para> </entry>
+                             <entry><para><xref linkend="gcalctool-ins-ascii"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>k</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Προβολή</guimenu> <guimenuitem>Εμφάνιση διαχωριστικού χιλιάδων</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Εμφάνιση διαχωριστικού χιλιάδων</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions-separator"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>m</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Προβολή</guimenu> <guimenuitem>Μνήμες</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Εμφάνιση του παραθύρου των <guilabel>Μνημών</guilabel></para> </entry>
+                             <entry><para><xref linkend="gcalctool-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>p</keycap></keycombo></para></entry>
+                                                         <entry><para> <menuchoice> <guimenu>Προβολή</guimenu> <guimenuitem>Προγραμματιστική</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Μετάβαση στην προγραμματιστική λειτουργία</para> </entry>
+                             <entry><para><xref linkend="gcalctool-programming-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>q</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Αριθμομηχανή</guimenu> <guimenuitem>Έξοδος</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Έξοδος από την εφαρμογή <application>gcalctool</application></para> </entry>
+                             <entry><para><xref linkend="gcalctool-quit"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>s</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Προβολή</guimenu> <guimenuitem>Επιστημονική</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Μετάβαση στην Επιστημονική λειτουργία</para> </entry>
+                             <entry><para><xref linkend="gcalctool-scientific-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>t</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Προβολή</guimenu> <guimenuitem>Εμφάνιση μηδενικών στο τέλος</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Εμφάνιση μηδενικών στο τέλος</para> </entry>
+                             <entry><para><xref linkend="gcalctool-set-acc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>v</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Επεξεργασία</guimenu> <guimenuitem>Επικόλληση</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Επικόλληση της τρέχουσας τιμής του προχείρου στην οθόνη</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>z</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Επεξεργασία</guimenu> <guimenuitem>Αναίρεση</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Αναίρεση προηγούμενης ενέργειας</para> </entry>
+                             <entry><para><xref linkend="gcalctool-undo-redo"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>z</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Επεξεργασία</guimenu> <guimenuitem>Ακύρωση αναίρεσης</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Ακύρωση της αναίρεσης μιας ενέργειας</para> </entry>
+                             <entry><para><xref linkend="gcalctool-undo-redo"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+  </sect1>
+</article>

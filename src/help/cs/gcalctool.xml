@@ -1,0 +1,2715 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "5.5.37">
+<!ENTITY manrevision "2.9">
+<!ENTITY date "March 2005">
+<!ENTITY app "<application>gcalctool</application>">
+<!ENTITY appname "Calculator">
+<!ENTITY ldquo "&#147;">
+<!-- Left Double Quote --><!ENTITY rdquo "&#148;">
+<!-- Right Double Quote -->]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="cs">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Příručka k aplikaci <application>gcalctool</application></title>       
+
+    <abstract role="description">
+      <para>gcalctool je kalkulačka pro GNOME. Umí pracovat v základním, pokročilém, finančním a vědeckém režimu a používá balíčky pro práci s různou přesností, aby se zajistila vysoká správnost výsledků.</para>
+    </abstract>
+
+    <copyright> 
+      <year>2003</year> 
+      <year>2004</year> 
+      <year>2005</year>
+      <holder>Sun Microsystems</holder> 
+    </copyright><copyright><year>2009.</year><holder>Marek Černocký (marek@manet.cz)</holder></copyright><copyright><year>2009.</year><holder>Lucas Lommer (llommer@svn.gnome.org)</holder></copyright> 
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+   -->
+    <publisher role="maintainer"> 
+      <publishername>Dokumentační projekt GNOME</publishername> 
+    </publisher> 
+
+     <legalnotice id="legalnotice">
+	<para>Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU Free Documentation License, verze 1.1 nebo jakékoli další verze vydané nadací Free Software Foundation; bez neměnných oddílů, bez textů předních desek a bez textů zadních desek. Kopie této licence je zahrnuta v oddílu jménem <ulink type="help" url="ghelp:fdl">GNU Free Documentation License</ulink> nebo v souboru COPYING-DOCS dodávaném s touto příručkou.</para>
+         <para>Tato příručka je součástí kolekce příruček GNOME, distribuovaných pod licencí GNU FDL. Pokud chcete tento dokument šířit odděleně od kolekce, musíte přiložit kopii licence dle popisu v sekci 6 dané licence.</para>
+
+	<para>Mnoho užívaných jmen určených k zviditelnění produktů nebo služeb jsou ochranné známky. Na místech, kde jsou tato jména v dokumentaci užita a členové Dokumentačního projektu GNOME jsou si vědomi skutečnosti, že se jedná o ochrannou známku, je takové jméno psáno velkými písmeny celé nebo s velkým písmenem na začátku.</para>
+
+	<para>DOKUMENT A JEHO UPRAVENÉ VERZE JSOU ŠÍŘENY V SOULADU SE ZNĚNÍM LICENCE GNU FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <orderedlist>
+		<listitem>
+		  <para>DOKUMENT JE POSKYTOVÁN V PODOBĚ „JAK JE“ BEZ ZÁRUKY V JAKÉKOLIV PODOBĚ, NEPOSKYTUJÍ SE ANI ODVOZENÉ ZÁRUKY, ZÁRUKY, ŽE DOKUMENT, NEBO JEHO UPRAVENÁ VERZE, JE BEZCHYBNÝ NEBO ZÁRUKY PRODEJNOSTI, VHODNOSTI PRO URČITÝ ÚČEL NEBO NEPORUŠENOSTI. RIZIKO NEKVALITY, NEPŘESNOSTI A ŠPATNÉHO PROVEDENÍ DOKUMENTU, NEBO JEHO UPRAVENÉ VERZE, LEŽÍ NA VÁS. POKUD KVŮLI TOMUTO DOKUMENTU, NEBO JEHO UPRAVENÉ VERZI, NASTANE PROBLÉM, VY (NIKOLIV PŮVODNÍ AUTOR NEBO JAKÝKOLIV PŘISPĚVATEL) PŘEBÍRÁTE JAKÉKOLIV NÁKLADY ZA NUTNÉ ÚPRAVY, OPRAVY ČI SLUŽBY. TOTO PROHLÁŠENÍ O ZÁRUCE PŘEDSTAVUJE ZÁKLADNÍ SOUČÁST TÉTO LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ, PODLE TÉTO DOHODY, POVOLENO UŽÍVÁNÍ ANI ÚPRAVY TOHOTO DOKUMENTU; DÁLE</para>
+		</listitem>
+		<listitem>
+		  <para>ZA ŽÁDNÝCH OKOLNOSTÍ A ŽÁDNÝCH PRÁVNÍCH PŘEDPOKLADŮ, AŤ SE JEDNÁ O PŘEČIN (VČETNĚ NEDBALOSTNÍCH), SMLOUVU NEBO JINÉ, NENÍ AUTOR, PŮVODNÍ PISATEL, KTERÝKOLIV PŘISPĚVATEL NEBO KTERÝKOLIV DISTRIBUTOR TOHOTO DOKUMENTU NEBO UPRAVENÉ VERZE DOKUMENTU NEBO KTERÝKOLIV DODAVATEL NĚKTERÉ Z TĚCHTO STRAN ODPOVĚDNÝ NĚJAKÉ OSOBĚ ZA PŘÍMÉ, NEPŘÍMÉ, SPECIÁLNÍ, NAHODILÉ NEBO NÁSLEDNÉ ŠKODY JAKÉHOKOLIV CHARAKTERU, VČETNĚ, ALE NEJEN, ZA POŠKOZENÍ ZE ZTRÁTY DOBRÉHO JMÉNA, PŘERUŠENÍ PRÁCE, PORUCHY NEBO NESPRÁVNÉ FUNKCE POČÍTAČE NEBO JINÉHO A VŠECH DALŠÍCH ŠKOD NEBO ZTRÁT VYVSTÁVAJÍCÍCH Z NEBO VZTAHUJÍCÍCH SE K POUŽÍVÁNÍ TOHOTO DOKUMENTU NEBO UPRAVENÝCH VERZÍ DOKUMENTU, I KDYŽ BY TAKOVÁTO STRANA BYLA INFORMOVANÁ O MOŽNOSTI TAKOVÉHOTO POŠKOZENÍ.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+        any of this. -->
+
+    <authorgroup> 
+      <corpauthor>Sun Microsystems Inc.</corpauthor>
+
+<!-- gdocteam@sun.com (Sun Java Desktop System Documentation Team) -->
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+     
+      <othercredit role="translator">
+                <firstname>Latin</firstname> 
+                <surname>Translator 1</surname> 
+                <affiliation> 
+                          <orgname>Latin Translation Team</orgname> 
+                          <address> <email>translator@gnome.org</email> </address> 
+                </affiliation>
+                <contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+    <revision> 
+                <revnumber>Příručka V2.9 ke kalkulačce</revnumber> 
+                <date>Březen 2005</date> 
+                <revdescription> 
+                          <para role="author">Dokumentační tým Sun Java Desktop System</para>
+                          <para role="publisher">Dokumentační projekt GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Manuál ke kalkulačce V2.8</revnumber> 
+                <date>Srpen 2004</date> 
+                <revdescription> 
+                          <para role="author">Dokumentační tým Sun Java Desktop System</para>
+                          <para role="publisher">Dokumentační projekt GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Příručka V2.7 ke gcalctool</revnumber> 
+                <date>Únor 2004</date> 
+                <revdescription> 
+                          <para role="author">Dokumentační tým GNOME společnosti Sun</para>
+                          <para role="publisher">Dokumentační projekt GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Příručka V2.6 ke gcalctool</revnumber> 
+                <date>Říjen 2003</date> 
+                <revdescription> 
+                          <para role="author">Dokumentační tým GNOME společnosti Sun</para>
+                          <para role="publisher">Dokumentační projekt GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Příručka V2.5 ke gcalctool</revnumber> 
+                <date>Červenec 2003</date> 
+                <revdescription> 
+                          <para role="author">Dokumentační tým GNOME společnosti Sun</para>
+                          <para role="publisher">Dokumentační projekt GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Příručka V2.4 ke gcalctool</revnumber> 
+                <date>Červen 2003</date> 
+                <revdescription> 
+                          <para role="author">Dokumentační tým GNOME společnosti Sun</para>
+                          <para role="publisher">Dokumentační projekt GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Příručka V2.3 ke gcalctool</revnumber> 
+                <date>Duben 2003</date> 
+                <revdescription> 
+                          <para role="author">Dokumentační tým GNOME společnosti Sun</para>
+                          <para role="publisher">Dokumentační projekt GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Příručka V2.2 ke gcalctool</revnumber> 
+                <date>Duben 2003</date> 
+                <revdescription> 
+                          <para role="author">Dokumentační tým GNOME společnosti Sun</para>
+                          <para role="publisher">Dokumentační projekt GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Příručka V2.1 ke gcalctool</revnumber> 
+                <date>Březen 2003</date> 
+                <revdescription> 
+                          <para role="author">Dokumentační tým GNOME společnosti Sun</para>
+                          <para role="publisher">Dokumentační projekt GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Příručka V2.0 ke gcalctool</revnumber> 
+                <date>Březen 2003</date> 
+                <revdescription> 
+                          <para role="author">Dokumentační tým GNOME společnosti Sun</para>
+                          <para role="publisher">Dokumentační projekt GNOME</para>
+                </revdescription> 
+      </revision> 
+    </revhistory> 
+
+    <releaseinfo>Tato příručka popisuje Kalkulačku ve verzi 5.5.37</releaseinfo> 
+    <legalnotice> 
+      <title>Ohlasy</title> 
+      <para>Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k aplikaci <application>gcalctool</application> nebo této příručce, postupujte dle instrukcí na stránce <ulink url="ghelp:gnome-feedback" type="help">Stránka s ohlasy na GNOME</ulink>.</para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>gcalctool</primary> 
+  </indexterm> 
+  <indexterm zone="index"> 
+    <primary>Kalkulačka</primary> 
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+  <sect1 id="gcalctool-intro"> 
+    <title>Úvod</title> 
+    <para>Aplikace <application>gcalctool</application> nabízí následující režimy s různými typy matematické funkcionality:</para>
+     <variablelist>
+        <varlistentry>
+        <term><link linkend="gcalctool-basic-mode">Základní</link></term>
+        <listitem><para>Výchozí režim. Poskytuje standardní funkce kalkulačky. V základním režimu můžete provádět standardní funkce sčítání, odčítání, násobení a dělení. A všechny funkce základního režimu můžete použít v každém z dalších režimů.</para></listitem>
+        </varlistentry>
+  <varlistentry>
+        <term><link linkend="gcalctool-advanced-mode">Pokročilá</link></term>
+        <listitem><para>Poskytuje funkce pokročilé kalkulačky. Můžete si ukládat číslo do 10 různých paměťových registrů a jednoduše si je z nich zase vytahovat a prohazovat je. Všechny pokročilé funkce můžete používat i v finančním, vědeckém a programátorském režimu.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+        <term><link linkend="gcalctool-financial-mode">Finanční</link></term>
+        <listitem><para>Poskytuje několik komplexních finančních funkcí.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+        <term><link linkend="gcalctool-scientific-mode">Vědecká</link></term>
+        <listitem><para>Poskytuje další matematické funkce včetně trigonometrických funkcí. Ve vědeckém režimu si můžete také ukládat vlastní definice funkcí a konstant.</para></listitem>
+        </varlistentry>
+                <varlistentry>
+                <term><link linkend="gcalctool-programming-mode">Programátorská</link></term>
+                <listitem><para>Poskytuje funkce vhodné pro programátory, včetně bitových operací a bitového editoru.</para></listitem>
+                </varlistentry>
+     </variablelist>
+
+    <para><application>gcalctool</application> můžete používat v následujících číselných soustavách:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Číselná soustava</para></entry>
+              <entry colname="COLSPEC1" align="right">
+                <para>Základ</para></entry>
+            </row>
+          </thead> 
+          <tbody> 
+            <row valign="top">
+              <entry><para>Dvojková</para></entry>
+              <entry align="right"><para>2</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Osmičková</para></entry>
+              <entry align="right"><para>8</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Desítková</para></entry>
+              <entry align="right"><para>10</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Šestnáctková</para></entry>
+              <entry align="right"><para>16</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+                           
+  </sect1>
+
+<!-- =========== Getting Started ============================== -->
+
+  <sect1 id="gcalctool-get-start"> 
+    <title>Jak začít</title> 
+    <para><application>gcalctool</application> můžete spustit následujícími způsoby:</para>
+    <variablelist>
+      <varlistentry>
+        <term>Nabídka</term>
+        <listitem>
+          <para>Zvolte <menuchoice><guimenu>Příslušenství</guimenu><guimenuitem>Kalkulačka</guimenuitem></menuchoice>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Příkazový řádek</term>
+        <listitem>
+          <para>Spusťte následující příkaz: <userinput>gnome-calculator</userinput></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>Po spuštění <application>gcalctool</application> se objeví následující okno:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-basic"> 
+        <title>Okno <application>gcalctool</application> v základním režimu</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_basic_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Zobrazuje <application>gcalctool</application> okno <application>gcalctool</application> v základním režimu</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+                <para>Okno <application>gcalctool</application> obsahuje následující části:</para>
+                <variablelist>
+                  <varlistentry> <term>Panel nabídek</term>
+                         <listitem>
+                                <para>Nabídky v panelu nabídek obsahují všechny příkazy, které potřebujete k práci s <application>gcalctool</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Oblast displeje</term>
+                         <listitem>
+                                <para>V oblasti displeje se zobrazují čísla, která zadáváte, a výsledky výpočtů.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Oblast režimu</term>
+                         <listitem>
+                                <para>V oblasti režimu se zobrazují tlačítka pro aktuální režim. Tlačítka základního režimu jsou zobrazená vždy. Tlačítka pokročilého režimu jsou dostupná také v režimech finančním, vědeckém a programátorském.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Vyskakovací nabídka</term>
+                         <listitem>
+                <para>Symbol <inlinemediaobject><imageobject><imagedata fileref="figures/gcalctool_menu_symbol.png" format="PNG"/></imageobject><textobject><phrase>Zobrazuje symbol vyskakovací nabídky.</phrase></textobject></inlinemediaobject> na tlačítku v <application>gcalctool</application> označuje, že po kliknutí na toto tlačítko se zobrazí vyskakovací nabídka.</para>
+                         </listitem>
+                  </varlistentry>
+<varlistentry>
+         <term>Stavový řádek</term>
+                         <listitem>
+                                <para>Stavový řádek zobrazuje zprávy podle stavu vašich výpočtů.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+  </sect1>
+<!-- ================ Usage ================================ -->
+  <sect1 id="gcalctool-usage"> 
+    <title>Použití</title> 
+
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="gcalctool-calc-functions">
+                <title>Používání funkcí kalkulačky</title> 
+                <para>K provádění výpočtů použijte jeden z následujících postupů:</para>
+                <itemizedlist>
+                  <listitem>
+                         <para>Klikáním na tlačítka <application>gcalctool</application> volte čísla a funkce.</para>
+                  </listitem>
+                  <listitem>
+                         <para>Přepněte se do okna aplikace <application>gcalctool</application> a používejte klávesnici (včetně číselné klávesnice) k zadávání výpočtů, které chcete provádět. Úplný přehled klávesových zkratek najdete v <xref linkend="gcalctool-keyboard-shortcut"/>.</para>
+                  </listitem>
+                </itemizedlist>
+                <para>Aplikace <application>gcalctool</application> zobrazuje čísla, která mají více než 40 číslic nebo jsou příliš malá, automaticky v exponenciálním tvaru. Například následující tabulka ukazuje hodnoty, které se zobrazí, pokud použijete desítkovou soustavu s přesností na dvě desetinná místa:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Zobrazení</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Význam</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>1,23e+37</para></entry>
+              <entry><para>1,23 × 10<superscript>37</superscript></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>1e-5</para></entry>
+              <entry><para>0,00001</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <para>Více informací o tom, jak zadávat čísla v exponenciálním tvaru, najdete v: <xref linkend="gcalctool-enter-exp"/>.</para>
+
+    <sect3 id="gcalctool-calc-functions-separator">
+                <title>Zobrazení oddělovačů u velkých čísel</title> 
+      <para>Pokud chcete, aby se mezi každé tři číslice nalevo od desetinné čárky vkládal oddělovač, tak zvolte menuchoice&gt;<guimenu>Zobrazit</guimenu><guimenuitem>Zobrazovat oddělovač tisíců</guimenuitem></para>
+      <note>
+      <para>Různé země a kultury mají rozdílné konvence pro komunikaci. Tyto konvence zahrnují mimo např. jazyka i znak použitý pro oddělování číslic.</para>
+      <para><application>gcalctool</application> je připravený pro práci v mezinárodním prostředí, takže si jej uživatel může přizpůsobit svým konvencím. Provádí se to pomocí nastavení národního prostředí. Nemůžeme dopředu vědět, jaká všechna místní nastavení budou existovat, kromě jednoho standardního, označovaného „C“.</para>
+      <para>Pokud použijete místní nastavení C (C locale), tak se oddělovací znak nebude zobrazovat.</para>
+      </note>
+    </sect3>
+
+    <sect3 id="gcalctool-calc-functions-copy">
+                <title>Kopírování a vkládání v oblasti displeje</title> 
+                <para>Pokud chcete zkopírovat výsledek výpočtu, tak zvolte <menuchoice><guimenu>Upravit</guimenu><guimenuitem>Kopírovat</guimenuitem></menuchoice>. Hodnotu můžete potom vložit do jiné aplikace.</para>
+
+                <para>Pokud chcete na displej vložit hodnotu, kterou máte ve schránce, tak zvolte <menuchoice><guimenu>Upravit</guimenu><guimenuitem>Vložit</guimenuitem></menuchoice>.</para>
+    </sect3>
+
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+   
+    <sect2 id="gcalctool-basic-mode"> 
+      <title>Provádění základních výpočtů</title> 
+      <para>Základní režim se zobrazí jako výchozí při prvním spuštění <application>gcalctool</application>. Pokud se v budoucnu budete chtít přepnout do základního režimu, stačí zvolit <menuchoice><guimenu>Zobrazit</guimenu><guimenuitem>Základní</guimenuitem></menuchoice>.</para>
+      <para>V základním režimu nejsou dostupné paměťové registry. Z toho důvodu je zakázaná volba <menuchoice><guimenu>Zobrazit</guimenu><guimenuitem>Paměťové registry</guimenuitem></menuchoice>.</para>
+    <sect3 id="gcalctool-simple-calc"> 
+      <title>Provádění jednoduchých výpočtů</title> 
+      <para>K provádění jednoduchých výpočtů použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-simple-calc"/>.</para>
+                <table id="gcalctool-TBL-simple-calc" frame="all">
+                  <title>Provádění jednoduchých výpočtů</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Příklad</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Číslice</para> </entry>
+                             <entry><para><guibutton>0</guibutton> až <guibutton>9</guibutton></para></entry>
+                             <entry><para>V desítkové a šestnáctkové soustavě jsou dostupné všechny číslice. V osmičkové soustavě jsou číslice <guibutton>8</guibutton> a <guibutton>9</guibutton> zakázané. Ve dvojkové soustavě jsou povolené pouze číslice <guibutton>0</guibutton> a <guibutton>1</guibutton>. Základní číselnou soustavou je desítková.</para></entry>
+                             <entry><para><guibutton>1</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Desetinná čárka</para> </entry>
+                             <entry><para><guibutton>,</guibutton></para></entry>
+                             <entry><para>Začíná desetinnou část zadaného čísla.</para></entry>
+                             <entry><para><guibutton>1</guibutton> <guibutton>,</guibutton> <guibutton>2</guibutton></para></entry>
+                             <entry><para>1,2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Spočítat výsledek</para> </entry>
+                             <entry><para><guibutton>=</guibutton></para></entry>
+                             <entry><para>Zobrazí výsledek aktuálního výpočtu v aktuální číselné soustavě.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Sčítání</para> </entry>
+                             <entry><para><guibutton>+</guibutton></para></entry>
+                             <entry><para>Současnou hodnotu na displeji přičte k číslu, které zadáte jako následující.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Odečítání</para> </entry>
+                             <entry><para><guibutton>-</guibutton></para></entry>
+                             <entry><para>Od současné hodnoty na displeji odečte číslo, které zadáte jako následující.</para></entry>
+                             <entry><para>3 <guibutton>-</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Násobení</para> </entry>
+                             <entry><para><guibutton>×</guibutton></para></entry>
+                             <entry><para>Současnou hodnotu na displeji vynásobí číslem, které zadáte jako následující.</para></entry>
+                             <entry><para>3 <guibutton>×</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>6</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Dělení</para> </entry>
+                             <entry><para><guibutton>÷</guibutton></para></entry>
+                             <entry><para>Současnou hodnotu na displeji podělí číslem, které zadáte jako následující.</para></entry>
+                             <entry><para>6 <guibutton>÷</guibutton><guibutton>3</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>2</para></entry>
+                           </row>
+                        <row valign="top">
+                             <entry><para>Změna znaménka</para> </entry>
+                             <entry><para><guibutton>+/-</guibutton></para></entry>
+                             <entry><para>Změní kladné číslo na záporné nebo naopak záporné na kladné.</para></entry>
+                             <entry><para>8 <guibutton>+/-</guibutton></para></entry>
+                             <entry><para>-8</para></entry>
+                           </row>
+                         </tbody>
+
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-erase-char"> 
+      <title>Mazání znaků</title> 
+      <para>Na mazání znaků použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-erase-char"/>.</para>
+                <table id="gcalctool-TBL-erase-char" frame="all">
+                  <title>Mazací znaky</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Příklad</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Smazat znak (Backspace)</para> </entry>
+                             <entry><para><guibutton>Bksp</guibutton></para></entry>
+                             <entry><para>Smaže z displeje znak nejvíc vpravo.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>Bksp</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Smazat vstup (Clear Entry)</para> </entry>
+                             <entry><para><guibutton>CE</guibutton></para></entry>
+                             <entry><para>Smaže z displeje současnou hodnotu.</para>
+                                    <para>Tato operace je totožná jako <guibutton>Clr</guibutton>.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>CE</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>0</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Smazat (Clear)</para> </entry>
+                             <entry><para><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>Nastaví aktuální hodnotu na displeji na nulu a smaže předchozí výsledky výpočtů. <guibutton>Clr</guibutton> také smaže volby <guilabel>Hyp</guilabel> a <guilabel>Inv</guilabel> ve vědeckém režimu.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>0</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    
+    
+
+
+
+  
+
+          <sect3 id="gcalctool-ins-ascii"> 
+            <title>Zobrazení ASCII hodnot</title> 
+                        <para>Pokud chcete zobrazit ASCII hodnotu znaku, tak zvolte <menuchoice><guimenu>Upravit</guimenu><guimenuitem>Vložit ASCII hodnotu znaku</guimenuitem></menuchoice>.</para>
+                        <para>Objeví se dialog Vložit hodnotu ASCII.</para>
+                        <para>Vložte požadovaný znak do pole <guilabel>Znak</guilabel> a klikněte na <guibutton>Vložit</guibutton>. Na displeji se objeví ASCII hodnota zadaného znaku v aktuální číselné soustavě. Například ASCII hodnota znaku B je desítkově 66.</para>
+          </sect3>
+        </sect2>
+
+ <sect2 id="gcalctool-advanced-mode">
+    <title>Provádění pokročilých výpočtů</title>
+  <para>Do pokročilého režimu přepnete volbou <menuchoice><guimenu>Zobrazit</guimenu><guimenuitem>Pokročilá</guimenuitem></menuchoice>.</para>
+    <para>Po přepnutí do pokročilého režimu se napravo od tlačítek základního režimu zobrazí ještě následující tlačítka:</para>
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-advanced"> 
+        <title>Tlačítka <application>gcalctool</application> v pokročilém režimu</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_advanced_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Zobrazuje <application>gcalctool</application> tlačítka <application>gcalctool</application> v pokročilém režimu</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+                <table id="gcalctool-TBL-adv-calc" frame="all">
+                  <title>Provádění pokročilých výpočtů</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Příklad</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Procenta</para> </entry>
+                             <entry><para><guibutton>%</guibutton></para></entry>
+                             <entry><para>Podělí aktuální hodnotu stem.</para></entry>
+                             <entry><para>560 <guibutton>%</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>5,60</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Převrácená hodnota</para> </entry>
+                             <entry><para><guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>Podělí 1 aktuální hodnotou na displeji.</para></entry>
+                             <entry><para>4 <guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>0,25</para></entry>
+                           </row>
+                    
+                           <row valign="top">
+                             <entry><para>Druhá odmocnina</para> </entry>
+                             <entry><para><guibutton>Sqrt</guibutton></para></entry>
+                             <entry><para>Vypočítá druhou odmocninu z aktuální hodnoty na displeji.</para></entry>
+                             <entry><para><guibutton>Sqrt</guibutton> 9 <guibutton>)</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Druhá mocnina</para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>Vypočítá druhou mocninu aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>3 <replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>9</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Celá část</para> </entry>
+                             <entry><para><guibutton>Int</guibutton></para></entry>
+                             <entry><para>Vypočítá celou část z aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>-23,45 <guibutton>Int</guibutton></para></entry>
+                             <entry><para>-23</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Desetinná část</para> </entry>
+                             <entry><para><guibutton>Frac</guibutton></para></entry>
+                             <entry><para>Vypočítá desetinnou část z aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>-23,45 <guibutton>Frac</guibutton></para></entry>
+                             <entry><para>-0,45</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Absolutní hodnota</para> </entry>
+                             <entry><para><guibutton>Abs</guibutton></para></entry>
+                             <entry><para>Vypočítá absolutní hodnotu z aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>-23,45 <guibutton>Abs</guibutton></para></entry>
+                             <entry><para>23,45</para></entry>
+                         </row>
+                           <row valign="top">
+                         <entry><para>Závorky</para> </entry>
+                             <entry><para><guibutton>(</guibutton> a <guibutton>)</guibutton></para></entry>
+                             <entry><para>Výpočty uzavřené v závorkách se provádí jako první. Závorky můžete zanořovat do libovolné úrovně.</para></entry>
+                           <entry>
+                               <para>2 <guibutton>+</guibutton><guibutton>3</guibutton><guibutton>×</guibutton><guibutton>4</guibutton><guibutton>=</guibutton></para>
+                               <para>2 <guibutton>+</guibutton><guibutton>(</guibutton><guibutton>3</guibutton><guibutton>×</guibutton><guibutton>4</guibutton><guibutton>)</guibutton></para>
+                             </entry>
+                             <entry> <para>20</para>
+                               <para>14</para>
+                             </entry>
+                               
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+
+<sect3 id="gcalctool-mem-reg"> 
+      <title>Použití paměťových registrů kalkulačky</title> 
+      <para>Hodnoty si můžete v <application>gcalctool</application> ukládat do jednoho z paměťových registrů <guilabel>R0</guilabel> to <guilabel>R9</guilabel>. Paměťové registry můžete zobrazit volbou <menuchoice><guimenu>Zobrazit</guimenu><guimenuitem>Paměťové registry</guimenuitem></menuchoice>.</para>
+      <para>Znovu je skrýt můžete opětovnou volbou menuchoice&gt;<guimenu>Zobrazit</guimenu><guimenuitem>Paměťové registry</guimenuitem></para>
+        <para><xref linkend="gcalctool-TBL-mem-reg"/> popisuje paměťové funkce, které můžete používat.</para>
+                <table id="gcalctool-TBL-mem-reg" frame="all">
+                  <title>Paměťové funkce</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Příklad</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Uloží hodnotu do paměťového registru</para> </entry>
+                             <entry><para><guibutton>Sto</guibutton></para></entry>
+                             <entry><para>Uloží aktuální hodnotu na displeji do určeného paměťového registru. Klikněte na tlačítko <guibutton>Sto</guibutton> a následně zvolte ve vyskakovací nabídce paměťový registr.</para>
+                                   <para>Vymazání paměťového registru během práce v <application>gcalctool</application>:</para>
+                                     <orderedlist>
+                                       <listitem><para>Kliknout na <guibutton>Clr</guibutton>.</para></listitem>
+                                       <listitem><para>Kliknout na <guibutton>Sto</guibutton>.</para></listitem>
+                                       <listitem><para>Zvolit paměťový registr z vyskakovací nabídky.</para></listitem>
+                                     </orderedlist>
+</entry>
+                             <entry><para>22 <guibutton>Sto</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para>Do paměťového registru <guilabel>R2</guilabel> se uloží hodnota 22.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Získání hodnoty z paměťového registru</para> </entry>
+                             <entry><para><guibutton>Rcl</guibutton></para></entry>
+                             <entry><para>Vytáhne obsah zvoleného paměťového registru. Klikněte na <guibutton>Rcl</guibutton> a z vyskakovací nabídky zvolte paměťový registr.</para></entry>
+                             <entry><para>0 <guibutton>Rcl</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para>Hodnota na displeji je 22.</para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Prohození hodnotu paměťového registru a displeje</para> </entry>
+                             <entry><para><guibutton>Exch</guibutton></para></entry>
+                             <entry><para>Zamění mezi sebou obsah zvoleného paměťového registru a aktuální hodnotu na displeji. Klikněte na <guibutton>Exch</guibutton> a z vyskakovací nabídky zvolte paměťový registr.</para></entry>
+                             <entry><para>44 <guibutton>Exch</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para>Hodnota na displeji se změní ze 44 na 22 a hodnota v R2 se změní z 22 na 44.</para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Pokud používáte klávesové zkratky, můžete k volbě paměťového registru použít klávesnici tak, jako v následujících příkladech:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Vstup z klávesnice</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Popis</para></entry>
+            </row>
+          </thead>
+          <tbody> 
+            <row valign="top">
+              <entry><para><keycap>S</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>Uloží aktuální obsah displeje do paměťového registru <guilabel>R2</guilabel>.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>R</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>Přenese aktuální hodnotu paměťového registru <guilabel>R2</guilabel> na displej.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>X</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>Zamění aktuální hodnotu na displeji s obsahem paměťového registru <guilabel>R2</guilabel>.</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+    </sect3>
+
+
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+         <sect2 id="gcalctool-financial-mode"> 
+      <title>Provádění finančních výpočtů</title> 
+      <para>Do finančního režimu se přepnete volbou menuchoice&gt;<guimenu>Zobrazit</guimenu><guimenuitem>Finanční</guimenuitem></para>
+     <para>Po přepnutí do finančního režimu se nad tlačítky základního a pokročilého režimu zobrazí následující tlačítka:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-financial"> 
+        <title>Tlačítka <application>gcalctool</application> ve finančním režimu</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_financial_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Zobrazuje <application>gcalctool</application> tlačítka <application>gcalctool</application> ve finančním režimu</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+      <para>K provádění finančních výpočtů použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-financial-calc"/>.</para>
+                <table id="gcalctool-TBL-financial-calc" frame="all">
+                  <title>Provádění finančních výpočtů</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Příklad</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Doba úročení</para> </entry>
+                             <entry><para><guibutton>Ctrm</guibutton></para></entry>
+                             <entry><para>Vypočítá počet úročených období nutných ke navýšení investice ze současné hodnoty na budoucí hodnotu při fixní úrokové sazbě po celé úročené období.</para>
+                             </entry>
+                             <entry><para>Máte na uloženo 8&nbsp;000,-&nbsp;€ na účtu s úrokem 9% p.a., který vám připisují měsíčně. Daný roční úrok jednoduše znamená, že měsíčně vám připisují 0,09 ÷ 12 = 0,0075. Pokud chcete spočítat, za jak dlouho se vaše úspory zdvojnásobí, klikněte na <guibutton>Ctrm</guibutton> a do textových polí zadejte následující hodnoty:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Úroková sazba za období</term>
+                                <listitem><para>0,0075</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Budoucí hodnota</term>
+                                <listitem><para>16000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Současná hodnota</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Klikněte na <guibutton>Spočítat</guibutton></para></entry>
+                             <entry><para>92,77</para>
+                                    <para>Investice se zdvojnásobí za 92,77 měsíců.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Dvojitě degresivní odpis</para> </entry>
+                             <entry><para><guibutton>Ddb</guibutton></para></entry>
+                             <entry><para>Vypočítá zrychlené odpisy dané aktivy za určité období pomocí dvojité degresivní metody odpisu.</para>
+                             </entry>
+                             <entry><para>Právě jste do kanceláře nakoupili stroj za 8&nbsp;000,-&nbsp;€. Životnost stroje je určená na šest let. Zůstatková hodnota po šesti letech je 900,-&nbsp;€. Pro výpočet odpisových nákladů po dobu čtyř let s použitím dvojitě degresivní metody klikněte na <guibutton>Ddb</guibutton> a do textových polí zadejte následující hodnoty:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Náklady</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Zůstatek</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Životnost</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Období</term>
+                                <listitem><para>4</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Klikněte na <guibutton>Spočítat</guibutton></para></entry>
+                             <entry><para>790,12</para>
+                                    <para>Odpisové náklady po dobu čtyř let jsou 790,12&nbsp;€.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Budoucí hodnota</para> </entry>
+                             <entry><para><guibutton>Fv</guibutton></para></entry>
+                             <entry><para>Vypočítá budoucí hodnotu investic založenou na sérii stejnoměrných plateb s pravidelnou úrokovou sazbou po zadaný počet platebních období v dané lhůtě.</para>
+                             </entry>
+                             <entry><para>Plánujete ukládat na bankovní účet vždy poslední den v roce 4&nbsp;000,-&nbsp;€ po dobu příštích 20&nbsp;let. Banka vám na účtu zaručí úrok 8% p.a. Úrok je vyplácen vždy poslední den v roce. Pro výpočet částky na vašem účtu po 20&nbsp;letech zmáčkněte <guibutton>Fv</guibutton> a do textových polí zadejte následující hodnoty:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Pravidelná splátka</term>
+                                <listitem><para>4000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Úroková sazba za období</term>
+                                <listitem><para>0,08</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Počet období</term>
+                                <listitem><para>20</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Klikněte na <guibutton>Spočítat</guibutton></para></entry>
+                             <entry><para>183047,86</para>
+                                    <para>Po dvaceti letech bude na účtu částka 183&nbsp;047,86&nbsp;€.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Hrubá marže</para></entry>
+                             <entry><para><guibutton>Gpm</guibutton></para></entry>
+                             <entry><para>Vypočítá prodejní cenu produktu založenou na nákladech a požadované hrubé marži.</para></entry>
+                             <entry><para>Prodáváte trička on-line. Náklady na každé tričko jsou 12,-&nbsp;€ za materiál a práci. Chcete trička prodávat s hrubým ziskem 0,40 - z každých pěti euro, které vyděláte, chcete mít dvě euro zisk. K výpočtu ceny, za kterou byste měli tričky prodávat, stiskněte <guibutton>Gpm</guibutton> a vložte následující hodnoty do textových polí:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Náklady</term>
+                                <listitem><para>12</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Marže</term>
+                                <listitem><para>0,40</para></listitem>
+                                </varlistentry>
+                             </variablelist>
+                             <para>Klikněte na <guibutton>Spočítat</guibutton></para></entry>
+                             <entry><para>20</para>
+                             <para>Budete muset prodávat trička za 20,- €.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Pravidelná splátka</para> </entry>
+                             <entry><para><guibutton>Pmt</guibutton></para></entry>
+                             <entry><para>Spočítá výši pravidelné splátky půjčky, kde jsou platby prováděny na konci každého platebního období.</para>
+                             </entry>
+                             <entry><para>Plánujete hypotéku ve výši 120&nbsp;000,-&nbsp;€ na dobu 30&nbsp;let s roční úrokovou sazbou 11%. Daná roční úroková sazba jednoduše říká, že každý měsíc zaplatíte úrok 0,11 ÷ 12 = 0,00917. Doba splácení je 30 × 12 = 360 měsíců. Pro výpočet měsíčních splátek takovéto hypotéky zmáčkněte <guibutton>Pmt</guibutton> a do textových polí zadejte následující hodnoty:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Půjčka</term>
+                                <listitem><para>120000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Úroková sazba za období</term>
+                                <listitem><para>0,00917</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Doba</term>
+                                <listitem><para>360</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Klikněte na <guibutton>Spočítat</guibutton></para></entry>
+                             <entry><para>1143,15</para>
+                                    <para>Měsíční splátka je 1&nbsp;143,15&nbsp;€.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Současná hodnota</para> </entry>
+                             <entry><para><guibutton>Pv</guibutton></para></entry>
+                             <entry><para>Vypočítá současnou hodnotu investice založené na sérii stejnoměrných plateb sníženou o pravidelnou úrokovou sazbu po zadaný počet platebních období v dané lhůtě.</para>
+                             </entry>
+                             <entry><para>Právě jste vyhráli milion euro. Cena je vyplácená v 20 ročních splátkách po 50&nbsp;000,-&nbsp;€. Roční splátky obdržíte vždy na konci roku. Pokud byste přijali splátky po 50&nbsp;000, pak byste je investovali s ročním úrokem 9%.</para>
+                                    <para>Dostali jste ale také možnost nechat si vyplatit jednorázovou částku ve výši 400&nbsp;000,-&nbsp;€ místo miliónu ve splátkách. Pro výpočet, která volba je v současných eurech výhodnější, stiskněte <guibutton>Pv</guibutton> a následně zadejte do textových polí tyto hodnoty:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Pravidelná splátka</term>
+                                <listitem><para>50000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Úroková sazba za období</term>
+                                <listitem><para>0,09</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Počet období</term>
+                                <listitem><para>20</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Klikněte na <guibutton>Spočítat</guibutton></para></entry>
+                             <entry><para>456427,28</para>
+                                    <para>1&nbsp;000&nbsp;000,-&nbsp;€ zaplacených v průběhu 20&nbsp;let má hodnotu 456&nbsp;427,28&nbsp;€ v současných eurech.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Úroková sazba za období</para> </entry>
+                             <entry><para><guibutton>Rate</guibutton></para></entry>
+                             <entry><para>Vypočítá měsíční úrok nutný k navýšení investice ze současné hodnoty na budoucí hodnotu po zadaný počet úročných období.</para>
+                             </entry>
+                             <entry><para>Investoval jste 20&nbsp;000,-&nbsp;€ do dluhopisů. Dluhopis je splatný po pěti letech a má splatnou hodnotu 30&nbsp;000,-&nbsp;€. Úrok je připočítáván měsíčně. Doba je 5 × 12 = 60 měsíců. Pro výpočet pravidelných úrokových splátek této investice zmáčkněte <guibutton>Rate</guibutton> a následně do textových polí zadejte tyto hodnoty:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Budoucí hodnota</term>
+                                <listitem><para>30000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Současná hodnota</term>
+                                <listitem><para>20000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Doba</term>
+                                <listitem><para>60</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Klikněte na <guibutton>Spočítat</guibutton></para></entry>
+                             <entry><para>,00678</para>
+                                    <para>Měsíční úroková sazba je 0,678%. Roční úroková sazba je 0,678% × 12 = 8,14%.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Lineární odpis</para> </entry>
+                             <entry><para><guibutton>Sln</guibutton></para></entry>
+                             <entry><para>Vypočítává lineární odpisy dané aktivy za určité období. Odpisovaná hodnota je daná jako <replaceable>pořizovací náklady</replaceable> - <replaceable>zůstatková hodnota</replaceable>. Lineární metoda odpisu dělí odepisovanou hodnotu rovnoměrně po celou použitelnou životnost aktiva. Použitelná životnost je počet období, typicky let, po kterou je aktivum odepisováno.</para>
+                             </entry>
+                             <entry><para>Právě jste do kanceláře nakoupili stroj za 8&nbsp;000,-&nbsp;€. Životnost stroje je určená na šest let. Zůstatková hodnota po šesti letech je 900,-&nbsp;€. Pro výpočet ročních odpisových nákladů s použitím lineární metody zmáčkněte <guibutton>Sln</guibutton> a do textových polí následující tři hodnoty:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Náklady</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Zůstatek</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Životnost</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Klikněte na <guibutton>Spočítat</guibutton></para></entry>
+                             <entry><para>1183,33</para>
+                                    <para>Roční odpisové náklady jsou 1&nbsp;183,33&nbsp;€.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Hodnota degresivního odpisu pro období</para> </entry>
+                             <entry><para><guibutton>Syd</guibutton></para></entry>
+                             <entry><para>Vypočítá hodnota degresivního odpisu pro zadané období s použitím metody SYD (Sum of The Years' Digits). Jedná se o degresivní metodu odpisů, takže z počátku je hodnota odpisů vyšší a časem klesá. Odepisovaná hodnota je daná jako <replaceable>náklady</replaceable> - <replaceable>zůstatková cena</replaceable>. Životnost je počet období, typicky v letech, po které je majetek odepisován.</para>
+                             </entry>
+                             <entry><para>Právě jste do kanceláře koupili stroj za 8&nbsp;000,-€ Životnost tohoto stroje je šest let. Zůstatková hodnota po šesti letech je 900,-&nbsp;€. Pro výpočet degresivní hodnoty odpisu pro čtvrtý roku zmáčkněte <guibutton>Syd</guibutton> a následně do textových polí zadejte tyto hodnoty:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Náklady</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Zůstatek</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Životnost</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Období</term>
+                                <listitem><para>4</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Klikněte na <guibutton>Spočítat</guibutton></para></entry>
+                             <entry><para>1014,29</para>
+                                    <para>Odpisové náklady pro čtyři roky jsou 1&nbsp;014,29&nbsp;€</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Platební období</para> </entry>
+                             <entry><para><guibutton>Doba</guibutton></para></entry>
+                             <entry><para>Vypočítá počet platebních období nutných při pravidelných platbách k získání budoucí hodnoty za dané pravidelné úrokové sazby.</para>
+                             </entry>
+                             <entry><para>Plánujete ukládat do banky na účet 1&nbsp;800,-&nbsp;€ pravidelně vždy poslední den v roce. Na účtu je vyplácený úrok 11% p.a. Úrok je vyplácen vždy poslední den v roce. Pro výpočet počtu období nutných k tomu, abyste nastřádali 120&nbsp;000,-&nbsp;€, zmáčkněte <guibutton>Term</guibutton> a potom do textových polí zadejte následující hodnoty:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Pravidelná splátka</term>
+                                <listitem><para>1800</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Budoucí hodnota</term>
+                                <listitem><para>120000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Úroková sazba za období</term>
+                                <listitem><para>0,11</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Klikněte na <guibutton>Spočítat</guibutton></para></entry>
+                             <entry><para>20,32</para>
+                                    <para>120&nbsp;000,-&nbsp;€ na účtu nastřádáte za 20,32&nbsp;roku.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="gcalctool-scientific-mode"> 
+      <title>Provádění vědeckých výpočtů</title> 
+      <para>Do vědeckého režimu se přepnete volbou <menuchoice><guimenu>Zobrazit</guimenu><guimenuitem>Vědecká</guimenuitem></menuchoice>.</para>
+    <para>Po přepnutí do vědeckého režimu se na tlačítky základního a pokročilého režimu zobrazí ještě následující tlačítka:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-scientific"> 
+        <title>Tlačítka <application>gcalctool</application> ve vědeckém režimu</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_scientific_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Zobrazuje <application>gcalctool</application> tlačítka <application>gcalctool</application> ve vědeckém režimu</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+    <sect3 id="gcalctool-set-acc"> 
+      <title>Nastavení přesnosti</title> 
+      <para>Přesnost displeje a paměťových registrů nastavíte tak, že kliknete na <guibutton>Acc</guibutton> a ve vyskakovací nabídce zvolíte úroveň přesnosti, kterou požadujete. Aktuální úroveň přesnosti poznáte podle vyplněného kolečka před ní. Zobrazovat lze až 99 významných míst. Výchozí přesnost je 9 významných míst.</para>
+<para>Pokud chcete nastavit větší přesnost než 9, musíte zvolit <guilabel>Jiná (9) ...</guilabel>, a v dialogu <guilabel>Nastavení přesnosti</guilabel> zvolit požadovanou úroveň.</para>
+      <para>Standardně se nezobrazují nevýznamné koncové nuly. Pokud je zobrazovat chcete, tak klikněte na <guibutton>Acc</guibutton> a zvolte ve vyskakovací nabídce <guilabel>Zobrazovat koncové nuly</guilabel> nebo přes hlavní nabídku zvolte <menuchoice><guimenu>Zobrazit</guimenu><guimenuitem>Zobrazovat koncové nuly</guimenuitem></menuchoice>. Zaškrtnutí ve vyskakovací nabídce <guibutton>Acc</guibutton>, případně v hlavní nabídce <guimenu>Zobrazit</guimenu>, signalizuje, jestli je volba <guilabel>Zobrazovat koncové nuly</guilabel> zapnutá. Opětovnou volbou v nabídce koncové nuly skryjete.</para>
+      <para>Následující příklady demonstrují, jak se nastavení přesnosti projeví na zobrazení <replaceable>x</replaceable> na displeji při výpočtu <literal>1 / 8 = <replaceable>x</replaceable></literal> v případě, že použijete desítkovou soustavu a máte zapnutou volbu <guimenuitem>Zobrazovat koncové nuly</guimenuitem>:</para>
+                <informaltable frame="all">
+                  <tgroup cols="2" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Přesnost</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>1 významné místo</para></entry>
+                             <entry><para>1,2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>2 významná místa</para></entry>
+                             <entry><para>1,25</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>3 významná místa</para></entry>
+                             <entry><para>1,250</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </informaltable>
+    </sect3>
+    <sect3 id="gcalctool-display-type"> 
+      <title>Nastavení typu displeje</title> 
+      <para>K nastavení typu displeje použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-display-type"/>.</para>
+                <table id="gcalctool-TBL-display-type" frame="all">
+                  <title>Nastavení typu displeje</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Inženýrský typ displeje</para> </entry>
+                             <entry><para><guibutton>Eng</guibutton></para></entry>
+                             <entry><para>Nastaví displej na inženýrský formát. Výsledky se zobrazují ve vědeckém zápisu. Exponent je vždy násobkem tři.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Typ displeje s pevnou čárkou</para> </entry>
+                             <entry><para><guibutton>Fix</guibutton></para></entry>
+                             <entry><para>Nastaví typ displeje na formát s pevnou čárkou. Výsledky se nezobrazují ve vědeckém zápisu. Jedná se o výchozí typ displeje. Pokud se přepnete z vědeckého režimu do základního nebo finančního, tak <application>gcalctool</application> automaticky přepne typ displeje na formát s pevnou čárkou.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Vědecký typ displeje</para> </entry>
+                             <entry><para><guibutton>Sci</guibutton></para></entry>
+                             <entry><para>Nastaví typ displeje na vědecký formát. Výsledky se zobrazují ve vědeckém zápisu s pevným počtem číslic.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-trig-type"> 
+      <title>Nastavení trigonometrických jednotek</title> 
+      <para>K nastavení trigonometrických jednotek použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-trig-type"/>.</para>
+                <table id="gcalctool-TBL-trig-type" frame="all">
+                  <title>Nastavení trigonometrických jednotek</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Stupně</para> </entry>
+                             <entry><para><guibutton>Stupně</guibutton></para></entry>
+                             <entry><para>Nastaví trigonometrické jednotky na stupně. Stupně jsou výchozí trigonometrickou jednotkou.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Grady</para> </entry>
+                             <entry><para><guibutton>Grady</guibutton></para></entry>
+                             <entry><para>Nastaví trigonometrické jednotky na grady.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Radiány</para> </entry>
+                             <entry><para><guibutton>Radiány</guibutton></para></entry>
+                             <entry><para>Nastaví trigonometrické jednotky na radiány.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-trig-options"> 
+      <title>Nastavení přepínačů pro trigonometrické funkce</title> 
+      <para>Pro trigonometrické funkce můžete použít přepínače, které popisuje <xref linkend="gcalctool-TBL-trig-options"/>.</para>
+                <table id="gcalctool-TBL-trig-options" frame="all">
+                  <title>Nastavení přepínačů pro trigonometrické funkce</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Hyperbolická funkce</para> </entry>
+                             <entry><para><guibutton>Hyp</guibutton></para></entry>
+                             <entry><para>Zvolí hyperbolickou verzi pro použitou trigonometrickou funkci</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Inverzní funkce</para> </entry>
+                             <entry><para><guibutton>Inv</guibutton></para></entry>
+                             <entry><para>Zvolí inverzní funkci pro použitou trigonometrickou funkci.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Ve výchozím stavu nejsou přepínače, jak je popisuje <xref linkend="gcalctool-TBL-trig-options"/>, zapnuté. Vypnout se také po kliknutí na <guibutton>Clr</guibutton>.</para>
+
+    </sect3>
+    <sect3 id="gcalctool-trig-calc"> 
+      <title>Výpočet trigonometrických hodnot</title> 
+      <para>K výpočtům trigonometrických hodnot použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-trig-calc"/>.</para>
+                <table id="gcalctool-TBL-trig-calc" frame="all">
+                  <title>Výpočet trigonometrických hodnot</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Příklad</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Kosinus <literal>cos</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> není zapnuté, <guilabel>Inv</guilabel> není zapnuté</para></entry>
+                             <entry><para>Vypočítá kosinus aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>60 <guibutton>Cos</guibutton></para></entry>
+                             <entry><para>0,5</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arkus kosinus <literal>acos</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> není zapnuté, <guilabel>Inv</guilabel> je zapnuté</para></entry>
+                             <entry><para>Vypočítá arkus kosinus aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>0,5 <guilabel>Inv</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>60</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Hyperbolický kosinus <literal>cosh</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> je zapnuté, <guilabel>Inv</guilabel> není zapnuté</para></entry>
+                             <entry><para>Vypočítá hyperbolický kosinus aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>0,4 <guilabel>Hyp</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>1,081072372</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arkus hyperbolický kosinus <literal>acosh</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> je zapnuté, <guilabel>Inv</guilabel> je zapnuté</para></entry>
+                             <entry><para>Vypočítá arkus hyperbolický kosinus aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>1.6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>1,046967915</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Sinus <literal>sin</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> není zapnuté, <guilabel>Inv</guilabel> není zapnuté</para></entry>
+                             <entry><para>Vypočítá sinus aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>90 <guibutton>Sin</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arkus sinus <literal>asin</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> není zapnuté, <guilabel>Inv</guilabel> je zapnuté</para></entry>
+                             <entry><para>Vypočítá arkus sinus aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>1 <guilabel>Inv</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>90</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Hyperbolický sinus <literal>sinh</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> je zapnuté, <guilabel>Inv</guilabel> není zapnuté</para></entry>
+                             <entry><para>Vypočítá hyperbolický sinus aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>0,4 <guilabel>Hyp</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>0,410752326</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arkus hyperbolický sinus <literal>asinh</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> je zapnuté, <guilabel>Inv</guilabel> je zapnuté</para></entry>
+                             <entry><para>Vypočítá arkus hyperbolický sinus aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>1,6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>1,248983328</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Tangens <literal>tan</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> není zapnuté, <guilabel>Inv</guilabel> není zapnuté</para></entry>
+                             <entry><para>Vypočítá tangens aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>45 <guibutton>Tan</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arkus tangens <literal>atan</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> není zapnuté, <guilabel>Inv</guilabel> je zapnuté</para></entry>
+                             <entry><para>Vypočítá arkus tangens aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>1 <guilabel>Inv</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>45</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Hyperbolický tangens <literal>tanh</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> je zapnuté, <guilabel>Inv</guilabel> není zapnuté</para></entry>
+                             <entry><para>Vypočítá hyperbolický tangens aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>0,6 <guilabel>Hyp</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>0,537049567</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arkus hyperbolický tangens <literal>atanh</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> je zapnuté, <guilabel>Inv</guilabel> je zapnuté</para></entry>
+                             <entry><para>Vypočítá arkus hyperbolický tangens aktuální hodnoty na displeji.</para></entry>
+                             <entry><para>0,6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>0,693147181</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-logs-calc"> 
+      <title>Výpočet logaritmů</title> 
+      <para>K výpočtu logaritmů použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-logs-calc"/>.</para>
+                <table id="gcalctool-TBL-logs-calc" frame="all">
+                  <title>Výpočet logaritmů</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Příklad</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Desítkový logaritmus</para> </entry>
+                             <entry><para>Log<subscript><replaceable>10</replaceable></subscript></para></entry>
+                             <entry><para>Vypočítá běžný logaritmus o základu 10 z aktuální hodnoty na displeji</para></entry>
+                             <entry><para>10 Log<subscript><replaceable>10</replaceable></subscript></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Přirozený logaritmus</para> </entry>
+                             <entry><para><guibutton>Ln</guibutton></para></entry>
+                             <entry><para>Vypočítá přirozený logaritmus z aktuální hodnoty na displeji</para></entry>
+                             <entry><para>10 <guibutton>Ln</guibutton></para></entry>
+                             <entry><para>2,30</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Dvojkový logaritmus</para> </entry>
+                             <entry><para>Log<subscript><replaceable>2</replaceable></subscript></para></entry>
+                             <entry><para>Vypočítá běžný logaritmus o základu 2 z aktuální hodnoty na displeji</para></entry>
+                             <entry><para>10 Log<subscript><replaceable>2</replaceable></subscript></para></entry>
+                             <entry><para>3,32</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <note>
+                  <para>V této verzi <application>gcalctool</application> není podporovaný běžný antilogaritmus a přirozený antilogaritmus.</para>
+                </note>
+    </sect3>
+    <sect3 id="gcalctool-enter-exp"> 
+      <title>Zadávání čísel v exponenciálním tvaru</title> 
+      <para>K zadání čísel v exponenciálním tvaru použijte tlačítko <guibutton>Exp</guibutton>.</para>
+      <para>Tlačítko <guibutton>Exp</guibutton> vám umožňuje zadávat čísla ve vědeckém zápisu, což je <replaceable>mantissa</replaceable> × <replaceable>base</replaceable><superscript><replaceable>exponent</replaceable></superscript>:</para>
+<variablelist>
+  <varlistentry>
+    <term><replaceable>mantisa</replaceable></term>
+    <listitem><para>Aktuální nenulové číslo na displeji. Pokud je aktuální hodnota na displeji nula, tak se použije mantisa 1,0.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><replaceable>základ</replaceable></term>
+    <listitem><para>2, 8, 10 nebo 16 pro dvojkovou, osmičkovou, desítkovou a šestnáctkovou číselnou soustavu.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><replaceable>exponent</replaceable></term>
+    <listitem><para>Další číslo, které zadáte.</para></listitem>
+  </varlistentry>
+</variablelist>
+
+<para>Po kliknutí na <guibutton>Exp</guibutton> kalkulačka zobrazí <literal>. +</literal> představující <replaceable>základ</replaceable> mocniny, které následně zadáte hodnotu.</para>
+<para>Pro změnu znaménka čísla použijte tlačítko <guibutton>+/-</guibutton> ještě před stisknutím tlačítka <guibutton>Exp</guibutton>. Ke změně znaménka exponentu (hodnota na kterou je číslo umocněno) použijte <guibutton>-</guibutton> po tlačítku <guibutton>Exp</guibutton>.</para>
+
+<para>Při zadávání desítkových čísel v exponenciálním formátu postupujte podle ukázek v následující tabulce:</para>
+          <informaltable frame="all">
+            <tgroup cols="3" colsep="1" rowsep="1">
+                   <colspec colname="COLSPEC0" colwidth="50*"/>
+                   <colspec colname="COLSPEC1" colwidth="50*"/>
+                   <thead>
+                          <row valign="top">
+                            <entry colname="COLSPEC0">
+                                   <para>Číslo</para></entry>
+                            <entry colname="COLSPEC1">
+                                   <para>Zadání</para></entry>
+                            <entry colname="COLSPEC2">
+                                   <para>Zobrazené číslo</para></entry>
+                          </row>
+                   </thead> 
+                   <tbody> 
+                     <row valign="top">
+                       <entry><para>1200000000</para></entry>
+                       <entry><para>12 <guibutton>Exp</guibutton><guibutton>+</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>1200000000</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>-1200000000</para></entry>
+                       <entry><para><guibutton>-</guibutton> 12 <guibutton>Exp</guibutton><guibutton>+</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>-1200000000</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>0,00000012</para></entry>
+                       <entry><para>12 <guibutton>Exp</guibutton><guibutton>-</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>1,2e-7</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>-0,00000012</para></entry>
+                       <entry><para><guibutton>-</guibutton> 12 <guibutton>Exp</guibutton><guibutton>-</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>-1,2e-7</para></entry>
+                     </row>
+                   </tbody>
+            </tgroup>
+          </informaltable>
+
+    </sect3>
+    <sect3 id="gcalctool-edit-const"> 
+      <title>Používání konstantních hodnot</title> 
+      <para>Kliknutím na <guibutton>Con</guibutton> zobrazíte seznam definovaných konstantních hodnot. Všechny konstanty jsou definované v desítkové soustavě, i když máte v daný okamžik nastavenou jinou číselnou soustavu.</para>
+      <para>Zvolením konstanty v nabídce přenesete její hodnotu na displej. Pokud použijete klávesovou zkratku <keycap>#</keycap>, můžete z klávesnice zvolit i kterou konstantu chcete, tak jak je uvedeno v následujícím příkladu:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Vstup z klávesnice</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Konstanta</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>#</keycap> <keycap>3</keycap> </para></entry>
+              <entry><para>C3</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      <para>Aplikace <application>gcalctool</application> vám dává k dispozici výchozí konstantní hodnoty, které jsou popsané v následující tabulce:</para>
+                <informaltable frame="all">
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1" colwidth="50*"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Číslo</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Hodnota</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>C0</para></entry>
+                             <entry><para>0,621</para></entry>
+                             <entry><para>Převodní činitel kilometrů na míle</para>
+                                    <para>Pokud chcete převést kilometry v hodině na míle v hodině, tak vynásobte aktuální hodnotu na displeji touto konstantou. Například 8 × <guibutton>Con</guibutton><guilabel>C0</guilabel><keycap>=</keycap> 5.</para>
+                                    <para>Pokud chcete převést míle v hodině na kilometry v hodině, tak podělte aktuální hodnotu na displeji touto konstantou. Například 5 ÷ <guibutton>Con</guibutton><guilabel>C0</guilabel><keycap>=</keycap> 8.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C1</para></entry>
+                             <entry><para>1,414213562</para></entry>
+                             <entry><para>Druhá odmocnina z 2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C2</para></entry>
+                             <entry><para>2,718281828</para></entry>
+                             <entry><para>e</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C3</para></entry>
+                             <entry><para>3,141592653</para></entry>
+                             <entry><para>π (Ludolfovo číslo)</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C4</para></entry>
+                             <entry><para>0,3937007</para></entry>
+                             <entry><para>Převodní činitel centimetrů na palce</para>
+                                    <para>Pokud chcete převést centimetry na palce, tak vynásobte aktuální hodnotu na displeji touto konstantou. Například 30 × <guibutton>Con</guibutton><guilabel>C4</guilabel><keycap>=</keycap> 12.</para>
+                                    <para>Pokud chcete převést palce na centimetry, tak vydělte aktuální hodnotu na displeji touto konstantou. Například 12 ÷ <guibutton>Con</guibutton><guilabel>C4</guilabel><keycap>=</keycap> 30.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C5</para></entry>
+                             <entry><para>57,295779513</para></entry>
+                             <entry><para>Stupně v radiánech</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C6</para></entry>
+                             <entry><para>1048576</para></entry>
+                             <entry><para>2 ^ 20</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C7</para></entry>
+                             <entry><para>0,0353</para></entry>
+                             <entry><para>Převodní činitel gramů na unce</para>
+                                    <para>Pokud chcete převést gramy na unce, tak vynásobte aktuální hodnotu na displeji touto konstantou. Například 500 × <guibutton>Con</guibutton><guilabel>C7</guilabel><keycap>=</keycap> 18.</para>
+                                    <para>Pokud chcete převést unce na gramy, tak vydělte aktuální hodnotu na displeji touto konstantou. Například 18 ÷ <guibutton>Con</guibutton><guilabel>C7</guilabel><keycap>=</keycap> 500.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C8</para></entry>
+                             <entry><para>0,948</para></entry>
+                             <entry><para>Převodní činitel kilojoulů na britské tepelné jednotky</para>
+                                    <para>Pokud chcete převést kilojouly na britské tepelné jednotky, tak vynásobte aktuální hodnotu na displeji touto konstantou. Například 10 × <guibutton>Con</guibutton><guilabel>C8</guilabel><keycap>=</keycap> 9,48.</para>
+                                    <para>Pokud chcete převést britské tepelné jednotky na kilojouly, tak vydělte aktuální hodnotu na displeji touto konstantou. Například 9,48 ÷ <guibutton>Con</guibutton><guilabel>C8</guilabel><keycap>=</keycap> 10.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C9</para></entry>
+                             <entry><para>0,061</para></entry>
+                             <entry><para>Převodní činitel krychlových centimetrů na krychlové palce</para>
+                                    <para>Pokud chcete převést krychlové centimetry na krychlové palce, tak vynásobte aktuální hodnotu na displeji touto konstantou. Například 100 × <guibutton>Con</guibutton><guilabel>C9</guilabel><keycap>=</keycap> 6,10.</para>
+                                    <para>Pokud chcete převést krychlové palce na krychlové centimetry, tak vydělte aktuální hodnotu na displeji touto konstantou. Například 6,10 ÷ <guibutton>Con</guibutton><guilabel>C9</guilabel><keycap>=</keycap> 100.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </informaltable>
+      <para>Výchozí konstanty můžete přepsat a tak si uložit vlastní konstanty.</para>
+      <para>Když chcete uložit novou konstantu nebo upravit stávající, postupujte podle následujících kroků:</para>
+      <orderedlist>
+        <listitem>
+           <para>Klikněte na <guibutton>Con</guibutton> a ve vyskakovací nabídce zvolte <guilabel>Upravit konstanty...</guilabel>.</para>
+        </listitem>
+        <listitem>
+      <para>V dialogu <guilabel>Úprava konstant</guilabel> zvolte konstantu, kterou chcete přepsat nebo upravit.</para>
+        </listitem>
+        <listitem>
+      <para>Klikněte na pole Hodnota a zadejte novou hodnotu.</para>
+        </listitem>
+        <listitem>
+      <para>Klikněte na pole Popis a zadejte nový popis.</para>
+        </listitem>
+        <listitem>
+      <para>Kliknutím na <guibutton>OK</guibutton> se změny uloží a dialog <guilabel>Úprava konstant</guilabel> se zavře.</para>
+        </listitem>
+      </orderedlist>
+    </sect3>
+    <sect3 id="gcalctool-edit-func"> 
+      <title>Používání funkcí</title> 
+      <para>Dostupné funkce zobrazíte kliknutím na <guibutton>Fun</guibutton>. Vyskakovací nabídka zobrazí seznam definovaných funkcí. Zvolením funkce v nabídce ji spustíte.</para>
+<para>Pokud použijete klávesovou zkratku <keycap>F</keycap>, můžete z klávesnice i určit, kterou funkci chcete zvolit podle následujícího příkladu:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Vstup z klávesnice</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Funkce</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>F</keycap> <keycap>3</keycap> </para></entry>
+              <entry><para>F3</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <para>Aplikace <application>gcalctool</application> nemá definované žádné výchozí funkce. Uložit si můžete až deset funkcí.</para>
+      <para>Při ukládání nové funkce nebo upravě stávající postupujte podle následujících kroků:</para>
+      <orderedlist>
+        <listitem>
+           <para>Klikněte na <guibutton>Fun</guibutton> a ve vyskakovací nabídce zvolte <guilabel>Upravit funkce...</guilabel></para>
+        </listitem>
+        <listitem>
+      <para>V dialogu <guilabel>Úprava funkcí</guilabel> zvolte prázdné pole nebo funkci, kterou chcete přepsat.</para>
+        </listitem>
+        <listitem>
+      <para>Klikněte na pole Hodnota a zadejte novou rovnici, která se má vyřešit. Můžete použít „ans“ pro výsledek předchozí rovnice a „R5“ pro paměťový registr 5 atd. Například pro výpočet kořene kvadratické rovnice R0*x^2 + R1*x + R2 = 0 zadejte <literal>(-R1+sqrt(R1^2-4*R0*R2))/(2*R0)</literal>.</para>
+        </listitem>
+        <listitem>
+      <para>Klepněte na pole Popis a zadejte nový popis. Například <literal>Řešení kvadratické rovnice</literal>.</para>
+        </listitem>
+        <listitem>
+      <para>Kliknutím na <guibutton>OK</guibutton> změny uložíte a zavřete dialog <guilabel>Úprava funkcí</guilabel>.</para>
+        </listitem>
+      </orderedlist>
+    </sect3>
+    <sect3 id="gcalctool-misc-calc"> 
+      <title>Provádění rozmanitých vědeckých výpočtů</title> 
+      <para>K provádění dalších vědeckých výpočtů použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-misc-calc"/>.</para>
+                <table id="gcalctool-TBL-misc-calc" frame="all">
+                  <title>Provádění různorodých vědeckých výpočtů.</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Příklad</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                                                      <row valign="top">
+                             <entry><para>e na <replaceable>x</replaceable>-tou</para> </entry>
+                             <entry><para>e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>Vypočítá hodnotu <literal>e</literal> umocněného na aktuální hodnotu na displeji.</para></entry>
+                             <entry><para>2 e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>7,39</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>10 na <replaceable>x</replaceable>-tou</para> </entry>
+                             <entry><para>10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>Vypočítá hodnotu čísla 10 umocněného na aktuální hodnotu na displeji.</para></entry>
+                             <entry><para>2 10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>100</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>2 na <replaceable>x</replaceable>-tou</para> </entry>
+                             <entry><para>2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>Vypočítá hodnotu čísla 2 umocněného na aktuální hodnotu na displeji.</para></entry>
+                             <entry><para>2 2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>4</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>x na <replaceable>y</replaceable>-tou</para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>Umocní aktuální hodnotu na displeji na hodnotu, kterou zadáte následně.</para></entry>
+                             <entry><para>2 <replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>16</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>x umocněné na převrácenou hodnotu <replaceable>y</replaceable></para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>Umocní aktuální hodnotu na displeji převrácenou hodnotou čísla, které následně zadáte.</para></entry>
+                             <entry><para>2 <replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>16</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><replaceable>x</replaceable> faktoriál </para> </entry>
+                             <entry><para><guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para>Vypočítá faktoriál aktuální hodnoty na displeji. Faktoriál čísla <replaceable>x</replaceable> je <replaceable>x</replaceable>×(<replaceable>x</replaceable>-1)×(<replaceable>x</replaceable>-2)...×1. Tuto funkci lze použít pouze pro celá kladná čísla.</para></entry>
+                             <entry><para>4 <guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para>24</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Zbytek po dělení</para> </entry>
+                             <entry><para><guibutton>Mod</guibutton></para></entry>
+                             <entry><para>Podělí aktuální celé číslo na displeji celým číslem, které zadáte následně a zobrazí zbytek.</para></entry>
+                             <entry><para>15 <guibutton>Mod</guibutton><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Generátor náhodných čísel</para> </entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>Vygeneruje náhodné číslo z rozsahu 0.0 až 1.0 a zobrazí jej na displeji.</para></entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>0,14</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    </sect2> 
+    <sect2 id="gcalctool-programming-mode">
+      <title>Provádění programátorských výpočtů</title>
+      <para>Do programátorského režimu přepnete pomocí <menuchoice><guimenu>Zobrazit</guimenu><guimenuitem>Programátorská</guimenuitem></menuchoice>.</para>
+    <para>Po přepnutí do programátorského režimu se na tlačítky základního a pokročilého režimu zobrazí ještě následující tlačítka:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-programming"> 
+        <title>Tlačítka <application>gcalctool</application> v programátorském režimu</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_programming_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Zobrazuje <application>gcalctool</application> tlačítka <application>gcalctool</application> v programátorském režimu</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+    <sect3 id="gcalctool-num-base"> 
+      <title>Nastavení číselné soustavy</title> 
+      <para>K nastavení číselné soustavy použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-num-base"/>.</para>
+                <table id="gcalctool-TBL-num-base" frame="all">
+                  <title>Nastavování číselné soustavy</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Dvojková soustava</para> </entry>
+                             <entry><para><guibutton>Bin</guibutton></para></entry>
+                             <entry><para>Nastaví číselnou soustavu na dvojkovou, tj. se základem 2.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Osmičková soustava</para> </entry>
+                             <entry><para><guibutton>Oct</guibutton></para></entry>
+                             <entry><para>Nastaví číselnou soustavu na osmičkovou, tj. se základem 8.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Desítková soustava</para> </entry>
+                             <entry><para><guibutton>Dec</guibutton></para></entry>
+                             <entry><para>Nastaví číselnou soustavu na desítkovou, tj. se základem 10. Desítková soustava je výchozí. Pokud přepnete z programátorského režimu do jiného, tak <application>gcalctool</application> automaticky přepne na desítkovou číselnou soustavu.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Šestnáctková soustava</para> </entry>
+                             <entry><para><guibutton>Hex</guibutton></para></entry>
+                             <entry><para>Nastaví číselnou soustavu na šestnáctkovou, tj. se základem 16.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-word-length">
+      <title>Nastavení délky slova</title>
+      <para>Délku slova lze měnit a příslušně podle toho potom pracují bitové operace. Pokud chcete nastavit délku slova, zmáčkněte jedno z tlačítek, která uvádí <xref linkend="gcalctool-TBL-word-length"/>.</para>
+                <table id="gcalctool-TBL-word-length" frame="all">
+                  <title>Nastavování délky slova</title>
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>64bitové slovo</para> </entry>
+                             <entry><para><guibutton>64 bitů</guibutton></para></entry>
+                             <entry><para>Nastaví délku slova na 64 bitů. 64 bitů je výchozí délka slova.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>32bitové slovo</para> </entry>
+                             <entry><para><guibutton>32 bitů</guibutton></para></entry>
+                             <entry><para>Nastaví délku slova na 32 bitů.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>16bitové slovo</para> </entry>
+                             <entry><para><guibutton>16 bitů</guibutton></para></entry>
+                             <entry><para>Nastaví délku slova na 16 bitů.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-calc-bit-manipulation-ext">
+      <title>Provádění bitových operací na celých číslech</title>
+      <para>Pokud je na displeji kalkulačky zobrazené celé číslo, každý jeho bit je zobrazený jako 0 nebo 1 v bitovém editoru. Kliknutím na kterýkoliv z těchto jednotlivých bitů můžete změnit jeho hodnotu a to se ihned příslušně odrazí v zobrazeném celém čísle.</para>
+    </sect3>
+    <sect3 id="gcalctool-logic-calc"> 
+      <title>Provádění logických bitových operací</title> 
+      <para>K provádění logických bitových operací použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-logic-calc"/>.</para>
+                <table id="gcalctool-TBL-logic-calc" frame="all">
+                  <title>Provádění logických bitových operací</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Příklad</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Logické OR</para> </entry>
+                             <entry><para><guibutton>OR</guibutton></para></entry>
+                             <entry><para>Provede logickou operaci OR mezi bity aktuální hodnoty na displeji a bity čísla, které následně zadáte.</para></entry>
+                             <entry><para>10001000 <guibutton>OR</guibutton> 00010001</para></entry>
+                             <entry><para>10011001</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Logické AND</para> </entry>
+                             <entry><para><guibutton>AND</guibutton></para></entry>
+                             <entry><para>Provede logickou operaci AND mezi bity aktuální hodnoty na displeji a bity čísla, které následně zadáte.</para></entry>
+                             <entry><para>10101010 <guibutton>AND</guibutton> 00110011</para></entry>
+                             <entry><para>100010</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Logické NOT</para> </entry>
+                             <entry><para><guibutton>NOT</guibutton></para></entry>
+                             <entry><para>Provede logickou operaci NOT na bitech aktuální hodnoty na displeji, přičemž se použije délka slova nastavená v <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para><guibutton>NOT</guibutton> 1357ACE</para></entry>
+                             <entry><para>FECA8531</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Logické XOR</para> </entry>
+                             <entry><para><guibutton>XOR</guibutton></para></entry>
+                             <entry><para>Provede logickou operaci XOR mezi bity aktuální hodnoty na displeji a bity čísla, které následně zadáte.</para></entry>
+                             <entry><para>1100 <guibutton>XOR</guibutton> 1010</para></entry>
+                             <entry><para>110</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Logické XNOR</para> </entry>
+                             <entry><para><guibutton>XNOR</guibutton></para></entry>
+                             <entry><para>Provede logickou operaci XNOR mezi bity aktuální hodnoty na displeji a bity čísla, které následně zadáte.</para></entry>
+                             <entry><para>1100 <guibutton>XNOR</guibutton> 1010</para></entry>
+                             <entry><para>1001</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-num-manip"> 
+      <title>Operace s dvojkovými čísly</title> 
+      <para>K operacím s dvojkovými čísly použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-num-manip"/>.</para>
+                <table id="gcalctool-TBL-num-manip" frame="all">
+                  <title>Operace s dvojkovými čísly</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Příklad</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Posun doleva o <replaceable>n</replaceable></para> </entry>
+                             <entry><para><guibutton>&lt;</guibutton></para></entry>
+                             <entry><para>Posune aktuální hodnotu zobrazenou na displeji o zadaný počet míst doleva. Klikněte na <guibutton>&lt;</guibutton> a ve vyskakovací nabídce zvolte počet míst, o které se má posun provést. Posunout lze až o 15 míst doleva.</para></entry>
+                             <entry><para>111 <guibutton>&lt;</guibutton><guilabel>1 place</guilabel></para></entry>
+                             <entry><para>1110</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Posun doprava <replaceable>n</replaceable></para> </entry>
+                             <entry><para><guibutton>&gt;</guibutton></para></entry>
+                             <entry><para>Posune aktuální hodnotu zobrazenou na displeji o zadaný počet míst doprava. Klikněte na <guibutton>&gt;</guibutton> a ve vyskakovací nabídce zvolte počet míst, o které se má posun provést. Posunout lze až o 15 míst doprava.</para></entry>
+                             <entry><para>1011 <guibutton>&gt;</guibutton><guilabel>1 place</guilabel></para></entry>
+                             <entry><para>101</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Ořezávání čísla</para> </entry>
+                             <entry><para><guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>Ořízne současnou hodnotu zobrazenou na displeji na délku nastavenou jak uvádí <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>FFFFFFFFFF <guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>FFFFFFFF</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Vrátí jedničkový doplněk</para> </entry>
+                             <entry><para><guibutton>1's</guibutton></para></entry>
+                             <entry><para>Vypočítá jedničkový doplněk k současné hodnotě zobrazené na displeji, při výpočtu se použije délka slova nastavená jak uvádí <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>D723 <guibutton>1's</guibutton></para></entry>
+                             <entry><para>FFFF28DC</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Vrátí dvojkový doplněk</para> </entry>
+                             <entry><para><guibutton>2's</guibutton></para></entry>
+                             <entry><para>Vypočítá dvojkový doplněk k současné hodnotě zobrazené na displeji, při výpočtu se použije délka slova nastavená jak uvádí <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>D723 <guibutton>2's</guibutton></para></entry>
+                             <entry><para>FFFF28DD</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Pokud používáte klávesové zkratky, můžete z klávesnice zadat i počet míst, o které se má provést posun, tak jako v následujících příkladech:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Vstup z klávesnice</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Popis</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>&lt;</keycap> <keycap>4</keycap></para></entry>
+              <entry><para>Posune aktuální hodnotu na displeji o 4 místa doleva.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>&gt;</keycap> <keycap>4</keycap></para></entry>
+              <entry><para>Posune aktuální hodnotu na displeji o 4 místa doprava.</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+
+    </sect3>
+        <sect3 id="gcalctool-misc-prog">
+      <title>Provádění různorodých programátorských výpočtů</title> 
+      <para>K provádění dalších programátorských výpočtů použijte tlačítka, která popisuje <xref linkend="gcalctool-TBL-misc-prog"/>.</para>
+                <table id="gcalctool-TBL-misc-prog" frame="all">
+                  <title>Provádění různorodých programátorských výpočtů</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Popis</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Příklad</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Výsledek</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Šestnáctkové číslice</para> </entry>
+                             <entry><para><guibutton>A</guibutton> až <guibutton>F</guibutton></para></entry>
+                             <entry><para>Tyto číslice jsou dostupné pouze v šestnáctkové číselné soustavě.</para></entry>
+                             <entry><para><guibutton>B</guibutton></para></entry>
+                             <entry><para>B</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+         </sect3>
+    </sect2>
+<!-- ============= Undo and Redo ======================== -->
+  <sect2 id="gcalctool-undo-redo">
+    <title>Funk zpět a znovu</title>
+                <para>Pokud chcete vrátit zpět svůj předchozí úkon, zvolte <menuchoice><guimenu>Upravit</guimenu><guimenuitem>Zpět</guimenuitem></menuchoice>. Můžete vrátit zpět až 15 posledních úkonů.</para>
+                <para>Pokud chcete znovu provést úkon, který jste právě vrátili zpět, tak zvolte <menuchoice><guimenu>Upravit</guimenu><guimenuitem>Znovu</guimenuitem></menuchoice>. Znovu provést můžete až 15 vrácených úkonů.</para>
+  </sect2>
+<!-- ============= Quitting ============================= -->
+  <sect2 id="gcalctool-quit"> 
+    <title>Ukončení</title> 
+                <para>K ukončení <application>gcalctool</application> zvolte <menuchoice><guimenu>Kalkulačka</guimenu><guimenuitem>Ukončit</guimenuitem></menuchoice>.</para>
+                <para>Při ukončení <application>gcalctool</application> se automaticky zapamatují aktuální hodnoty následujících nastavení a při dalším spuštění <application>gcalctool</application> se obnoví do stejného stavu:</para>
+                  <itemizedlist>
+                    <listitem><para>Režim: <link linkend="gcalctool-basic-mode">Základní</link>, <link linkend="gcalctool-advanced-mode">Pokročilý</link>, <link linkend="gcalctool-financial-mode">Finanční</link>, or <link linkend="gcalctool-scientific-mode">Vědecký</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-set-acc">Přesnost</link></para></listitem>
+                    <listitem><para>Zda je nebo není zobrazené <link linkend="gcalctool-mem-reg">okno paměťových registrů</link> plus obsah každého paměťového registru.</para></listitem>
+                    <listitem><para><link linkend="gcalctool-num-base">Číselná soustava</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-display-type">Typ displeje</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-trig-type">Trigonometrické jednotky</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-set-acc">Zobrazování koncových nul</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-calc-functions-separator">Zobrazování oddělovače tisíců</link></para></listitem>
+                  </itemizedlist>
+  </sect2>
+  </sect1>
+<!-- ============= Technical Information ============================= -->
+  <sect1 id="gcalctool-tech-info">
+         <title>Technické informace</title>
+
+         <sect2 id="gcalctool-recognize-error">
+                <title>Chybové stavy</title>
+                <para>V případě, že provedete neplatný výpočet, <application>gcalctool</application> následovně signalizuje chybový stav: <itemizedlist>
+<listitem><para>Zobrazí na displeji slovo <literal>Chyba</literal></para></listitem>
+<listitem><para>Ve stavovém řádku zobrazí chybovou zprávu.</para></listitem>
+<listitem><para>Znepřístupní všechna tlačítka kalkulačky s výjimkou <guibutton>Clr</guibutton>.</para></listitem>
+<listitem><para>Znepřístupní všechny volby kalkulačky.</para></listitem>
+<listitem><para>Znepřístupní všechny nabídky kalkulačky vyjma <menuchoice><guimenu>Kalkulačka</guimenu><guimenuitem>Ukončit</guimenuitem></menuchoice> a <menuchoice><guimenu>Nápověda</guimenu><guimenuitem>Obsah</guimenuitem></menuchoice>.</para></listitem>
+</itemizedlist></para>
+<para>Chybový stav zrušíte kliknutím na <guibutton>Clr</guibutton> nebo zmáčknutím <keycombo><keycap>Shift</keycap><keycap>Delete</keycap></keycombo>.</para>
+         </sect2>
+
+         <sect2 id="gcalctool-change-modes">
+                <title>Změny režimů</title>
+                <para>Když se uživatel pokusí změnit režim během nedokončeného výpočtu, objeví se dialog s varování. Upozorní uživatele, že současný výpočet bude smazán a číselná soustava přepnuta na desítkovou.</para>
+                <para>K dispozici je přepínač, kterým můžete toto hlášení napříště zakázat.</para>
+                <para>Pokud uživatel stiskne tlačítko <guibutton>Zrušit</guibutton>, přepnutí režimu se zruší. Pokud zmáčkne tlačítko <guibutton>Změnit režim</guibutton>, změna režimu se provede a bude mít následující efekty: <itemizedlist>
+<listitem><para>Vymazání displeje.</para></listitem>
+   <listitem><para>Nastavení číselné soustavy na desítkovou.</para></listitem>
+   <listitem><para>Nastavení typu displeje s pevnou čárkou.</para></listitem>
+   <listitem><para>Nastavení přesnosti výpočtu na devět platných desetinných míst.</para></listitem>
+   <listitem><para>Vypnutí zobrazování oddělovače tisíců.</para></listitem>
+   <listitem><para>Vypnutí zobrazování koncových nul za desetinnou čárkou.</para></listitem>
+   <listitem><para>Pokud je zvoleným režimem základní, tak se skryje okno s paměťovými registry.</para></listitem>
+</itemizedlist></para>
+         </sect2>
+
+         <sect2 id="gcalctool-changing-display-area">
+                <title>Změny v oblasti displeje</title>
+                <para>Je možné použít myš ke kliknutí do oblasti displeje a úpravě jeho obsahu.</para>
+                <para>Fungují všechny normální klávesové zkratky plus tyto další: <itemizedlist>
+    <listitem><para><keycombo><keycap>Ctrl</keycap><keycap>Delete</keycap></keycombo> vymaže znak napravo od textového kurzoru</para></listitem>
+    <listitem><para><keycap>Home</keycap> přesune textový kurzor na začátek displeje.</para></listitem> 
+    <listitem><para><keycap>End</keycap> přesune textový kurzor na konec displeje.</para></listitem> 
+</itemizedlist></para>
+         </sect2>
+
+  </sect1>
+<!-- ============= Keyboard Shortcuts ============================= -->
+  <sect1 id="gcalctool-keyboard-shortcut"> 
+    <title>Rychlý přehled: Klávesové zkratky</title> 
+                <para><xref linkend="gcalctool-TBL-keyboard-shortcut-button"/>, <xref linkend="gcalctool-TBL-keyboard-shortcut-sci-options"/> a <xref linkend="gcalctool-TBL-keyboard-shortcut-menu"/> poskytují rychlý přehled všech klávesových zkratek aplikace <application>gcalctool</application>.</para>
+                <para>Pokud použijete klávesovou zkratku pro některé z tlačítek kalkulačky, které má přidruženou nabídku, tak ta se zobrazí. Pro výběr položky z této nabídky můžete použít šipky nebo zkratky jednotlivých položek.</para>
+                <table id="gcalctool-TBL-keyboard-shortcut-button" frame="all">
+                  <title>Rychlý přehled klávesových zkratek pro tlačítka aplikace <application>gcalctool</application></title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Klávesová zkratka</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Tlačítko</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Viz</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycap>0</keycap> až <keycap>9</keycap></para></entry>
+                             <entry><para><guibutton>0</guibutton> až <guibutton>9</guibutton></para></entry>
+                             <entry><para>Číslice</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>A</keycap> </para></entry>
+                             <entry><para><guibutton>Acc</guibutton> </para></entry>
+                             <entry><para>Přesnost</para> </entry>
+                             <entry><para><xref linkend="gcalctool-set-acc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>a</keycap> </para></entry>
+                             <entry><para><guibutton>A</guibutton> </para></entry>
+                             <entry><para>Šestnáctková číslice</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>b</keycap> </para></entry>
+                             <entry><para><guibutton>B</guibutton> </para></entry>
+                             <entry><para>Šestnáctková číslice</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>C</keycap></para></entry>
+                             <entry><para><guibutton>+/-</guibutton></para></entry>
+                             <entry><para>Změna znaménka</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>c</keycap> </para></entry>
+                             <entry><para><guibutton>C</guibutton> </para></entry>
+                             <entry><para>Šestnáctková číslice</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>D</keycap></para></entry>
+                             <entry><para><guibutton>Ddb</guibutton></para></entry>
+                             <entry><para>Dvojitě degresivní odpis</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>d</keycap> </para></entry>
+                             <entry><para><guibutton>D</guibutton> </para></entry>
+                             <entry><para>Šestnáctková číslice</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>E</keycap> </para></entry>
+                             <entry><para><guibutton>Exp</guibutton> </para></entry>
+                             <entry><para>Exponent</para> </entry>
+                             <entry><para><xref linkend="gcalctool-enter-exp"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>e</keycap> </para></entry>
+                             <entry><para><guibutton>E</guibutton> </para></entry>
+                             <entry><para>Šestnáctková číslice</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>F</keycap> </para></entry>
+                             <entry><para><guibutton>Fun</guibutton> </para></entry>
+                             <entry><para>Funkce</para> </entry>
+                             <entry><para><xref linkend="gcalctool-edit-func"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>f</keycap> </para></entry>
+                             <entry><para><guibutton>F</guibutton> </para></entry>
+                             <entry><para>Šestnáctková číslice</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>G</keycap></para></entry>
+                             <entry><para>10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>10 na <replaceable>x</replaceable>-tou</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>g</keycap></para></entry>
+                             <entry><para><guibutton>Log</guibutton></para></entry>
+                             <entry><para>Desítkový logaritmus</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>H</keycap></para></entry>
+                             <entry><para>2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>2 na <replaceable>x</replaceable>-tou</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>h</keycap></para></entry>
+                             <entry><para>Log<subscript>2</subscript></para></entry>
+                             <entry><para>Dvojkový logaritmus</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>I</keycap></para></entry>
+                             <entry><para><guibutton>Gpm</guibutton></para></entry>
+                             <entry><para>Hrubá marže</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>i</keycap></para></entry>
+                             <entry><para><guibutton>Int</guibutton></para></entry>
+                             <entry><para>Celá část</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>J</keycap></para></entry>
+                             <entry><para>Cos<superscript>-1</superscript></para></entry>
+                             <entry><para>Inverzní kosinus</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>j</keycap></para></entry>
+                             <entry><para><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>Kosinus</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>K</keycap></para></entry>
+                             <entry><para>Sin<superscript>-1</superscript></para></entry>
+                             <entry><para>Inverzní sinus</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>k</keycap></para></entry>
+                             <entry><para><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>Sinus</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>l</keycap></para></entry>
+                             <entry><para><guibutton>Sln</guibutton></para></entry>
+                             <entry><para>Lineární odpis</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>M</keycap></para></entry>
+                             <entry><para><guibutton>Mod</guibutton></para></entry>
+                             <entry><para>Zbytek po dělení</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>m</keycap></para></entry>
+                             <entry><para><guibutton>Ctrm</guibutton></para></entry>
+                             <entry><para>Doba úročení</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>N</keycap></para></entry>
+                             <entry><para>e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>e na <replaceable>x</replaceable>-tou</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>n</keycap></para></entry>
+                             <entry><para><guibutton>Ln</guibutton></para></entry>
+                             <entry><para>Přirozený logaritmus</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                                                   <row valign="top">
+                                                         <entry><para><keycap>O</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>x umocněno na převrácenou hodnotu <replaceable>y</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>o</keycap> nebo <keycap>^</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>x na <replaceable>y</replaceable>-tou</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>P</keycap></para></entry>
+                             <entry><para><guibutton>Pmt</guibutton></para></entry>
+                             <entry><para>Pravidelná splátka</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>p</keycap></para></entry>
+                             <entry><para><guibutton>Pv</guibutton></para></entry>
+                             <entry><para>Současná hodnota</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>R</keycap></para></entry>
+                             <entry><para><guibutton>Rcl</guibutton></para></entry>
+                             <entry><para>Vytáhne hodnotu z paměťového registru</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>r</keycap></para></entry>
+                             <entry><para><guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>Převrácená hodnota</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>S</keycap></para></entry>
+                             <entry><para><guibutton>Sto</guibutton></para></entry>
+                             <entry><para>Uloží hodnotu do paměťového registru</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>s</keycap></para></entry>
+                             <entry><para><guibutton>Sqrt</guibutton></para></entry>
+                             <entry><para>Druhá odmocnina</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>T</keycap></para></entry>
+                             <entry><para><guibutton>Rate</guibutton></para></entry>
+                             <entry><para>Úroková sazba za období</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>t</keycap></para></entry>
+                             <entry><para><guibutton>Doba</guibutton></para></entry>
+                             <entry><para>Platební období</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>u</keycap></para></entry>
+                             <entry><para><guibutton>Abs</guibutton></para></entry>
+                             <entry><para>Absolutní hodnota</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>v</keycap></para></entry>
+                             <entry><para><guibutton>Fv</guibutton></para></entry>
+                             <entry><para>Budoucí hodnota</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>W</keycap></para></entry>
+                             <entry><para>Tan<superscript>-1</superscript></para></entry>
+                             <entry><para>Inverzní tangens</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>w</keycap></para></entry>
+                             <entry><para><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>Tan</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>X</keycap></para></entry>
+                             <entry><para><guibutton>Exch</guibutton></para></entry>
+                             <entry><para>Změní hodnoty mezi paměťovým registrem a displejem</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>x</keycap></para></entry>
+                             <entry><para><guibutton>Xor</guibutton></para></entry>
+                             <entry><para>Logické XOR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Y</keycap></para></entry>
+                             <entry><para><guibutton>Syd</guibutton></para></entry>
+                             <entry><para>Hodnota degresivního odpisu pro období</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Z</keycap></para></entry>
+                             <entry><para><guibutton>2's</guibutton></para></entry>
+                             <entry><para>dvojkový doplněk</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>z</keycap></para></entry>
+                             <entry><para><guibutton>1's</guibutton></para></entry>
+                             <entry><para>jedničkový doplněk</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>!</keycap></para></entry>
+                             <entry><para><guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para><replaceable>x</replaceable> faktoriál</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>#</keycap> </para></entry>
+                             <entry><para><guibutton>Con</guibutton> </para></entry>
+                             <entry><para>Konstantní hodnota</para> </entry>
+                             <entry><para><xref linkend="gcalctool-edit-const"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>%</keycap></para></entry>
+                             <entry><para><guibutton>%</guibutton></para></entry>
+                             <entry><para>Procenta</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&amp;</keycap></para></entry>
+                             <entry><para><guibutton>And</guibutton></para></entry>
+                             <entry><para>Logické AND</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>(</keycap> a <keycap>)</keycap></para></entry>
+                             <entry><para><guibutton>(</guibutton> a <guibutton>)</guibutton></para></entry>
+                             <entry><para>Závorky</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>×</keycap></para></entry>
+                             <entry><para><guibutton>×</guibutton></para></entry>
+                             <entry><para>Násobení</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>+</keycap></para></entry>
+                             <entry><para><guibutton>+</guibutton></para></entry>
+                             <entry><para>Sčítání</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>-</keycap></para></entry>
+                             <entry><para><guibutton>-</guibutton></para></entry>
+                             <entry><para>Odečítání</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>,</keycap></para></entry>
+                             <entry><para><guibutton>,</guibutton></para></entry>
+                             <entry><para>Desetinná čárka</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>÷</keycap></para></entry>
+                             <entry><para><guibutton>÷</guibutton></para></entry>
+                             <entry><para>Dělení</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>:</keycap></para></entry>
+                             <entry><para><guibutton>Frac</guibutton></para></entry>
+                             <entry><para>Desetinná část</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&lt;</keycap></para></entry>
+                             <entry><para><guibutton>&lt;</guibutton></para></entry>
+                             <entry><para>Posun doleva o <replaceable>n</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>=</keycap> nebo <keycap>Return</keycap></para></entry>
+                             <entry><para><guibutton>=</guibutton></para></entry>
+                             <entry><para>Spočítat výsledek</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&gt;</keycap></para></entry>
+                             <entry><para><guibutton>&gt;</guibutton></para></entry>
+                             <entry><para>Posun doprava o <replaceable>n</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>?</keycap></para></entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>Generátor náhodných čísel</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>@</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>Druhá mocnina</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>{</keycap></para></entry>
+                             <entry><para><guibutton>Xnor</guibutton></para></entry>
+                             <entry><para>Logické XNOR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>[</keycap></para></entry>
+                             <entry><para><guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>Ořezání čísla</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>|</keycap></para></entry>
+                             <entry><para><guibutton>Or</guibutton></para></entry>
+                             <entry><para>Logické OR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>~</keycap></para></entry>
+                             <entry><para><guibutton>Not</guibutton></para></entry>
+                             <entry><para>Logické NOT</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Smazat znak (Backspace)</keycap></para></entry>
+                             <entry><para><guibutton>Bksp</guibutton></para></entry>
+                             <entry><para>Smazat znak (Backspace)</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Esc</keycap> nebo</para>
+                                    <para><keycombo><keycap>Ctrl</keycap><keycap>Smazat znak (Backspace)</keycap></keycombo></para></entry>
+                             <entry><para><guibutton>CE</guibutton></para></entry>
+                             <entry><para>Smazat vstup</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Shift</keycap><keycap>Delete</keycap></keycombo></para></entry>
+                             <entry><para><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>Smazat (Clear)</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <table id="gcalctool-TBL-keyboard-shortcut-sci-options" frame="all">
+                  <title>Rychlý přehled klávesových zkratek pro volby vědeckého režimu aplikace <application>gcalctool</application></title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Klávesová zkratka</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Volba</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Viz</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>1</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>16 bitů</guilabel></para></entry>
+                             <entry><para>Nastaví délku slova na 16 bitů.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>3</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>32 bitů</guilabel></para></entry>
+                             <entry><para>Nastaví délku slova na 32 bitů.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>6</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>64 bitů</guilabel></para></entry>
+                             <entry><para>Nastaví délku slova na 64 bitů.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>a</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Grady</guilabel></para></entry>
+                             <entry><para>Nastaví trigonometrické jednotky na grady.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>b</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Bin</guilabel></para></entry>
+                             <entry><para>Nastaví číselnou soustavu na dvojkovou.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>d</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Dec</guilabel></para></entry>
+                             <entry><para>Nastaví číselnou soustavu na desítkovou.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>f</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Fix</guilabel></para></entry>
+                             <entry><para>Nastaví typ displeje na formát s pevnou čárkou.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>g</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Stupně</guilabel></para></entry>
+                             <entry><para>Nastaví trigonometrické jednotky na stupně.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>i</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Inv</guilabel></para></entry>
+                             <entry><para>Přepne přepínač inverzní varianty trigonometrických funkcí.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-options"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>n</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Eng</guilabel></para></entry>
+                             <entry><para>Nastaví typ displeje na inženýrský formát.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>o</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Oct</guilabel></para></entry>
+                             <entry><para>Nastaví číselnou soustavu na osmičkovou.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>r</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Radiány</guilabel></para></entry>
+                             <entry><para>Nastaví trigonometrické jednotky na radiány.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>s</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Sci</guilabel></para></entry>
+                             <entry><para>Nastaví typ displeje na vědecký formát.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>x</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Hex</guilabel></para></entry>
+                             <entry><para>Nastaví číselnou soustavu na šestnáctkovou.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>y</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Hyp</guilabel></para></entry>
+                             <entry><para>Přepne přepínač hyperbolické varianty trigonometrických funkcí.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-options"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <table id="gcalctool-TBL-keyboard-shortcut-menu" frame="all">
+                  <title>Rychlý přehled klávesových zkratek položek nabídek aplikace <application>gcalctool</application></title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Klávesová zkratka</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Položka nabídky</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Funkce</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Viz</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>b</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Zobrazit</guimenu> <guimenuitem>Základní</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Přepne do základního režimu</para> </entry>
+                             <entry><para><xref linkend="gcalctool-basic-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>c</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Upravit</guimenu> <guimenuitem>Kopírovat</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Zkopíruje aktuální hodnotu na displeji do schránky</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>f</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Zobrazit</guimenu> <guimenuitem>Finanční</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Přepne do finančního režimu</para> </entry>
+                             <entry><para><xref linkend="gcalctool-financial-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>h</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Obsah</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Zobrazí nápovědu k aplikaci <application>gcalctool</application></para> </entry>
+                             <entry><para><xref linkend="gcalctool-intro"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>i</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Upravit</guimenu> <guimenuitem>Vložit ASCII hodnotu znaku</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Zobrazí dialog <guilabel>Vložit hodnotu ASCII</guilabel></para> </entry>
+                             <entry><para><xref linkend="gcalctool-ins-ascii"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>k</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Zobrazit</guimenu> <guimenuitem>Zobrazování oddělovače tisíců</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Zobrazí oddělovače tisíců</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions-separator"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>m</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Zobrazit</guimenu> <guimenuitem>Paměťové registry</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Zobrazí okno <guilabel>Paměťových registrů</guilabel></para> </entry>
+                             <entry><para><xref linkend="gcalctool-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>p</keycap></keycombo></para></entry>
+                                                         <entry><para> <menuchoice> <guimenu>Zobrazit</guimenu> <guimenuitem>Programátorská</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Přepne do programátorského režimu</para> </entry>
+                             <entry><para><xref linkend="gcalctool-programming-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>q</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Kalkulačka</guimenu> <guimenuitem>Ukončit</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Ukončí aplikaci <application>gcalctool</application></para> </entry>
+                             <entry><para><xref linkend="gcalctool-quit"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>s</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Zobrazit</guimenu> <guimenuitem>Vědecká</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Přepne do vědeckého režimu</para> </entry>
+                             <entry><para><xref linkend="gcalctool-scientific-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>t</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Zobrazit</guimenu> <guimenuitem>Zobrazování koncových nul</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Zobrazit koncové nuly</para> </entry>
+                             <entry><para><xref linkend="gcalctool-set-acc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>v</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Upravit</guimenu> <guimenuitem>Vložit</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Vloží aktuální hodnotu ve schránce na displej</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>z</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Upravit</guimenu> <guimenuitem>Zpět</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Vrátí zpět předchozí úkon</para> </entry>
+                             <entry><para><xref linkend="gcalctool-undo-redo"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>z</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Upravit</guimenu> <guimenuitem>Znovu</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Provede znovu vrácený úkon</para> </entry>
+                             <entry><para><xref linkend="gcalctool-undo-redo"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+  </sect1>
+</article>

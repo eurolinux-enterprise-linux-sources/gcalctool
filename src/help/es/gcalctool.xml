@@ -1,0 +1,2716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "5.5.37">
+<!ENTITY manrevision "2.9">
+<!ENTITY date "March 2005">
+<!ENTITY app "<application>gcalctool</application>">
+<!ENTITY appname "Calculator">
+<!ENTITY ldquo "&#147;">
+<!-- Left Double Quote --><!ENTITY rdquo "&#148;">
+<!-- Right Double Quote -->]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="es">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manual de la <application>Calculadora</application></title>       
+
+    <abstract role="description">
+      <para>gcalctool es una calculadora para GNOME. Incluye los modos básico, avanzado, financiero y científico y usa un paquete de precisión múltiple para los cálculos aritméticos y proporcionar un alto grado de precisión.</para>
+    </abstract>
+
+    <copyright> 
+      <year>2003</year> 
+      <year>2004</year> 
+      <year>2005</year>
+      <holder>Sun Microsystems</holder> 
+    </copyright><copyright><year>2007-2009</year><holder>Jorge González (jorgegonz@svn.gnome.org)</holder></copyright> 
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+   -->
+    <publisher role="maintainer"> 
+      <publishername>Proyecto de documentación de GNOME</publishername> 
+    </publisher> 
+
+     <legalnotice id="legalnotice">
+	<para>Se otorga permiso para copiar, distribuir y/o modificar este documento bajo los términos de la Licencia de Documentación Libre de GNU, Versión 1.1 o cualquier otra versión posterior publicada por la Free Software Foundation; sin Secciones Invariantes ni Textos de Cubierta Delantera ni Textos de Cubierta Trasera. Puede encontrar una copia de la licencia GFDL en este <ulink type="help" url="ghelp:fdl">enlace</ulink> o en el archivo COPYING-DOCS distribuido con este manual.</para>
+         <para>Este manual es parte de una colección de manuales de GNOME distribuido bajo la GFDL. Si quiere distribuir este manual por separado de la colección, puede hacerlo añadiendo una copia de la licencia al manual, tal como se describe en la sección 6 de la licencia.</para>
+
+	<para>Muchos de los nombres usados por compañías para distinguir sus productos y servicios son mencionados como marcas comerciales. Donde esos nombres aparezcan en cualquier documentación de GNOME, y los miembros del Proyecto de Documentación de GNOME están al corriente de esas marcas comerciales, entonces los nombres se pondrán en mayúsculas o con la inicial en mayúsculas.</para>
+
+	<para>ESTE DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL MISMO SE PROPORCIONAN SEGÚN LAS CONDICIONES ESTABLECIDAS EN LA LICENCIA DE DOCUMENTACIÓN LIBRE DE GNU (GFDL) Y TENIENDO EN CUENTA QUE: <orderedlist>
+		<listitem>
+		  <para>EL DOCUMENTO SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, NI EXPLÍCITA NI IMPLÍCITA INCLUYENDO, SIN LIMITACIÓN, GARANTÍA DE QUE EL DOCUMENTO O VERSIÓN MODIFICADA DE ÉSTE CAREZCA DE DEFECTOS COMERCIALES, SEA ADECUADO A UN FIN CONCRETO O INCUMPLA ALGUNA NORMATIVA. TODO EL RIESGO RELATIVO A LA CALIDAD, PRECISIÓN Y UTILIDAD DEL DOCUMENTO O SU VERSIÓN MODIFICADA RECAE EN USTED. SI CUALQUIER DOCUMENTO O VERSIÓN MODIFICADA DE AQUÉL RESULTARA DEFECTUOSO EN CUALQUIER ASPECTO, USTED (Y NO EL REDACTOR INICIAL, AUTOR O CONTRIBUYENTE) ASUMIRÁ LOS COSTES DE TODA REPARACIÓN, MANTENIMIENTO O CORRECCIÓN NECESARIOS. ESTA RENUNCIA DE GARANTÍA ES UNA PARTE ESENCIAL DE ESTA LICENCIA. NO SE AUTORIZA EL USO DE NINGÚN DOCUMENTO NI VERSIÓN MODIFICADA DE ÉSTE POR EL PRESENTE, SALVO DENTRO DEL CUMPLIMIENTO DE LA RENUNCIA;Y</para>
+		</listitem>
+		<listitem>
+		  <para>BAJO NINGUNA CIRCUNSTANCIA NI BAJO NINGUNA TEORÍA LEGAL, SEA POR ERROR (INCLUYENDO NEGLIGENCIA), CONTRATO O DE ALGÚN OTRO MODO, EL AUTOR, EL ESCRITOR INICIAL, CUALQUIER CONTRIBUIDOR, O CUALQUIER DISTRIBUIDOR DEL DOCUMENTO O VERSIÓN MODIFICADA DEL DOCUMENTO, O CUALQUIER PROVEEDOR DE CUALQUIERA DE ESAS PARTES, SERÁ RESPONSABLE ANTE NINGUNA PERSONA POR NINGÚN DAÑO DIRECTO, INDIRECTO, ESPECIAL, INCIDENTAL O DERIVADO DE NINGÚN TIPO, INCLUYENDO, SIN LIMITACIÓN DAÑOS POR PÉRDIDA DE MERCANCÍAS, PARO TÉCNICO, FALLO INFORMÁTICO O MAL FUNCIONAMIENTO O CUALQUIER OTRO POSIBLE DAÑO O PÉRDIDAS DERIVADAS O RELACIONADAS CON EL USO DEL DOCUMENTO O SUS VERSIONES MODIFICADAS, AUNQUE DICHA PARTE HAYA SIDO INFORMADA DE LA POSIBILIDAD DE QUE SE PRODUJESEN DICHOS DAÑOS.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+        any of this. -->
+
+    <authorgroup> 
+      <corpauthor>Sun Microsystems Inc.</corpauthor>
+
+<!-- gdocteam@sun.com (Sun Java Desktop System Documentation Team) -->
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+     
+      <othercredit role="translator">
+                <firstname>Latin</firstname> 
+                <surname>Translator 1</surname> 
+                <affiliation> 
+                          <orgname>Latin Translation Team</orgname> 
+                          <address> <email>translator@gnome.org</email> </address> 
+                </affiliation>
+                <contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+    <revision> 
+                <revnumber>Manual de la calculadora V2.9</revnumber> 
+                <date>Marzo de 2005</date> 
+                <revdescription> 
+                          <para role="author">Equipo de documentación del escritorio de Sun Java Desktop System</para>
+                          <para role="publisher">Proyecto de documentación de GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Manual de la Calculadora V2.8</revnumber> 
+                <date>Agosto de 2004</date> 
+                <revdescription> 
+                          <para role="author">Equipo de documentación del escritorio de Sun Java Desktop System</para>
+                          <para role="publisher">Proyecto de documentación de GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Manual de gcalctool V2.7</revnumber> 
+                <date>Febrero de 2004</date> 
+                <revdescription> 
+                          <para role="author">Equipo de documentación de GNOME de Sun</para>
+                          <para role="publisher">Proyecto de documentación de GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Manual de gcalctool V2.6</revnumber> 
+                <date>Octubre de 2003</date> 
+                <revdescription> 
+                          <para role="author">Equipo de documentación de GNOME de Sun</para>
+                          <para role="publisher">Proyecto de documentación de GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Manual de gcalctool V2.5</revnumber> 
+                <date>Julio de 2003</date> 
+                <revdescription> 
+                          <para role="author">Equipo de documentación de GNOME de Sun</para>
+                          <para role="publisher">Proyecto de documentación de GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Manual de gcalctool V2.4</revnumber> 
+                <date>Junio de 2003</date> 
+                <revdescription> 
+                          <para role="author">Equipo de documentación de GNOME de Sun</para>
+                          <para role="publisher">Proyecto de documentación de GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Manual de gcalctool V2.3</revnumber> 
+                <date>Abril de 2003</date> 
+                <revdescription> 
+                          <para role="author">Equipo de documentación de GNOME de Sun</para>
+                          <para role="publisher">Proyecto de documentación de GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Manual de la gcalctool V2.2</revnumber> 
+                <date>Abril de 2003</date> 
+                <revdescription> 
+                          <para role="author">Equipo de documentación de GNOME de Sun</para>
+                          <para role="publisher">Proyecto de documentación de GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Manual de la gcalctool V2.1</revnumber> 
+                <date>Marzo de 2003</date> 
+                <revdescription> 
+                          <para role="author">Equipo de documentación de GNOME de Sun</para>
+                          <para role="publisher">Proyecto de documentación de GNOME</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Manual de la gcalctool V2.0</revnumber> 
+                <date>Marzo de 2003</date> 
+                <revdescription> 
+                          <para role="author">Equipo de documentación de GNOME de Sun</para>
+                          <para role="publisher">Proyecto de documentación de GNOME</para>
+                </revdescription> 
+      </revision> 
+    </revhistory> 
+
+    <releaseinfo>Este manual describe la versión 5.5.37 de la Calculadora.</releaseinfo> 
+    <legalnotice> 
+      <title>Comentarios</title> 
+      <para>Para informar de un fallo, o hacer alguna sugerencia concerniente a la <application>Calculadora</application> o este manual, siga las indicaciones en la <ulink url="ghelp:gnome-feedback" type="help">Página de 
+contacto de GNOME</ulink>.</para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>gcalctool</primary> 
+  </indexterm> 
+  <indexterm zone="index"> 
+    <primary>Calculadora</primary> 
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+  <sect1 id="gcalctool-intro"> 
+    <title>Introducción</title> 
+    <para>La aplicación <application>Calculadora</application> proporciona los modos siguientes para diferentes tipos de funcionalidad matemática:</para>
+     <variablelist>
+        <varlistentry>
+        <term><link linkend="gcalctool-basic-mode">Básico</link></term>
+        <listitem><para>El modo predeterminado. Proporciona unas funciones de cálculo estándar. Puede realizar las funciones de suma, resta, división y multiplicación en el modo básico y también puede usar todos las funciones básicas en el resto de los modos.</para></listitem>
+        </varlistentry>
+  <varlistentry>
+        <term><link linkend="gcalctool-advanced-mode">Avanzado</link></term>
+        <listitem><para>Proporciona funciones de cálculo avanzadas. Puede almacenar números en 10 registros de memoria diferentes así como recuperar y reemplazar los números en los registros de memoria. Puede usar todas las funciones avanzadas en los modos Financiero, Científico y Programador.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+        <term><link linkend="gcalctool-financial-mode">Financiero</link></term>
+        <listitem><para>Proporciona varias funciones financieras complejas.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+        <term><link linkend="gcalctool-scientific-mode">Científico</link></term>
+        <listitem><para>Proporciona muchas funciones matemáticas adicionales, incluyendo funciones trigonométricas. Además puede almacenar sus propias funciones y constantes, cuando use el modo Científico.</para></listitem>
+        </varlistentry>
+                <varlistentry>
+                <term><link linkend="gcalctool-programming-mode">Programador</link></term>
+                <listitem><para>Proporciona funciones útiles para un programador, incluyendo funciones bit a bit y un editor de bits.</para></listitem>
+                </varlistentry>
+     </variablelist>
+
+    <para>Puede usar la <application>Calculadora</application> en los siguientes sistemas de numeración:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Sistema de numeración</para></entry>
+              <entry colname="COLSPEC1" align="right">
+                <para>Base</para></entry>
+            </row>
+          </thead> 
+          <tbody> 
+            <row valign="top">
+              <entry><para>Binario</para></entry>
+              <entry align="right"><para>2</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Octal</para></entry>
+              <entry align="right"><para>8</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Decimal</para></entry>
+              <entry align="right"><para>10</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Hexadecimal</para></entry>
+              <entry align="right"><para>16</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+                           
+  </sect1>
+
+<!-- =========== Getting Started ============================== -->
+
+  <sect1 id="gcalctool-get-start"> 
+    <title>Inicio</title> 
+    <para>Puede iniciar la <application>Calculadora</application> de las siguientes formas:</para>
+    <variablelist>
+      <varlistentry>
+        <term>Menú</term>
+        <listitem>
+          <para>Elija <menuchoice><guimenu>Accesorios</guimenu><guimenuitem>Calculadora</guimenuitem></menuchoice>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Línea de órdenes</term>
+        <listitem>
+          <para>Ejecute el siguiente comando: <userinput>gnome-calculator</userinput></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>Cuando inicie la <application>Calculadora</application>, se mostrará la siguiente ventana:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-basic"> 
+        <title>Ventana del modo básico de la <application>Calculadora</application></title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_basic_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Muestra la ventana de modo Básico de la <application>gcalctool</application>.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+                <para>La ventana de la <application>Calculadora</application> contiene los siguientes elementos:</para>
+                <variablelist>
+                  <varlistentry> <term>Barra de menú</term>
+                         <listitem>
+                                <para>Los menús en la barra de menú contienen todos los comandos que necesita para trabajar con la <application>Calculadora</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Área de visualización</term>
+                         <listitem>
+                                <para>El área del visor muestra los números que introduce, y el resultado de los cálculos.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Área de modo</term>
+                         <listitem>
+                                <para>El área de modo muestra los botones para el modo actual. Los botones del modo Básico siempre se muestran. Los botones del modo Avanzado están disponibles en los modos Financiero, Científico y Programador.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Menú emergente</term>
+                         <listitem>
+                <para>El símbolo <inlinemediaobject><imageobject><imagedata fileref="figures/gcalctool_menu_symbol.png" format="PNG"/></imageobject><textobject><phrase>Muestra el símbolo del menú emergente.</phrase></textobject></inlinemediaobject> en un botón de la <application>Calculadora</application> indica que se mostrará un menú emergente cuando pulse ése botón.</para>
+                         </listitem>
+                  </varlistentry>
+<varlistentry>
+         <term>Barra de estado</term>
+                         <listitem>
+                                <para>La barra de estado muestra mensajes acerca del estado de sus cálculos.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+  </sect1>
+<!-- ================ Usage ================================ -->
+  <sect1 id="gcalctool-usage"> 
+    <title>Uso</title> 
+
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="gcalctool-calc-functions">
+                <title>Usar las funciones de la calculadora</title> 
+                <para>Para realizar un cálculo, use uno de los siguientes métodos:</para>
+                <itemizedlist>
+                  <listitem>
+                         <para>Pulse en los botones de la <application>Calculadora</application> para introducir números y funciones.</para>
+                  </listitem>
+                  <listitem>
+                         <para>De el foco a la ventana de la <application>Calculadora</application>, después use el teclado o el teclado numérico para especificar el cálculo que quiere realizar. Para ver una lista completa de los atajos de teclado vea la <xref linkend="gcalctool-keyboard-shortcut"/>.</para>
+                  </listitem>
+                </itemizedlist>
+                <para>La aplicación <application>Calculadora</application> muestra automáticamente números con más de 40 dígitos y números pequeños de forma exponencial. Por ejemplo, la siguiente tabla muestra el valor que se mostrará cuando use números decimales con una precisión de 2 dígitos significativos:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Área de visualización</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Significado</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>1.23e+37</para></entry>
+              <entry><para>1.23 * 10<superscript>37</superscript></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>1e-5</para></entry>
+              <entry><para>0.00001</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <para>Para obtener más información acerca de cómo introducir un número en forma exponencial vea la <xref linkend="gcalctool-enter-exp"/>.</para>
+
+    <sect3 id="gcalctool-calc-functions-separator">
+                <title>Para mostrar un separador en números grandes</title> 
+      <para>Para insertar un separador entre grupos de tres dígitos a la izquierda del punto numérico en base decimal, elija <menuchoice><guimenu>Ver</guimenu><guimenuitem>Mostrar separador de miles</guimenuitem></menuchoice>.</para>
+      <note>
+      <para>Diferentes países y culturas han variado las convenciones de la comunicación. Estas convenciones incluyen el lenguaje escrito y el carácter que se usa como separador numérico.</para>
+      <para><application>gcalctool</application> se ha internacionalizado de tal forma que los usuarios pueden adaptarla a sus propias convenciones. Esto se realiza estableciendo una configuración regional específica, excepto por la estándar llamada «C».</para>
+      <para>Cuando usa la configuración regional «C» no se muestra el carácter separador.</para>
+      </note>
+    </sect3>
+
+    <sect3 id="gcalctool-calc-functions-copy">
+                <title>Cómo copiar y pegar en el área de visualización</title> 
+                <para>Para copiar el resultado de un cálculo, elija <menuchoice><guimenu>Editar</guimenu><guimenuitem>Copiar</guimenuitem></menuchoice>. Puede pegar el valor en otra aplicación.</para>
+
+                <para>Para pegar en el área de visualización un valor previamente copiado, elija <menuchoice><guimenu>Editar</guimenu><guimenuitem>Pegar</guimenuitem></menuchoice>.</para>
+    </sect3>
+
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+   
+    <sect2 id="gcalctool-basic-mode"> 
+      <title>Cómo realizar cálculos básicos</title> 
+      <para>Cuando inicia la <application>Calculadora</application> por primera vez, de forma predeterminada se muestra el modo básico. Para invocar explicitamente el modo básico, elija <menuchoice><guimenu>Ver</guimenu><guimenuitem>Básico</guimenuitem></menuchoice>.</para>
+      <para>Los registros de memoria de la calculadora no están disponibles en el modo Básico. En otras palabras <menuchoice><guimenu>Ver</guimenu><guimenuitem>Registros de memoria</guimenuitem></menuchoice> está inactivo.</para>
+    <sect3 id="gcalctool-simple-calc"> 
+      <title>Cómo realizar cálculos simples</title> 
+      <para>Para realizar cálculos simples, use los botones descritos en la <xref linkend="gcalctool-TBL-simple-calc"/>.</para>
+                <table id="gcalctool-TBL-simple-calc" frame="all">
+                  <title>Realizar cálculos simples</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ejemplo</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Números</para> </entry>
+                             <entry><para><guibutton>0</guibutton> al <guibutton>9</guibutton> inclusive</para></entry>
+                             <entry><para>Tanto en base decimal y como en hexadecimal, todos los números están disponibles. En base octal el <guibutton>8</guibutton> y el <guibutton>9</guibutton> no están disponibles. En base binaria sólo el <guibutton>0</guibutton> y el <guibutton>1</guibutton> están disponibles. La base decimal es la predeterminada.</para></entry>
+                             <entry><para><guibutton>1</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Coma numérica</para> </entry>
+                             <entry><para><guibutton>.</guibutton></para></entry>
+                             <entry><para>Comienza la parte fraccional de una entrada numérica.</para></entry>
+                             <entry><para><guibutton>1</guibutton> <guibutton>.</guibutton> <guibutton>2</guibutton></para></entry>
+                             <entry><para>1.2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Calcular un resultado</para> </entry>
+                             <entry><para><guibutton>=</guibutton></para></entry>
+                             <entry><para>Muestra el resultado del cálculo actual en la base actual.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Suma</para> </entry>
+                             <entry><para><guibutton>+</guibutton></para></entry>
+                             <entry><para>Añade el valor actual en el área de visualización al siguiente número que introduzca.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Resta</para> </entry>
+                             <entry><para><guibutton>-</guibutton></para></entry>
+                             <entry><para>Resta del valor actual en el área de visualización el siguiente número que introduzca.</para></entry>
+                             <entry><para>3 <guibutton>-</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Multiplicación</para> </entry>
+                             <entry><para><guibutton>*</guibutton></para></entry>
+                             <entry><para>Multiplica el valor actual en el área de visualización por el siguiente número que introduzca.</para></entry>
+                             <entry><para>3 <guibutton>*</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>6</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>División</para> </entry>
+                             <entry><para><guibutton>/</guibutton></para></entry>
+                             <entry><para>Divide el valor actual en el área de visualización entre el siguiente número que introduzca.</para></entry>
+                             <entry><para>6 <guibutton>/</guibutton><guibutton>3</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>2</para></entry>
+                           </row>
+                        <row valign="top">
+                             <entry><para>Cambiar el signo aritmético</para> </entry>
+                             <entry><para><guibutton>+/-</guibutton></para></entry>
+                             <entry><para>Cambia un número positivo a número negativo, o un número negativo a número positivo.</para></entry>
+                             <entry><para>8 <guibutton>+/-</guibutton></para></entry>
+                             <entry><para>-8</para></entry>
+                           </row>
+                         </tbody>
+
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-erase-char"> 
+      <title>Cómo borrar caracteres</title> 
+      <para>Para borrar caracteres use los botones descritos en la <xref linkend="gcalctool-TBL-erase-char"/>.</para>
+                <table id="gcalctool-TBL-erase-char" frame="all">
+                  <title>Borrar caracteres</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ejemplo</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Borrado</para> </entry>
+                             <entry><para><guibutton>Rtcs</guibutton></para></entry>
+                             <entry><para>Borra el carácter más a la derecha del área de visualización.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>Rtcs</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Limpiar el valor mostrado</para> </entry>
+                             <entry><para><guibutton>CE</guibutton></para></entry>
+                             <entry><para>Limpia el valor actual del área de visualización.</para>
+                                    <para>Esta operación es la misma que <guibutton>Clr</guibutton></para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>CE</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>0</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Limpiar</para> </entry>
+                             <entry><para><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>Limpia el valor actual en el área de visualización a cero y borra cualquier cálculo previo. <guibutton>Clr</guibutton> también deselecciona las opciones <guilabel>Hyp</guilabel> e <guilabel>Inv</guilabel> si está en modo Científico.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>0</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    
+    
+
+
+
+  
+
+          <sect3 id="gcalctool-ins-ascii"> 
+            <title>Cómo mostrar valores ASCII</title> 
+                        <para>Para mostrar el valor ASCII de un carácter, elija <menuchoice><guimenu>Editar</guimenu><guimenuitem>Introduzca un valor ASCII</guimenuitem></menuchoice>.</para>
+                        <para>Se mostrará el diálogo de introducción de valor ASCII.</para>
+                        <para>Introduzca el carácter requerido en el campo <guilabel>Carácter</guilabel>, después pulse <guibutton>Insertar</guibutton>. El valor ASCII de ése carácter, en la base numérica actual, aparecerá en el área de visualización. Por ejemplo, el valor ASCII de B en base decimal es 66.</para>
+          </sect3>
+        </sect2>
+
+ <sect2 id="gcalctool-advanced-mode">
+    <title>Cómo realizar cálculos avanzados</title>
+  <para>Para cambiar al modo avanzado, elija <menuchoice><guimenu>Ver</guimenu><guimenuitem>Avanzado</guimenuitem></menuchoice>.</para>
+    <para>Cuando cambie al modo Avanzado, los siguientes botones se mostrarán a la derecha de los botones del modo Básico:</para>
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-advanced"> 
+        <title>Botones del modo avanzado de la <application>Calculadora</application></title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_advanced_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Muestra los botones del modo Avanzado de la <application>gcalctool</application>.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+                <table id="gcalctool-TBL-adv-calc" frame="all">
+                  <title>Realizar cálculos avanzados</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ejemplo</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Porcentaje</para> </entry>
+                             <entry><para><guibutton>%</guibutton></para></entry>
+                             <entry><para>Divide el valor actual entre 100.</para></entry>
+                             <entry><para>560 <guibutton>%</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>5.60</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Inverso</para> </entry>
+                             <entry><para><guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>Divide 1 entre el valor actual en el área de visualización.</para></entry>
+                             <entry><para>4 <guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>0.25</para></entry>
+                           </row>
+                    
+                           <row valign="top">
+                             <entry><para>Raíz cuadrada</para> </entry>
+                             <entry><para><guibutton>Sqrt</guibutton></para></entry>
+                             <entry><para>Calcula la raíz cuadrada del valor actual en el área de visualización.</para></entry>
+                             <entry><para><guibutton>Sqrt</guibutton> 9 <guibutton>)</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Cuadrado</para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>Calcula el cuadrado del valor actual en el área de visualización.</para></entry>
+                             <entry><para>3 <replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>9</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Parte entera</para> </entry>
+                             <entry><para><guibutton>Int</guibutton></para></entry>
+                             <entry><para>Calcula la parte entera del valor actual en el área de visualización.</para></entry>
+                             <entry><para>-23.45 <guibutton>Int</guibutton></para></entry>
+                             <entry><para>-23</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Parte fraccional</para> </entry>
+                             <entry><para><guibutton>Frac</guibutton></para></entry>
+                             <entry><para>Calcula la parte fraccional del valor actual en el área de visualización.</para></entry>
+                             <entry><para>-23.45 <guibutton>Frac</guibutton></para></entry>
+                             <entry><para>-0.45</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Valor absoluto</para> </entry>
+                             <entry><para><guibutton>Abs</guibutton></para></entry>
+                             <entry><para>Calcula el valor absoluto del valor actual en el área de visualización.</para></entry>
+                             <entry><para>-23.45 <guibutton>Abs</guibutton></para></entry>
+                             <entry><para>23.45</para></entry>
+                         </row>
+                           <row valign="top">
+                         <entry><para>Paréntesis</para> </entry>
+                             <entry><para><guibutton>(</guibutton> y <guibutton>)</guibutton></para></entry>
+                             <entry><para>Los cálculos entre paréntesis se realizan primero. Puede anidar tantos paréntesis como quiera.</para></entry>
+                           <entry>
+                               <para>2 <guibutton>+</guibutton><guibutton>3</guibutton><guibutton>*</guibutton><guibutton>4</guibutton><guibutton>=</guibutton></para>
+                               <para>2 <guibutton>+</guibutton><guibutton>(</guibutton><guibutton>3</guibutton><guibutton>*</guibutton><guibutton>4</guibutton><guibutton>)</guibutton></para>
+                             </entry>
+                             <entry> <para>20</para>
+                               <para>14</para>
+                             </entry>
+                               
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+
+<sect3 id="gcalctool-mem-reg"> 
+      <title>Cómo usar los registros de memoria de la Calculadora</title> 
+      <para>Puede almacenar valores en cualquiera de los diez registros de memoria de <guilabel>R0</guilabel> a <guilabel>R9</guilabel>, de la <application>Calculadora</application>.Para mostrar los registros de memoria, elija  <menuchoice><guimenu>Ver</guimenu><guimenuitem>Registros de memoria</guimenuitem></menuchoice>.</para>
+      <para>Los registros de memoria pueden ignorar eligiendo <menuchoice><guimenu>Ver</guimenu><guimenuitem>Registros de memoria</guimenuitem></menuchoice> de nuevo, o pulsando en el botón <guibutton>Cerrar</guibutton> en la ventana de los registros de memoria.</para>
+        <para>La <xref linkend="gcalctool-TBL-mem-reg"/> describe las funciones de memoria que puede usar.</para>
+                <table id="gcalctool-TBL-mem-reg" frame="all">
+                  <title>Funciones de la memoria</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ejemplo</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Almacenar un valor un registro de memoria</para> </entry>
+                             <entry><para><guibutton>Sto</guibutton></para></entry>
+                             <entry><para>Almacena el contenido actual del área de visualización en el registro de memoria especificado. Pulse <guibutton>Sto</guibutton>, después seleccione un registro de memoria del menú emergente.</para>
+                                   <para>Para limpiar un registro de memoria durante una sesión de la <application>Calculadora</application>:</para>
+                                     <orderedlist>
+                                       <listitem><para>Pulse <guibutton>Clr</guibutton>.</para></listitem>
+                                       <listitem><para>Pulse <guibutton>Sto</guibutton>.</para></listitem>
+                                       <listitem><para>Seleccione el registro de memoria del menú emergente.</para></listitem>
+                                     </orderedlist>
+</entry>
+                             <entry><para>22 <guibutton>Sto</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para>El valor 22 se almacenará en el registro de memoria <guilabel>R2</guilabel>.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Recuperar un valor del registro de memoria</para> </entry>
+                             <entry><para><guibutton>Rcl</guibutton></para></entry>
+                             <entry><para>Recupera el contenido del registro de memoria especificado. Pulse <guibutton>Rcl</guibutton>, después seleccione el registro de memoria del menú emergente.</para></entry>
+                             <entry><para>0 <guibutton>Rcl</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para>El valor en el área de visualización es 22.</para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Intercambiar el valor de un registro de memoria con el del área de visualización</para> </entry>
+                             <entry><para><guibutton>Exch</guibutton></para></entry>
+                             <entry><para>Intercambia el contenido del registro de memoria especificado con el valor actual en el área de visualización. Pulse <guibutton>Exch</guibutton>, después seleccione el registro de memoria del menú emergente.</para></entry>
+                             <entry><para>44 <guibutton>Exch</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para>El valor en el área de visualización cambia de 44 a 22, el valor en el registro R2 cambia de 22 a 44.</para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Si usa los atajos de teclado, puede usar el teclado para especificar el registro de memoria, tal y como se muestra en los siguientes ejemplos:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Entrada por teclado</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Descripción</para></entry>
+            </row>
+          </thead>
+          <tbody> 
+            <row valign="top">
+              <entry><para><keycap>S</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>Almacena el contenido actual del área de visualización en el registro de memoria <guilabel>R2</guilabel>.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>R</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>Recupera el contenido actual del registro de memoria <guilabel>R2</guilabel> en el área de visualización.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>X</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>Intercambia el contenido actual del área de visualización con el contenido del registro de memoria <guilabel>R2</guilabel>.</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+    </sect3>
+
+
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+         <sect2 id="gcalctool-financial-mode"> 
+      <title>Cómo realizar cálculos financieros</title> 
+      <para>Para cambiar al modo financiero, elija <menuchoice><guimenu>Ver</guimenu><guimenuitem>Financiero</guimenuitem></menuchoice>.</para>
+     <para>Cuando cambie al modo financiero, se mostrarán los siguientes botones sobre los botones de los modos Básico y Avanzado:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-financial"> 
+        <title>Botones del modo financiero de la <application>Calculadora</application></title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_financial_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Muestra los botones del modo Financiero de la <application>gcalctool</application>.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+      <para>Para realizar cálculos financieros, use los botones descritos en la <xref linkend="gcalctool-TBL-financial-calc"/>.</para>
+                <table id="gcalctool-TBL-financial-calc" frame="all">
+                  <title>Realizar cálculos financieros</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ejemplo</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Periodo de interés compuesto</para> </entry>
+                             <entry><para><guibutton>Trmc</guibutton></para></entry>
+                             <entry><para>Calcula el número de periodos de interés compuesto necesarios para incrementar una inversión de un valor presenta a un valor futuro, a una tasa de interés fija por cada periodo de interés.</para>
+                             </entry>
+                             <entry><para>Ha depositado 8.000€ en una cuenta de un banco que paga una tasa de interés anual del 9%, en periodos de interés mensuales. Dada la tasa de interés anual, determina que la tasa de interés mensual es de 0.09 / 12 = 0.0075. Para calcular el periodo de tiempo necesario para doblar su inversión, pulse <guibutton>Trmc</guibutton> e introduzca los siguientes valores en las entradas de texto:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Tasa periódica de interés</term>
+                                <listitem><para>0.0075</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Valor futuro</term>
+                                <listitem><para>16000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Valor presente</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Pulse <guibutton>Calcular</guibutton>.</para></entry>
+                             <entry><para>92.77</para>
+                                    <para>La inversión dobla su valor en 92.77 meses.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Depreciación doble declinación</para> </entry>
+                             <entry><para><guibutton>Ddd</guibutton></para></entry>
+                             <entry><para>Calcula la depreciación sobre un activo para un periodo de tiempo dado, usando el método de depreciación doble declinación.</para>
+                             </entry>
+                             <entry><para>Acaba de comprar una máquina para la oficina por 8.000€. La vida útil de esta máquina es de seis años. El valor residual después de seis años es de 900€. Para calcular los gastos de depreciación para el cuarto año, usando el método de depreciación doble declinación, pulse <guibutton>Ddd</guibutton> e introduzca los siguientes valores en las entradas de texto:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Costo</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Recuperado</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Vida</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Periodo</term>
+                                <listitem><para>4</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Pulse <guibutton>Calcular</guibutton>.</para></entry>
+                             <entry><para>790.12</para>
+                                    <para>El gasto de depreciación para el cuarto año de es 790,12€.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Valor futuro</para> </entry>
+                             <entry><para><guibutton>Vf</guibutton></para></entry>
+                             <entry><para>Calcula el valor futuro de una inversión basado en series de pagos iguales a una tasa periódica de interés sobre el número de pagos periódicos durante el plazo.</para>
+                             </entry>
+                             <entry><para>Está pensando depositar 4.000€ en la cuenta de un banco en el último día de cada año durante los próximos 20 años. La cuenta paga un 8% de intereses, en periodos de interés anual. El interés se paga el último día de cada mes. Para calcular el valor de su cuenta a los 20 años, pulse <guibutton>Vf</guibutton> e introduzca los siguientes valores en las entradas de texto:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Pago periódico</term>
+                                <listitem><para>4000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Tasa periódica de interés</term>
+                                <listitem><para>0.08</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Número de periodos</term>
+                                <listitem><para>20</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Pulse <guibutton>Calcular</guibutton>.</para></entry>
+                             <entry><para>183047.86</para>
+                                    <para>Al final de 20 años, el valor de la cuenta es de 183.047,86€.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Margen de ingresos brutos</para></entry>
+                             <entry><para><guibutton>MIB</guibutton></para></entry>
+                             <entry><para>Calcula el precio de reventa de un producto, basado en el precio del producto y el margen de ingreso bruto deseado.</para></entry>
+                             <entry><para>Vende camisetas en internet. Cada camiseta le cuesta 12€ en material y trabajo. Quiere vender las camisetas con un Margen de ingresos bruto de 0.40; por cada cinco euros que gane, quiere que dos sean de beneficios. Para calcular el precio al que tendrá que vender sus camisetas pulse <guibutton>MIB</guibutton> y escriba los siguientes valores en las entradas de texto:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Costo</term>
+                                <listitem><para>12</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Margen</term>
+                                <listitem><para>0.40</para></listitem>
+                                </varlistentry>
+                             </variablelist>
+                             <para>Pulse <guibutton>Calcular</guibutton>.</para></entry>
+                             <entry><para>20</para>
+                             <para>Tendrá que vender sus camisetas por 20€.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Pago periódico</para> </entry>
+                             <entry><para><guibutton>Ppc</guibutton></para></entry>
+                             <entry><para>Calcula la cantidad de pagos periódicos de un préstamo, donde los pagos se realizan al final de cada periodo de pago.</para>
+                             </entry>
+                             <entry><para>Está considerando una hipoteca de 120.000€ a 30 años con una tasa de interés anual del 11.0%. Dada la tasa de interés anual, determina que la tasa de interés mensual es de 0.11 / 12 = 0.00917. El plazo es de 30 * 12 = 360 meses. Para calcular el pago mensual para esta hipoteca, pulse <guibutton>Ppc</guibutton> e introduzca los siguientes valores en las entradas de texto:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Principal</term>
+                                <listitem><para>120000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Tasa periódica de interés</term>
+                                <listitem><para>0.00917</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Term</term>
+                                <listitem><para>360</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Pulse <guibutton>Calcular</guibutton>.</para></entry>
+                             <entry><para>1143.15</para>
+                                    <para>El pago mensual es de 1.143,15€.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Valor presente</para> </entry>
+                             <entry><para><guibutton>Vp</guibutton></para></entry>
+                             <entry><para>Calcula el valor presente de una inversión basado en series de pagos iguales, descontando una tasa de interés periódica, sobre el número de pagos periódicos en el plazo.</para>
+                             </entry>
+                             <entry><para>Ha ganado un millón de euros. El premio se le entregará en 20 pagos anuales de 50.000€ cada uno. Los pagos anuales se reciben al final de cada año. Si va a aceptar los pagos anuales de 50.000€, debería invertir el dinero a una tasa de interés anual del 9%.</para>
+                                    <para>No obstante, se le ha dado la oportunidad de recibir un pago único de 400.000€ en lugar de las anualidades. Para calcular qué opción es mejor en moneda de hoy, pulse <guibutton>Vp</guibutton> e introduzca los siguientes valores en las entradas de texto:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Pago periódico</term>
+                                <listitem><para>50000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Tasa periódica de interés</term>
+                                <listitem><para>0.09</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Número de periodos</term>
+                                <listitem><para>20</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Pulse <guibutton>Calcular</guibutton>.</para></entry>
+                             <entry><para>456427.28</para>
+                                    <para>El pago de 1.000.000€ a lo largo de 20 años vale 456.427,28€ en euros actuales.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Tasa periódica de interés</para> </entry>
+                             <entry><para><guibutton>Tasa</guibutton></para></entry>
+                             <entry><para>Calcula el interés periódico necesario para aumentar una inversión de valor presente para un valor futuro, sobre un número de periodos de interés compuestos.</para>
+                             </entry>
+                             <entry><para>Ha invertido 20.000€ en un nono. El bono vence a los cinco años, y tiene un valor de vencimiento de 30.000€. El periodo de interés es mensual. El plazo es 5 * 12 = 60 meses. Para calcular la tasa de interés periódica de esta inversión, pulse <guibutton>Tasa</guibutton> e introduzca los siguientes valores en las entradas de texto:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Valor futuro</term>
+                                <listitem><para>30000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Valor presente</term>
+                                <listitem><para>20000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Term</term>
+                                <listitem><para>60</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Pulse <guibutton>Calcular</guibutton>.</para></entry>
+                             <entry><para>.00678</para>
+                                    <para>La tasa de interés mensual es del 0.678%. La tasa de interés anual es de 0.678% * 12 = 8.14%.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Deprecación lineal</para> </entry>
+                             <entry><para><guibutton>Sln</guibutton></para></entry>
+                             <entry><para>Calcula la depreciación lineal de un activo para un periodo. El coste amortizable es <replaceable>coste</replaceable> - <replaceable>residual</replaceable>. El método de depreciación lineal divide el coste amortizable uniformemente sobre la vida útil de un activo. La vida útil es el número de periodos, generalmente años, sobre el cual un activo se deprecia.</para>
+                             </entry>
+                             <entry><para>Acaba de comprar una máquina para la oficina por 8.000€. La vida útil de esta máquina es de seis años. El valor residual después de seis años es de 900€. Para calcular los gastos de depreciación, usando el método de depreciación lineal, pulse <guibutton>Dpl</guibutton> e introduzca los siguientes valores en las entradas de texto:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Costo</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Recuperado</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Vida</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Pulse <guibutton>Calcular</guibutton>.</para></entry>
+                             <entry><para>1183.33</para>
+                                    <para>El gasto de depreciación anual es de 1.183,33€.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Sumatorio de los años-dígitos de deprecación</para> </entry>
+                             <entry><para><guibutton>Syd</guibutton></para></entry>
+                             <entry><para>Calcula la depreciación lineal de un activo para un periodo específico de tiempo, usando el método sumatorio de los años-dígitos de deprecación. Éste método de depreciación acelera la tasa de depreciación, de tal forma que existen más gastos de depreciación en los primeros periodos y menos en los últimos. El coste amortizable es <replaceable>coste</replaceable> - <replaceable>residual</replaceable>. El método de depreciación lineal divide el coste amortizable uniformemente sobre la vida útil de un activo. La vida útil es el número de periodos, generalmente años, sobre el cual un activo se deprecia.</para>
+                             </entry>
+                             <entry><para>Acaba de comprar una máquina para la oficina por 8.000€. La vida útil de esta máquina es de seis años. El valor residual después de seis años es de 900€. Para calcular los gastos de depreciación para el cuarto año, usando el método de sumatorio de los años-dígitos de depreciación, pulse <guibutton>Sad</guibutton> e introduzca los siguientes valores en las entradas de texto:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Costo</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Recuperado</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Vida</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Periodo</term>
+                                <listitem><para>4</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Pulse <guibutton>Calcular</guibutton>.</para></entry>
+                             <entry><para>1014.29</para>
+                                    <para>El gasto de depreciación para el cuarto año de es 1.014,29€.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Periodo de pago</para> </entry>
+                             <entry><para><guibutton>Term</guibutton></para></entry>
+                             <entry><para>Calcula el número de plazos de pago necesarios durante el periodo de un año ordinario, para acumular un valor futuro, con cierta tasa periódica de interés periódica.</para>
+                             </entry>
+                             <entry><para>Está pensando depositar 18.000€ en la cuenta de un banco en el último día de cada año. La cuenta paga un 11% de intereses, en periodos de interés anual. El interés se paga el último día de cada mes. Para calcular el periodo necesario para acumular 120.000€, pulse <guibutton>Plazo</guibutton> e introduzca los siguientes valores en las entradas de texto:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Pago periódico</term>
+                                <listitem><para>1800</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Valor futuro</term>
+                                <listitem><para>120000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Tasa periódica de interés</term>
+                                <listitem><para>0.11</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Pulse <guibutton>Calcular</guibutton>.</para></entry>
+                             <entry><para>20.32</para>
+                                    <para>Se acumulan 120.000€ en la cuenta en 20,32 años.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="gcalctool-scientific-mode"> 
+      <title>Cómo realizar cálculos científicos</title> 
+      <para>Para cambiar al modo científico, elija <menuchoice><guimenu>Ver</guimenu><guimenuitem>Científico</guimenuitem></menuchoice>.</para>
+    <para>Cuando cambie al modo científico, se mostrarán los siguientes botones sobre los botones de los modos Básico y Avanzado:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-scientific"> 
+        <title>Botones del modo científico de la <application>Calculadora</application></title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_scientific_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Muestra los botones del modo Científico de la <application>gcalctool</application>.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+    <sect3 id="gcalctool-set-acc"> 
+      <title>Cómo establecer la precisión</title> 
+      <para>Para establecer la precisión del área de visualización y de los registros de memoria, pulse <guibutton>Acc</guibutton>, después seleccione del menú emergente el nivel de precisión que necesite. La precisión actual se indica por un círculo negro que precede a la opción en el menú emergente. Se pueden mostrar hasta 99 lugares significativos. La precisión predeterminada es de 9 lugares significativos.</para>
+<para>Para establecer el nivel de precisión por encima de 9, seleccione <guilabel>Otro (9) ...</guilabel>, después elija la precisión que desee del menú emergente <guilabel>Establecer precisión</guilabel>.</para>
+      <para>De forma predeterminada no se muestran los ceros excedentes. Para mostrar los ceros excedentes pulse <guibutton>Acc</guibutton> y después seleccione <guilabel>Mostrar los ceros excedentes</guilabel> del menú emergente, o elija <menuchoice><guimenu>Ver</guimenu><guimenuitem>Mostrar los ceros excedentes</guimenuitem></menuchoice>. Una marca precedente en el menú emergente <guibutton>Acc</guibutton> o en el menú <guimenu>Ver</guimenu> indica que la opción <guilabel>Mostrar los ceros excedentes</guilabel> está seleccionada. Para ocultar los ceros excedentes, elija <menuchoice><guimenu>Ver</guimenu><guimenuitem>Mostrar los ceros excedentes</guimenuitem></menuchoice> de nuevo.</para>
+      <para>Los ejemplos de la siguiente tabla muestran cómo afectan a <replaceable>x</replaceable> los ajustes de la precisión en el área de visualización, cuando usa base decimal, con la opción <guimenuitem>Mostrar los ceros excedentes</guimenuitem> seleccionada, para el cálculo <literal>1 / 8 = <replaceable>x</replaceable></literal>:</para>
+                <informaltable frame="all">
+                  <tgroup cols="2" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Precisión</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>1 lugar significativo</para></entry>
+                             <entry><para>1.2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>2 lugares significativos</para></entry>
+                             <entry><para>1.25</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>3 lugares significativos</para></entry>
+                             <entry><para>1.250</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </informaltable>
+    </sect3>
+    <sect3 id="gcalctool-display-type"> 
+      <title>Cómo establecer el formato de pantalla</title> 
+      <para>Para establecer el formato de pantalla, seleccione uno de los botones descritos en la <xref linkend="gcalctool-TBL-display-type"/>.</para>
+                <table id="gcalctool-TBL-display-type" frame="all">
+                  <title>Establecer el formato de pantalla</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Formato de pantalla en ingeniería</para> </entry>
+                             <entry><para><guibutton>Eng</guibutton></para></entry>
+                             <entry><para>Establece el formato de la pantalla a formato ingeniería. Los resultados se muestran en notación científica. El exponente es siempre un múltiplo de tres.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Formato de pantalla en coma fija</para> </entry>
+                             <entry><para><guibutton>Fix</guibutton></para></entry>
+                             <entry><para>Establece el formato de la pantalla a formato de coma fija. Los resultados no se muestran en notación científica. La coma fija es el formato predeterminado. Si cambia del modo científico al modo básico o financiero, la <application>Calculadora</application> establece el formato a coma fija automáticamente.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Formato de pantalla en científico</para> </entry>
+                             <entry><para><guibutton>Sci</guibutton></para></entry>
+                             <entry><para>Establece el formato de la pantalla a formato científico. Los resultados se muestran en notación científica, con un número fijo de dígitos numéricos.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-trig-type"> 
+      <title>Cómo establecer el tipo trigonométrico</title> 
+      <para>Para establecer el tipo trigonométrico, seleccione uno de los botones descritos en la <xref linkend="gcalctool-TBL-trig-type"/>.</para>
+                <table id="gcalctool-TBL-trig-type" frame="all">
+                  <title>Establecer el tipo trigonométrico</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Grados</para> </entry>
+                             <entry><para><guibutton>Grados</guibutton></para></entry>
+                             <entry><para>Establece el tipo trigonométrico a grados. Los grados son el tipo predeterminado de tipo trigonométrico.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Gradianes</para> </entry>
+                             <entry><para><guibutton>Gradianes</guibutton></para></entry>
+                             <entry><para>Establece el tipo trigonométrico a gradianes.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Radianes</para> </entry>
+                             <entry><para><guibutton>Radianes</guibutton></para></entry>
+                             <entry><para>Establece el tipo trigonométrico a radianes.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-trig-options"> 
+      <title>Cómo establecer las opciones trigonométricas</title> 
+      <para>Para establecer las opciones trigonométricas, use las opciones descritas en la <xref linkend="gcalctool-TBL-trig-options"/>.</para>
+                <table id="gcalctool-TBL-trig-options" frame="all">
+                  <title>Establecer las opciones trigonométricas</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Indicador de opción hiperbólica</para> </entry>
+                             <entry><para><guibutton>Hyp</guibutton></para></entry>
+                             <entry><para>Selecciona la opción hiperbólica para su uso con las funciones trigonométricas.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Indicador de opción de inverso</para> </entry>
+                             <entry><para><guibutton>Inv</guibutton></para></entry>
+                             <entry><para>Selecciona la opción de inverso para su uso con las funciones trigonométricas.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Las opciones descritas en la <xref linkend="gcalctool-TBL-trig-options"/> no están seleccionadas de forma predeterminada. Pulse <guibutton>Clr</guibutton> para deseleccionar estas opciones.</para>
+
+    </sect3>
+    <sect3 id="gcalctool-trig-calc"> 
+      <title>Cómo calcular valores trigonométricos</title> 
+      <para>Para calcular valores trigonométricos, use los botones descritos en la <xref linkend="gcalctool-TBL-trig-calc"/>.</para>
+                <table id="gcalctool-TBL-trig-calc" frame="all">
+                  <title>Cálculo de valores trigonométricos</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ejemplo</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Coseno <literal>cos</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, opción <guilabel>Hyp</guilabel> no seleccionada, opción <guilabel>Inv</guilabel> no seleccionada</para></entry>
+                             <entry><para>Calcula el coseno del valor actual en el área de visualización.</para></entry>
+                             <entry><para>60 <guibutton>Cos</guibutton></para></entry>
+                             <entry><para>0.5</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arcocoseno <literal>acos</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, opción <guilabel>Hyp</guilabel> no seleccionada, opción <guilabel>Inv</guilabel> seleccionada</para></entry>
+                             <entry><para>Calcula el arcocoseno del valor actual en el área de visualización.</para></entry>
+                             <entry><para>0.5 <guilabel>Inv</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>60</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Coseno hiperbólico <literal>cosh</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, opción <guilabel>Hyp</guilabel> seleccionada, opción <guilabel>Inv</guilabel> no seleccionada</para></entry>
+                             <entry><para>Calcula el coseno hiperbólico del valor actual en el área de visualización.</para></entry>
+                             <entry><para>0.4 <guilabel>Hyp</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>1.081072372</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arcocoseno hiperbólico <literal>acosh</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, opción <guilabel>Hyp</guilabel> seleccionada, opción <guilabel>Inv</guilabel> seleccionada</para></entry>
+                             <entry><para>Calcula el arcocoseno hiperbólico del valor actual en el área de visualización.</para></entry>
+                             <entry><para>1.6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>1.046967915</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Seno <literal>sin</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, opción <guilabel>Hyp</guilabel> no seleccionada, opción <guilabel>Inv</guilabel> no seleccionada</para></entry>
+                             <entry><para>Calcula el seno del valor actual en el área de visualización.</para></entry>
+                             <entry><para>90 <guibutton>Sin</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arcoseno <literal>asin</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, opción <guilabel>Hyp</guilabel> no seleccionada, opción <guilabel>Inv</guilabel> seleccionada</para></entry>
+                             <entry><para>Calcula el arcoseno del valor actual en el área de visualización.</para></entry>
+                             <entry><para>1 <guilabel>Inv</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>90</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Seno hiperbólico <literal>sinh</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, opción <guilabel>Hyp</guilabel> seleccionada, opción <guilabel>Inv</guilabel> no seleccionada</para></entry>
+                             <entry><para>Calcula el seno hiperbólico del valor actual en el área de visualización.</para></entry>
+                             <entry><para>0.4 <guilabel>Hyp</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>0.410752326</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arcoseno hiperbólico <literal>asinh</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, opción <guilabel>Hyp</guilabel> seleccionada, opción <guilabel>Inv</guilabel> seleccionada</para></entry>
+                             <entry><para>Calcula el arcoseno hiperbólico del valor actual en el área de visualización.</para></entry>
+                             <entry><para>1.6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>1.248983328</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Tangente<literal>tan</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, opción <guilabel>Hyp</guilabel> no seleccionada, opción <guilabel>Inv</guilabel> no seleccionada</para></entry>
+                             <entry><para>Calcula la tangente del valor actual en el área de visualización.</para></entry>
+                             <entry><para>45 <guibutton>Tan</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arcotangente <literal>atan</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, opción <guilabel>Hyp</guilabel> no seleccionada, opción <guilabel>Inv</guilabel> seleccionada</para></entry>
+                             <entry><para>Calcula la arcotangente del valor actual en el área de visualización.</para></entry>
+                             <entry><para>1 <guilabel>Inv</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>45</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Tangente hiperbólica <literal>tanh</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, opción <guilabel>Hyp</guilabel> seleccionada, opción <guilabel>Inv</guilabel> no seleccionada</para></entry>
+                             <entry><para>Calcula la tangente hiperbólica del valor actual en el área de visualización.</para></entry>
+                             <entry><para>0.6 <guilabel>Hyp</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>0.537049567</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arcotangente hiperbólica <literal>atanh</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, opción <guilabel>Hyp</guilabel> seleccionada, opción <guilabel>Inv</guilabel> seleccionada</para></entry>
+                             <entry><para>Calcula la arcotangente hiperbólica del valor actual en el área de visualización.</para></entry>
+                             <entry><para>0.6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>0.693147181</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-logs-calc"> 
+      <title>Cómo calcular logaritmos</title> 
+      <para>Para calcular logaritmos, use los botones descritos en la <xref linkend="gcalctool-TBL-logs-calc"/>.</para>
+                <table id="gcalctool-TBL-logs-calc" frame="all">
+                  <title>Cálculo de logaritmos</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ejemplo</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Base común logarítmica 10</para> </entry>
+                             <entry><para>Log<subscript><replaceable>10</replaceable></subscript></para></entry>
+                             <entry><para>Calcula el logaritmo común (base 10) del valor actual en el área de visualización.</para></entry>
+                             <entry><para>10 Log<subscript><replaceable>10</replaceable></subscript></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Logaritmo natural</para> </entry>
+                             <entry><para><guibutton>Ln</guibutton></para></entry>
+                             <entry><para>Calcula el logaritmo natural del valor actual en el área de visualización.</para></entry>
+                             <entry><para>10 <guibutton>Ln</guibutton></para></entry>
+                             <entry><para>2.30</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Base común logarítmica 2</para> </entry>
+                             <entry><para>Log<subscript><replaceable>2</replaceable></subscript></para></entry>
+                             <entry><para>Calcula el logaritmo común (base 2) del valor actual en el área de visualización.</para></entry>
+                             <entry><para>10 Log<subscript><replaceable>2</replaceable></subscript></para></entry>
+                             <entry><para>3.32</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <note>
+                  <para>El inverso del logaritmo común y del logaritmo natural no están soportados en esta versión de la <application>Calculadora</application>.</para>
+                </note>
+    </sect3>
+    <sect3 id="gcalctool-enter-exp"> 
+      <title>Cómo introducir números exponenciales</title> 
+      <para>Para introducir números exponenciales, use el botón <guibutton>Exp</guibutton>.</para>
+      <para>El botón <guibutton>Exp</guibutton> le permite introducir números en notación científica, esto es, <replaceable>mantisa</replaceable> * <replaceable>base</replaceable><superscript><replaceable>exponente</replaceable></superscript>:</para>
+<variablelist>
+  <varlistentry>
+    <term><replaceable>mantisa</replaceable></term>
+    <listitem><para>Valor actual en el área de visualización distinto de cero.Si el valor actual en el área de visualización es cero, la mantisa es 1.0.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><replaceable>base</replaceable></term>
+    <listitem><para>2, 8, 10 o 16 para base numérica binaria, octal, decimal y hexadecimal respectivamente.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><replaceable>exponente</replaceable></term>
+    <listitem><para>Siguiente número que introduzca.</para></listitem>
+  </varlistentry>
+</variablelist>
+
+<para>Cuando pulsa <guibutton>Exp</guibutton>, la calculadora muestra <literal>. +</literal> para representar la <replaceable>base</replaceable> a la potencia del siguiente número que introduzca.</para>
+<para>Para cambiar el signo de un número, use el botón <guibutton>+/-</guibutton> antes del botón <guibutton>Exp</guibutton>. Para cambiar el signo del exponente (la potencia a la que se eleva el número) use <guibutton>-</guibutton> después de pulsar el botón <guibutton>Exp</guibutton>.</para>
+
+<para>Para introducir un número decimal en forma exponencial, use las guía que proporciona la siguiente tabla:</para>
+          <informaltable frame="all">
+            <tgroup cols="3" colsep="1" rowsep="1">
+                   <colspec colname="COLSPEC0" colwidth="50*"/>
+                   <colspec colname="COLSPEC1" colwidth="50*"/>
+                   <thead>
+                          <row valign="top">
+                            <entry colname="COLSPEC0">
+                                   <para>Número</para></entry>
+                            <entry colname="COLSPEC1">
+                                   <para>Entrada</para></entry>
+                            <entry colname="COLSPEC2">
+                                   <para>Número mostrado</para></entry>
+                          </row>
+                   </thead> 
+                   <tbody> 
+                     <row valign="top">
+                       <entry><para>1200000000</para></entry>
+                       <entry><para>12 <guibutton>Exp</guibutton><guibutton>+</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>1200000000</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>-1200000000</para></entry>
+                       <entry><para><guibutton>-</guibutton> 12 <guibutton>Exp</guibutton><guibutton>+</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>-1200000000</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>0.00000012</para></entry>
+                       <entry><para>12 <guibutton>Exp</guibutton><guibutton>-</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>1.2e-7</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>-0.00000012</para></entry>
+                       <entry><para><guibutton>-</guibutton> 12 <guibutton>Exp</guibutton><guibutton>-</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>-1.2e-7</para></entry>
+                     </row>
+                   </tbody>
+            </tgroup>
+          </informaltable>
+
+    </sect3>
+    <sect3 id="gcalctool-edit-const"> 
+      <title>Uso de valores constantes</title> 
+      <para>Pulse <guibutton>Con</guibutton> para mostrar la lista de constantes definidas. Todos los valores constantes se especifican en la base decimal, incluso si la base numérica actual no es la decimal.</para>
+      <para>Seleccione una constante del menú para introducir su valor en el área de visualización. si usa el atajo de teclado <keycap>#</keycap>, puede usar el teclado para especificar la constante, como se muestra en el siguiente ejemplo:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Entrada por teclado</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Constante</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>#</keycap> <keycap>3</keycap> </para></entry>
+              <entry><para>C3</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      <para>La aplicación <application>Calculadora</application> proporciona diez valores constantes predeterminadas, tal y como se describe en la siguiente tabla:</para>
+                <informaltable frame="all">
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1" colwidth="50*"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Número</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Valor</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>C0</para></entry>
+                             <entry><para>0.621</para></entry>
+                             <entry><para>Factor de conversión de kilómetros a millas</para>
+                                    <para>Multiplica el valor actual en el área de visualización por esta constante, para convertir de kilómetros por hora a millas por hora. Por ejemplo, 8 * <guibutton>Con</guibutton><guilabel>C0</guilabel><keycap>=</keycap> 5.</para>
+                                    <para>Divide el valor actual en el área de visualización entre esta constante, para convertir de millas por hora a kilómetros por hora. Por ejemplo, 5 / <guibutton>Con</guibutton><guilabel>C0</guilabel><keycap>=</keycap> 8.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C1</para></entry>
+                             <entry><para>1.414213562</para></entry>
+                             <entry><para>Raíz cuadrada de 2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C2</para></entry>
+                             <entry><para>2.718281828</para></entry>
+                             <entry><para>e</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C3</para></entry>
+                             <entry><para>3.141592653</para></entry>
+                             <entry><para>pi</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C4</para></entry>
+                             <entry><para>0.3937007</para></entry>
+                             <entry><para>Factor de conversión de cm a pulgadas</para>
+                                    <para>Multiplica el valor actual en el área de visualización por esta constante, para convertir de centímetros a pulgadas. Por ejemplo, 30 * <guibutton>Con</guibutton><guilabel>C4</guilabel><keycap>=</keycap> 12.</para>
+                                    <para>Divide el valor actual en el área de visualización entre esta constante, para convertir de pulgadas a centímetros. Por ejemplo, 12 / <guibutton>Con</guibutton><guilabel>C4</guilabel><keycap>=</keycap> 30.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C5</para></entry>
+                             <entry><para>57.295779513</para></entry>
+                             <entry><para>Grados en un radián</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C6</para></entry>
+                             <entry><para>1048576</para></entry>
+                             <entry><para>2 ^ 20</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C7</para></entry>
+                             <entry><para>0.0353</para></entry>
+                             <entry><para>Factor de conversión de gramos a onzas</para>
+                                    <para>Multiplica el valor actual en el área de visualización por esta constante, para convertir de gramos a onzas. Por ejemplo, 500 * <guibutton>Con</guibutton><guilabel>C7</guilabel><keycap>=</keycap> 18.</para>
+                                    <para>Divide el valor actual en el área de visualización entre esta constante, para convertir de onzas a gramos. Por ejemplo, 18 / <guibutton>Con</guibutton><guilabel>C7</guilabel><keycap>=</keycap> 500.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C8</para></entry>
+                             <entry><para>0.948</para></entry>
+                             <entry><para>Factor de conversión de kilojulios a unidad termal británica</para>
+                                    <para>Multiplica el valor actual en el área de visualización entre esta constante, para convertir de kilojulios a unidad termal británica. Por ejemplo, 10 * <guibutton>Con</guibutton><guilabel>C8</guilabel><keycap>=</keycap> 9.48.</para>
+                                    <para>Divide el valor actual en el área de visualización entre esta constante, para convertir de unidad termal británica a kilojulios. Por ejemplo, 9.48 / <guibutton>Con</guibutton><guilabel>C8</guilabel><keycap>=</keycap> 10.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C9</para></entry>
+                             <entry><para>0.061</para></entry>
+                             <entry><para>Factor de conversión de centímetros cúbicos a pulgadas cúbicas</para>
+                                    <para>Multiplica el valor actual en el área de visualización por esta constante, para convertir de centímetros cúbicos a pulgadas cúbicas. Por ejemplo 100 * <guibutton>Con</guibutton><guilabel>C9</guilabel><keycap>=</keycap> 6.10.</para>
+                                    <para>Divide el valor actual en el área de visualización entre esta constante, para convertir de pulgadas cúbicas a centímetros cúbicos. Por ejemplo 6 / <guibutton>Con</guibutton><guilabel>C9</guilabel><keycap>=</keycap> 100.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </informaltable>
+      <para>Puede sobreescribir las constantes predeterminadas para almacenar sus propias constantes.</para>
+      <para>Para almacenar una nueva constante o editar una constante ya existente, realice los siguientes pasos:</para>
+      <orderedlist>
+        <listitem>
+           <para>Pulse <guibutton>Con</guibutton>, después seleccione <guilabel>Editar constantes</guilabel> del menú emergente.</para>
+        </listitem>
+        <listitem>
+      <para>En el diálogo <guilabel>Editar constantes</guilabel> seleccione la constante que quiere sobreescribir o editar.</para>
+        </listitem>
+        <listitem>
+      <para>Pulse en el campo valor, después introduzca el nuevo valor.</para>
+        </listitem>
+        <listitem>
+      <para>Pulse en el campo descripción e introduzca la nueva descripción.</para>
+        </listitem>
+        <listitem>
+      <para>Pulse <guibutton>Aceptar</guibutton> para guardar sus cambios y cerrar el diálogo <guilabel>Editar constantes</guilabel>.</para>
+        </listitem>
+      </orderedlist>
+    </sect3>
+    <sect3 id="gcalctool-edit-func"> 
+      <title>Cómo usar las funciones</title> 
+      <para>Para mostrar las funciones disponibles, pulse <guibutton>Fun</guibutton>. Un menú emergente mostrará la lista de funciones definidas. Seleccione una función de la lista para ejecutarla.</para>
+<para>Si usa el atajo de teclado <keycap>F</keycap> puede usar el teclado para especificar la función, como se muestra en el siguiente ejemplo:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Entrada por teclado</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Función</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>F</keycap> <keycap>3</keycap> </para></entry>
+              <entry><para>F3</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <para>La aplicación <application>Calculadora</application> no proporciona ninguna función predeterminada. Puede almacenar hasta diez funciones.</para>
+      <para>Para almacenar una nueva función o editar una existente, realice los siguientes pasos:</para>
+      <orderedlist>
+        <listitem>
+           <para>Pulse <guibutton>Fun</guibutton>, después seleccione <guilabel>Editar funciones</guilabel> del menú emergente.</para>
+        </listitem>
+        <listitem>
+      <para>En el diálogo <guilabel>Editar funciones</guilabel>, seleccione una entrada vacía o la función que quiera sobreescribir.</para>
+        </listitem>
+        <listitem>
+      <para>Pulse en el campo Valor, después introduzca la nueva ecuación para resolver. Puede usar «ans» para el resultado de la ecuación anterior y «R5» para el registro 5, etc. Por ejemplo, introduzca <literal>(-R1+sqrt(R1^2-4*R0*R2))/(2*R0)</literal> para calcular la raíz cuadrada de la ecuación cuadrática R0*x^2 + R1*x + R2 = 0.</para>
+        </listitem>
+        <listitem>
+      <para>Pulse en el campo de descripción, después introduzca la nueva descripción. Por ejemplo, <literal>Resolutor cuadrático</literal>.</para>
+        </listitem>
+        <listitem>
+      <para>Pulse <guibutton>Aceptar</guibutton> para guardar sus cambios y cerrar el diálogo <guilabel>Editar funciones</guilabel>.</para>
+        </listitem>
+      </orderedlist>
+    </sect3>
+    <sect3 id="gcalctool-misc-calc"> 
+      <title>Cómo realizar cálculos científicos de miscelánea</title> 
+      <para>Para realizar cálculos científicos de miscelánea, use los botones descritos en la <xref linkend="gcalctool-TBL-misc-calc"/>.</para>
+                <table id="gcalctool-TBL-misc-calc" frame="all">
+                  <title>Realizar cálculos científicos de miscelánea</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ejemplo</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                                                      <row valign="top">
+                             <entry><para>e a la potencia <replaceable>x</replaceable></para> </entry>
+                             <entry><para>e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>Calcula el valor de <literal>e</literal> elevado a la potencia del valor actual en el área de visualización.</para></entry>
+                             <entry><para>2 e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>7.39</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>10 a la potencia <replaceable>x</replaceable></para> </entry>
+                             <entry><para>10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>Calcula el valor de 10 elevado a la potencia del valor actual en el área de visualización.</para></entry>
+                             <entry><para>2 10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>100</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>2 a la potencia <replaceable>x</replaceable></para> </entry>
+                             <entry><para>2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>Calcula el valor de 2 elevado a la potencia del valor actual en el área de visualización.</para></entry>
+                             <entry><para>2 2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>4</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>x a la potencia <replaceable>y</replaceable></para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>Eleva el valor actual en el área de visualización a la potencia del siguiente valor que introduzca.</para></entry>
+                             <entry><para>2 <replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>16</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>x a la potencia recíproca <replaceable>y</replaceable></para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>Eleva el valor actual en el área de visualización a la potencia recíproca del siguiente valor que introduzca.</para></entry>
+                             <entry><para>2 <replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>16</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><replaceable>x</replaceable> factorial</para> </entry>
+                             <entry><para><guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para>Calcula el factorial del valor actual en el área de visualización. <replaceable>x</replaceable> factorial es <replaceable>x</replaceable>*(<replaceable>x</replaceable>-1)*(<replaceable>x</replaceable>-2)...*1. Esta función sólo es válida para números enteros positivos.</para></entry>
+                             <entry><para>4 <guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para>24</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>División modular</para> </entry>
+                             <entry><para><guibutton>Mod</guibutton></para></entry>
+                             <entry><para>Divide el valor entero actual en el área de visualización entre el siguiente número entero que introduzca, mostrando el resto.</para></entry>
+                             <entry><para>15 <guibutton>Mod</guibutton><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Generador aleatorio de números</para> </entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>Genera un número aleatorio entre el rango 0.0 y 1.0 y después lo muestra en el área de visualización.</para></entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>0.14</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    </sect2> 
+    <sect2 id="gcalctool-programming-mode">
+      <title>Realizar cálculos de programador</title>
+      <para>Para cambiar al modo programador, elija <menuchoice><guimenu>Ver</guimenu><guimenuitem>Programador</guimenuitem></menuchoice>.</para>
+    <para>Cuando cambie al modo Programador, se mostrarán los siguientes botones sobre los botones de los modos Básico y Avanzado:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-programming"> 
+        <title>Botones del modo Programador de la <application>Calculadora</application></title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_programming_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Muestra los botones del modo Programador de la <application>gcalctool</application>.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+    <sect3 id="gcalctool-num-base"> 
+      <title>Cómo establecer la base numérica</title> 
+      <para>Para establecer la base numérica, seleccione uno de los botones descritos en la <xref linkend="gcalctool-TBL-num-base"/>.</para>
+                <table id="gcalctool-TBL-num-base" frame="all">
+                  <title>Establecer la base numérica</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Base binaria</para> </entry>
+                             <entry><para><guibutton>Bin</guibutton></para></entry>
+                             <entry><para>Establece la base a binaria, esto es, base 2.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Base octal</para> </entry>
+                             <entry><para><guibutton>Oct</guibutton></para></entry>
+                             <entry><para>Establece la base numérica a octal, esto es, base 8.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Base decimal</para> </entry>
+                             <entry><para><guibutton>Dec</guibutton></para></entry>
+                             <entry><para>Establece la base numérica a decimal, esto es, base 10. La base decimal es la predeterminada. Si cambia del modo científico a otro modo, la <application>Calculadora</application> establecerá la base numérica a decimal automáticamente.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Base hexadecimal</para> </entry>
+                             <entry><para><guibutton>Hex</guibutton></para></entry>
+                             <entry><para>Establece la base numérica a hexadecimal, esto es, base 16.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-word-length">
+      <title>Establecer la longitud de palabra</title>
+      <para>El tamaño de palabra se puede modificar para que las funciones bit a bit se comporten de forma diferente. Para establecer el tamaño de palabra seleccione uno de los botones descritos en <xref linkend="gcalctool-TBL-word-length"/>.</para>
+                <table id="gcalctool-TBL-word-length" frame="all">
+                  <title>Establecer la longitud de palabra</title>
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Palabra de 64 bits</para> </entry>
+                             <entry><para><guibutton>64 bits</guibutton></para></entry>
+                             <entry><para>Establece la longitud de la palabra a 64 bits. 64 bits es la longitud de palabra predeterminada.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Palabra de 32 bits</para> </entry>
+                             <entry><para><guibutton>32 bits</guibutton></para></entry>
+                             <entry><para>Establece la longitud de la palabra a 32 bits.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Palabra de 16 bits</para> </entry>
+                             <entry><para><guibutton>16 bits</guibutton></para></entry>
+                             <entry><para>Establece la longitud de la palabra a 16 bits.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-calc-bit-manipulation-ext">
+      <title>Realizar manipulaciones de bit sobre enteros</title>
+      <para>Si la pantalla de la calculadora muestra un valor entero, entonces cada uno de los bits en ese valor entero se muestra como una colección de unos y ceros en el editor de bits. Pulsando sobre cualquiera de esos bits individuales se puede cambiar su valor, haciendo que el valor del entero mostrado se ajuste de forma acorde.</para>
+    </sect3>
+    <sect3 id="gcalctool-logic-calc"> 
+      <title>Cómo realizar cálculos bit a bit</title> 
+      <para>Para realizar cálculos bit a bit, use los botones descritos en la <xref linkend="gcalctool-TBL-logic-calc"/>.</para>
+                <table id="gcalctool-TBL-logic-calc" frame="all">
+                  <title>Realizar cálculos bit a bit</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ejemplo</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>OR bit a bit</para> </entry>
+                             <entry><para><guibutton>OR</guibutton></para></entry>
+                             <entry><para>Realiza una operación OR sobre el valor actual en el área de visualización y el siguiente número que introduzca.</para></entry>
+                             <entry><para>10001000 <guibutton>OR</guibutton> 00010001</para></entry>
+                             <entry><para>10011001</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>AND bit a bit</para> </entry>
+                             <entry><para><guibutton>AND</guibutton></para></entry>
+                             <entry><para>Realiza una operación AND sobre el valor actual en el área de visualización y el siguiente número que introduzca.</para></entry>
+                             <entry><para>10101010 <guibutton>AND</guibutton> 00110011</para></entry>
+                             <entry><para>100010</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>NOT bit a bit</para> </entry>
+                             <entry><para><guibutton>NOT</guibutton></para></entry>
+                             <entry><para>Realiza una operación NOT sobre el valor actual en el área de visualización, usando el tamaño de palabra configurado en <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para><guibutton>NOT</guibutton> 1357ACE</para></entry>
+                             <entry><para>FECA8531</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>XOR bit a bit</para> </entry>
+                             <entry><para><guibutton>XOR</guibutton></para></entry>
+                             <entry><para>Realiza una operación XOR bit a bit sobre el valor actual en el área de visualización y el siguiente número que introduzca.</para></entry>
+                             <entry><para>1100 <guibutton>XOR</guibutton> 1010</para></entry>
+                             <entry><para>110</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>XNOR bit a bit</para> </entry>
+                             <entry><para><guibutton>XNOR</guibutton></para></entry>
+                             <entry><para>Realiza una operación XNOR sobre el valor actual en el área de visualización y el siguiente número que introduzca.</para></entry>
+                             <entry><para>1100 <guibutton>XNOR</guibutton> 1010</para></entry>
+                             <entry><para>1001</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-num-manip"> 
+      <title>Cómo manipular números binarios</title> 
+      <para>Para manipular números binarios, use los botones descritos en la <xref linkend="gcalctool-TBL-num-manip"/>.</para>
+                <table id="gcalctool-TBL-num-manip" frame="all">
+                  <title>Manipular números binarios</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ejemplo</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Desplazamiento a la izquierda <replaceable>n</replaceable> posiciones</para> </entry>
+                             <entry><para><guibutton>&lt;</guibutton></para></entry>
+                             <entry><para>Desplaza el valor actual binario en el área de visualización, el número especificado de posiciones a la izquierda. Pulse <guibutton>&lt;</guibutton>, después seleccione el número de posiciones a desplazar del menú emergente. El número puede ser desplazado hasta 15 posiciones a la izquierda.</para></entry>
+                             <entry><para>111 <guibutton>&lt;</guibutton><guilabel>1 lugar</guilabel></para></entry>
+                             <entry><para>1110</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Desplazamiento a la derecha <replaceable>n</replaceable> posiciones</para> </entry>
+                             <entry><para><guibutton>&gt;</guibutton></para></entry>
+                             <entry><para>Desplaza el valor actual binario en el área de visualización, el número especificado de posiciones a la derecha. Pulse <guibutton>&gt;</guibutton>, después seleccione el número de posiciones a desplazar del menú emergente. El número puede ser desplazado hasta 15 posiciones a la derecha.</para></entry>
+                             <entry><para>1011 <guibutton>&gt;</guibutton><guilabel>1 lugar</guilabel></para></entry>
+                             <entry><para>101</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Truncar un número</para> </entry>
+                             <entry><para><guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>Trunca el valor actual en el área de visualización al tamaño de palabra configurado en <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>FFFFFFFFFF <guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>FFFFFFFF</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Obtener el complemento a 1</para> </entry>
+                             <entry><para><guibutton>C. a 1</guibutton></para></entry>
+                             <entry><para>Calcula el complemento a 1 sobre el valor actualmente en el área de visualización, usando el tamaño de palabra configurado en <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>D723 <guibutton>C. a 1</guibutton></para></entry>
+                             <entry><para>FFFF28DC</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Obtener el complemento a 2</para> </entry>
+                             <entry><para><guibutton>C. a 2</guibutton></para></entry>
+                             <entry><para>Calcula el complemento a 2 sobre el valor actualmente en el área de visualización, usando el tamaño de palabra configurado en <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>D723 <guibutton>C. a 2</guibutton></para></entry>
+                             <entry><para>FFFF28DD</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Si usa los atajos de teclado, puede usar el teclado para especificar el número de posiciones a desplazar, como se muestra en los siguientes ejemplos:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Entrada por teclado</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Descripción</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>&lt;</keycap> <keycap>4</keycap></para></entry>
+              <entry><para>Desplaza 4 posiciones a la izquierda el valor binario actual en el área de visualización.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>&gt;</keycap> <keycap>4</keycap></para></entry>
+              <entry><para>Desplaza 4 posiciones a la derecha el valor binario actual en el área de visualización.</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+
+    </sect3>
+        <sect3 id="gcalctool-misc-prog">
+      <title>Realizar cálculos de programador de miscelánea</title> 
+      <para>Para realizar cálculos científicos de programador de miscelánea, use los botones descritos en la <xref linkend="gcalctool-TBL-misc-prog"/>.</para>
+                <table id="gcalctool-TBL-misc-prog" frame="all">
+                  <title>Realizar cálculos de programador de miscelánea</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Descripción</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ejemplo</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Resultado</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Números hexadecimales</para> </entry>
+                             <entry><para>De <guibutton>A</guibutton> a <guibutton>F</guibutton> ambos inclusive</para></entry>
+                             <entry><para>Éstas sólo están disponibles en base hexadecimal.</para></entry>
+                             <entry><para><guibutton>B</guibutton></para></entry>
+                             <entry><para>B</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+         </sect3>
+    </sect2>
+<!-- ============= Undo and Redo ======================== -->
+  <sect2 id="gcalctool-undo-redo">
+    <title>Deshacer una acción</title>
+                <para>Para deshacer su acción anterior, elija <menuchoice><guimenu>Editar</guimenu><guimenuitem>Deshacer</guimenuitem></menuchoice>. Puede deshacer hasta 15 acciones pasadas.</para>
+                <para>Si quiere rehacer una acción que acaba de deshacer, elija <menuchoice><guimenu>Editar</guimenu><guimenuitem>Rehacer</guimenuitem></menuchoice>. Puede rehacer hasta 15 acciones deshechas.</para>
+  </sect2>
+<!-- ============= Quitting ============================= -->
+  <sect2 id="gcalctool-quit"> 
+    <title>Cómo salir</title> 
+                <para>Para salir de la <application>Calculadora</application>, elija <menuchoice><guimenu>Calculadora</guimenu><guimenuitem>Salir</guimenuitem></menuchoice>.</para>
+                <para>Cuando sale de la <application>Calculadora</application>, los valores actuales de los siguientes ajustes se almacenan y se aplicarán la siguiente vez que inicie la <application>Calculadora</application>:</para>
+                  <itemizedlist>
+                    <listitem><para>Modo: <link linkend="gcalctool-basic-mode">Básico</link>, <link linkend="gcalctool-advanced-mode">Avanzado</link>, <link linkend="gcalctool-financial-mode">Financiero</link>, o <link linkend="gcalctool-scientific-mode">Científico</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-set-acc">Precisión</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-mem-reg">Ventana de los registros de memoria</link> mostrada o no, además del contenido de cada registro de memoria</para></listitem>
+                    <listitem><para><link linkend="gcalctool-num-base">Base numérica</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-display-type">Formato de pantalla</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-trig-type">Tipo trigonométrico</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-set-acc">Mostrar los ceros excedentes</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-calc-functions-separator">Mostrar separador de miles</link></para></listitem>
+                  </itemizedlist>
+  </sect2>
+  </sect1>
+<!-- ============= Technical Information ============================= -->
+  <sect1 id="gcalctool-tech-info">
+         <title>Información técnica</title>
+
+         <sect2 id="gcalctool-recognize-error">
+                <title>Condiciones de error</title>
+                <para>Si realiza un cálculo no válido, la <application>Calculadora</application> indica la condición del error tal y como sigue: <itemizedlist>
+<listitem><para>Muestra la palabra <literal>Error</literal> en el área de visualización.</para></listitem>
+<listitem><para>Muestra un error en la barra de estado.</para></listitem>
+<listitem><para>Hace que todos los botones de la calculadora no estén disponibles, salvo <guibutton>Clr</guibutton>.</para></listitem>
+<listitem><para>Hace que todas las opciones de la calculadora no estén disponibles.</para></listitem>
+<listitem><para>Hace que todos los elementos de los menús no estén disponibles, excepto <menuchoice><guimenu>Calculadora</guimenu><guimenuitem>Salir</guimenuitem></menuchoice> y <menuchoice><guimenu>Ayuda</guimenu><guimenuitem>Contenido</guimenuitem></menuchoice>.</para></listitem>
+</itemizedlist></para>
+<para>Para borrar la condición del error, pulse <guibutton>Clr</guibutton> o pulse <keycombo><keycap>Delete</keycap><keycap>Borrar</keycap></keycombo>.</para>
+         </sect2>
+
+         <sect2 id="gcalctool-change-modes">
+                <title>Cambiar los modos</title>
+                <para>Si el usuario intenta cambiar los modos cuando se está mostrando un cálculo parcial, entonces se mostrará un diálogo de advertencia, avisando al usuario de que el cálculo actual se limpiará y la base se cambiará a decimal.</para>
+                <para>Existe una casilla de verificación que si se activa, previene que el diálogo se muestre de nuevo.</para>
+                <para>Si el usuario pulsa el botón <guibutton>Cancelar</guibutton>, el cambio de modo de operación se cancela. Si el usuario pulsa el botón <guibutton>Cambiar de modo</guibutton>, entonces se cambia el modo y tiene los siguientes efectos colaterales: <itemizedlist>
+<listitem><para>Limpia la pantalla.</para></listitem>
+   <listitem><para>Establecer la base a decimal.</para></listitem>
+   <listitem><para>Establece la pantalla numérica a fija.</para></listitem>
+   <listitem><para>Establece la precisión a nueve lugares después del punto numérico.</para></listitem>
+   <listitem><para>Limpia la pantalla del separador de miles.</para></listitem>
+   <listitem><para>Limpia la pantalla de los ceros excedentes después del punto numérico.</para></listitem>
+   <listitem><para>Ignora la ventana de registro si el nuevo modo es Básico.</para></listitem>
+</itemizedlist></para>
+         </sect2>
+
+         <sect2 id="gcalctool-changing-display-area">
+                <title>Cambiar el área de visualización</title>
+                <para>Es posible usar el ratón para pulsar en el área de visualización y editarlo.</para>
+                <para>Todos los atajos de teclado normales funcionarán, además de: <itemizedlist>
+    <listitem><para><keycombo><keycap>Ctrl</keycap><keycap>Borrar</keycap></keycombo> que borrará el carácter a la derecha del cursor</para></listitem>
+    <listitem><para><keycap>Inicio</keycap> que moverá el cursor al comienzo del área de visualización</para></listitem> 
+    <listitem><para><keycap>Fin</keycap> que moverá el cursor al final del área de visualización</para></listitem> 
+</itemizedlist></para>
+         </sect2>
+
+  </sect1>
+<!-- ============= Keyboard Shortcuts ============================= -->
+  <sect1 id="gcalctool-keyboard-shortcut"> 
+    <title>Referencia rápida: Combinaciones de teclas</title> 
+                <para>La <xref linkend="gcalctool-TBL-keyboard-shortcut-button"/>, la <xref linkend="gcalctool-TBL-keyboard-shortcut-sci-options"/>, y la <xref linkend="gcalctool-TBL-keyboard-shortcut-menu"/> proporcionan una referencia rápida para todos los atajos de teclado de la <application>Calculadora</application>.</para>
+                <para>Se mostrará el menú asociado a los botones de la calculadora cuando use los atajos de teclado para cualquier botón que tenga uno asociado. Puede usar las teclas de flechas para seleccionar un elemento del menú o el atajo de teclado del elemento del menú.</para>
+                <table id="gcalctool-TBL-keyboard-shortcut-button" frame="all">
+                  <title>Referencia rápida para los atajos de teclado de los botones de la <application>Calculadora</application></title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Combinaciones de teclas</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botón</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Vea</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycap>0</keycap> a <keycap>9</keycap> incluido</para></entry>
+                             <entry><para><guibutton>0</guibutton> al <guibutton>9</guibutton> inclusive</para></entry>
+                             <entry><para>Números</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>A</keycap> </para></entry>
+                             <entry><para><guibutton>Acc</guibutton> </para></entry>
+                             <entry><para>Precisión</para> </entry>
+                             <entry><para><xref linkend="gcalctool-set-acc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>a</keycap> </para></entry>
+                             <entry><para><guibutton>A</guibutton> </para></entry>
+                             <entry><para>Números hexadecimales</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>b</keycap> </para></entry>
+                             <entry><para><guibutton>B</guibutton> </para></entry>
+                             <entry><para>Números hexadecimales</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>C</keycap></para></entry>
+                             <entry><para><guibutton>+/-</guibutton></para></entry>
+                             <entry><para>Cambiar el signo aritmético</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>c</keycap> </para></entry>
+                             <entry><para><guibutton>C</guibutton> </para></entry>
+                             <entry><para>Números hexadecimales</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>D</keycap></para></entry>
+                             <entry><para><guibutton>Ddd</guibutton></para></entry>
+                             <entry><para>Depreciación doble declinación</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>d</keycap> </para></entry>
+                             <entry><para><guibutton>D</guibutton> </para></entry>
+                             <entry><para>Números hexadecimales</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>E</keycap> </para></entry>
+                             <entry><para><guibutton>Exp</guibutton> </para></entry>
+                             <entry><para>Exponencial</para> </entry>
+                             <entry><para><xref linkend="gcalctool-enter-exp"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>e</keycap> </para></entry>
+                             <entry><para><guibutton>E</guibutton> </para></entry>
+                             <entry><para>Números hexadecimales</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>F</keycap> </para></entry>
+                             <entry><para><guibutton>Fun</guibutton> </para></entry>
+                             <entry><para>Función</para> </entry>
+                             <entry><para><xref linkend="gcalctool-edit-func"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>f</keycap> </para></entry>
+                             <entry><para><guibutton>F</guibutton> </para></entry>
+                             <entry><para>Números hexadecimales</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>G</keycap></para></entry>
+                             <entry><para>10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>10 a la potencia <replaceable>x</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>g</keycap></para></entry>
+                             <entry><para><guibutton>Log</guibutton></para></entry>
+                             <entry><para>Logaritmo común en base 10</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>H</keycap></para></entry>
+                             <entry><para>2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>2 a la potencia <replaceable>x</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>h</keycap></para></entry>
+                             <entry><para>Log<subscript>2</subscript></para></entry>
+                             <entry><para>Logaritmo común en base 2</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>I</keycap></para></entry>
+                             <entry><para><guibutton>MIB</guibutton></para></entry>
+                             <entry><para>Margen de ingresos brutos</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>i</keycap></para></entry>
+                             <entry><para><guibutton>Int</guibutton></para></entry>
+                             <entry><para>Porción entera</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>J</keycap></para></entry>
+                             <entry><para>Cos<superscript>-1</superscript></para></entry>
+                             <entry><para>Arcocoseno</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>j</keycap></para></entry>
+                             <entry><para><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>Coseno</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>K</keycap></para></entry>
+                             <entry><para>Sin<superscript>-1</superscript></para></entry>
+                             <entry><para>Arcoseno</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>k</keycap></para></entry>
+                             <entry><para><guibutton>Sen</guibutton></para></entry>
+                             <entry><para>Seno</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>l</keycap></para></entry>
+                             <entry><para><guibutton>Sln</guibutton></para></entry>
+                             <entry><para>Deprecación lineal</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>M</keycap></para></entry>
+                             <entry><para><guibutton>Mod</guibutton></para></entry>
+                             <entry><para>División modular</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>m</keycap></para></entry>
+                             <entry><para><guibutton>Trmc</guibutton></para></entry>
+                             <entry><para>Periodo de interés compuesto</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>NN</keycap></para></entry>
+                             <entry><para>e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>e a la potencia <replaceable>x</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>n</keycap></para></entry>
+                             <entry><para><guibutton>Ln</guibutton></para></entry>
+                             <entry><para>Logaritmo natural</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                                                   <row valign="top">
+                                                         <entry><para><keycap>O</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>x a la potencia recíproca <replaceable>y</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>o</keycap> o <keycap>^</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>x a la potencia <replaceable>y</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>P</keycap></para></entry>
+                             <entry><para><guibutton>Ppc</guibutton></para></entry>
+                             <entry><para>Pago periódico</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>p</keycap></para></entry>
+                             <entry><para><guibutton>Vp</guibutton></para></entry>
+                             <entry><para>Valor presente</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>R</keycap></para></entry>
+                             <entry><para><guibutton>Rcl</guibutton></para></entry>
+                             <entry><para>Recuperar un valor de los registros de memoria</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>r</keycap></para></entry>
+                             <entry><para><guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>Inverso</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>S</keycap></para></entry>
+                             <entry><para><guibutton>Sto</guibutton></para></entry>
+                             <entry><para>Almacenar el valor en un registro de memoria</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>s</keycap></para></entry>
+                             <entry><para><guibutton>Sqrt</guibutton></para></entry>
+                             <entry><para>Raíz cuadrada</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>T</keycap></para></entry>
+                             <entry><para><guibutton>Tasa</guibutton></para></entry>
+                             <entry><para>Tasa de interés periódica</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>t</keycap></para></entry>
+                             <entry><para><guibutton>Term</guibutton></para></entry>
+                             <entry><para>Pago periódico</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>u</keycap></para></entry>
+                             <entry><para><guibutton>Abs</guibutton></para></entry>
+                             <entry><para>Valor absoluto</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>v</keycap></para></entry>
+                             <entry><para><guibutton>Vf</guibutton></para></entry>
+                             <entry><para>Valor futuro</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>W</keycap></para></entry>
+                             <entry><para>Tan<superscript>-1</superscript></para></entry>
+                             <entry><para>Arcotangente</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>w</keycap></para></entry>
+                             <entry><para><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>Tan</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>X</keycap></para></entry>
+                             <entry><para><guibutton>Exch</guibutton></para></entry>
+                             <entry><para>Intercambiar un registro de memoria con el valor mostrado</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>x</keycap></para></entry>
+                             <entry><para><guibutton>Xor</guibutton></para></entry>
+                             <entry><para>XOR bit a bit</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Y</keycap></para></entry>
+                             <entry><para><guibutton>Syd</guibutton></para></entry>
+                             <entry><para>Sumatorio de los años-dígitos de depreciación</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Z</keycap></para></entry>
+                             <entry><para><guibutton>C. a 2</guibutton></para></entry>
+                             <entry><para>Complemento a 2</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>z</keycap></para></entry>
+                             <entry><para><guibutton>C. a 1</guibutton></para></entry>
+                             <entry><para>Complemento a 1</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>!</keycap></para></entry>
+                             <entry><para><guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para><replaceable>x</replaceable> factorial</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>#</keycap> </para></entry>
+                             <entry><para><guibutton>Con</guibutton> </para></entry>
+                             <entry><para>Valor constante</para> </entry>
+                             <entry><para><xref linkend="gcalctool-edit-const"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>%</keycap></para></entry>
+                             <entry><para><guibutton>%</guibutton></para></entry>
+                             <entry><para>Porcentaje</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&amp;</keycap></para></entry>
+                             <entry><para><guibutton>And</guibutton></para></entry>
+                             <entry><para>AND bit a bit</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>(</keycap> y <keycap>)</keycap></para></entry>
+                             <entry><para><guibutton>(</guibutton> y <guibutton>)</guibutton></para></entry>
+                             <entry><para>Paréntesis</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>*</keycap></para></entry>
+                             <entry><para><guibutton>*</guibutton></para></entry>
+                             <entry><para>Multiplicación</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>+</keycap></para></entry>
+                             <entry><para><guibutton>+</guibutton></para></entry>
+                             <entry><para>Suma</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>-</keycap></para></entry>
+                             <entry><para><guibutton>-</guibutton></para></entry>
+                             <entry><para>Resta</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>.</keycap></para></entry>
+                             <entry><para><guibutton>.</guibutton></para></entry>
+                             <entry><para>Coma numérica</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>/</keycap></para></entry>
+                             <entry><para><guibutton>/</guibutton></para></entry>
+                             <entry><para>División</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>:</keycap></para></entry>
+                             <entry><para><guibutton>Frac</guibutton></para></entry>
+                             <entry><para>Porción fraccional</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&lt;</keycap></para></entry>
+                             <entry><para><guibutton>&lt;</guibutton></para></entry>
+                             <entry><para>Desplazamiento a la izquierda de <replaceable>n</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>=</keycap> o <keycap>Intro</keycap></para></entry>
+                             <entry><para><guibutton>=</guibutton></para></entry>
+                             <entry><para>Calcular un resultado</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&gt;</keycap></para></entry>
+                             <entry><para><guibutton>&gt;</guibutton></para></entry>
+                             <entry><para>Desplazamiento a la derecha de <replaceable>n</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>?</keycap></para></entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>Generador de números aleatorios</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>@</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>Cuadrado</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>{</keycap></para></entry>
+                             <entry><para><guibutton>Xnor</guibutton></para></entry>
+                             <entry><para>XNOR bit a bit</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>[</keycap></para></entry>
+                             <entry><para><guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>Trunca el número</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>|</keycap></para></entry>
+                             <entry><para><guibutton>Or</guibutton></para></entry>
+                             <entry><para>OR bit a bit</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>~</keycap></para></entry>
+                             <entry><para><guibutton>Not</guibutton></para></entry>
+                             <entry><para>NOT bit a bit</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Borrado</keycap></para></entry>
+                             <entry><para><guibutton>Rtcs</guibutton></para></entry>
+                             <entry><para>Borrado</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Esc</keycap> o</para>
+                                    <para><keycombo><keycap>Ctrl</keycap><keycap>Borrado</keycap></keycombo></para></entry>
+                             <entry><para><guibutton>CE</guibutton></para></entry>
+                             <entry><para>Limpiar entrada</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Mayús.</keycap><keycap>Borrar</keycap></keycombo></para></entry>
+                             <entry><para><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>Limpiar</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <table id="gcalctool-TBL-keyboard-shortcut-sci-options" frame="all">
+                  <title>Referencia rápida para los atajos de teclado del modo científico de la <application>Calculadora</application></title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Combinaciones de teclas</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Opción</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Vea</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>1</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>16 bits</guilabel></para></entry>
+                             <entry><para>Establece el tamaño de palabra a 16 bits.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>3</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>32 bits</guilabel></para></entry>
+                             <entry><para>Establece el tamaño de palabra a 32 bits.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>6</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>64 bits</guilabel></para></entry>
+                             <entry><para>Establece el tamaño de palabra a 64 bits.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>a</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Gradianes</guilabel></para></entry>
+                             <entry><para>Establecer el tipo trigonométrico a gradianes.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>b</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Bin</guilabel></para></entry>
+                             <entry><para>Establecer la base numérica a binaria.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>d</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Dec</guilabel></para></entry>
+                             <entry><para>Establecer la base numérica a decimal.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>f</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Fix</guilabel></para></entry>
+                             <entry><para>Establecer formato de la pantalla a coma fija.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>g</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Grados</guilabel></para></entry>
+                             <entry><para>Establecer el tipo trigonométrico a grados.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>i</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Inv</guilabel></para></entry>
+                             <entry><para>Seleccionar la opción inversa para usar con las funciones trigonométricas.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-options"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>n</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Eng</guilabel></para></entry>
+                             <entry><para>Establecer formato de la pantalla a ingeniería.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>o</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Oct</guilabel></para></entry>
+                             <entry><para>Establecer la base numérica a octal.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>r</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Radianes</guilabel></para></entry>
+                             <entry><para>Establecer el tipo trigonométrico a radianes.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>s</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Sci</guilabel></para></entry>
+                             <entry><para>Establecer tipo de la pantalla a formato científico.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>x</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Hex</guilabel></para></entry>
+                             <entry><para>Establecer la base numérica a hexadecimal.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>y</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Hyp</guilabel></para></entry>
+                             <entry><para>Seleccionar la opción hiperbólica para usar con las funciones trigonométricas.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-options"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <table id="gcalctool-TBL-keyboard-shortcut-menu" frame="all">
+                  <title>Referencia rápida para los atajos de teclado de los elementos del menú de la <application>Calculadora</application></title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Combinaciones de teclas</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Elemento del menú</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Función</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Vea</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>b</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Básico</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Cambiar al modo básico</para> </entry>
+                             <entry><para><xref linkend="gcalctool-basic-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>c</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Editar</guimenu> <guimenuitem>Copiar</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Copia el valor actual en el área de visualización al portapapeles</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>f</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Financiero</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Cambia al modo financiero</para> </entry>
+                             <entry><para><xref linkend="gcalctool-financial-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>h</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ayuda</guimenu> <guimenuitem>Contenido</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Mostrar la ayuda en línea de la <application>Calculadora</application></para> </entry>
+                             <entry><para><xref linkend="gcalctool-intro"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>i</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Editar</guimenu> <guimenuitem>Insertar un valor ASCII</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Mostrar el diálogo <guilabel>Introduzca un valor ASCII</guilabel></para> </entry>
+                             <entry><para><xref linkend="gcalctool-ins-ascii"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>k</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Mostrar separador de miles</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Mostrar el separador de miles</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions-separator"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>m</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Registros de memoria</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Mostrar la ventana de los <guilabel>Registros de memoria</guilabel></para> </entry>
+                             <entry><para><xref linkend="gcalctool-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>p</keycap></keycombo></para></entry>
+                                                         <entry><para> <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Programador</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Cambiar al modo programador</para> </entry>
+                             <entry><para><xref linkend="gcalctool-programming-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>q</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Calculadora</guimenu> <guimenuitem>Salir</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Salir de la aplicación <application>Calculadora</application></para> </entry>
+                             <entry><para><xref linkend="gcalctool-quit"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>s</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Científico</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Cambiar al modo científico</para> </entry>
+                             <entry><para><xref linkend="gcalctool-scientific-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>t</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Mostrar los ceros excedentes</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Mostrar los ceros excedentes</para> </entry>
+                             <entry><para><xref linkend="gcalctool-set-acc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>v</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Editar</guimenu> <guimenuitem>Pegar</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Pegar el valor actual en el portapapeles al área de visualización</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ctrl</keycap><keycap>z</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Editar</guimenu> <guimenuitem>Deshacer</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Deshacer la acción anterior</para> </entry>
+                             <entry><para><xref linkend="gcalctool-undo-redo"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Mayús.</keycap><keycap>Ctrl</keycap><keycap>z</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Editar</guimenu> <guimenuitem>Rehacer</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Rehacer una acción deshecha</para> </entry>
+                             <entry><para><xref linkend="gcalctool-undo-redo"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+  </sect1>
+</article>

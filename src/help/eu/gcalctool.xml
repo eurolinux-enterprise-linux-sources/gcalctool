@@ -1,0 +1,2765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "5.5.37">
+<!ENTITY manrevision "2.9">
+<!ENTITY date "March 2005">
+<!ENTITY app "<application>gcalctool</application>">
+<!ENTITY appname "Calculator">
+<!ENTITY ldquo "&#147;">
+<!-- Left Double Quote --><!ENTITY rdquo "&#148;">
+<!-- Right Double Quote -->]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="eu">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title><application>gcalctool</application> Manual</title>       
+
+    <abstract role="description">
+      <para>
+      gcalctool is a calculator for GNOME. It includes basic, advanced, 
+      financial, and scientific modes and uses a multiple precision package 
+      to do its arithmetic to give a high degree of accuracy.
+      </para>
+    </abstract>
+
+    <copyright> 
+      <year>2003</year> 
+      <year>2004</year> 
+      <year>2005</year>
+      <holder>Sun Microsystems </holder> 
+    </copyright> 
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+   -->
+    <publisher role="maintainer"> 
+      <publishername>GNOMEren dokumentazio-proiektua</publishername> 
+    </publisher> 
+
+     <legalnotice id="legalnotice">
+	<para>Baimena ematen da dokumentu hau kopiatu, banatu eta/edo aldatzeko Free Software Foundation-ek argitaratutako GNU Dokumentazio Librearen Lizentziaren 1.1. bertsioan edo berriago batean ezarritako baldintzak betetzen badira; Atal Aldaezinik, Aurreko azaleko testurik eta Atzeko azaleko testurik gabe. GFDL lizentziaren kopia <ulink type="help" url="ghelp:fdl">esteka honetan</ulink> edo eskuliburu honekin batera ematen den COPYING-DOCS fitxategian aurkituko duzu.</para>
+         <para>Eskuliburu hau GFDL lizentziarekin banatzen diren GNOME eskuliburuen bildumakoa da. Eskuliburu hau bildumatik bereizita banatu nahi baduzu, bana dezakezu, baina eskuliburuari lizentziaren kopia bat gehitu beharko diozu, lizentzian bertan 6. atalean azaltzen den bezala.</para>
+
+	<para>Enpresek euren produktu eta zerbitzuak bereizteko erabiltzen dituzten izen asko marka erregistratu moduan hartu behar dira. Izen horiek GNOMEren edozein agiritan agertzen direnean, eta GNOMEren Dokumentazio Proiektuko kideak marka komertzialak direla konturatu badira, orduan izen horiek maiuskulaz idatzita egongo dira, osorik edo hasierako letra maiuskulaz jarrita.</para>
+
+	<para>DOKUMENTUA ETA DOKUMENTUAREN BERTSIO ALDATUAK GNU DOKUMENTAZIO LIBREAREN LIZENTZIAREN BALDINTZEN ARABERA EMATEN DIRA, ETA ONDOREN ZEHAZTEN DIRENAK ONARTZERA BEHARTZEN DUTE: <orderedlist>
+		<listitem>
+		  <para>DOKUMENTUA "DAGOEN-DAGOENEAN" EMATEN DA, INOLAKO BERMERIK GABE, EZ ESPRESUKI ADIERAZITAKORIK ETA EZ INPLIZITURIK ERE; BESTEAK BESTE (MUGARIK GABE), EZ DA BERMATZEN DOKUMENTUA EDO BERTSIO ALDATUA AKATSIK GABEA DENIK, MERKATURATZEKO EDO XEDE JAKIN BATERAKO EGOKIA DENIK EDO ARAURIK HAUSTEN EZ DUENIK. DOKUMENTUAREN EDO DOKUMENTUAREN BERTSIO ALDATUAREN KALITATEARI, ZEHAZTASUNARI ETA PERFORMANTZIARI BURUZKO ERANTZUKIZUN OSOA ZUREA DA. DOKUMENTUREN BATEK EDO BERTSIO ALDATUREN BATEK EDOZEIN MOTATAKO AKATSIK IZANEZ GERO, ZUK (EZ HASIERAKO IDAZLEAK, EZ EGILEAK ETA EZ INONGO KOLABORATZAILEK) ZEURE GAIN HARTU BEHARKO DUZU BERRIKUSTEKO, KONPONTZEKO EDO ZUZENTZEKO BEHARREZKO ZERBITZU GUZTIEN KOSTUA. BERME-UKATZE HAU LIZENTZIA HONEN FUNTSEZKO ZATIA DA. EZ DA BAIMENIK EMATEN EZEIN DOKUMENTU EDO BERTSIO ALDATU ERABILTZEKO, BALDIN ETA EZ BADA BERME-UKATZE HAU ONARTZEN.</para>
+		</listitem>
+		<listitem>
+		  <para>EZINGO DA INONGO ZIRKUNSTANTZIA EDO LEGE-TEORIARIK OINARRI HARTU --EZ ERANTZUKIZUN ZIBILARI BURUZKORIK (ZABARKERIA BARNE HARTUTA) EZ KONTRATUARI BURUZKORIK, EZ BESTERIK-- DOKUMENTU HONEN EDO BERTSIO ALDATU BATEN EGILEA, HASIERAKO IDAZLEA, EDOZEIN KOLABORATZAILE EDO BANATZAILE, EDO ALDERDI HORIEN EDOZEIN HORNITZAILE BESTE PERTSONA BATEN AURREAN ERANTZULE EGITEKO, PERTSONA HORREK EDOZEIN MOTATAKO KALTE ZUZENEKO, ZEHARKAKO, BEREZI, INTZIDENTAL EDO ONDORIOZKOAK JASAN DITUELAKO, BESTEAK BESTE (MUGARIK GABE), BEZEROAK GALTZEAREN, LANA ETEN BEHARRAREN, ORDENAGAILUAK EZ IBILTZEAREN EDO GAIZKI IBILTZEAREN ONDORIOZKO KALTEAK, EDO DOKUMENTUA NAHIZ HAREN BERTSIO ALDATUAK ERABILTZETIK ONDORIOZTATZEN DIREN EDO ERABILERA HORREKIN ZERIKUSIA DUEN EDOZEIN KALTE EDO GALERA, ALDERDIARI KALTE HORIEK GERTA ZITEZKEELA ADITZERA EMAN BAZAIO ERE.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+        any of this. -->
+
+    <authorgroup> 
+      <corpauthor>Sun Microsystems Inc.</corpauthor>
+
+<!-- gdocteam@sun.com (Sun Java Desktop System Documentation Team) -->
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+     
+      <othercredit role="translator">
+                <firstname>Latin</firstname> 
+                <surname>Translator 1</surname> 
+                <affiliation> 
+                          <orgname>Latin Translation Team</orgname> 
+                          <address> <email>translator@gnome.org</email> </address> 
+                </affiliation>
+                <contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+    <revision> 
+                <revnumber>Kalkulagailuaren eskuliburua V2.9</revnumber> 
+                <date>2005eko martxoa</date> 
+                <revdescription> 
+                          <para role="author">Sun Java Mahaigaineko Sistemaren Dokumentazio-taldea</para>
+                          <para role="publisher">GNOMEren dokumentazio-proiektua</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Kalkulagailuaren eskuliburua V2.8</revnumber> 
+                <date>2004ko abuztua</date> 
+                <revdescription> 
+                          <para role="author">Sun Java Mahaigaineko Sistemaren Dokumentazio-taldea</para>
+                          <para role="publisher">GNOMEren dokumentazio-proiektua</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Gcalctool-en eskuliburua V2.7</revnumber> 
+                <date>2004ko otsaila</date> 
+                <revdescription> 
+                          <para role="author">Sun-eko GNOMEren dokumentazio-taldea</para>
+                          <para role="publisher">GNOMEren dokumentazio-proiektua</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Gcalctool-en eskuliburua V2.6</revnumber> 
+                <date>2003ko urria</date> 
+                <revdescription> 
+                          <para role="author">Sun-eko GNOMEren dokumentazio-taldea</para>
+                          <para role="publisher">GNOMEren dokumentazio-proiektua</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Gcalctool-en eskuliburua V2.5</revnumber> 
+                <date>2003ko uztaila</date> 
+                <revdescription> 
+                          <para role="author">Sun-eko GNOMEren dokumentazio-taldea</para>
+                          <para role="publisher">GNOMEren dokumentazio-proiektua</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Gcalctool-en eskuliburua V2.4</revnumber> 
+                <date>2003ko ekaina</date> 
+                <revdescription> 
+                          <para role="author">Sun-eko GNOMEren dokumentazio-taldea</para>
+                          <para role="publisher">GNOMEren dokumentazio-proiektua</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Gcalctool-en eskuliburua V2.3</revnumber> 
+                <date>2003ko apirila</date> 
+                <revdescription> 
+                          <para role="author">Sun-eko GNOMEren dokumentazio-taldea</para>
+                          <para role="publisher">GNOMEren dokumentazio-proiektua</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Gcalctool-en eskuliburua V2.2</revnumber> 
+                <date>2003ko apirila</date> 
+                <revdescription> 
+                          <para role="author">Sun-eko GNOMEren dokumentazio-taldea</para>
+                          <para role="publisher">GNOMEren dokumentazio-proiektua</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Gcalctool-en eskuliburua V2.1</revnumber> 
+                <date>2003ko martxoa</date> 
+                <revdescription> 
+                          <para role="author">Sun-eko GNOMEren dokumentazio-taldea</para>
+                          <para role="publisher">GNOMEren dokumentazio-proiektua</para>
+                </revdescription> 
+      </revision> 
+      <revision> 
+                <revnumber>Gcalctool-en eskuliburua V2.0</revnumber> 
+                <date>2003ko martxoa</date> 
+                <revdescription> 
+                          <para role="author">Sun-eko GNOMEren dokumentazio-taldea</para>
+                          <para role="publisher">GNOMEren dokumentazio-proiektua</para>
+                </revdescription> 
+      </revision> 
+    </revhistory> 
+
+    <releaseinfo>Eskuliburu honetan Kalkulagailuaren 5.5.37 bertsioa azaltzen da.</releaseinfo> 
+    <legalnotice> 
+      <title>Oharrak</title> 
+      <para>To report a bug or make a suggestion regarding the <application>gcalctool</application> application or this manual, follow the directions in the <ulink url="ghelp:gnome-feedback" type="help">GNOME Feedback Page</ulink>. 
+      </para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>gcalctool</primary> 
+  </indexterm> 
+  <indexterm zone="index"> 
+    <primary>Kalkulagailua</primary> 
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+  <sect1 id="gcalctool-intro"> 
+    <title>Sarrera</title> 
+    <para>The <application>gcalctool</application> application provides the following modes for different types of mathematical functionality: </para>
+     <variablelist>
+        <varlistentry>
+        <term><link linkend="gcalctool-basic-mode">Oinarrizkoa</link></term>
+        <listitem><para>Modu lehenetsia. Kalkulagailuaren funtzio estandarrak ditu. Batuketa, kenketa, zatiketa eta biderketa estandarrak egin daitezke oinarrizko moduan, eta oinarrizko funtzio guztiak erabil daitezke beste modu guztietan.</para></listitem>
+        </varlistentry>
+  <varlistentry>
+        <term><link linkend="gcalctool-advanced-mode">Aurreratua</link></term>
+        <listitem><para>Provides advanced calculator functions. You can store numbers in 10 different memory registers, and easily retrieve and replace the numbers in the memory registers. You can use all of the Advanced functions in Financial, Scientific and Programming modes.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+        <term><link linkend="gcalctool-financial-mode">Finantzarioa</link></term>
+        <listitem><para>Hainbat finantza-funtzio konplexu ditu.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+        <term><link linkend="gcalctool-scientific-mode">Zientifikoa</link></term>
+        <listitem><para>Provides many additional mathematical functions, including trigonometric functions. You can also store your own functions and constants, when you use Scientific mode.</para></listitem>
+        </varlistentry>
+                <varlistentry>
+                <term><link linkend="gcalctool-programming-mode">Programming </link></term>
+                <listitem><para>Provides functions useful to a programmer, including bitwise functions and a bit editor.</para></listitem>
+                </varlistentry>
+     </variablelist>
+
+    <para>You can use <application>gcalctool</application> in the following numbering systems:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Zenbaki-sistema</para></entry>
+              <entry colname="COLSPEC1" align="right">
+                <para>Oinarria</para></entry>
+            </row>
+          </thead> 
+          <tbody> 
+            <row valign="top">
+              <entry><para>Bitarra</para></entry>
+              <entry align="right"><para>2</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Zortzitarra</para></entry>
+              <entry align="right"><para>8</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Hamartarra</para></entry>
+              <entry align="right"><para>10</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Hamaseitarra</para></entry>
+              <entry align="right"><para>16</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+                           
+  </sect1>
+
+<!-- =========== Getting Started ============================== -->
+
+  <sect1 id="gcalctool-get-start"> 
+    <title>Erabiltzen hastea</title> 
+    <para>You can start <application>gcalctool</application> in the following ways:</para>
+    <variablelist>
+      <varlistentry>
+        <term>Menua</term>
+        <listitem>
+          <para>Aukeratu <menuchoice><guimenu>Gehigarriak</guimenu><guimenuitem>Kalkulagailua</guimenuitem></menuchoice>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Komando-lerroa</term>
+        <listitem>
+          <para>Exekutatu komando hau: <userinput>gnome-kalkulagailua</userinput></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>When you start <application>gcalctool</application>, the following window is displayed:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-basic"> 
+        <title><application>gcalctool</application> Basic Mode Window</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_basic_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Oinarrizko moduaren leihoa bistaratzen du (<application>gcalctool</application>).</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+                <para>The <application>gcalctool</application> window contains the following elements: </para>
+                <variablelist>
+                  <varlistentry> <term>Menu-barra</term>
+                         <listitem>
+                                <para>The menus on the menubar contain all of the commands that you need to work with <application>gcalctool</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Bistaratze-area</term>
+                         <listitem>
+                                <para>The display area shows the numbers that you enter, and the results of calculations.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Modu-area</term>
+                         <listitem>
+                                <para>The mode area displays the buttons for the current mode. The Basic mode buttons are always displayed. Advanced mode buttons are also available in Financial, Scientific and Programming modes.  </para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Laster-menua</term>
+                         <listitem>
+                <para>The <inlinemediaobject><imageobject><imagedata fileref="figures/gcalctool_menu_symbol.png" format="PNG"/></imageobject><textobject><phrase>Laster-menuaren ikurra erakusten du.</phrase></textobject></inlinemediaobject> symbol on a <application>gcalctool</application> button indicates that a popup menu is displayed when you click on that button.</para>
+                         </listitem>
+                  </varlistentry>
+<varlistentry>
+         <term>Egoera-barra</term>
+                         <listitem>
+                                <para>Kalkuluen egoerari buruzko informazioa bistaratzen du egoera-barrak.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+  </sect1>
+<!-- ================ Usage ================================ -->
+  <sect1 id="gcalctool-usage"> 
+    <title>Erabilera</title> 
+
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="gcalctool-calc-functions">
+                <title>Kalkulagailuaren funtzioak erabiltzea</title> 
+                <para>Kalkulu bat egiteko, aukera hauek daude:</para>
+                <itemizedlist>
+                  <listitem>
+                         <para>Click on the <application>gcalctool</application> buttons to enter numbers and functions.</para>
+                  </listitem>
+                  <listitem>
+                         <para>Give focus to the <application>gcalctool</application> window, then use the keyboard or numeric keypad to specify the calculation that you want to perform. For a complete list of keyboard shortcuts, see <xref linkend="gcalctool-keyboard-shortcut"/>.</para>
+                  </listitem>
+                </itemizedlist>
+                <para>The <application>gcalctool</application> application automatically displays numbers with more than 40 digits, and small numbers, as exponential numbers. For example, the following table shows the value that is displayed when you use the decimal numeric base with an accuracy of 2 significant places: </para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Bistaratzea</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Esan nahi du</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>1.23e+37</para></entry>
+              <entry><para>1,23 * 10<superscript>37</superscript></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>1e-5</para></entry>
+              <entry><para>0,00001</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <para>Zenbaki bat formatu esponentzialean nola sartu jakiteko, ikus <xref linkend="gcalctool-enter-exp"/>.</para>
+
+    <sect3 id="gcalctool-calc-functions-separator">
+                <title>Zenbaki handietan bereizlea bistaratzea</title> 
+      <para>Zenbaki hamartarretan komatik ezkerrera hiru zenbakitik behin bereizle bat jartzeko, aukeratu <menuchoice><guimenu>Ikusi</guimenu><guimenuitem>Erakutsi milakoen bereizleak</guimenuitem></menuchoice>.</para>
+      <note>
+      <para>Different countries and cultures have varying conventions for how to communicate. These conventions include the language spoken and the character used as a numeric separator.</para>
+      <para><application>gcalctool</application> has been internationalized so users can adapt to their own conventions. This is done by setting a specific locale. We can't determine what locales will exist, except for a standard one called the C locale.</para>
+      <para>When you use the C locale, the separator character is not displayed.</para>
+      </note>
+    </sect3>
+
+    <sect3 id="gcalctool-calc-functions-copy">
+                <title>Bistaratze-arean kopiatzea eta itsastea</title> 
+                <para>Kalkulu baten emaitza kopiatzeko, aukeratu <menuchoice><guimenu>Editatu</guimenu><guimenuitem>Kopiatu</guimenuitem></menuchoice>. Beste aplikazio batean itsats dezakezu balioa.</para>
+
+                <para>Lehendik kopiatutako balio bat bistaratze-arean itsasteko, aukeratu <menuchoice><guimenu>Editatu</guimenu><guimenuitem>Itsatsi</guimenuitem></menuchoice>.</para>
+    </sect3>
+
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+   
+    <sect2 id="gcalctool-basic-mode"> 
+      <title>Oinarrizko kalkuluak egitea</title> 
+      <para>Basic mode is displayed by default when you first start <application>gcalctool</application>. To explicitly invoke Basic mode, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Basic</guimenuitem></menuchoice>.  </para>
+      <para>Kalkulagailuaren memoria-erregistroak ez daude erabilgarri oinarrizko moduan. Alegia, inaktibo dago <menuchoice><guimenu>Ikusi</guimenu><guimenuitem>Memoria-erregistroak</guimenuitem></menuchoice> aukera.</para>
+    <sect3 id="gcalctool-simple-calc"> 
+      <title>Kalkulu errazak egitea</title> 
+      <para>Kalkulu errazak egiteko, erabili <xref linkend="gcalctool-TBL-simple-calc"/>(e)n deskribatutako botoiak.</para>
+                <table id="gcalctool-TBL-simple-calc" frame="all">
+                  <title>Kalkulu errazak egitea</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Adibidea</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Zenbakiak</para> </entry>
+                             <entry><para><guibutton>0</guibutton>tik <guibutton>9</guibutton>ra, biak barne</para></entry>
+                             <entry><para>Oinarri hamartarrean eta hamaseitarrean, zenbaki guztiak daude erabilgarri. Oinarri zortzitarrean, ez daude erabilgarri <guibutton>8</guibutton> eta <guibutton>9</guibutton> botoiak. Oinarri bitarrean, berriz, <guibutton>0</guibutton> eta <guibutton>1</guibutton> botoiak soilik daude erabilgarri. Oinarri lehenetsia hamartarra da.</para></entry>
+                             <entry><para><guibutton>1</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Zenbaki-koma</para> </entry>
+                             <entry><para><guibutton>.</guibutton></para></entry>
+                             <entry><para>Zenbakizko sarrera baten zati ez osokoari hasiera ematen dio.</para></entry>
+                             <entry><para><guibutton>1</guibutton> <guibutton>.</guibutton> <guibutton>2</guibutton></para></entry>
+                             <entry><para>1.2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Emaitza kalkulatzea</para> </entry>
+                             <entry><para><guibutton>=</guibutton></para></entry>
+                             <entry><para>Uneko kalkuluaren emaitza bistaratzen du, uneko oinarrian.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Batuketa</para> </entry>
+                             <entry><para><guibutton>+</guibutton></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioa gehitzen dio sartzen duzun hurrengo zenbakiari.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Kenketa</para> </entry>
+                             <entry><para><guibutton>-</guibutton></para></entry>
+                             <entry><para>Sartzen duzun hurrengo zenbakia kentzen dio bistaratze-areako uneko balioari.</para></entry>
+                             <entry><para>3 <guibutton>-</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Biderketa</para> </entry>
+                             <entry><para><guibutton>*</guibutton></para></entry>
+                             <entry><para>Sartzen duzun hurrengo zenbakiaz biderkatzen du bistaratze-areako uneko balioa.</para></entry>
+                             <entry><para>3 <guibutton>*</guibutton><guibutton>2</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>6</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Zatiketa</para> </entry>
+                             <entry><para><guibutton>/</guibutton></para></entry>
+                             <entry><para>Sartzen duzun hurrengo zenbakiaz zatitzen du bistaratze-areako uneko balioa.</para></entry>
+                             <entry><para>6 <guibutton>/</guibutton><guibutton>3</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>2</para></entry>
+                           </row>
+                        <row valign="top">
+                             <entry><para>Aldatu zeinu aritmetikoa</para> </entry>
+                             <entry><para><guibutton>+/-</guibutton></para></entry>
+                             <entry><para>Zenbaki positiboak negatibo bihurtzen ditu, eta zenbaki negatiboak, berriz, positibo.</para></entry>
+                             <entry><para>8 <guibutton>+/-</guibutton></para></entry>
+                             <entry><para>-8</para></entry>
+                           </row>
+                         </tbody>
+
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-erase-char"> 
+      <title>Karaktereak ezabatzea</title> 
+      <para>Karaktereak ezabatzeko, erabili <xref linkend="gcalctool-TBL-erase-char"/>(e)n deskribatutako botoiak.</para>
+                <table id="gcalctool-TBL-erase-char" frame="all">
+                  <title>Karaktereak ezabatzea</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Adibidea</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Atzera tekla</para> </entry>
+                             <entry><para><guibutton>Atze</guibutton></para></entry>
+                             <entry><para>Bistaratze-arean eskuin-eskuinean dagoen karakterea kentzen du.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>Bksp</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Garbitu sarrera</para> </entry>
+                             <entry><para><guibutton>CE</guibutton></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioa kentzen du.</para>
+                                    <para>This operation is the same as <guibutton>Clr</guibutton></para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>CE</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>0</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Garbitu</para> </entry>
+                             <entry><para><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioa kendu eta zero berrezartzen du, eta aurreko kalkuluen emaitzak kentzen ditu. Modu zientifikoan, gainera, <guilabel>Hip</guilabel> eta <guilabel>Ald</guilabel> aukerak desautatzen ditu.</para></entry>
+                             <entry><para>1 <guibutton>+</guibutton><guibutton>2</guibutton><guibutton>2</guibutton><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>0</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    
+    
+
+
+
+  
+
+          <sect3 id="gcalctool-ins-ascii"> 
+            <title>ASCII balioak bistaratzea</title> 
+                        <para>Karaktere baten ASCII balioa bistaratzeko, aukeratu <menuchoice><guimenu>Editatu</guimenu><guimenuitem>Txertatu ASCII balioa</guimenuitem></menuchoice>.</para>
+                        <para>ASCII balioa txertatzeko elkarrizketa-koadroa bistaratzen da.</para>
+                        <para>Sartu nahi duzun karakterea <guilabel>Karakterea</guilabel> eremuan, eta, ondoren, egin klik <guibutton>Txertatu</guibutton> botoian. Karaktere horren ASCII balioa agertzen da bistaratze-arean, uneko oinarrian. Adibidez, B-ren ASCII balioa 66 da oinarri hamartarrean.</para>
+          </sect3>
+        </sect2>
+
+ <sect2 id="gcalctool-advanced-mode">
+    <title>Kalkulu aurreratuak egitea</title>
+  <para>Modu aurreratua aktibatzeko, aukeratu <menuchoice><guimenu>Ikusi</guimenu><guimenuitem>Aurreratua</guimenuitem></menuchoice>.</para>
+    <para>Modu aurreratua aktibatzean, botoi hauek bistaratzen dira oinarrizko moduko botoien eskuinaldean:</para>
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-advanced"> 
+        <title><application>gcalctool</application> Advanced Mode Buttons</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_advanced_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Modu aurreratuaren <application>gcalctool</application> botoi bistaratzen ditu.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+                <table id="gcalctool-TBL-adv-calc" frame="all">
+                  <title>Kalkulu aurreratuak egitea</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Adibidea</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Ehunekoa</para> </entry>
+                             <entry><para><guibutton>%</guibutton></para></entry>
+                             <entry><para>Uneko balioa 100ez zatitzen du.</para></entry>
+                             <entry><para>560 <guibutton>%</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>5.60</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Alderantzizkoa</para> </entry>
+                             <entry><para><guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>Bistaratze-areako balioaz zatitzen du 1.</para></entry>
+                             <entry><para>4 <guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>0.25</para></entry>
+                           </row>
+                    
+                           <row valign="top">
+                             <entry><para>Erro karratua</para> </entry>
+                             <entry><para><guibutton>Sqrt</guibutton></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren erro karratua kalkulatzen du.</para></entry>
+                             <entry><para><guibutton>Sqrt</guibutton> 9 <guibutton>)</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Karratua</para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren karratua kalkulatzen du.</para></entry>
+                             <entry><para>3 <replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>9</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Osoko zatia</para> </entry>
+                             <entry><para><guibutton>Int</guibutton></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren osoko zatia kalkulatzen du.</para></entry>
+                             <entry><para>-23.45 <guibutton>Int</guibutton></para></entry>
+                             <entry><para>-23</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Ez-osoko zatia</para> </entry>
+                             <entry><para><guibutton>Frac</guibutton></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren ez-osoko zatia kalkulatzen du.</para></entry>
+                             <entry><para>-23.45 <guibutton>Frac</guibutton></para></entry>
+                             <entry><para>-0.45</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Balio absolutua</para> </entry>
+                             <entry><para><guibutton>Abs</guibutton></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren balio absolutua kalkulatzen du.</para></entry>
+                             <entry><para>-23.45 <guibutton>Abs</guibutton></para></entry>
+                             <entry><para>23.45</para></entry>
+                         </row>
+                           <row valign="top">
+                         <entry><para>Parentesiak</para> </entry>
+                             <entry><para><guibutton>(</guibutton> eta <guibutton>)</guibutton></para></entry>
+                             <entry><para>Calculations within parentheses are performed first. You can nest parentheses to any level.</para></entry>
+                           <entry>
+                               <para>2 <guibutton>+</guibutton><guibutton>3</guibutton><guibutton>*</guibutton><guibutton>4</guibutton><guibutton>=</guibutton></para>
+                               <para>2 <guibutton>+</guibutton><guibutton>(</guibutton><guibutton>3</guibutton><guibutton>*</guibutton><guibutton>4</guibutton><guibutton>)</guibutton></para>
+                             </entry>
+                             <entry> <para>20</para>
+                               <para>14</para>
+                             </entry>
+                               
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+
+<sect3 id="gcalctool-mem-reg"> 
+      <title>Kalkulagailuaren memoria-erregistroak erabiltzea</title> 
+      <para>You can store values in any of the ten <application>gcalctool</application> memory registers <guilabel>R0</guilabel> to <guilabel>R9</guilabel>. To display the memory registers, choose 
+        <menuchoice> 
+          <guimenu>View</guimenu> 
+          <guimenuitem>Memory Registers</guimenuitem> 
+        </menuchoice>. 
+      </para>
+      <para>Memoria-erregistroak ezkutatzeko, aukeratu berriz <menuchoice><guimenu>Ikusi</guimenu><guimenuitem>Memoria-erregistroak</guimenuitem></menuchoice>, edo egin klik memoria-erregistroen leihoko <guibutton>Itxi</guibutton> botoian.</para>
+        <para>Memoria-funtzio erabilgarriak deskribatzen dira hemen: <xref linkend="gcalctool-TBL-mem-reg"/>.</para>
+                <table id="gcalctool-TBL-mem-reg" frame="all">
+                  <title>Memoria-funtzioak</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Adibidea</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Gorde balioa memoria-erregistroan</para> </entry>
+                             <entry><para><guibutton>Sto</guibutton></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioa gordetzen du zehaztutako memoria-erregistroan. Egin klik <guibutton>Sto</guibutton> botoian, eta, ondoren, hautatu memoria-erregistro bat leiho gainerakorrean.</para>
+                                   <para>To clear a memory register during a <application>gcalctool</application> session:</para>
+                                     <orderedlist>
+                                       <listitem><para>Egin klik <guibutton>Clr</guibutton> botoian.</para></listitem>
+                                       <listitem><para>Egin klik <guibutton>Sto</guibutton> botoian.</para></listitem>
+                                       <listitem><para>Hautatu memoria-erregistroa leiho gainerakorrean.</para></listitem>
+                                     </orderedlist>
+</entry>
+                             <entry><para>22 <guibutton>Sto</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para><guilabel>R2</guilabel> memoria-erregistroan gorde da 22 balioa.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Eskuratu memoria-erregistroko balio bat</para> </entry>
+                             <entry><para><guibutton>Rcl</guibutton></para></entry>
+                             <entry><para>Zehaztutako memoria-erregistroaren edukia eskuratzen du. Egin klik <guibutton>Rcl</guibutton> botoian, eta, ondoren, hautatu memoria-erregistroa leiho gainerakorrean.</para></entry>
+                             <entry><para>0 <guibutton>Rcl</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para>Bistaratze-areako balioa 22 da.</para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Trukatu memoria-erregistroko balioa eta bistaratutako balioa</para> </entry>
+                             <entry><para><guibutton>Exch</guibutton></para></entry>
+                             <entry><para>Memoria-erregistro jakin baten edukia eta bistaratze-areako uneko balioa trukatzen ditu. Egin klik <guibutton>Exch</guibutton> botoian, eta, ondoren, hautatu memoria-erregistroa leiho gainerakorrean.</para></entry>
+                             <entry><para>44 <guibutton>Exch</guibutton><guilabel>R2</guilabel></para></entry>
+                             <entry><para>Bistaratze-areako balioa 44tik 22ra aldatzen da, eta R2ko balioa, berriz, 22tik 44ra.</para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Laster-teklak erabiltzen badituzu, teklatua erabil dezakezu memoria-erregistroa zehazteko. Hemen dituzu adibide batzuk:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Teklatu bidezko sarrera</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Azalpena</para></entry>
+            </row>
+          </thead>
+          <tbody> 
+            <row valign="top">
+              <entry><para><keycap>S</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>Bistaratze-areako uneko balioa gordetzen du <guilabel>R2</guilabel> memoria-erregistroan.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>R</keycap> <keycap>2</keycap></para></entry>
+              <entry><para><guilabel>R2</guilabel> memoria-erregistroaren uneko edukia eskuratzen du, eta bistaratze-arean jartzen du.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>X</keycap> <keycap>2</keycap></para></entry>
+              <entry><para>Bistaratze-areako uneko balioa eta <guilabel>R2</guilabel> memoria-erregistroaren edukia trukatzen ditu.</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+    </sect3>
+
+
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+         <sect2 id="gcalctool-financial-mode"> 
+      <title>Finantza-kalkuluak egitea</title> 
+      <para>Modu finantzarioa aktibatzeko, aukeratu <menuchoice><guimenu>Ikusi</guimenu><guimenuitem>Finantzarioa</guimenuitem></menuchoice>.</para>
+     <para>Modu finantzarioa aktibatzean, botoi hauek bistaratzen dira oinarrizko moduko eta modu aurreratuko botoien gainaldean:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-financial"> 
+        <title><application>gcalctool</application> Financial Mode Buttons</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_financial_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Modu finantzarioaren <application>gcalctool</application> botoi bistaratzen ditu.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+      <para>Kalkulu finantzarioak egiteko, erabili <xref linkend="gcalctool-TBL-financial-calc"/>(e)n deskribatutako botoiak.</para>
+                <table id="gcalctool-TBL-financial-calc" frame="all">
+                  <title>Finantza-kalkuluak egitea</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Adibidea</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Interes konposatuko epea</para> </entry>
+                             <entry><para><guibutton>Ctrm</guibutton></para></entry>
+                             <entry><para>Calculates the number of compounding periods necessary to increase an investment from a present value to a future value, at a fixed interest rate per compounding period.</para>
+                             </entry>
+                             <entry><para>You have just deposited $8000 in an account that pays an annual interest rate of 9%, compounded monthly. Given the annual interest rate, you determine that the simple monthly interest rate is 0.09 / 12 = 0.0075. To calculate the time period necessary to double your investment, click <guibutton>Ctrm</guibutton>, and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Aldiaren interes-tasa</term>
+                                <listitem><para>0,0075</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Etorkizuneko balioa</term>
+                                <listitem><para>16000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Uneko balioa</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>92,77</para>
+                                    <para>Inbertsioa bikoizteko 92,77 hilabete behar dira.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Faktore bikoitzeko amortizazio beherakorra</para> </entry>
+                             <entry><para><guibutton>Ddb</guibutton></para></entry>
+                             <entry><para>Ondasun baten denboraldi jakin bateko amortizazioa kalkulatzen du, faktore bikoitzeko amortizazio beherakorraren metodoa erabiliz.</para>
+                             </entry>
+                             <entry><para>You have just purchased an office machine for $8000. The useful life of this machine is six years. The salvage value after six years is $900.
+To calculate the depreciation expense for the fourth year, using the double-declining balance method, click <guibutton>Ddb</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Cost</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Salvage</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Life</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Period</term>
+                                <listitem><para>4</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>790,12</para>
+                                    <para>Laugarren urteko amortizazio-gastua 790,12 € da.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Etorkizuneko balioa</para> </entry>
+                             <entry><para><guibutton>Fv</guibutton></para></entry>
+                             <entry><para>Calculates the future value of an investment based on a series of equal payments at a specific periodic interest rate, over the number of payment periods in the term.
+</para>
+                             </entry>
+                             <entry><para>You plan to deposit $4000 in a bank account on the last day of each year for the next 20 years. The account pays 8% interest, compounded annually. Interest is paid on the last day of each year. 
+To calculate the value of your account in 20 years, press <guibutton>Fv</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Ordainketa periodikoa</term>
+                                <listitem><para>4000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Aldiaren interes-tasa</term>
+                                <listitem><para>0,08</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Number Of Periods</term>
+                                <listitem><para>20</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>183047,86</para>
+                                    <para>20 urteren buruan 183.047,86 € izango dira kontuan.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Gross Profit Margin</para></entry>
+                             <entry><para><guibutton>Gpm</guibutton></para></entry>
+                             <entry><para>Calculates the resale price of a product, based on the product cost and the wanted gross profit margin.</para></entry>
+                             <entry><para>You sell T-Shirts online. Each T-Shirt cost you $12 in material and labor. You want to sell the T-Shirts with a Gross Profit Margin of 0.40 - for every five dollars you earn, you want two to be profit. To calculate the price you would have to sell your T-Shirts for, press <guibutton>Gpm</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Cost</term>
+                                <listitem><para>12</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Margin</term>
+                                <listitem><para>0.40</para></listitem>
+                                </varlistentry>
+                             </variablelist>
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>20</para>
+                             <para>You will have to sell your T-Shirts for $20</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Ordainketa periodikoa</para> </entry>
+                             <entry><para><guibutton>Pmt</guibutton></para></entry>
+                             <entry><para>Mailegu baten ordainketa periodikoaren zenbatekoa kalkulatzen du, ordainketak ordain-aldi bakoitzaren amaieran eginik.</para>
+                             </entry>
+                             <entry><para>You are considering a $120,000 mortgage for 30 years at an annual interest rate of 11.0%. Given the annual interest rate, you determine that the simple monthly interest rate is 0.11 / 12 = 0.00917. The term is 30 * 12 = 360 months. To calculate the monthly repayment for this mortgage, press <guibutton>Pmt</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Principal</term>
+                                <listitem><para>120000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Aldiaren interes-tasa</term>
+                                <listitem><para>0,00917</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Epea</term>
+                                <listitem><para>360</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>1143,15</para>
+                                    <para>Hileroko amortizazioa 1143,15 € da.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Uneko balioa</para> </entry>
+                             <entry><para><guibutton>Pv</guibutton></para></entry>
+                             <entry><para>Calculates the present value of an investment based on a series of equal payments, discounted at a periodic interest rate, over the number of payment periods in the term.
+</para>
+                             </entry>
+                             <entry><para>Milioi bat euro irabazi berriak dituzu. Saria ordaintzeko era hau da: urtean 50.000 €-ko ordainketa bat, 20 urtean. Urteroko ordainketak urte-bukaeran jasotzen dira. Urtean 50.000 € jasotzea onartuz gero, dirua % 9ko interes-tasan inbertitzeko asmoa duzu, urtero konposatuta.</para>
+                                    <para>However, you are given the option of receiving a single lump-sum payment of $400,000 instead of the million dollars annuity. 
+To calculate which option is worth more in today's dollars, press <guibutton>Pv</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Ordainketa periodikoa</term>
+                                <listitem><para>50000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Aldiaren interes-tasa</term>
+                                <listitem><para>0,09</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Number Of Periods</term>
+                                <listitem><para>20</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>456427,28</para>
+                                    <para>20 urteetan zehar ordaindutako 1.000.000 euroek 456.427,25 € balio dituzte orain.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Aldiaren interes-tasa</para> </entry>
+                             <entry><para><guibutton>Tasa</guibutton></para></entry>
+                             <entry><para>Calculates the periodic interest necessary to increase an investment of a present value to a future value, over a number of compounding periods.
+</para>
+                             </entry>
+                             <entry><para>You have invested $20,000 in a bond. The bond matures in five years, and has a maturity value of $30,000. Interest is compounded monthly. The term is 5 * 12 = 60 months.
+To calculate the periodic interest rate for this investment, press <guibutton>Rate</guibutton> and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Etorkizuneko balioa</term>
+                                <listitem><para>30000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Uneko balioa</term>
+                                <listitem><para>20000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Epea</term>
+                                <listitem><para>60</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>,00678</para>
+                                    <para>Hileko interes-tasa % 0,678 da. Urteko interes-tasa hau da: % 0,678 * 12 = % 8,14.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Amortizazio lineala</para> </entry>
+                             <entry><para><guibutton>Sln</guibutton></para></entry>
+                             <entry><para>Ondasun baten denboraldi jakin bateko amortizazio lineala kalkulatzen du. Hau da kostu amortizagarria: <replaceable>kostua</replaceable> - <replaceable>hondar-balioa</replaceable>. Amortizazio-metodo linealaren bidez uniformeki banatzen da ondasun baten kostu amortizagarria ondasunaren balio-bizitzan. Ondasun baten amortizazio-aldia da balio-bizitza; urtetan adierazten da normalean.</para>
+                             </entry>
+                             <entry><para>You have just purchased an office machine for $8000. The useful life of this machine is six years. The salvage value after six years is $900.
+To calculate the yearly depreciation expense, using the straight-line method, prss <guibutton>Sln</guibutton>, and put the following values into the first three memory registers:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Cost</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Salvage</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Life</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>1183,33</para>
+                                    <para>Urteko amortizazio-gastua 1183,33 € dira.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Urteen zenbaki-ordenarekiko alderantziz proportzionala den amortizazioa</para> </entry>
+                             <entry><para><guibutton>Syd</guibutton></para></entry>
+                             <entry><para>Ondasun baten denboraldi jakin bateko amortizazioa kalkulatzen du, amortizazio beherakor urteen zenbaki-ordenarekiko alderantziz proportzionalaren metodoa erabiliz. Amortizazio-metodo horren arabera, amortizazio-tasa azeleratu egiten da amortizazio-gastu handienak hasieran egiteko, eta ez amaieran. Hau da kostu amortizagarria: <replaceable>kostua</replaceable> - <replaceable>hondar-balioa</replaceable>. Ondasun baten amortizazio-aldia da balio-bizitza; urtetan adierazten da normalean.</para>
+                             </entry>
+                             <entry><para>You have just purchased an office machine for $8000. The useful life of this machine is six years. The salvage value after six years is $900.
+To calculate the depreciation expense for the fourth year, using the sum-of-the-years'-digits method, press <guibutton>Syd</guibutton>, and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Cost</term>
+                                <listitem><para>8000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Salvage</term>
+                                <listitem><para>900</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Life</term>
+                                <listitem><para>6</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Period</term>
+                                <listitem><para>4</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>1014,29</para>
+                                    <para>Laugarren urteko amortizazio-gastua 1014,29 € da.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Ordainketa-aldia</para> </entry>
+                             <entry><para><guibutton>Epea</guibutton></para></entry>
+                             <entry><para>Calculates the number of payment periods that are necessary during the term of an ordinary annuity, to accumulate a future value, at a certain periodic interest rate.</para>
+                             </entry>
+                             <entry><para>You plan to deposit $1800 in a bank account on the last day of each year. The account pays 11% interest, compounded annually. Interest is paid on the last day of each year. 
+To calculate the time period necessary to accumulate $120,000, press <guibutton>Term</guibutton>, and put the following values into the text entries:</para>
+                             <variablelist>
+                                <varlistentry>
+                                <term>Ordainketa periodikoa</term>
+                                <listitem><para>1800</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Etorkizuneko balioa</term>
+                                <listitem><para>120000</para></listitem>
+                                </varlistentry>
+                                <varlistentry>
+                                <term>Aldiaren interes-tasa</term>
+                                <listitem><para>0,11</para></listitem>
+                                </varlistentry>
+                             </variablelist> 
+                             <para>Click <guibutton>Calculate</guibutton></para></entry>
+                             <entry><para>20,32</para>
+                                    <para>Kontuan 120.000 € biltzeko 20,32 urte behar dira.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect2> 
+    <!-- ================ Usage Subsection ================================ -->
+    <sect2 id="gcalctool-scientific-mode"> 
+      <title>Kalkulu zientifikoak egitea</title> 
+      <para>Modu zientifikoa aktibatzeko, aukeratu <menuchoice><guimenu>Ikusi</guimenu><guimenuitem>Zientifikoa</guimenuitem></menuchoice>.</para>
+    <para>Modu zientifikoa aktibatzean, botoi hauek bistaratzen dira oinarrizko moduko eta modu aurreratuko botoien gainaldean:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-scientific"> 
+        <title><application>gcalctool</application> Scientific Mode Buttons</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_scientific_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Modu zientifikoaren <application>gcalctool</application> botoi bistaratzen ditu.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+    <sect3 id="gcalctool-set-acc"> 
+      <title>Zehaztasuna ezartzeko</title> 
+      <para>To set the accuracy of the display area and of the memory registers, click <guibutton>Acc</guibutton>, then select from the popup menu the accuracy level that you require. The current accuracy level is indicated by a preceding black circle in the popup menu. Up to 99 significant places can be displayed. The default accuracy is 9 significant places. </para>
+<para>Zehaztasun-maila 9tik gora jartzeko, hautatu <guilabel>Beste (9) ...</guilabel>, eta, ondoren, aukeratu zehaztasun-maila <guilabel>Ezarri zehaztasuna</guilabel> laster-leihoan.</para>
+      <para>Lehenespenez, atzeko zeroak ez dira bistaratzen. Atzeko zeroak bistaratzeko, egin klik <guibutton>Acc</guibutton> botoian eta, ondoren, hautatu laster-menuko <guilabel>Erakutsi zero guztiak</guilabel>, edo aukeratu <menuchoice><guimenu>Ikusi</guimenu><guimenuitem>Erakutsi zero guztiak</guimenuitem></menuchoice>. <guibutton>Acc</guibutton> laster-menuan edo <guimenu>Ikusi</guimenu> menuan kontrol-marka baten bidez adierazten da <guilabel>Erakutsi zero guztiak</guilabel> aukera hautatua dagoela  Atzeko zeroak ezkutatzeko, aukeratu berriro <menuchoice><guimenu> Ikusi</guimenu><guimenuitem>Erakutsi zero guztiak</guimenuitem></menuchoice>.</para>
+      <para><literal>1 / 8 = <replaceable>x</replaceable></literal> eragiketa sistema hamartarrean egitean, zehaztasun-ezarpenak bistaratze-areako <replaceable>x</replaceable>(r)i nola eragiten dion ikusten da ondorengo taulako adibideetan, <guimenuitem>Erakutsi zero guztiak</guimenuitem> aukera hautatua egonik:</para>
+                <informaltable frame="all">
+                  <tgroup cols="2" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Zehaztasuna</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Zifra esanguratsu 1</para></entry>
+                             <entry><para>1.2</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>2 zifra esanguratsu</para></entry>
+                             <entry><para>1,25</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>3 zifra esanguratsu</para></entry>
+                             <entry><para>1,250</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </informaltable>
+    </sect3>
+    <sect3 id="gcalctool-display-type"> 
+      <title>Bistaratze mota ezartzea</title> 
+      <para>Bistaratze mota ezartzeko, hautatu <xref linkend="gcalctool-TBL-display-type"/>(e)n deskribatutako botoietako bat.</para>
+                <table id="gcalctool-TBL-display-type" frame="all">
+                  <title>Bistaratze mota ezartzea</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Ingeniaritzako bistaratze mota</para> </entry>
+                             <entry><para><guibutton>Eng</guibutton></para></entry>
+                             <entry><para>Ingeniaritzako formatuaren bistaratze modua ezartzen du. Emaitzak idazkera zientifikoan bistaratuko dira. Hiruren multiploa da beti berretzailea.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Koma finkoko bistaratze mota</para> </entry>
+                             <entry><para><guibutton>Fix</guibutton></para></entry>
+                             <entry><para>Sets the display type to fixed-point format. Results are not displayed in scientific notation. Fixed-point is the default display type.  If you change from scientific mode to either basic mode or financial mode, <application>gcalctool</application> automatically sets the display type to fixed-point format.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Bistaratze mota zientifikoa</para> </entry>
+                             <entry><para><guibutton>Sci</guibutton></para></entry>
+                             <entry><para>Formatu zientifikoaren bistaratze modua ezartzen du. Emaitzak idazkera zientifikoan bistaratzen dira, zifra kopuru finko batekin.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-trig-type"> 
+      <title>Trigonometria mota ezartzea</title> 
+      <para>Trigonometria mota ezartzeko, hautatu <xref linkend="gcalctool-TBL-trig-type"/>(e)n deskribatutako botoietako bat.</para>
+                <table id="gcalctool-TBL-trig-type" frame="all">
+                  <title>Trigonometria mota ezartzea</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Graduak</para> </entry>
+                             <entry><para><guibutton>Graduak</guibutton></para></entry>
+                             <entry><para>Gradutan ezartzen du trigonometria mota. Graduak dira trigonometria mota lehenetsia.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Gradu ehundarrak</para> </entry>
+                             <entry><para><guibutton>Gradu ehundarrak</guibutton></para></entry>
+                             <entry><para>Gradu ehundarretan ezartzen du trigonometria mota.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Radianak</para> </entry>
+                             <entry><para><guibutton>Radianak</guibutton></para></entry>
+                             <entry><para>Radianetan ezartzen du trigonometria mota.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-trig-options"> 
+      <title>Trigonometria motaren aukerak ezartzea</title> 
+      <para>Trigonometria-aukerak ezartzeko, hautatu <xref linkend="gcalctool-TBL-trig-options"/>(e)n deskribatutako botoietako bat.</para>
+                <table id="gcalctool-TBL-trig-options" frame="all">
+                  <title>Trigonometria-aukerak ezartzea</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Aukera hiperbolikoaren adierazlea</para> </entry>
+                             <entry><para><guibutton>Hyp</guibutton></para></entry>
+                             <entry><para>Aukera hiperbolikoa hautatzen du, funtzio trigonometrikoekin erabiltzeko.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Alderantzizkoa aukeraren adierazlea</para> </entry>
+                             <entry><para><guibutton>Inv</guibutton></para></entry>
+                             <entry><para>Alderantzizkoa aukera hautatzen du, funtzio trigonometrikoekin erabiltzeko.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Lehenespenez, <xref linkend="gcalctool-TBL-trig-options"/>(e)n azaltzen diren aukerak ez daude hautatuak. Sakatu <guibutton>Clr</guibutton> aukera horiek desautatzeko.</para>
+
+    </sect3>
+    <sect3 id="gcalctool-trig-calc"> 
+      <title>Balio trigonometrikoak kalkulatzea</title> 
+      <para>Balio trigonometrikoak kalkulatzeko, erabili <xref linkend="gcalctool-TBL-trig-calc"/>(e)n deskribatutako botoiak.</para>
+                <table id="gcalctool-TBL-trig-calc" frame="all">
+                  <title>Balio trigonometrikoak kalkulatzea</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Adibidea</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Kosinua <literal>cos</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> hautatu gabe, <guilabel>Inv</guilabel> hautatu gabe</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren kosinua kalkulatzen du.</para></entry>
+                             <entry><para>60 <guibutton>Cos</guibutton></para></entry>
+                             <entry><para>0,5</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arku kosinua <literal>acos</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> hautatu gabe, <guilabel>Inv</guilabel> hautatuta</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren arku kosinua kalkulatzen du.</para></entry>
+                             <entry><para>0,5 <guilabel>Inv</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>60</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Kosinu hiperbolikoa <literal>cosh</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> hautatuta, <guilabel>Inv</guilabel> hautatu gabe</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren kosinu hiperbolikoa kalkulatzen du.</para></entry>
+                             <entry><para>0,4 <guilabel>Hyp</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>1,081072372</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arku kosinu hiperbolikoa <literal>acosh</literal></para> </entry>
+                             <entry><para><guibutton>Cos</guibutton>, <guilabel>Hyp</guilabel> hautatuta, <guilabel>Inv</guilabel> hautatuta</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren arku kosinu hiperbolikoa kalkulatzen du.</para></entry>
+                             <entry><para>1,6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>1,046967915</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Sinua <literal>sin</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> hautatu gabe, <guilabel>Inv</guilabel> hautatu gabe</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren sinua kalkulatzen du.</para></entry>
+                             <entry><para>90 <guibutton>Sin</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arku sinua <literal>asin</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> hautatu gabe, <guilabel>Inv</guilabel> hautatuta</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren arku sinua kalkulatzen du.</para></entry>
+                             <entry><para>1 <guilabel>Inv</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>90</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Sinu hiperbolikoa <literal>sinh</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> hautatuta, <guilabel>Inv</guilabel> hautatu gabe</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren sinu hiperbolikoa kalkulatzen du.</para></entry>
+                             <entry><para>0,4 <guilabel>Hyp</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>0,410752326</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arku sinu hiperbolikoa <literal>asinh</literal></para> </entry>
+                             <entry><para><guibutton>Sin</guibutton>, <guilabel>Hyp</guilabel> hautatuta, <guilabel>Inv</guilabel> hautatuta</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren arku sinu hiperbolikoa kalkulatzen du.</para></entry>
+                             <entry><para>1,6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>1,248983328</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Tangentea <literal>tan</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> hautatu gabe, <guilabel>Inv</guilabel> hautatu gabe</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren tangentea kalkulatzen du.</para></entry>
+                             <entry><para>45 <guibutton>Tan</guibutton></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arku tangentea <literal>atan</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> hautatu gabe, <guilabel>Inv</guilabel> hautatuta</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren arku tangentea kalkulatzen du.</para></entry>
+                             <entry><para>1 <guilabel>Inv</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>45</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Tangente hiperbolikoa <literal>tanh</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> hautatuta, <guilabel>Inv</guilabel> hautatu gabe</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren tangente hiperbolikoa kalkulatzen du.</para></entry>
+                             <entry><para>0,6 <guilabel>Hyp</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>0,537049567</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Arku tangente hiperbolikoa <literal>atanh</literal></para> </entry>
+                             <entry><para><guibutton>Tan</guibutton>, <guilabel>Hyp</guilabel> hautatuta, <guilabel>Inv</guilabel> hautatuta</para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren arku tangente hiperbolikoa kalkulatzen du.</para></entry>
+                             <entry><para>0,6 <guilabel>Hyp</guilabel><guilabel>Inv</guilabel><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>0,693147181</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-logs-calc"> 
+      <title>Logaritmoak kalkulatzea</title> 
+      <para>Logaritmoak kalkulatzeko, erabili <xref linkend="gcalctool-TBL-logs-calc"/>(e)n deskribatutako botoiak.</para>
+                <table id="gcalctool-TBL-logs-calc" frame="all">
+                  <title>Logaritmoak kalkulatzea</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Adibidea</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Logaritmo hamartar arrunta</para> </entry>
+                             <entry><para>Log<subscript><replaceable>10</replaceable></subscript></para></entry>
+                             <entry><para>Calculates the common logarithm (base 10) of the current value in the display area.</para></entry>
+                             <entry><para>10 Log<subscript><replaceable>10</replaceable></subscript></para></entry>
+                             <entry><para>1</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Logaritmo nepertarra</para> </entry>
+                             <entry><para><guibutton>Ln</guibutton></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren logaritmo nepertarra kalkulatzen du.</para></entry>
+                             <entry><para>10 <guibutton>Ln</guibutton></para></entry>
+                             <entry><para>2,30</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Common Logarithm Base 2</para> </entry>
+                             <entry><para>Log<subscript><replaceable>2</replaceable></subscript></para></entry>
+                             <entry><para>Calculates the common logarithm (base 2) of the current value in the display area.</para></entry>
+                             <entry><para>10 Log<subscript><replaceable>2</replaceable></subscript></para></entry>
+                             <entry><para>3.32</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <note>
+                  <para>Common antilogarithm and natural antilogarithm are not supported in this version of <application>gcalctool</application>.</para>
+                </note>
+    </sect3>
+    <sect3 id="gcalctool-enter-exp"> 
+      <title>Zenbaki esponentzialak idaztea</title> 
+      <para>Zenbaki esponentzialak idazteko, erabili <guibutton>Exp</guibutton> botoia.</para>
+      <para>Zenbakiak idazkera zientifikoz idazteko aukera ematen du <guibutton>Exp</guibutton> botoiak, alegia, <replaceable>mantisa</replaceable> * <replaceable>oinarria</replaceable><superscript><replaceable>berretzailea</replaceable></superscript>:</para>
+<variablelist>
+  <varlistentry>
+    <term><replaceable>mantisa</replaceable></term>
+    <listitem><para>Bistaratze-areako ez-zero balioa. Bistaratze-areako uneko balioa zero bada, mantisa 1,0 da.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><replaceable>oinarria</replaceable></term>
+    <listitem><para>2, 8, 10 edo 16, oinarri bitarra, zortzitarra, hamartarra edo hamaseitarra adierazteko, hurrenez hurren.</para></listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><replaceable>berretzailea</replaceable></term>
+    <listitem><para>Sartzen duzun hurrengo zenbakia.</para></listitem>
+  </varlistentry>
+</variablelist>
+
+<para><guibutton>Exp</guibutton> botoia sakatzean, <literal>. +</literal> bistaratzen du kalkulagailuak, berretzailearen (sartuko den hurrengo zenbakiaren) <replaceable>oinarria</replaceable> adierazteko.</para>
+<para>To change the sign of the number, use the <guibutton>+/-</guibutton> button before the <guibutton>Exp</guibutton> button.
+To change the sign of the exponent (the power to which the number is raised) use <guibutton>-</guibutton> after the
+<guibutton>Exp</guibutton> button.</para>
+
+<para>To enter a decimal number in exponential format, use the guidelines in the following table: </para>
+          <informaltable frame="all">
+            <tgroup cols="3" colsep="1" rowsep="1">
+                   <colspec colname="COLSPEC0" colwidth="50*"/>
+                   <colspec colname="COLSPEC1" colwidth="50*"/>
+                   <thead>
+                          <row valign="top">
+                            <entry colname="COLSPEC0">
+                                   <para>Zenbakia</para></entry>
+                            <entry colname="COLSPEC1">
+                                   <para>Sartu</para></entry>
+                            <entry colname="COLSPEC2">
+                                   <para>Bistaratutako zenbakia</para></entry>
+                          </row>
+                   </thead> 
+                   <tbody> 
+                     <row valign="top">
+                       <entry><para>1200000000</para></entry>
+                       <entry><para>12 <guibutton>Exp</guibutton> <guibutton>+</guibutton> <guibutton>8</guibutton> <guibutton>=</guibutton></para></entry>
+                       <entry><para>1200000000</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>-1200000000</para></entry>
+                       <entry><para><guibutton>-</guibutton> 12 <guibutton>Exp</guibutton> <guibutton>+</guibutton> <guibutton>8</guibutton> <guibutton>=</guibutton> </para></entry>
+                       <entry><para>-1200000000</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>0,00000012</para></entry>
+                       <entry><para>12 <guibutton>Exp</guibutton><guibutton>-</guibutton><guibutton>8</guibutton><guibutton>=</guibutton></para></entry>
+                       <entry><para>1,2e-7</para></entry>
+                     </row>
+                     <row valign="top">
+                       <entry><para>-0,00000012</para></entry>
+                       <entry><para><guibutton>-</guibutton> 12 <guibutton>Exp</guibutton> <guibutton>-</guibutton> <guibutton>8</guibutton> <guibutton>=</guibutton> </para></entry>
+                       <entry><para>-1,2e-7</para></entry>
+                     </row>
+                   </tbody>
+            </tgroup>
+          </informaltable>
+
+    </sect3>
+    <sect3 id="gcalctool-edit-const"> 
+      <title>Balio konstanteak erabiltzea</title> 
+      <para>Egin klik <guibutton>Con</guibutton> botoian, definitutako balio konstanteen zerrenda bistaratzeko. Balio konstante guztiak oinarri hamartarrean daude, nahiz eta uneko oinarria ez hamartarra izan.</para>
+      <para>Hautatu menuko konstante bat, balio hori bistaratze-arean jartzeko. <keycap>#</keycap> laster-tekla erabiltzen baduzu, teklatua erabil dezakezu konstantea zehazteko; ikus adibide hau:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Teklatu bidezko sarrera</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Konstantea</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>#</keycap> <keycap>3</keycap> </para></entry>
+              <entry><para>C3</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      <para>The <application>gcalctool</application> application provides ten default constant values, as described in the following table:</para>
+                <informaltable frame="all">
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1" colwidth="50*"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Zenbakia</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Balioa</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>C0</para></entry>
+                             <entry><para>0,621</para></entry>
+                             <entry><para>Kilometroak -&gt; miliak bihurketa-faktorea</para>
+                                    <para>Bistaratze-areako uneko balioa konstante horrekin biderkatuta, kilometroak (kilometro orduko) milia (milia orduko) bihurtzen dira. Adibidez, 8 * <guibutton>Con</guibutton><guilabel>C0</guilabel><keycap>=</keycap> 5.</para>
+                                    <para>Bistaratze-areako uneko balioa konstante horrez zatituta, miliak (milia orduko) kilometro (kilometro orduko) bihurtzen dira. Adibidez, 5 / <guibutton>Con</guibutton><guilabel>C0</guilabel><keycap>=</keycap> 8.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C1</para></entry>
+                             <entry><para>1,414213562</para></entry>
+                             <entry><para>2ren erro karratua</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C2</para></entry>
+                             <entry><para>2,718281828</para></entry>
+                             <entry><para>e</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C3</para></entry>
+                             <entry><para>3,141592653</para></entry>
+                             <entry><para>pi</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C4</para></entry>
+                             <entry><para>0,3937007</para></entry>
+                             <entry><para>Zentimetroak -&gt; hazbeteak bihurketa-faktorea</para>
+                                    <para>Bistaratze-areako uneko balioa konstante horrekin biderkatuta zentimetroak hazbete bihurtzen dira. Adibidez, 30 * <guibutton>Con</guibutton><guilabel>C4</guilabel><keycap>=</keycap> 12.</para>
+                                    <para>Bistaratze-areako uneko balioa konstante horrez zatituta hazbeteak zentimetro bihurtzen dira. Adibidez, 12 / <guibutton>Con</guibutton><guilabel>C4</guilabel><keycap>=</keycap> 30.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C5</para></entry>
+                             <entry><para>57,295779513</para></entry>
+                             <entry><para>Radian -&gt; gradu bihurketa-faktorea</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C6</para></entry>
+                             <entry><para>1048576</para></entry>
+                             <entry><para>2 ^ 20</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C7</para></entry>
+                             <entry><para>0,0353</para></entry>
+                             <entry><para>Gramoak -&gt; ontzak bihurketa-faktorea</para>
+                                    <para>Bistaratze-areako uneko balioa konstante horrekin biderkatuta gramoak ontza bihurtzen dira. Adibidez, 500 * <guibutton>Con</guibutton><guilabel>C7</guilabel><keycap>=</keycap> 18.</para>
+                                    <para>Bistaratze-areako uneko balioa konstante horrez zatituta ontzak gramo bihurtzen dira. Adibidez, 18 / <guibutton>Con</guibutton><guilabel>C7</guilabel><keycap>=</keycap> 500.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C8</para></entry>
+                             <entry><para>0,948</para></entry>
+                             <entry><para>Kilojoule -&gt; BTU (British Thermal Unit) bihurketa-faktorea</para>
+                                    <para>Bistaratze-areako uneko balioa konstante horrekin biderkatuta kilojouleak BTU (British Thermal Unit) bihurtzen dira. Adibidez, 10 * <guibutton>Con</guibutton><guilabel>C8</guilabel><keycap>=</keycap> 9,48.</para>
+                                    <para>Bistaratze-areako uneko balioa konstante horrez zatituta BTUak (British Thermal Unit) kilojoule bihurtzen dira. Adibidez, 9,48 / <guibutton>Con</guibutton><guilabel>C8</guilabel><keycap>=</keycap> 10.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>C9</para></entry>
+                             <entry><para>0,061</para></entry>
+                             <entry><para>Zentimetro kubiko -&gt; hazbete kubiko bihurketa-faktorea</para>
+                                    <para>Bistaratze-areako uneko balioa konstante horrekin biderkatuta zentimetro kubikoak hazbete kubiko bihurtzen dira. Adibidez, 100 * <guibutton>Con</guibutton><guilabel>C9</guilabel><keycap>=</keycap> 6,10.</para>
+                                    <para>Bistaratze-areako uneko balioa konstante horrez zatituta hazbete kubikoak zentimetro kubiko bihurtzen dira. Adibidez, 6,10 / <guibutton>Con</guibutton><guilabel>C9</guilabel><keycap>=</keycap> 100.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </informaltable>
+      <para>Zure konstanteak gorde ditzakezu konstante lehenetsiak gainidatzita.</para>
+      <para>Beste konstante bat gordetzeko edo lehendik dagoen konstante bat editatzeko, jarraitu urrats hauei:</para>
+      <orderedlist>
+        <listitem>
+           <para>Egin klik <guibutton>Con</guibutton> botoian, eta hautatu menu gainerakorreko <guilabel>Editatu konstanteak</guilabel>.</para>
+        </listitem>
+        <listitem>
+      <para><guilabel>Editatu konstanteak</guilabel> elkarrizketa-koadroan, hautatu gainidatzi edo editatu nahi duzun konstantea.</para>
+        </listitem>
+        <listitem>
+      <para>Egin klik Balioa eremuan, eta, ondoren, idatzi balio berria.</para>
+        </listitem>
+        <listitem>
+      <para>Egin klik Azalpena eremuan, eta, ondoren, idatzi azalpen berria.</para>
+        </listitem>
+        <listitem>
+      <para>Egin klik <guibutton>Ados</guibutton> botoian aldaketak gordetzeko, eta itxi <guilabel>Editatu konstanteak</guilabel> elkarrizketa-koadroa.</para>
+        </listitem>
+      </orderedlist>
+    </sect3>
+    <sect3 id="gcalctool-edit-func"> 
+      <title>Funtzioak erabiltzea</title> 
+      <para>To show the available functions, click <guibutton>Fun</guibutton>. A popup menu displays the list of defined functions. Select a function from the menu to run that function.</para>
+<para><keycap>F</keycap> laster-tekla erabiltzen baduzu, teklatua erabil dezakezu funtzioa zehazteko; ikus adibide hau:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Teklatu bidezko sarrera</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Funtzioa</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>F</keycap> <keycap>3</keycap> </para></entry>
+              <entry><para>F3</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <para>The <application>gcalctool</application> application does not provide any default functions. You can store up to ten functions. </para>
+      <para>Funtzio bat gordetzeko edo lehendik dagoen funtzio bat editatzeko, jarraitu urrats hauei:</para>
+      <orderedlist>
+        <listitem>
+           <para>Egin klik <guibutton>Fun</guibutton> botoian, eta hautatu menu gainerakorreko <guilabel>Editatu funtzioak</guilabel>.</para>
+        </listitem>
+        <listitem>
+      <para><guilabel>Editatu funtzioak</guilabel> elkarrizketa-koadroan, hautatu sarrera huts bat edo gainidatzi nahi duzun funtzioa.</para>
+        </listitem>
+        <listitem>
+      <para>Click on the Value field, then enter the new equation to solve. You can use "ans" for the result of the previous equation and "R5" for register 5 etc. For example, enter <literal>(-R1+sqrt(R1^2-4*R0*R2))/(2*R0)</literal> to calculate a root of the quadratic equation R0*x^2 + R1*x + R2 = 0.</para>
+        </listitem>
+        <listitem>
+      <para>Click on the Description field, then enter the new description. For example, <literal>Quadratic Solver</literal>.</para>
+        </listitem>
+        <listitem>
+      <para>Egin klik <guibutton>Ados</guibutton> botoian aldaketak gordetzeko, eta itxi <guilabel>Editatu funtzioak</guilabel> elkarrizketa-koadroa.</para>
+        </listitem>
+      </orderedlist>
+    </sect3>
+    <sect3 id="gcalctool-misc-calc"> 
+      <title>Beste zenbait kalkulu zientifiko egitea</title> 
+      <para>Beste zenbait kalkulu zientifiko egiteko, erabili <xref linkend="gcalctool-TBL-misc-calc"/>(e)n deskribatutako botoiak.</para>
+                <table id="gcalctool-TBL-misc-calc" frame="all">
+                  <title>Beste zenbait kalkulu zientifiko egitea</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Adibidea</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                                                      <row valign="top">
+                             <entry><para>e ber <replaceable>x</replaceable></para> </entry>
+                             <entry><para>e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para><literal>e</literal> ber bistaratze-areako uneko balioa kalkulatzen du.</para></entry>
+                             <entry><para>2 e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>7,39</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>10 ber <replaceable>x</replaceable></para> </entry>
+                             <entry><para>10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>10 ber bistaratze-areako uneko balioa kalkulatzen du.</para></entry>
+                             <entry><para>2 10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>100</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>2 to the <replaceable>x</replaceable> power</para> </entry>
+                             <entry><para>2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>Calculates the value of 2 raised to the power of the current value in the display area.</para></entry>
+                             <entry><para>2 2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>4</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>x ber <replaceable>y</replaceable></para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioa ber sartzen duzun hurrengo balioa egiten du.</para></entry>
+                             <entry><para>2 <replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>16</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>x to the reciprocal <replaceable>y</replaceable> power</para> </entry>
+                             <entry><para><replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>Raises the current value in the display area to the reciprocal power of the next value that you enter.</para></entry>
+                             <entry><para>2 <replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript> <guibutton>4</guibutton> <guibutton>=</guibutton></para></entry>
+                             <entry><para>16</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><replaceable>x</replaceable> faktoriala</para> </entry>
+                             <entry><para><guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para>Bistaratze-areako uneko balioaren faktoriala kalkulatzen du. <replaceable>x</replaceable> faktoriala hau da: <replaceable>x</replaceable>*(<replaceable>x</replaceable>-1)*(<replaceable>x</replaceable>-2)...*1. Osoko zenbaki positiboei soilik aplikatzen zaie funtzio hori.</para></entry>
+                             <entry><para>4 <guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para>24</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Zatiketa modularra</para> </entry>
+                             <entry><para><guibutton>Mod</guibutton></para></entry>
+                             <entry><para>Sartzen duzun hurrengo osoko zenbakiaz zatitzen du bistaratze-areako uneko osoko balioa, eta hondarra bistaratzen du.</para></entry>
+                             <entry><para>15 <guibutton>Mod</guibutton><guibutton>4</guibutton><guibutton>=</guibutton></para></entry>
+                             <entry><para>3</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Ausazko zenbakien sortzailea</para> </entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>0,0tik 1,0ra bitarteko ausazko zenbaki bat sortzen du, eta bistaratze-arean bistaratzen du ausazko zenbaki hori.</para></entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>0,14</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    </sect2> 
+    <sect2 id="gcalctool-programming-mode">
+      <title>To Perform Programming Calculations</title>
+      <para>To change to Programming mode, choose 
+        <menuchoice> 
+          <guimenu>View</guimenu> 
+          <guimenuitem>Programming</guimenuitem> 
+        </menuchoice>. 
+      </para>
+    <para>When you change to Programming mode, the following widget is displayed above the Base and Advanced mode buttons:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="gcalctool-FIG-programming"> 
+        <title><application>gcalctool</application> Programming Mode Buttons</title> 
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata fileref="figures/gcalctool_programming_window.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>Shows <application>gcalctool</application> Programming mode buttons.  </phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+    <sect3 id="gcalctool-num-base"> 
+      <title>Oinarria ezartzea</title> 
+      <para>Oinarria ezartzeko, hautatu <xref linkend="gcalctool-TBL-num-base"/>(e)n deskribatutako botoietako bat.</para>
+                <table id="gcalctool-TBL-num-base" frame="all">
+                  <title>Oinarria ezartzea</title> 
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Oinarri bitarra</para> </entry>
+                             <entry><para><guibutton>Bin</guibutton></para></entry>
+                             <entry><para>Oinarri bitarra ezartzen du.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Oinarri zortzitarra</para> </entry>
+                             <entry><para><guibutton>Oct</guibutton></para></entry>
+                             <entry><para>Oinarri zortzitarra ezartzen du.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Oinarri hamartarra</para> </entry>
+                             <entry><para><guibutton>Dec</guibutton></para></entry>
+                             <entry><para>Sets the numeric base to decimal, that is, base 10. Decimal is the default numeric base. If you change from Programming mode to another mode, <application>gcalctool</application> automatically sets the numeric base to decimal.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Oinarri hamaseitarra</para> </entry>
+                             <entry><para><guibutton>Hex</guibutton></para></entry>
+                             <entry><para>Oinarri hamaseitarra ezartzen du.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-word-length">
+      <title>To Set the Word Length</title>
+      <para>The word length can be altered, to make the bitwise functions behave differently. To set the word length, select one of the buttons described in <xref linkend="gcalctool-TBL-word-length"/>. </para>
+                <table id="gcalctool-TBL-word-length" frame="all">
+                  <title>Setting the Word Length</title>
+                  <tgroup cols="3" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>64 bit word</para> </entry>
+                             <entry><para><guibutton>64 bit</guibutton></para></entry>
+                             <entry><para>Sets the word length to 64 bits. 64 bits is the default word length.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>32 bit word</para> </entry>
+                             <entry><para><guibutton>32 bit</guibutton></para></entry>
+                             <entry><para>Sets the word length to 32 bits.</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>16 bit word</para> </entry>
+                             <entry><para><guibutton>16 bit</guibutton></para></entry>
+                             <entry><para>Sets the word length to 16 bits.</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-calc-bit-manipulation-ext">
+      <title>To Perform Bit Manipulations on Integers</title>
+      <para>If the calculator display shows an integer value, then each of the bits in that integer value is displayed as a collection of 0s and 1s in the Bit Editor. By clicking on any of these individual bits, their value can be toggled, causing the displayed integer value to be adjusted accordingly.</para>
+    </sect3>
+    <sect3 id="gcalctool-logic-calc"> 
+      <title>Bitetan oinarritutako kalkuluak egitea</title> 
+      <para>Bitetan oinarritutako kalkuluak egiteko, erabili <xref linkend="gcalctool-TBL-logic-calc"/>(e)n deskribatutako botoiak.</para>
+                <table id="gcalctool-TBL-logic-calc" frame="all">
+                  <title>Bitetan oinarritutako kalkuluak egitea</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Adibidea</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Bitez biteko OR</para> </entry>
+                             <entry><para><guibutton>OR</guibutton></para></entry>
+                             <entry><para>Performs a bitwise OR operation on the current value in the display area and the next number that you enter.</para></entry>
+                             <entry><para>10001000 <guibutton>OR</guibutton> 00010001</para></entry>
+                             <entry><para>10011001</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Bitez biteko AND</para> </entry>
+                             <entry><para><guibutton>AND</guibutton></para></entry>
+                             <entry><para>Performs a bitwise AND operation on the current value in the display area and the next number that you enter.</para></entry>
+                             <entry><para>10101010 <guibutton>AND</guibutton> 00110011</para></entry>
+                             <entry><para>100010</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Bitez biteko NOT</para> </entry>
+                             <entry><para><guibutton>NOT</guibutton></para></entry>
+                             <entry><para>Performs a bitwise NOT operation on the current value in the display area, using the word size configured in <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para><guibutton>NOT</guibutton> 1357ACE</para></entry>
+                             <entry><para>FECA8531</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Bitez biteko XOR</para> </entry>
+                             <entry><para><guibutton>XOR</guibutton></para></entry>
+                             <entry><para>Performs a bitwise XOR operation on the current value in the display area and the next number that you enter.</para></entry>
+                             <entry><para>1100 <guibutton>XOR</guibutton> 1010</para></entry>
+                             <entry><para>110</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Bitez biteko XNOR</para> </entry>
+                             <entry><para><guibutton>XNOR</guibutton></para></entry>
+                             <entry><para>Performs a bitwise XNOR operation on the current value in the display area and the next number that you enter.</para></entry>
+                             <entry><para>1100 <guibutton>XNOR</guibutton> 1010</para></entry>
+                             <entry><para>1001</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+    </sect3>
+    <sect3 id="gcalctool-num-manip"> 
+      <title>Zenbaki bitarrekin lan egitea</title> 
+      <para>Zenbaki bitarrekin lan egiteko, erabili <xref linkend="gcalctool-TBL-num-manip"/>(e)n deskribatutako botoiak.</para>
+                <table id="gcalctool-TBL-num-manip" frame="all">
+                  <title>Zenbaki bitarrekin lan egitea</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Adibidea</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><replaceable>n</replaceable> posizio ezkerrera desplazatzea</para> </entry>
+                             <entry><para><guibutton>&lt;</guibutton></para></entry>
+                             <entry><para>Shifts the current value in the display area, the specified number of places to the left. Click <guibutton>&lt;</guibutton>, then select the number of shift places from the popup menu. The number can be shifted up to 15 places left. </para></entry>
+                             <entry><para>111 <guibutton>&lt;</guibutton><guilabel>digitu 1</guilabel></para></entry>
+                             <entry><para>1110</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><replaceable>n</replaceable> posizio eskuinera desplazatzea</para> </entry>
+                             <entry><para><guibutton>&gt;</guibutton></para></entry>
+                             <entry><para>Shifts the current value in the display area, the specified number of places to the right. Click <guibutton>&gt;</guibutton>, then select the number of shift places from the popup menu. The number can be shifted up to 15 places right.</para></entry>
+                             <entry><para>1011 <guibutton>&gt;</guibutton><guilabel>digitu 1</guilabel></para></entry>
+                             <entry><para>101</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Truncating a number</para> </entry>
+                             <entry><para><guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>Truncates the current value in the display area to the word size configured in <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>FFFFFFFFFF <guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>FFFFFFFF</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Get the 1's complement</para> </entry>
+                             <entry><para><guibutton>1's</guibutton></para></entry>
+                             <entry><para>Calculates the 1's complement for the current value in the display area, using the word size configured in <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>D723 <guibutton>1's</guibutton></para></entry>
+                             <entry><para>FFFF28DC</para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para>Get the 2's complement</para> </entry>
+                             <entry><para><guibutton>2's</guibutton></para></entry>
+                             <entry><para>Calculates the 2's complement for the current value in the display area, using the word size configured in <xref linkend="gcalctool-word-length"/>.</para></entry>
+                             <entry><para>D723 <guibutton>2's</guibutton></para></entry>
+                             <entry><para>FFFF28DD</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+      <para>Laster-teklak erabiltzen badituzu, teklatua erabil dezakezu desplazatzeko posizio kopurua zehazteko. Hemen dituzu adibide batzuk:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Teklatu bidezko sarrera</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Azalpena</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><keycap>&lt;</keycap> <keycap>4</keycap></para></entry>
+              <entry><para>Bistaratze-areako uneko balio bitarra 4 posizio desplazatzen du ezkerrera.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><keycap>&gt;</keycap> <keycap>4</keycap></para></entry>
+              <entry><para>Bistaratze-areako uneko balio bitarra 4 posizio desplazatzen du eskuinera.</para></entry>
+            </row>
+          </tbody> 
+        </tgroup>
+      </informaltable>
+
+    </sect3>
+        <sect3 id="gcalctool-misc-prog">
+      <title>To Perform Miscellaneous Programming Calculations</title> 
+      <para>To perform miscellaneous programming calculations, use the buttons described in <xref linkend="gcalctool-TBL-misc-prog"/>. </para>
+                <table id="gcalctool-TBL-misc-prog" frame="all">
+                  <title>Performing Miscellaneous Programming Calculations</title> 
+                  <tgroup cols="5" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <colspec colname="COLSPEC4" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Azalpena</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Adibidea</para></entry>
+                                  <entry colname="COLSPEC4">
+                                         <para>Emaitza</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para>Zifra hamaseitarrak</para> </entry>
+                             <entry><para><guibutton>A</guibutton>tik <guibutton>F</guibutton>ra biak barne</para></entry>
+                             <entry><para>Zifra horiek erabilgarri daude soilik oinarri hamaseitarrean.</para></entry>
+                             <entry><para><guibutton>B</guibutton></para></entry>
+                             <entry><para>B</para></entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+         </sect3>
+    </sect2>
+<!-- ============= Undo and Redo ======================== -->
+  <sect2 id="gcalctool-undo-redo">
+    <title>To Undo and Redo</title>
+                <para>To undo your previous action, choose
+                  <menuchoice>
+                         <guimenu>Edit</guimenu>
+                         <guimenuitem>Undo</guimenuitem>
+                  </menuchoice>.  You can undo up to 15 past actions.</para>
+                <para>If you want to redo an action you have just undone, choose
+                  <menuchoice>
+                         <guimenu>Edit</guimenu>
+                         <guimenuitem>Redo</guimenuitem>
+                  </menuchoice>. You can redo up to 15 undone actions.</para>
+  </sect2>
+<!-- ============= Quitting ============================= -->
+  <sect2 id="gcalctool-quit"> 
+    <title>Irtetea</title> 
+                <para>To quit <application>gcalctool</application>, choose
+                  <menuchoice>
+                         <guimenu>Calculator</guimenu>
+                         <guimenuitem>Quit</guimenuitem>
+                  </menuchoice>.  </para>
+                <para>When you quit <application>gcalctool</application>, the current values of the following settings are stored and automatically applied the next time you start <application>gcalctool</application>: </para>
+                  <itemizedlist>
+                    <listitem><para>Modua: <link linkend="gcalctool-basic-mode">Oinarrizkoa</link>, <link linkend="gcalctool-advanced-mode">Aurreratua</link>, <link linkend="gcalctool-financial-mode">Finantzarioa</link>, edo <link linkend="gcalctool-scientific-mode">Zientifikoa</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-set-acc">Zehaztasuna</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-mem-reg">Memoria-erregistroen leihoa</link> bistaratua ala bistaratu gabea, eta memoria-erregistro guztien edukia</para></listitem>
+                    <listitem><para><link linkend="gcalctool-num-base">Oinarria</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-display-type">Bistaratze-mota</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-trig-type">Trigonometria mota</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-set-acc">Zero guztiak erakustea</link></para></listitem>
+                    <listitem><para><link linkend="gcalctool-calc-functions-separator">Milakoen bereizlea erakustea</link></para></listitem>
+                  </itemizedlist>
+  </sect2>
+  </sect1>
+<!-- ============= Technical Information ============================= -->
+  <sect1 id="gcalctool-tech-info">
+         <title>Informazio teknikoa</title>
+
+         <sect2 id="gcalctool-recognize-error">
+                <title>Errore-baldintzak</title>
+                <para>If you perform an invalid calculation, <application>gcalctool</application> indicates the error condition as follows:
+<itemizedlist>
+<listitem><para><literal>Errorea</literal> hitza bistaratzen du bistaratze-arean.</para></listitem>
+<listitem><para>Errore-mezua bistaratzen du egoera-barran.</para></listitem>
+<listitem><para>Kalkulu-botoi guztiak ez-erabilgarri bihurtzen ditu, <guibutton>Clr</guibutton> izan ezik.</para></listitem>
+<listitem><para>Kalkulagailuaren aukera guztiak ez-erabilgarri bihurtzen ditu.</para></listitem>
+<listitem><para>Kalkulagailuaren menu-elementu guztiak ez-erabilgarri bihurtzen ditu hauek izan ezik: <menuchoice><guimenu>Kalkulagailua</guimenu><guimenuitem>Irten</guimenuitem></menuchoice> eta <menuchoice><guimenu>Laguntza</guimenu><guimenuitem>Edukia</guimenuitem></menuchoice>.</para></listitem>
+</itemizedlist>
+</para>
+<para>To clear the error condition, click <guibutton>Clr</guibutton> or press <keycombo><keycap>Shift</keycap><keycap>Delete</keycap></keycombo>.</para>
+         </sect2>
+
+         <sect2 id="gcalctool-change-modes">
+                <title>Changing Modes</title>
+                <para>If the user tries to change modes when a partial
+calculation is being displayed, a warning dialog is displayed, telling
+the user that the current calculation will be cleared, and the base will 
+be reset to decimal.</para>
+                <para>There is a checkbox present, that if checked, prevents the dialog from being shown again.</para>
+                <para>If the user presses the <guibutton>Cancel</guibutton> button, the change mode operation is cancelled. If the user presses the <guibutton>Change Mode</guibutton> button, the mode is changed and has the following side-effects:
+<itemizedlist>
+<listitem><para>Clears the display.</para></listitem>
+   <listitem><para>Sets the base to decimal.</para></listitem>
+   <listitem><para>Sets the numeric display to fixed.</para></listitem>
+   <listitem><para>Sets the accuracy to nine places after the numeric point.</para></listitem>
+   <listitem><para>Clears the display of the thousands separator.</para></listitem>
+   <listitem><para>Clears the display of trailing zeroes after the numeric point.</para></listitem>
+   <listitem><para>Dismisses the register window if the new mode is Basic.</para></listitem>
+</itemizedlist>
+</para>
+         </sect2>
+
+         <sect2 id="gcalctool-changing-display-area">
+                <title>Changing The Display Area</title>
+                <para>It is possible to use the mouse to click on the display area and edit it.</para>
+                <para>All the normal keyboard shortcuts will work, plus the addition of:
+<itemizedlist>
+    <listitem><para><keycombo><keycap>Ctrl</keycap><keycap>Delete</keycap></keycombo> which will delete the character to the right of the text cursor</para></listitem>
+    <listitem><para><keycap>Home</keycap> which moves the text cursor to the beginning of the display area</para></listitem> 
+    <listitem><para><keycap>End</keycap> which moves the text cursor to the end of the display area</para></listitem> 
+</itemizedlist>
+</para>
+         </sect2>
+
+  </sect1>
+<!-- ============= Keyboard Shortcuts ============================= -->
+  <sect1 id="gcalctool-keyboard-shortcut"> 
+    <title>Erreferentzia bizkorra: laster-teklak</title> 
+                <para><xref linkend="gcalctool-TBL-keyboard-shortcut-button"/>, <xref linkend="gcalctool-TBL-keyboard-shortcut-sci-options"/>, and <xref linkend="gcalctool-TBL-keyboard-shortcut-menu"/> provide a quick reference for all of the <application>gcalctool</application> keyboard shortcuts.</para>
+                <para>When you use the keyboard shortcut for any of the calculator
+                      buttons that have a menu associated with them, that menu is displayed.
+                      You can then use the arrow keys to select a menu item or the menu item's shortcut.</para>
+                <table id="gcalctool-TBL-keyboard-shortcut-button" frame="all">
+                  <title>Quick Reference for Keyboard Shortcuts of <application>gcalctool</application> Buttons</title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Laster-tekla</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Botoia</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ikus</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycap>0</keycap>tik <keycap>9</keycap>ra, biak barne</para></entry>
+                             <entry><para><guibutton>0</guibutton>tik <guibutton>9</guibutton>ra, biak barne</para></entry>
+                             <entry><para>Zenbakiak</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>A</keycap> </para></entry>
+                             <entry><para><guibutton>Acc</guibutton> </para></entry>
+                             <entry><para>Zehaztasuna</para> </entry>
+                             <entry><para><xref linkend="gcalctool-set-acc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>a</keycap> </para></entry>
+                             <entry><para><guibutton>A</guibutton> </para></entry>
+                             <entry><para>Zifra hamaseitarrak</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>b</keycap> </para></entry>
+                             <entry><para><guibutton>B</guibutton> </para></entry>
+                             <entry><para>Zifra hamaseitarrak</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>C</keycap></para></entry>
+                             <entry><para><guibutton>+/-</guibutton></para></entry>
+                             <entry><para>Aldatu zeinu aritmetikoa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>c</keycap> </para></entry>
+                             <entry><para><guibutton>C</guibutton> </para></entry>
+                             <entry><para>Zifra hamaseitarrak</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>D</keycap></para></entry>
+                             <entry><para><guibutton>Ddb</guibutton></para></entry>
+                             <entry><para>Faktore bikoitzeko amortizazio beherakorra</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>d</keycap> </para></entry>
+                             <entry><para><guibutton>D</guibutton> </para></entry>
+                             <entry><para>Zifra hamaseitarrak</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>E</keycap> </para></entry>
+                             <entry><para><guibutton>Exp</guibutton> </para></entry>
+                             <entry><para>Esponentziala</para> </entry>
+                             <entry><para><xref linkend="gcalctool-enter-exp"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>e</keycap> </para></entry>
+                             <entry><para><guibutton>E</guibutton> </para></entry>
+                             <entry><para>Zifra hamaseitarrak</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>F</keycap> </para></entry>
+                             <entry><para><guibutton>Fun</guibutton> </para></entry>
+                             <entry><para>Funtzioa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-edit-func"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>f</keycap> </para></entry>
+                             <entry><para><guibutton>F</guibutton> </para></entry>
+                             <entry><para>Zifra hamaseitarrak</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>G</keycap></para></entry>
+                             <entry><para>10<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>10 ber <replaceable>x</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>g</keycap></para></entry>
+                             <entry><para><guibutton>Log</guibutton></para></entry>
+                             <entry><para>Common base 10 logarithm</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>H</keycap></para></entry>
+                             <entry><para>2<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>2 to the <replaceable>x</replaceable> power</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>h</keycap></para></entry>
+                             <entry><para>Log<subscript>2</subscript></para></entry>
+                             <entry><para>Common base 2 logarithm</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>I</keycap></para></entry>
+                             <entry><para><guibutton>Gpm</guibutton></para></entry>
+                             <entry><para>Gross Profit Margin</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>i</keycap></para></entry>
+                             <entry><para><guibutton>Int</guibutton></para></entry>
+                             <entry><para>Osoko zatia</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>J</keycap></para></entry>
+                             <entry><para>Cos<superscript>-1</superscript></para></entry>
+                             <entry><para>Inverse Cosine</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>j</keycap></para></entry>
+                             <entry><para><guibutton>Cos</guibutton></para></entry>
+                             <entry><para>Kosinua</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>K</keycap></para></entry>
+                             <entry><para>Sin<superscript>-1</superscript></para></entry>
+                             <entry><para>Inverse Sine</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>k</keycap></para></entry>
+                             <entry><para><guibutton>Sin</guibutton></para></entry>
+                             <entry><para>Sinua</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>l</keycap></para></entry>
+                             <entry><para><guibutton>Sln</guibutton></para></entry>
+                             <entry><para>Amortizazio lineala</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>M</keycap></para></entry>
+                             <entry><para><guibutton>Mod</guibutton></para></entry>
+                             <entry><para>Zatiketa modularra</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>m</keycap></para></entry>
+                             <entry><para><guibutton>Ctrm</guibutton></para></entry>
+                             <entry><para>Interes konposatuko epea</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>N</keycap></para></entry>
+                             <entry><para>e<superscript><replaceable>x</replaceable></superscript></para></entry>
+                             <entry><para>e ber <replaceable>x</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>n</keycap></para></entry>
+                             <entry><para><guibutton>Ln</guibutton></para></entry>
+                             <entry><para>Logaritmo nepertarra</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logs-calc"/></para> </entry>
+                           </row>
+                                                   <row valign="top">
+                                                         <entry><para><keycap>O</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript>1/<replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>x to the reciprocal<replaceable>y</replaceable> power</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>o</keycap> or <keycap>^</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript><replaceable>y</replaceable></superscript></para></entry>
+                             <entry><para>x ber <replaceable>y</replaceable></para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>P</keycap></para></entry>
+                             <entry><para><guibutton>Pmt</guibutton></para></entry>
+                             <entry><para>Ordainketa periodikoa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>p</keycap></para></entry>
+                             <entry><para><guibutton>Pv</guibutton></para></entry>
+                             <entry><para>Uneko balioa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>R</keycap></para></entry>
+                             <entry><para><guibutton>Rcl</guibutton></para></entry>
+                             <entry><para>Eskuratu memoria-erregistroko balio bat</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>r</keycap></para></entry>
+                             <entry><para><guibutton>1/<replaceable>x</replaceable></guibutton></para></entry>
+                             <entry><para>Alderantzizkoa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>S</keycap></para></entry>
+                             <entry><para><guibutton>Sto</guibutton></para></entry>
+                             <entry><para>Gorde balioa memoria-erregistroan</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>s</keycap></para></entry>
+                             <entry><para><guibutton>Sqrt</guibutton></para></entry>
+                             <entry><para>Erro karratua</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>T</keycap></para></entry>
+                             <entry><para><guibutton>Tasa</guibutton></para></entry>
+                             <entry><para>Aldiaren interes-tasa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>t</keycap></para></entry>
+                             <entry><para><guibutton>Epea</guibutton></para></entry>
+                             <entry><para>Ordainketa-aldia</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>u</keycap></para></entry>
+                             <entry><para><guibutton>Abs</guibutton></para></entry>
+                             <entry><para>Balio absolutua</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>v</keycap></para></entry>
+                             <entry><para><guibutton>Fv</guibutton></para></entry>
+                             <entry><para>Etorkizuneko balioa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>W</keycap></para></entry>
+                             <entry><para>Tan<superscript>-1</superscript></para></entry>
+                             <entry><para>Inverse Tan</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>w</keycap></para></entry>
+                             <entry><para><guibutton>Tan</guibutton></para></entry>
+                             <entry><para>Tan</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>X</keycap></para></entry>
+                             <entry><para><guibutton>Exch</guibutton></para></entry>
+                             <entry><para>Trukatu memoria-erregistroko balioa eta bistaratutako balioa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>x</keycap></para></entry>
+                             <entry><para><guibutton>Xor</guibutton></para></entry>
+                             <entry><para>Bitez biteko XOR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Y</keycap></para></entry>
+                             <entry><para><guibutton>Syd</guibutton></para></entry>
+                             <entry><para>Urteen zenbaki-ordenarekiko alderantziz proportzionala den amortizazioa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-financial-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Z</keycap></para></entry>
+                             <entry><para><guibutton>2's</guibutton></para></entry>
+                             <entry><para>2's complement</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>z</keycap></para></entry>
+                             <entry><para><guibutton>1's</guibutton></para></entry>
+                             <entry><para>1's complement</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>!</keycap></para></entry>
+                             <entry><para><guibutton><replaceable>x</replaceable>!</guibutton></para></entry>
+                             <entry><para><replaceable>x</replaceable> faktoriala</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>#</keycap> </para></entry>
+                             <entry><para><guibutton>Con</guibutton> </para></entry>
+                             <entry><para>Balio konstantea</para> </entry>
+                             <entry><para><xref linkend="gcalctool-edit-const"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>%</keycap></para></entry>
+                             <entry><para><guibutton>%</guibutton></para></entry>
+                             <entry><para>Ehunekoa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&amp;</keycap></para></entry>
+                             <entry><para><guibutton>And</guibutton></para></entry>
+                             <entry><para>Bitez biteko AND</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>(</keycap> eta <keycap>)</keycap></para></entry>
+                             <entry><para><guibutton>(</guibutton> eta <guibutton>)</guibutton></para></entry>
+                             <entry><para>Parentesiak</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>*</keycap></para></entry>
+                             <entry><para><guibutton>*</guibutton></para></entry>
+                             <entry><para>Biderketa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>+</keycap></para></entry>
+                             <entry><para><guibutton>+</guibutton></para></entry>
+                             <entry><para>Batuketa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>-</keycap></para></entry>
+                             <entry><para><guibutton>-</guibutton></para></entry>
+                             <entry><para>Kenketa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>.</keycap></para></entry>
+                             <entry><para><guibutton>.</guibutton></para></entry>
+                             <entry><para>Zenbaki-koma</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>/</keycap></para></entry>
+                             <entry><para><guibutton>/</guibutton></para></entry>
+                             <entry><para>Zatiketa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>:</keycap></para></entry>
+                             <entry><para><guibutton>Frac</guibutton></para></entry>
+                             <entry><para>Ez-osoko zatia</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&lt;</keycap></para></entry>
+                             <entry><para><guibutton>&lt;</guibutton></para></entry>
+                             <entry><para><replaceable>n</replaceable> posizio ezkerrera desplazatzea</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>=</keycap> edo <keycap>Sartu</keycap></para></entry>
+                             <entry><para><guibutton>=</guibutton></para></entry>
+                             <entry><para>Emaitza kalkulatzea</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-simple-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>&gt;</keycap></para></entry>
+                             <entry><para><guibutton>&gt;</guibutton></para></entry>
+                             <entry><para><replaceable>n</replaceable> posizio eskuinera desplazatzea</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>?</keycap></para></entry>
+                             <entry><para><guibutton>Rand</guibutton></para></entry>
+                             <entry><para>Ausazko zenbakien sortzailea</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-misc-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>@</keycap></para></entry>
+                             <entry><para><replaceable>x</replaceable><superscript>2</superscript></para></entry>
+                             <entry><para>Karratua</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-adv-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>{</keycap></para></entry>
+                             <entry><para><guibutton>Xnor</guibutton></para></entry>
+                             <entry><para>Bitez biteko XNOR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>[</keycap></para></entry>
+                             <entry><para><guibutton>Trunc</guibutton></para></entry>
+                             <entry><para>Truncates the number</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-manip"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>|</keycap></para></entry>
+                             <entry><para><guibutton>Or</guibutton></para></entry>
+                             <entry><para>Bitez biteko OR</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>~</keycap></para></entry>
+                             <entry><para><guibutton>Not</guibutton></para></entry>
+                             <entry><para>Bitez biteko NOT</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-logic-calc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Atzera tekla</keycap></para></entry>
+                             <entry><para><guibutton>Atze</guibutton></para></entry>
+                             <entry><para>Atzera tekla</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycap>Ihes</keycap> edo</para>
+                                    <para><keycombo><keycap>Ktrl</keycap><keycap>Atzera tekla</keycap></keycombo></para></entry>
+                             <entry><para><guibutton>CE</guibutton></para></entry>
+                             <entry><para>Garbitu sarrera</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Shift</keycap><keycap>Ezabatu</keycap></keycombo></para></entry>
+                             <entry><para><guibutton>Clr</guibutton></para></entry>
+                             <entry><para>Garbitu</para> </entry>
+                             <entry><para><xref linkend="gcalctool-TBL-erase-char"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <table id="gcalctool-TBL-keyboard-shortcut-sci-options" frame="all">
+                  <title>Quick Reference for Keyboard Shortcuts of <application>gcalctool</application> Scientific Mode Options</title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Laster-tekla</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Aukera</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ikus</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>1</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>16 bit</guilabel></para></entry>
+                             <entry><para>Set the word size to 16 bits.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>3</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>32 bit</guilabel></para></entry>
+                             <entry><para>Set the word size to 32 bits.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>6</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>64 bit</guilabel></para></entry>
+                             <entry><para>Set the word size to 64 bits.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-word-length"/></para></entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>a</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Gradu ehundarrak</guilabel></para></entry>
+                             <entry><para>Ezarri trigonometria mota gradu ehundarretan.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>b</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Bin</guilabel></para></entry>
+                             <entry><para>Ezarri oinarri bitarra.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>d</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Dec</guilabel></para></entry>
+                             <entry><para>Ezarri oinarri hamartarra.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>f</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Fix</guilabel></para></entry>
+                             <entry><para>Ezarri koma finkoko formatuaren bistaratze modua.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>g</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Graduak</guilabel></para></entry>
+                             <entry><para>Ezarri trigonometria mota gradutan.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>i</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Inv</guilabel></para></entry>
+                             <entry><para>Hautatu alderantzizkoa, funtzio trigonometrikoekin erabiltzeko.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-options"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>n</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Eng</guilabel></para></entry>
+                             <entry><para>Ezarri ingeniaritzako formatuaren bistaratze modua.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>o</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Oct</guilabel></para></entry>
+                             <entry><para>Ezarri oinarri zortzitarra.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>r</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Radianak</guilabel></para></entry>
+                             <entry><para>Ezarri trigonometria mota radianetan.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>s</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Sci</guilabel></para></entry>
+                             <entry><para>Ezarri formatu zientifikoaren bistaratze modua.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-display-type"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>x</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Hex</guilabel></para></entry>
+                             <entry><para>Ezarri oinarri hamaseitarra.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-num-base"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Alt</keycap><keycap>y</keycap></keycombo></para></entry>
+                             <entry><para><guilabel>Hyp</guilabel></para></entry>
+                             <entry><para>Hautatu aukera hiperbolikoa, funtzio trigonometrikoekin erabiltzeko.</para></entry>
+                             <entry><para><xref linkend="gcalctool-TBL-trig-options"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+                <table id="gcalctool-TBL-keyboard-shortcut-menu" frame="all">
+                  <title>Quick Reference for Keyboard Shortcuts of <application>gcalctool</application> Menu Items</title> 
+                  <tgroup cols="4" colsep="1" rowsep="1">
+                         <colspec colname="COLSPEC0" colwidth="50*"/>
+                         <colspec colname="COLSPEC1"/>
+                         <colspec colname="COLSPEC2" colwidth="50*"/>
+                         <colspec colname="COLSPEC3" colwidth="50*"/>
+                         <thead>
+                                <row valign="top">
+                                  <entry colname="COLSPEC0">
+                                         <para>Laster-tekla</para></entry>
+                                  <entry colname="COLSPEC1">
+                                         <para>Menu-elementua</para></entry>
+                                  <entry colname="COLSPEC2">
+                                         <para>Funtzioa</para></entry>
+                                  <entry colname="COLSPEC3">
+                                         <para>Ikus</para></entry>
+                                </row>
+                         </thead> 
+                         <tbody> 
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>b</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ikusi</guimenu> <guimenuitem>Oinarrizkoa</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Aktibatu oinarrizko modua</para> </entry>
+                             <entry><para><xref linkend="gcalctool-basic-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>c</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Editatu</guimenu> <guimenuitem>Kopiatu</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Bistaratze-areako uneko balioa arbelean kopiatzen du</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>f</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ikusi</guimenu> <guimenuitem>Finantzarioa</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Aktibatu modu finantzarioa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-financial-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>h</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Laguntza</guimenu> <guimenuitem>Edukia</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Display the <application>gcalctool</application> online help </para> </entry>
+                             <entry><para><xref linkend="gcalctool-intro"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>i</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Editatu</guimenu> <guimenuitem>Txertatu ASCII balioa</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Bistaratu <guilabel>Txertatu ASCII balioa</guilabel> elkarrizketa-koadroa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-ins-ascii"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>k</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ikusi</guimenu> <guimenuitem>Milakoen bereizlea erakustea</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Bistaratu milakoen bereizlea</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions-separator"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>m</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ikusi</guimenu> <guimenuitem>Memoria-erregistroak</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Bistaratu <guilabel>Memoria erregistro</guilabel>en leihoa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-mem-reg"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>p</keycap></keycombo></para></entry>
+                                                         <entry><para> <menuchoice> <guimenu>Ikusi</guimenu> <guimenuitem>Programming</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Change to Programming mode</para> </entry>
+                             <entry><para><xref linkend="gcalctool-programming-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>q</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Kalkulagailua</guimenu> <guimenuitem>Irten</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Quit the <application>gcalctool</application> application</para> </entry>
+                             <entry><para><xref linkend="gcalctool-quit"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>s</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ikusi</guimenu> <guimenuitem>Zientifikoa</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Aktibatu modu zientifikoa</para> </entry>
+                             <entry><para><xref linkend="gcalctool-scientific-mode"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>t</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Ikusi</guimenu> <guimenuitem>Zero guztiak erakustea</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Erakutsi zero guztiak</para> </entry>
+                             <entry><para><xref linkend="gcalctool-set-acc"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>v</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Editatu</guimenu> <guimenuitem>Itsatsi</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Arbeleko uneko balioa bistaratze-arean kopiatzen du</para> </entry>
+                             <entry><para><xref linkend="gcalctool-calc-functions"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Ktrl</keycap><keycap>z</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Editatu</guimenu> <guimenuitem>Undo</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Undo previous action</para> </entry>
+                             <entry><para><xref linkend="gcalctool-undo-redo"/></para> </entry>
+                           </row>
+                           <row valign="top">
+                             <entry><para><keycombo><keycap>Shift</keycap><keycap>Ktrl</keycap><keycap>z</keycap></keycombo></para></entry>
+                             <entry><para> <menuchoice> <guimenu>Editatu</guimenu> <guimenuitem>Redo</guimenuitem> </menuchoice> </para></entry>
+                             <entry><para>Redo an undone action</para> </entry>
+                             <entry><para><xref linkend="gcalctool-undo-redo"/></para> </entry>
+                           </row>
+                         </tbody>
+                  </tgroup>
+                </table>
+  </sect1>
+</article>

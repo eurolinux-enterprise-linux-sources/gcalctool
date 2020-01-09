@@ -1,0 +1,19 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+[encoding: UTF-8]
+[type: gettext/glade]data/financial.ui
+[type: gettext/glade]data/gcalctool.ui
+data/gcalctool.desktop.in
+data/gcalctool.schemas.in
+src/calctool.c
+src/display.c
+src/financial.c
+src/functions.c
+src/get.c
+src/gtk.c
+src/mp.c
+src/mp-binary.c
+src/mp-convert.c
+src/mp-equation.c
+src/mp-trigonometric.c
+src/register.c
